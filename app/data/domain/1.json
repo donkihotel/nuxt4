@@ -1,0 +1,28 @@
+{
+    "domains": [
+        {
+            "id": "google.com",
+            "name": "가비아",
+            "department": "가비아",
+            "role": "아임웹",
+            "salary": "구글워크스페이스",
+            "score": 100
+        },
+        {
+            "id": "naver.com",
+            "name": "가비아",
+            "department": "가비아",
+            "role": "아임웹",
+            "salary": "구글워크스페이스",
+            "score": 99
+        },
+        {
+            "id": "naver.com",
+            "name": "가비아",
+            "department": "가비아",
+            "role": "아임웹",
+            "salary": "구글워크스페이스",
+            "score": 80
+        }
+    ]
+}

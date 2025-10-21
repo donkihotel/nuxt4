@@ -1,0 +1,85 @@
+{
+    "domains": [
+        {
+            "domain": "google.com",
+            "ssl": "SECTIGO",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "아임웹",
+            "email": "google_workspace",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "GlobalSign",
+            "purchaser": "카페24",
+            "nameserver": "가비아",
+            "homepage": "윅스",
+            "email": "naver_works",
+            "cost": 40000
+        },
+        {
+            "domain": "yahoo.com",
+            "ssl": "GOGETSSL",
+            "purchaser": "고대디",
+            "nameserver": "고대디",
+            "homepage": "카페24 쇼핑몰",
+            "email": "microsoft_365",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "Amazon",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "윅스",
+            "email": "google_workspace",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "GOGETSSL",
+            "purchaser": "스퀘어스페이스",
+            "nameserver": "스퀘어스페이스",
+            "homepage": "구글사이트도구",
+            "email": "naver_works",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "Let's Encrypt",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "아임웹",
+            "email": "naver_works",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "GlobalSign",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "카페24 쇼핑몰",
+            "email": "microsoft_365",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "Amazon",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "구글사이트도구",
+            "email": "google_workspace",
+            "cost": 40000
+        },
+        {
+            "domain": "naver.com",
+            "ssl": "RapidSSL",
+            "purchaser": "가비아",
+            "nameserver": "가비아",
+            "homepage": "아임웹",
+            "email": "microsoft_365",
+            "cost": 40000
+        }
+    ]
+}

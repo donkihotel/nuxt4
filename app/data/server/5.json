@@ -1,0 +1,55 @@
+{
+    "id": 5,
+    "date": "2024-01-05",
+    "title": "홈페이지",
+    "domain": "google.com",
+    "frontend": "Vue",
+    "backend": "SpringBoot",
+    "database": "MariaDB",
+    "requirements": {
+        "hosting": "Azure",
+        "budget": 1000000,
+        "scale": "스케일 업",
+        "deployment": "수동",
+        "backup": "소스, 데이터베이스",
+        "security": "SSL, 방화벽"
+    },
+    "design": "/design/22-07-09-01.d379833e.jpg",
+    "schedule": [
+        {
+            "no": 1,
+            "day": "1 Day",
+            "milestone": "기획",
+            "title": "기획",
+            "description": "요구사항 분석 및 문서화"
+        },
+        {
+            "no": 2,
+            "day": "2 Day",
+            "milestone": "디자인",
+            "title": "디자인",
+            "description": "UI/UX 디자인 및 프로토타입 제작"
+        },
+        {
+            "no": 3,
+            "day": "3 Day",
+            "milestone": "개발",
+            "title": "개발",
+            "description": "프론트엔드 및 백엔드 개발"
+        },
+        {
+            "no": 4,
+            "day": "4 Day",
+            "milestone": "테스트",
+            "title": "테스트",
+            "description": "시스템 테스트 및 버그 수정"
+        },
+        {
+            "no": 5,
+            "day": "5 Day",
+            "milestone": "배포",
+            "title": "배포",
+            "description": "서버 설정 및 서비스 배포"
+        }
+    ]
+}
