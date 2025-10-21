@@ -1,3 +1,5 @@
+import { defineStore, acceptHMRUpdate } from 'pinia'
+
 interface IUser {
   email: string
   name: string
