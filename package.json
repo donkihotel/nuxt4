@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "npx http-server ./dist -c-1 -p 8001 -a localhost"
+    "http": "npx http-server ./dist -c-1 -p 3000 -a localhost"
   },
   "dependencies": {
     "@nuxt/image": "1.11.0",
