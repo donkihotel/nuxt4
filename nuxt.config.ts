@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/nuxt4/',
-    buildAssetsDir: '/nuxt4/_nuxt/'
+    buildAssetsDir: '_nuxt/'
   },
   imports: {
     dirs: ['./stores']
