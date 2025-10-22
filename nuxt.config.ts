@@ -20,8 +20,8 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: '/nuxt4/',
-    buildAssetsDir: '/nuxt4/_nuxt/'
+    baseURL: '/',
+
   },
   imports: {
     dirs: ['./stores']
