@@ -38,21 +38,21 @@
 
    <template v-slot:item.frontend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.frontend }}</span>
       </v-chip>
     </template>
 
     <template v-slot:item.backend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.backend }}</span>
       </v-chip>
     </template>
 
     <template v-slot:item.database="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`${$config.public.baseURL}/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.database }}</span>
       </v-chip>
     </template>
@@ -88,7 +88,7 @@
     </template>
 
     <!-- <template #item.hosting="{ item }">
-      <v-img :src="`/hosting/${getHostingIcon(item.hosting)}`" />
+      <v-img :src="`${$config.public.baseURL}/hosting/${getHostingIcon(item.hosting)}`" />
     </template> -->
 
     <template #item.server_cost="{ item }">

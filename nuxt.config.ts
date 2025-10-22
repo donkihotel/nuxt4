@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: '/nuxt4/'
+      baseURL: '/nuxt4'
     }
   },
   imports: {
