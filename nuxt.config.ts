@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   ssr: false,
   nitro: {
-    preset: 'github_pages'
+    preset: 'github_pages',
   },
   modules: [
     'vuetify-nuxt-module',
@@ -20,12 +20,8 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: '/',
-    buildAssetsDir: '_nuxt/',
-
-  },
-  vite: {
-    base: '/nuxt4/',
+    baseURL: '/nuxt4/',
+    buildAssetsDir: '/_nuxt/'
   },
   imports: {
     dirs: ['./stores']
