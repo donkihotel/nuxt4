@@ -91,7 +91,7 @@
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계</h3>
           <v-card-text>
-            <v-img :src="server?.design" alt="Server Image" width="100%" />
+            <v-img :src="`${$config.public.baseURL}/${server?.design}`" alt="Server Image" width="100%" />
           </v-card-text>
         </v-card>
 
