@@ -34,21 +34,21 @@
 
         <template v-slot:item.frontend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`/assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.frontend }}</span>
           </v-chip>
         </template>
 
         <template v-slot:item.backend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`/assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.backend }}</span>
           </v-chip>
         </template>
 
         <template v-slot:item.database="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`/assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.database }}</span>
           </v-chip>
         </template>
@@ -116,7 +116,7 @@
         </template>
 
         <template #item.email="{ item }">
-          <v-img :src="`/assets/email/${formatEmailIcon(item.email)}`"  width="120" />
+          <v-img :src="`assets/email/${formatEmailIcon(item.email)}`"  width="120" />
         </template>
 
         <template #item.cost="{ item }">

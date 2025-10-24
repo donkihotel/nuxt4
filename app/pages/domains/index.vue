@@ -69,7 +69,7 @@
 
     <template #item.email="{ item }">
         <!-- <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.email)}`" height="24" width="24" class="mr-2" /> -->
-      <v-img :src="`/assets/email/${formatEmailIcon(item.email)}`"  width="120" />
+      <v-img :src="`assets/email/${formatEmailIcon(item.email)}`"  width="120" />
     </template>
 
     <template #item.cost="{ item }">
