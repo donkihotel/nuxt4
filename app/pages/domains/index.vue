@@ -3,8 +3,8 @@
     class="pa-6 text-white mx-auto "
     color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">도메인 연결</h4>
+    <h3>도메인에 홈페이지 및 메일을 연결 해드립니다.</h3>
     <p>
-      <h3>도메인에 홈페이지 및 메일을 연결 해드립니다.</h3>
       · 아임웹, 윅스, 카페24 쇼핑몰, 구글사이트도구, 캔바 및 기타 홈페이지 연결
       <br>
       · 네이버웍스, 구글워크스페이스, 마이크로소프트365 및 기타 메일서비스 연결
@@ -69,7 +69,7 @@
 
     <template #item.email="{ item }">
         <!-- <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.email)}`" height="24" width="24" class="mr-2" /> -->
-      <v-img :src="`${$config.public.baseURL}/email/${formatEmailIcon(item.email)}`"  width="120" />
+      <v-img :src="`/assets/email/${formatEmailIcon(item.email)}`"  width="120" />
     </template>
 
     <template #item.cost="{ item }">

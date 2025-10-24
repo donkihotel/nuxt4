@@ -8,9 +8,9 @@
         hide-delimiter-background
         class="rounded"
       >
-        <v-carousel-item src="/banner/banner01.png" cover></v-carousel-item>
-        <v-carousel-item src="/banner/banner02.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/banner/banner03.png" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner01.png" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner02.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner03.png" cover></v-carousel-item>
       </v-carousel>
     </v-col>
     <v-col cols="6">
@@ -32,31 +32,23 @@
           </v-toolbar>
         </template>
 
-        <!-- <template v-slot:headers>
-          <tr class="bg-primary">
-            <th v-for="header in headers" :key="header.value">
-              {{ header.title }}
-            </th>
-          </tr>
-        </template> -->
-
-      <template v-slot:item.frontend="{ item }">
+        <template v-slot:item.frontend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`/assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.frontend }}</span>
           </v-chip>
         </template>
 
         <template v-slot:item.backend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`/assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.backend }}</span>
           </v-chip>
         </template>
 
         <template v-slot:item.database="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`${$config.public.baseURL}/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`/assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.database }}</span>
           </v-chip>
         </template>
@@ -123,17 +115,8 @@
           </v-toolbar>
         </template>
 
-        <!-- <template v-slot:headers>
-          <tr class="bg-primary">
-            <th v-for="header in headers" :key="header.value">
-              {{ header.title }}
-            </th>
-          </tr>
-        </template> -->
-
         <template #item.email="{ item }">
-            <!-- <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.email)}`" height="24" width="24" class="mr-2" /> -->
-          <v-img :src="`${$config.public.baseURL}/email/${formatEmailIcon(item.email)}`"  width="120" />
+          <v-img :src="`/assets/email/${formatEmailIcon(item.email)}`"  width="120" />
         </template>
 
         <template #item.cost="{ item }">
@@ -288,10 +271,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-data-table thead th {
-  background-color: #1976d2;
-  color: white;
-}
-</style>

@@ -3,8 +3,8 @@
     class="pa-6 text-white mx-auto "
     color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">서버 구축</h4>
+    <h3>서버를 구축하고 소스를 배포하여, 서비스가 운영되도록 합니다.</h3>
     <p>
-      <h3>서버를 구축하고 소스를 배포하여, 서비스가 운영되도록 합니다.</h3>
       · 아임웹, 윅스, 카페24 쇼핑몰, 구글사이트도구, 캔바 및 기타 홈페이지 연결
       <br>
       · 네이버웍스, 구글워크스페이스, 마이크로소프트365 및 기타 메일서비스 연결
@@ -64,21 +64,21 @@
 
    <template v-slot:item.frontend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`/assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.frontend }}</span>
       </v-chip>
     </template>
 
     <template v-slot:item.backend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`/assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.backend }}</span>
       </v-chip>
     </template>
 
     <template v-slot:item.database="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+        <v-img :src="`/assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
         <span>{{ item.database }}</span>
       </v-chip>
     </template>
@@ -115,7 +115,7 @@
     </template>
 
     <template #item.hosting="{ item }">
-      <v-img :src="`${$config.public.baseURL}/hosting/${getHostingIcon(item.hosting)}`" />
+      <v-img :src="`/assets/hosting/${getHostingIcon(item.hosting)}`" />
     </template>
 
     <template #item.server_cost="{ item }">
@@ -186,7 +186,7 @@
   // 데이터 로드
   onMounted(async () => {
     const data = await import('~/data/server/main.json')
-    servers.value = (data.default.servers || []).slice().reverse()
+    servers.value = (data.default.servers || []).slice().sort((a, b) => b.id - a.id)
   })
 
   // 전체 페이지 수

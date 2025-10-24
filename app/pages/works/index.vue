@@ -3,8 +3,8 @@
     class="pa-6 text-white mx-auto "
     color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">작업 설명</h4>
+    <h3>서버를 구축하는데 다양한 작업이 있습니다.</h3>
     <p>
-      <h3>서버를 구축하는데 다양한 작업이 있습니다.</h3>
       · 아임웹, 윅스, 카페24 쇼핑몰, 구글사이트도구, 캔바 및 기타 홈페이지 연결
       <br>
       · 네이버웍스, 구글워크스페이스, 마이크로소프트365 및 기타 메일서비스 연결
@@ -26,14 +26,6 @@
         </v-toolbar-title>
       </v-toolbar>
     </template>
-
-    <!-- <template v-slot:headers>
-      <tr class="bg-primary">
-        <th v-for="header in headers" :key="header.value">
-          {{ header.title }}
-        </th>
-      </tr>
-    </template> -->
 
     <template #item.price="{ item }">
       {{ formatPrice(item.price) }}
@@ -69,7 +61,6 @@
   const items = await import(`~/data/works/main.json`)
 
   const handleClickRow = (item, row) => {
-    console.log('Row clicked:', row);
     router.push(`/works/${row.item.id}`)
   }
 
@@ -77,10 +68,3 @@
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 </script>
-
-<style scoped>
-.v-data-table thead th {
-  background-color: #1976d2;
-  color: white;
-}
-</style>
