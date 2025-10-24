@@ -1,7 +1,7 @@
 {
     "servers": [
         {
-            "link": 1,
+            "id": 1,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "React",
@@ -17,7 +17,7 @@
             "build_cost": 180000
         },
         {
-            "link": 2,
+            "id": 2,
             "project": "홈페이지",
             "domain": "google.com",
             "frontend": "Next",
@@ -33,7 +33,7 @@
             "build_cost": 300000
         },
         {
-            "link": 3,
+            "id": 3,
             "project": "홈페이지",
             "domain": "naver.com",
             "frontend": "Next",
@@ -49,7 +49,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 4,
+            "id": 4,
             "project": "홈페이지",
             "domain": "naver.com",
             "frontend": "Next",
@@ -65,7 +65,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 5,
+            "id": 5,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "React",
@@ -81,7 +81,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 6,
+            "id": 6,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "Nuxt",
@@ -97,7 +97,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 7,
+            "id": 7,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "React",
@@ -113,7 +113,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 8,
+            "id": 8,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "Vue",
@@ -129,7 +129,7 @@
             "build_cost": 1800000
         },
         {
-            "link": 9,
+            "id": 9,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "Nuxt",
@@ -145,7 +145,167 @@
             "build_cost": 1800000
         },
         {
-            "link": 10,
+            "id": 10,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "React",
+            "backend": "Nest",
+            "database": "MySQL",
+            "hosting": "CAFE24",
+            "server_type": "EKS",
+            "server_count": 3,
+            "server_cost": 75000,
+            "dev_complexity": 5,
+            "scale": "OUT",
+            "dev_deployment": "자동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 11,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "React",
+            "backend": "Flask",
+            "database": "MariaDB",
+            "hosting": "CAFE24",
+            "server_type": "단독웹호스팅",
+            "server_count": 3,
+            "server_cost": 75000,
+            "dev_complexity": 1,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 180000
+        },
+        {
+            "id": 12,
+            "project": "홈페이지",
+            "domain": "google.com",
+            "frontend": "Next",
+            "backend": "Springboot",
+            "database": "MongoDB",
+            "hosting": "AWS",
+            "server_type": "Lightsail",
+            "server_count": 3,
+            "server_cost": 75000,
+            "dev_complexity": 2,
+            "scale": "OUT",
+            "dev_deployment": "자동",
+            "build_cost": 300000
+        },
+        {
+            "id": 13,
+            "project": "홈페이지",
+            "domain": "naver.com",
+            "frontend": "Next",
+            "backend": "Django",
+            "database": "MongoDB",
+            "hosting": "AWS",
+            "server_type": "Lightsail",
+            "server_count": 2,
+            "server_cost": 75000,
+            "dev_complexity": 3,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 14,
+            "project": "홈페이지",
+            "domain": "naver.com",
+            "frontend": "Next",
+            "backend": "Springboot",
+            "database": "MariaDB",
+            "hosting": "CAFE24",
+            "server_type": "가상서버호스팅",
+            "server_count": 4,
+            "server_cost": 75000,
+            "dev_complexity": 4,
+            "scale": "OUT",
+            "dev_deployment": "자동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 15,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "React",
+            "backend": "Nest",
+            "database": "MySQL",
+            "hosting": "AWS",
+            "server_type": "EC2",
+            "server_count": 2,
+            "server_cost": 75000,
+            "dev_complexity": 5,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 16,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "Nuxt",
+            "backend": "Express",
+            "database": "MySQL",
+            "hosting": "AWS",
+            "server_type": "EC2",
+            "server_count": 1,
+            "server_cost": 75000,
+            "dev_complexity": 1,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 17,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "React",
+            "backend": "Flask",
+            "database": "MariaDB",
+            "hosting": "CAFE24",
+            "server_type": "ECS/EC2",
+            "server_count": 4,
+            "server_cost": 75000,
+            "dev_complexity": 2,
+            "scale": "OUT",
+            "dev_deployment": "자동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 18,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "Vue",
+            "backend": "Springboot",
+            "database": "MongoDB",
+            "hosting": "AWS",
+            "server_type": "ECS/Fargate",
+            "server_count": 5,
+            "server_cost": 75000,
+            "dev_complexity": 3,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 19,
+            "project": "IoT 모니터링",
+            "domain": "naver.com",
+            "frontend": "Nuxt",
+            "backend": "Node",
+            "database": "MySQL",
+            "hosting": "CAFE24",
+            "server_type": "ECS",
+            "server_count": 2,
+            "server_cost": 75000,
+            "dev_complexity": 4,
+            "scale": "UP",
+            "dev_deployment": "수동",
+            "build_cost": 1800000
+        },
+        {
+            "id": 20,
             "project": "IoT 모니터링",
             "domain": "naver.com",
             "frontend": "React",

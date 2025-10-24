@@ -5,8 +5,8 @@
       <v-col cols="12">
         <v-card border flat color="primary">
           <v-list-item class="px-5">
-            <template v-slot:title>No. {{project.id }}</template>
-            <template v-slot:append>{{project.date }}</template>
+            <template v-slot:title>No. {{server?.id }}</template>
+            <template v-slot:append>{{server?.date }}</template>
           </v-list-item>
         </v-card>
       </v-col>
@@ -18,28 +18,28 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">프로젝트</div>
-                  <div>{{project.title }}</div>
+                  <div>{{ server?.title ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">도메인</div>
-                  <div>{{project.domain }}</div>
+                  <div>{{server?.domain }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">프론트</div>
-                  <div>{{project.frontend }}</div>
+                  <div>{{server?.frontend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">백엔드</div>
-                  <div>{{project.backend }}</div>
+                  <div>{{server?.backend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{project.database }}</div>
+                  <div>{{server?.database ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -53,34 +53,35 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">호스팅</div>
-                  <div>{{project.requirements.hosting}}</div>
+                  <div>{{server?.requirements.hosting ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">서버 요금</div>
-                  <div>(월) {{formatPrice(project.requirements.budget)}} 원</div>
+                  <div v-if="server?.requirements.budget">(월) {{formatPrice(server?.requirements.budget ?? 0 )}} 원</div>
+                  <div v-else>-</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">서버 확장</div>
-                  <div>{{project.requirements.scale}}</div>
+                  <div>{{server?.requirements.scale ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                  <div>
                   <div class="font-weight-bold">개발 배포</div>
-                  <div>{{project.requirements.deployment}}</div>
+                  <div>{{server?.requirements.deployment ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">백업</div>
-                  <div>{{project.requirements.backup}}</div>
+                  <div>{{server?.requirements.backup ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">보안</div>
-                  <div>{{project.requirements.security}}</div>
+                  <div>{{server?.requirements.security ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -90,7 +91,7 @@
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계</h3>
           <v-card-text>
-            <v-img :src="project.design" alt="Server Image" width="100%" />
+            <v-img :src="server?.design" alt="Server Image" width="100%" />
           </v-card-text>
         </v-card>
 
@@ -101,7 +102,7 @@
               <v-timeline-item
                 color="primary"
                 icon="mdi-calendar"
-                v-for="item in project.schedule"
+                v-for="item in server?.schedule"
                 :key="item.no"
               >
                 <v-card flat>
@@ -126,7 +127,7 @@
             <v-card-text>
               <v-data-table
                 :headers="headers"
-                :items="project.estimates"
+                :items="server?.estimates"
                 density="compact"
                 item-key="name"
                 hide-default-footer
@@ -255,46 +256,118 @@
   </v-container>
 </template>
 
-<script setup>
-  import { useRoute } from 'vue-router'
-  import { ref, computed } from "vue";
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { ref, computed } from 'vue'
+import type { DataTableHeader } from 'vuetify'
 
-  const route = useRoute()
-  const projectId = route.params.id
+const route = useRoute()
+const id = String(route.params.id) // string으로 통일
 
-  const project = await import(`~/data/server/${projectId}.json`)
+// --- JSON 파일 타입 정의 ---
+interface ScheduleItem {
+  no: number
+  day: string
+  milestone: string
+  title: string
+  description: string
+}
 
-  // estimates 배열
-  const estimates = ref(project.estimates ?? []);
+interface EstimateItem {
+  no: number
+  work: string
+  supplyPrice: number
+  quantity: number
+  sumPrice: number
+}
 
-  // 합계 (sumPrice 기준)
-  const totalSupply = computed(() => {
-    if (!estimates.value.length) return 0;
-    return estimates.value.reduce((acc, cur) => acc + (cur.sumPrice ?? 0), 0);
-  });
+interface Requirements {
+  hosting: string
+  budget: number
+  scale: string
+  deployment: string
+  backup: string
+  security: string
+}
 
-  // VAT 10%
-  const vat = computed(() => {
-    return Math.floor(totalSupply.value * 0.1);
-  });
+interface Server {
+  id: number
+  date: string
+  title: string
+  domain: string
+  frontend: string
+  backend: string
+  database: string
+  requirements: Requirements
+  design: string
+  schedule: ScheduleItem[]
+  estimates: EstimateItem[]
+}
 
-  // 총합계
-  const totalAmount = computed(() => {
-    return totalSupply.value + vat.value;
-  });
+// --- 모든 JSON 파일 eager import ---
+const modules = import.meta.glob('~/data/server/*.json', { eager: true }) as Record<string, { default: Server }>
 
-  const headers = [
-    { title: 'No', align: 'end', sortable: false, key: 'no' },
-    { title: '작업', align: 'start', sortable: false, key: 'work' },
-    { title: '공급가 (원)', align: 'end', sortable: false, key: 'supplyPrice', value: item => formatPrice(item.supplyPrice) },
-    { title: '수량', align: 'end', sortable: false, key: 'quantity' },
-    { title: '합계 (원)', align: 'end', sortable: false, key: 'sumPrice', value: item => formatPrice(item.sumPrice)  },
-  ]
+// --- ID 기반 매핑 생성 ---
+const serversById: Record<string, Server> = {}
 
-  function formatPrice (value) {
-    return `${value.toFixed(0).replace(/\d(?=(\d{3})+$)/g, '$&,')}`
-  }
+for (const path in modules) {
+  const proj = modules[path]?.default
+  if (!proj) continue
+  serversById[String(proj.id)] = proj
+}
+
+// --- id로 프로젝트 가져오기 ---
+const server = serversById[id] ?? null
+
+// 데이터 없음 처리용 ref
+const error = ref<string | null>(null)
+if (!server) {
+  error.value = `서버 데이터가 존재하지 않습니다. ID: ${id}`
+}
+
+// --- estimates 배열 ---
+const estimates = ref<EstimateItem[]>(server?.estimates ?? [])
+
+// 합계 (sumPrice 기준)
+const totalSupply = computed(() =>
+  estimates.value.reduce((acc, cur) => acc + (cur.sumPrice ?? 0), 0)
+)
+
+// VAT 10%
+const vat = computed(() => Math.floor(totalSupply.value * 0.1))
+
+// 총합계
+const totalAmount = computed(() => totalSupply.value + vat.value)
+
+// --- Vuetify 테이블 헤더 ---
+const headers: DataTableHeader[] = [
+  { title: 'No', align: 'end', sortable: false, key: 'no' },
+  { title: '작업', align: 'start', sortable: false, key: 'work' },
+  {
+    title: '공급가 (원)',
+    align: 'end',
+    sortable: false,
+    key: 'supplyPrice',
+    value: item => formatPrice(item.supplyPrice as number)
+  },
+  { title: '수량', align: 'end', sortable: false, key: 'quantity' },
+  {
+    title: '합계 (원)',
+    align: 'end',
+    sortable: false,
+    key: 'sumPrice',
+    value: item => formatPrice(item.sumPrice as number)
+  },
+]
+
+// --- 가격 포맷 함수 ---
+function formatPrice(value: number) {
+  if (value == null) return '0'
+  return value.toFixed(0).replace(/\d(?=(\d{3})+$)/g, '$&,')
+}
 </script>
+
+
 
 <style scoped>
 .left-content {

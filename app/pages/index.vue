@@ -1,139 +1,203 @@
 <template>
+  <v-row class="bg-grey-lighten-3">
+    <v-col cols="12">
+      <v-carousel
+        height="300"
+        show-arrows="hover"
+        cycle
+        hide-delimiter-background
+        class="rounded"
+      >
+        <v-carousel-item src="/banner/banner01.png" cover></v-carousel-item>
+        <v-carousel-item src="/banner/banner02.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/banner/banner03.png" cover></v-carousel-item>
+      </v-carousel>
+    </v-col>
+    <v-col cols="6">
+      <v-data-table
+        :headers="headers1"
+        :items="servers"
+        hover
+        class="text-no-wrap"
+        @click:row="handleClickRow"
+        hide-default-footer
+        density="compact"
+      >
+        <template v-slot:top>
+          <v-toolbar flat>
+            <v-toolbar-title>
+              서버 구축
+            </v-toolbar-title>
+            <v-btn variant="text" size="small" to="/servers">더 보기 ></v-btn>
+          </v-toolbar>
+        </template>
 
-  <v-card>
-  <v-carousel
-    height="300"
-    show-arrows="hover"
-    cycle
-    hide-delimiter-background
-  >
-      <v-carousel-item src="/banner/banner01.png" cover></v-carousel-item>
-      <v-carousel-item src="/banner/banner02.jpg" cover></v-carousel-item>
-      <v-carousel-item src="/banner/banner03.png" cover></v-carousel-item>
-  </v-carousel>
-  </v-card>
+        <!-- <template v-slot:headers>
+          <tr class="bg-primary">
+            <th v-for="header in headers" :key="header.value">
+              {{ header.title }}
+            </th>
+          </tr>
+        </template> -->
 
-  <v-data-table
-    :headers="headers"
-    :items="items.servers"
-    hover
-    class="text-no-wrap"
-    @click:row="handleClickRow"
-  >
-    <template v-slot:top>
-      <v-toolbar flat>
-        <v-toolbar-title>
-          구축 사례
-        </v-toolbar-title>
-      </v-toolbar>
-    </template>
+      <template v-slot:item.frontend="{ item }">
+          <v-chip variant="text" class="pl-0">
+            <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.frontend }}</span>
+          </v-chip>
+        </template>
 
-    <!-- <template v-slot:headers>
-      <tr class="bg-primary">
-        <th v-for="header in headers" :key="header.value">
-          {{ header.title }}
-        </th>
-      </tr>
-    </template> -->
+        <template v-slot:item.backend="{ item }">
+          <v-chip variant="text" class="pl-0">
+            <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.backend }}</span>
+          </v-chip>
+        </template>
 
-   <template v-slot:item.frontend="{ item }">
-      <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.frontend }}</span>
-      </v-chip>
-    </template>
+        <template v-slot:item.database="{ item }">
+          <v-chip variant="text" class="pl-0">
+            <v-img :src="`${$config.public.baseURL}/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.database }}</span>
+          </v-chip>
+        </template>
 
-    <template v-slot:item.backend="{ item }">
-      <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.backend }}</span>
-      </v-chip>
-    </template>
+        <template #item.dev_complexity="{ item }">
+          <v-chip
+            :text="`Level ${item.dev_complexity}`"
+            size="small"
+            label
+          ></v-chip>
+        </template>
 
-    <template v-slot:item.database="{ item }">
-      <v-chip variant="text" class="pl-0">
-        <v-img :src="`${$config.public.baseURL}/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.database }}</span>
-      </v-chip>
-    </template>
+        <template #item.scale="{ item }">
+          <v-chip
+            :border="`${getScaleColor(item.scale)}`"
+            :color="getScaleColor(item.scale)"
+            :text="item.scale"
+            size="small"
+            class="w-100"
+            variant="flat"
+            label
+          ></v-chip>
+        </template>
 
-    <template #item.dev_complexity="{ item }">
-      <v-chip
-        :text="`Level ${item.dev_complexity}`"
-        size="small"
-        label
-      ></v-chip>
-    </template>
+        <template #item.dev_deployment="{ item }">
+          <v-chip
+            :border="`${getDeploymentColor(item.dev_deployment)}`"
+            :color="getDeploymentColor(item.dev_deployment)"
+            :text="item.dev_deployment"
+            size="small"
+            variant="flat"
+          ></v-chip>
+        </template>
 
-    <template #item.scale="{ item }">
-      <v-chip
-        :border="`${getScaleColor(item.scale)}`"
-        :color="getScaleColor(item.scale)"
-        :text="item.scale"
-        size="small"
-        class="w-100"
-        variant="flat"
-        label
-      ></v-chip>
-    </template>
+        <!-- <template #item.hosting="{ item }">
+          <v-img :src="`${$config.public.baseURL}/hosting/${getHostingIcon(item.hosting)}`" />
+        </template> -->
 
-    <template #item.dev_deployment="{ item }">
-      <v-chip
-        :border="`${getDeploymentColor(item.dev_deployment)}`"
-        :color="getDeploymentColor(item.dev_deployment)"
-        :text="item.dev_deployment"
-        size="small"
-        variant="flat"
-      ></v-chip>
-    </template>
+        <template #item.server_cost="{ item }">
+          {{ formatPrice(item.server_cost) }}
+        </template>
 
-    <!-- <template #item.hosting="{ item }">
-      <v-img :src="`${$config.public.baseURL}/hosting/${getHostingIcon(item.hosting)}`" />
-    </template> -->
+        <template #item.build_cost="{ item }">
+          {{ formatPrice(item.build_cost) }}
+        </template>
+      </v-data-table>
+    </v-col>
+    <v-col cols="6">
+      <v-data-table
+        :headers="headers2"
+        :items="domains"
+        hover
+        class="text-no-wrap"
+        disable-sort
+        hide-default-footer
+        density="compact"
+      >
+        <template v-slot:top>
+          <v-toolbar flat>
+            <v-toolbar-title>
+              도메인 연결
+            </v-toolbar-title>
+            <v-btn variant="text" size="small" to="/domains">더 보기 ></v-btn>
+          </v-toolbar>
+        </template>
 
-    <template #item.server_cost="{ item }">
-      {{ formatPrice(item.server_cost) }}
-    </template>
+        <!-- <template v-slot:headers>
+          <tr class="bg-primary">
+            <th v-for="header in headers" :key="header.value">
+              {{ header.title }}
+            </th>
+          </tr>
+        </template> -->
 
-    <template #item.build_cost="{ item }">
-      {{ formatPrice(item.build_cost) }}
-    </template>
+        <template #item.email="{ item }">
+            <!-- <v-img :src="`${$config.public.baseURL}/dev/${formatDevIcon(item.email)}`" height="24" width="24" class="mr-2" /> -->
+          <v-img :src="`${$config.public.baseURL}/email/${formatEmailIcon(item.email)}`"  width="120" />
+        </template>
 
-    <template v-slot:bottom>
-      <div class="text-center pt-2">
-        <v-pagination
-          v-model="page"
-          :length="pageCount"
-        ></v-pagination>
-      </div>
-    </template>
+        <template #item.cost="{ item }">
+          {{ formatPrice(item.cost) }}
+        </template>
+      </v-data-table>
+    </v-col>
+  </v-row>
 
-  </v-data-table>
 </template>
 
 <script setup>
-  const headers = [
+  const headers1 = [
+    { title: 'No', value: 'id' },
     { title: '프로젝트', value: 'project' },
-    // { title: '도메인', value: 'domain' },
     { title: '개발 (Frontend)', value: 'frontend' },
     { title: '개발 (Backend)', value: 'backend' },
-    { title: '데이터베이스', value: 'database' },
+    { title: '개발 (DB)', value: 'database' },
     { title: '개발 복잡도', value: 'dev_complexity', align: 'center' },
     { title: '호스팅', value: 'hosting' },
     { title: '서버 확장', value: 'scale' },
     { title: '개발 배포', value: 'dev_deployment', align: 'center' },
-    // { title: '서버 유형', value: 'server_type' },
-    // { title: '서버 (수)', value: 'server_count', align: 'end' },
     { title: '서버 요금 (₩)', value: 'server_cost', align: 'end' },
     { title: '구축 비용 (₩)', value: 'build_cost', align: 'end' }
   ]
 
-  const items = await import(`~/data/main/main.json`)
+  const items1 = await import(`~/data/server/main.json`)
+  const servers = items1.default.servers
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 5)
+
+  const headers2 = [
+    { title: 'No', value: 'id' },
+    { title: '도메인', key: 'domain' },
+    { title: '구매', key: 'purchaser' },
+    { title: '네임서버', key: 'nameserver' },
+    { title: '홈페이지', key: 'homepage' },
+    { title: '인증서 (SSL)', key: 'ssl' },
+    { title: '메일', key: 'email' },
+    { title: '연결 비용 (₩)', key: 'cost', align: 'end' },
+  ]
+
+  const items2 = await import(`~/data/domain/main.json`)
+  const domains = items2.default.domains
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 5)
 
   const getScaleColor = (value) => {
     if (value === 'UP') return 'grey-lighten-2'
     else if (value === 'OUT') return 'black'
     else return 'grey'
+  }
+
+  const formatEmailIcon = (email) => {
+    switch (email) {
+      case 'google_workspace':
+        return 'google_workspace.png'
+      case 'naver_works':
+        return 'naver_works.png'
+      case 'microsoft_365':
+        return 'microsoft_365.png'
+      default:
+        return 'default_email.png'
+    }
   }
 </script>
 
@@ -151,7 +215,7 @@ export default {
       // item contains the data of the clicked row
       // row contains other related data, including the native event
       // console.log('Row clicked:', row.item.link);
-      this.$router.push(`/servers/${row.item.link}`); // Example: navigate using Vue Router
+      this.$router.push(`/servers/${row.item.id}`); // Example: navigate using Vue Router
     },
 
     formatPrice (value) {

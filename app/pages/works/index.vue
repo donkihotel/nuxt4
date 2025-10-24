@@ -1,4 +1,16 @@
 <template>
+  <v-sheet border="md"
+    class="pa-6 text-white mx-auto "
+    color="#141518">
+    <h4 class="text-h5 font-weight-bold mb-4">작업 설명</h4>
+    <p>
+      <h3>서버를 구축하는데 다양한 작업이 있습니다.</h3>
+      · 아임웹, 윅스, 카페24 쇼핑몰, 구글사이트도구, 캔바 및 기타 홈페이지 연결
+      <br>
+      · 네이버웍스, 구글워크스페이스, 마이크로소프트365 및 기타 메일서비스 연결
+    </p>
+  </v-sheet>
+
   <v-data-table
     :headers="headers"
     :items="items.works"
@@ -43,6 +55,9 @@
   import { useRouter } from 'vue-router'
 
   const router = useRouter()
+
+  const page = 1
+  const pageCount = 5
 
   const headers = [
     { title: '작업명', key: 'title' },

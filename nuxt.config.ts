@@ -20,12 +20,12 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: '/nuxt4/',
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     buildAssetsDir: '_nuxt/'
   },
   runtimeConfig: {
     public: {
-      baseURL: '/nuxt4'
+      baseURL: process.env.NUXT_APP_BASE_URL || 'http://localhost:3000',
     }
   },
   imports: {
