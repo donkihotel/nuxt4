@@ -220,7 +220,7 @@
                 width="200"
               >
                  <img
-                  src="/btn/kmong.png"
+                  src="/assets/btn/kmong.png"
                   alt="kmong"
                   height="24"
                   class="mr-1 mt-1"
@@ -234,7 +234,7 @@
                 width="200"
               >
                 <img
-                  src="/btn/kakao.png"
+                  src="/assets/btn/kakao.png"
                   alt="kakao"
                   height="24"
                   class="mr-1 mt-1"
