@@ -2,92 +2,110 @@
     "domains": [
         {
             "id": 1,
-            "domain": "google.com",
-            "ssl": "SECTIGO",
-            "purchaser": "가비아",
-            "nameserver": "가비아",
-            "homepage": "아임웹",
+            "domain": "theblue-studio.com",
+            "purchaser": "스퀘어스페이스",
+            "nameserver": "스퀘어스페이스",
+            "homepage": "n/a",
+            "ssl": "n/a",
+            "ssl_cost": 0,
             "email": "google_workspace",
-            "cost": 40000
+            "pricing_plan": "Starter",
+            "cost": 30000
         },
         {
             "id": 2,
             "domain": "naver.com",
             "ssl": "GlobalSign",
+            "ssl_cost": 12000,
             "purchaser": "카페24",
             "nameserver": "가비아",
             "homepage": "윅스",
             "email": "naver_works",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 3,
             "domain": "yahoo.com",
             "ssl": "GOGETSSL",
+            "ssl_cost": 15000,
             "purchaser": "고대디",
             "nameserver": "고대디",
             "homepage": "카페24 쇼핑몰",
             "email": "microsoft_365",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 4,
             "domain": "naver.com",
             "ssl": "Amazon",
+            "ssl_cost": 13000,
             "purchaser": "가비아",
             "nameserver": "가비아",
             "homepage": "윅스",
             "email": "google_workspace",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 5,
             "domain": "naver.com",
             "ssl": "GOGETSSL",
+            "ssl_cost": 15000,
             "purchaser": "스퀘어스페이스",
             "nameserver": "스퀘어스페이스",
             "homepage": "구글사이트도구",
             "email": "naver_works",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 6,
             "domain": "naver.com",
+            "purchaser": "caf24",
             "ssl": "Let's Encrypt",
-            "purchaser": "가비아",
+            "ssl_cost": 13000,
             "nameserver": "가비아",
             "homepage": "아임웹",
             "email": "naver_works",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 7,
             "domain": "naver.com",
             "ssl": "GlobalSign",
+            "ssl_cost": 12000,
             "purchaser": "가비아",
             "nameserver": "가비아",
             "homepage": "카페24 쇼핑몰",
             "email": "microsoft_365",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 8,
             "domain": "naver.com",
             "ssl": "Amazon",
+            "ssl_cost": 0,
             "purchaser": "가비아",
             "nameserver": "가비아",
             "homepage": "구글사이트도구",
             "email": "google_workspace",
+            "pricing_plan": "Starter",
             "cost": 40000
         },
         {
             "id": 9,
             "domain": "naver.com",
             "ssl": "RapidSSL",
+            "ssl_cost": 15000,
             "purchaser": "가비아",
             "nameserver": "가비아",
             "homepage": "아임웹",
             "email": "microsoft_365",
+            "pricing_plan": "Starter",
             "cost": 40000
         }
     ]

@@ -1,19 +1,67 @@
 <template>
   <v-row class="bg-grey-lighten-3">
-    <v-col cols="12">
+    <v-col cols="7">
+      <v-table density="compact" >
+        <template v-slot:top>
+          <v-toolbar flat>
+            <v-toolbar-title>
+              작업 설명
+            </v-toolbar-title>
+            <v-btn variant="text" size="small" to="/works">더 보기 ></v-btn>
+          </v-toolbar>
+        </template>
+        <thead>
+          <tr>
+            <th class="text-left">
+              작업
+            </th>
+            <th class="text-left">
+              난이도
+            </th>
+            <th class="text-left">
+              작업 시간
+            </th>
+            <th class="text-right">
+              작업 가격
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in works"
+            :key="item.id"
+          >
+            <td>{{ item.title }}</td>
+            <td>{{ item.difficulty }}</td>
+            <td>{{ item.duration }}</td>
+            <td class="text-right"><span class="text-caption">₩</span> {{ formatPrice(item.price) }}</td>
+          </tr>
+        </tbody>
+      </v-table>
+    </v-col>
+    <v-col cols="5">
+      <v-toolbar flat>
+        <v-toolbar-title>
+          배너
+        </v-toolbar-title>
+      </v-toolbar>
       <v-carousel
-        height="300"
+        height="328"
         show-arrows="hover"
         cycle
         hide-delimiter-background
         class="rounded"
       >
-        <v-carousel-item src="/assets/banner/banner01.png" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner02.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner03.png" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner1.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner2.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner3.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner4.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner5.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner6.jpg" cover></v-carousel-item>
+        <v-carousel-item src="/assets/banner/banner7.jpg" cover></v-carousel-item>
       </v-carousel>
     </v-col>
-    <v-col cols="6">
+    <v-col cols="12">
       <v-data-table
         :headers="headers1"
         :items="servers"
@@ -21,7 +69,6 @@
         class="text-no-wrap"
         @click:row="handleClickRow"
         hide-default-footer
-        density="compact"
       >
         <template v-slot:top>
           <v-toolbar flat>
@@ -88,15 +135,15 @@
         </template> -->
 
         <template #item.server_cost="{ item }">
-          {{ formatPrice(item.server_cost) }}
+          <span class="text-caption">₩</span> {{ formatPrice(item.server_cost) }}
         </template>
 
         <template #item.build_cost="{ item }">
-          {{ formatPrice(item.build_cost) }}
+          <span class="text-caption">₩</span> {{ formatPrice(item.build_cost) }}
         </template>
       </v-data-table>
     </v-col>
-    <v-col cols="6">
+    <v-col cols="12">
       <v-data-table
         :headers="headers2"
         :items="domains"
@@ -104,7 +151,6 @@
         class="text-no-wrap"
         disable-sort
         hide-default-footer
-        density="compact"
       >
         <template v-slot:top>
           <v-toolbar flat>
@@ -115,12 +161,20 @@
           </v-toolbar>
         </template>
 
+        <template #item.ssl_cost="{ item }">
+          <span class="text-caption">₩</span> {{ formatPrice(item.ssl_cost) }}
+        </template>
+
         <template #item.email="{ item }">
           <v-img :src="`assets/email/${formatEmailIcon(item.email)}`"  width="120" />
         </template>
 
+        <template #item.email_cost="{ item }">
+          <span class="text-caption">₩</span> {{ formatPrice(item.email_cost) }}
+        </template>
+
         <template #item.cost="{ item }">
-          {{ formatPrice(item.cost) }}
+          <span class="text-caption">₩</span> {{ formatPrice(item.cost) }}
         </template>
       </v-data-table>
     </v-col>
@@ -129,18 +183,23 @@
 </template>
 
 <script setup>
+  const items0 = await import(`~/data/works/main.json`)
+  const works = items0.default.works
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 8)
+
   const headers1 = [
     { title: 'No', value: 'id' },
     { title: '프로젝트', value: 'project' },
-    { title: '개발 (Frontend)', value: 'frontend' },
-    { title: '개발 (Backend)', value: 'backend' },
-    { title: '개발 (DB)', value: 'database' },
+    { title: '프론트엔드', value: 'frontend' },
+    { title: '백엔드', value: 'backend' },
+    { title: '데이터베이스', value: 'database' },
     { title: '개발 복잡도', value: 'dev_complexity', align: 'center' },
-    { title: '호스팅', value: 'hosting' },
+    { title: '서버 호스팅', value: 'hosting' },
     { title: '서버 확장', value: 'scale' },
-    { title: '개발 배포', value: 'dev_deployment', align: 'center' },
-    { title: '서버 요금 (₩)', value: 'server_cost', align: 'end' },
-    { title: '구축 비용 (₩)', value: 'build_cost', align: 'end' }
+    { title: '서버 배포', value: 'dev_deployment', align: 'center' },
+    { title: '서버 요금', value: 'server_cost', align: 'end' },
+    { title: '구축 비용', value: 'build_cost', align: 'end' }
   ]
 
   const items1 = await import(`~/data/server/main.json`)
@@ -154,9 +213,11 @@
     { title: '구매', key: 'purchaser' },
     { title: '네임서버', key: 'nameserver' },
     { title: '홈페이지', key: 'homepage' },
-    { title: '인증서 (SSL)', key: 'ssl' },
-    { title: '메일', key: 'email' },
-    { title: '연결 비용 (₩)', key: 'cost', align: 'end' },
+    { title: 'SSL 인증서', key: 'ssl' },
+    { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
+    { title: '메일 서비스', key: 'email' },
+    { title: '메일 요금', key: 'email_cost', align: 'end'  },
+    { title: '연결 비용', key: 'cost', align: 'end' },
   ]
 
   const items2 = await import(`~/data/domain/main.json`)

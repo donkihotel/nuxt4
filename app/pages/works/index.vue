@@ -13,7 +13,9 @@
 
   <v-data-table
     :headers="headers"
-    :items="items.works"
+    :items="items"
+    :items-per-page="10"
+    v-model:page="page"
     hover
     class="text-no-wrap"
     @click:row="handleClickRow"
@@ -28,7 +30,7 @@
     </template>
 
     <template #item.price="{ item }">
-      {{ formatPrice(item.price) }}
+      <span class="text-caption">₩</span> {{ formatPrice(item.price) }}
     </template>
 
     <template v-slot:bottom>
@@ -36,6 +38,7 @@
         <v-pagination
           v-model="page"
           :length="pageCount"
+          @update:model-value="handlePage"
         ></v-pagination>
       </div>
     </template>
@@ -43,28 +46,64 @@
   </v-data-table>
 </template>
 
-<script setup>
-  import { useRouter } from 'vue-router'
+<script setup lang="ts">
+  import { ref, computed, onMounted } from 'vue'
+  import { useRouter, useRoute } from 'vue-router'
+  import type { DataTableHeader } from 'vuetify'
 
+  const route = useRoute()
   const router = useRouter()
 
-  const page = 1
-  const pageCount = 5
-
-  const headers = [
+  // 테이블 헤더
+  const headers: DataTableHeader[] = [
+    { title: 'No', key: 'id' },
     { title: '작업명', key: 'title' },
     { title: '난이도', key: 'difficulty' },
     { title: '작업시간', key: 'duration' },
-    { title: '작업가격 (₩)', key: 'price', align: 'end' },
+    { title: '작업가격', key: 'price', align: 'end' },
   ]
 
-  const items = await import(`~/data/works/main.json`)
+   // 데이터 구조
+  interface Worker {
+    id: number
+    title: string,
+    price: number,
+    difficulty: string,
+    duration: string
+  }
 
-  const handleClickRow = (item, row) => {
+  // 상태
+  const items = ref<Worker[]>([])
+  const page = ref(Number(route.query.page) || 1)
+  const perPage = 10
+
+  // 데이터 로드
+  onMounted(async () => {
+    const data = await import('~/data/works/main.json')
+    items.value = (data.default.works || []).slice().sort((a, b) => b.id - a.id)
+  })
+
+  // 전체 페이지 수
+  const pageCount = computed(() => Math.ceil(items.value.length / perPage) || 1)
+
+  // 현재 페이지 데이터 계산
+  const paginatedItems = computed(() => {
+    const start = (page.value - 1) * perPage
+    return items.value.slice(start, start + perPage)
+  })
+
+  // 페이지 변경 시 호출 (선택적)
+  function handlePage(value: number) {
+    page.value = value
+    router.replace({ path: route.path, query: { ...route.query, page: value } })
+  }
+
+  // 행 클릭 시 상세 페이지로 이동
+  const handleClickRow = (item: any, row: any) => {
     router.push(`/works/${row.item.id}`)
   }
 
-  const formatPrice = (value) => {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
+  const formatPrice = (value: number) => {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 </script>

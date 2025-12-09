@@ -1,0 +1,28 @@
+{
+    "id": 2,
+    "domain": "2theblue-studio.com",
+    "purchaser": "스퀘어스페이스",
+    "nameserver": "스퀘어스페이스",
+    "homepage": "n/a",
+    "ssl": "n/a",
+    "ssl_cost": 0,
+    "email": "google_workspace",
+    "pricing_plan": "Starter",
+    "cost": 30000,
+    "estimates": [
+        {
+            "no": 1,
+            "work": "홈페이지 연결",
+            "supplyPrice": 10000,
+            "quantity": 1,
+            "sumPrice": 10000
+        },
+        {
+            "no": 2,
+            "work": "메일 연결",
+            "supplyPrice": 30000,
+            "quantity": 1,
+            "sumPrice": 30000
+        }
+    ]
+}

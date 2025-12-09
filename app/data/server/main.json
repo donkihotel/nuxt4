@@ -210,7 +210,7 @@
         },
         {
             "id": 14,
-            "project": "홈페이지",
+            "project": "홈페이지 14",
             "domain": "naver.com",
             "frontend": "Next",
             "backend": "Springboot",
@@ -226,7 +226,7 @@
         },
         {
             "id": 15,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 15",
             "domain": "naver.com",
             "frontend": "React",
             "backend": "Nest",
@@ -242,7 +242,7 @@
         },
         {
             "id": 16,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 16",
             "domain": "naver.com",
             "frontend": "Nuxt",
             "backend": "Express",
@@ -258,7 +258,7 @@
         },
         {
             "id": 17,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 17",
             "domain": "naver.com",
             "frontend": "React",
             "backend": "Flask",
@@ -274,7 +274,7 @@
         },
         {
             "id": 18,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 18",
             "domain": "naver.com",
             "frontend": "Vue",
             "backend": "Springboot",
@@ -290,7 +290,7 @@
         },
         {
             "id": 19,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 19",
             "domain": "naver.com",
             "frontend": "Nuxt",
             "backend": "Node",
@@ -306,7 +306,7 @@
         },
         {
             "id": 20,
-            "project": "IoT 모니터링",
+            "project": "IoT 모니터링 20",
             "domain": "naver.com",
             "frontend": "React",
             "backend": "Nest",
