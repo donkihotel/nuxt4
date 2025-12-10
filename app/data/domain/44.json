@@ -1,24 +1,17 @@
 {
-    "id": 8,
-    "domain": "theblue-studio.com",
+    "id": 44,
+    "domain": "laurelclinic.net",
     "purchaser": "스퀘어스페이스",
     "nameserver": "스퀘어스페이스",
     "homepage": "-",
     "ssl": "-",
     "ssl_cost": 0,
     "email": "google",
-    "pricing_plan": "Starter",
+    "pricing_plan": "스타터",
     "cost": 30000,
     "estimates": [
         {
             "no": 1,
-            "work": "홈페이지 연결",
-            "supplyPrice": 10000,
-            "quantity": 1,
-            "sumPrice": 10000
-        },
-        {
-            "no": 2,
             "work": "메일 연결",
             "supplyPrice": 30000,
             "quantity": 1,

@@ -1,0 +1,26 @@
+{
+    "id": 2,
+    "date": "2024-01-01",
+    "title": "AWS IAM Identity Center 설정",
+    "level": "중",
+    "time": "1시간",
+    "price": "2만원",
+    "image": "",
+    "process": [
+        {
+            "step": 1,
+            "title": "그룹 생성",
+            "content": "AWS IAM Identity Center에서 사용자 그룹을 생성하여 사용자 관리를 용이하게 합니다."
+        },
+        {
+            "step": 2,
+            "title": "권한 세트 생성",
+            "content": "AWS IAM Identity Center에서 권한 세트를 생성하여 사용자 및 그룹에 할당할 수 있는 권한을 정의합니다."
+        },
+        {
+            "step": 3,
+            "title": "AWS 계정 권한 세트 연결",
+            "content": "AWS IAM Identity Center에서 생성한 권한 세트를 AWS 계정에 연결하여 사용자 및 그룹이 해당 권한을 사용할 수 있도록 합니다."
+        }
+    ]
+}

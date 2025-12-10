@@ -1,0 +1,26 @@
+{
+    "id": 6,
+    "date": "2025-10-23",
+    "title": "AWS Route53 설정",
+    "level": "하",
+    "time": "30분",
+    "price": "1만원",
+    "image": "",
+    "process": [
+        {
+            "step": 1,
+            "title": "도메인 등록",
+            "content": "AWS Management Console, AWS CLI 또는 AWS SDK를 사용하여 Route 53에서 도메인을 등록합니다."
+        },
+        {
+            "step": 2,
+            "title": "퍼블릭 호스팅 생성",
+            "content": "Route 53에서 퍼블릭 호스팅 영역을 생성하여 도메인 이름을 관리합니다."
+        },
+        {
+            "step": 3,
+            "title": "프라이빗 호스팅 생성",
+            "content": "프라이빗 호스팅 영역을 생성하여 내부 도메인 이름을 관리합니다."
+        }
+    ]
+}

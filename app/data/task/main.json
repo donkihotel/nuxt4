@@ -1,0 +1,84 @@
+{
+    "task": [
+        {
+            "id": 1,
+            "category": "거버넌스",
+            "title": "AWS Organizations를 활용한 멀티 계정 관리",
+            "level": "중",
+            "time": "1시간",
+            "price": 20000
+        },
+        {
+            "id": 2,
+            "category": "거버넌스",
+            "title": "AWS IAM Identity Center 설정",
+            "level": "중",
+            "time": "30분",
+            "price": 20000
+        },
+        {
+            "id": 3,
+            "category": "네트워크",
+            "title": "AWS Private VPC 설계",
+            "level": "상",
+            "time": "2시간",
+            "price": 60000
+        },
+        {
+            "id": 4,
+            "category": "컴퓨터",
+            "title": "AWS EC2 Bastion Host 구축",
+            "level": "하",
+            "time": "30분",
+            "price": 10000
+        },
+        {
+            "id": 5,
+            "category": "네트워크",
+            "title": "AWS EC2 NAT 게이트웨이 구축",
+            "level": "하",
+            "time": "1시간",
+            "price": 20000
+        },
+        {
+            "id": 6,
+            "category": "네트워크",
+            "title": "AWS Route53 설정",
+            "level": "하",
+            "time": "30분",
+            "price": 10000
+        },
+        {
+            "id": 7,
+            "category": "데이터베이스",
+            "title": "AWS RDS MySQL 인스턴스 생성",
+            "level": "중",
+            "time": "1시간",
+            "price": 20000
+        },
+        {
+            "id": 8,
+            "category": "데이터베이스",
+            "title": "MySQL 데이터베이스 및 계정 생성",
+            "level": "하",
+            "time": "30분",
+            "price": 10000
+        },
+        {
+            "id": 9,
+            "category": "데이터베이스",
+            "title": "MySQL 데이터베이스 백업 및 복구",
+            "level": "중",
+            "time": "1시간",
+            "price": 20000
+        },
+        {
+            "id": 10,
+            "category": "데이터베이스",
+            "title": "RDS 스냅샷 계정 이전",
+            "level": "중",
+            "time": "1시간",
+            "price": 20000
+        }
+    ]
+}

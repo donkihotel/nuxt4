@@ -22,21 +22,21 @@
         </NuxtLink>
 
         <v-btn
-          to="/servers"
+          to="/server"
           variant="text"
         >서버 구축</v-btn>
 
         <v-divider vertical class="mx-2"></v-divider>
 
         <v-btn
-          to="/domains"
+          to="/domain"
           variant="text"
         >도메인 연결</v-btn>
 
         <v-divider vertical class="mx-2"></v-divider>
 
         <v-btn
-          to="/works"
+          to="/task"
           variant="text"
         >작업 설명</v-btn>
 

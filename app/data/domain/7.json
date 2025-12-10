@@ -3,10 +3,10 @@
     "domain": "theblue-studio.com",
     "purchaser": "스퀘어스페이스",
     "nameserver": "스퀘어스페이스",
-    "homepage": "n/a",
-    "ssl": "n/a",
+    "homepage": "-",
+    "ssl": "-",
     "ssl_cost": 0,
-    "email": "google_workspace",
+    "email": "google",
     "pricing_plan": "Starter",
     "cost": 30000,
     "estimates": [

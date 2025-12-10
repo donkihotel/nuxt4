@@ -1,43 +1,28 @@
 <template>
   <v-row class="bg-grey-lighten-3">
     <v-col cols="7">
-      <v-table density="compact" >
+      <v-data-table
+        :headers="headers0"
+        :items="task"
+        hover
+        class="text-no-wrap"
+        @click:row="handleClickRowTask"
+        hide-default-footer
+        density="compact"
+      >
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
               작업 설명
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/works">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
           </v-toolbar>
         </template>
-        <thead>
-          <tr>
-            <th class="text-left">
-              작업
-            </th>
-            <th class="text-left">
-              난이도
-            </th>
-            <th class="text-left">
-              작업 시간
-            </th>
-            <th class="text-right">
-              작업 가격
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="item in works"
-            :key="item.id"
-          >
-            <td>{{ item.title }}</td>
-            <td>{{ item.difficulty }}</td>
-            <td>{{ item.duration }}</td>
-            <td class="text-right"><span class="text-caption">₩</span> {{ formatPrice(item.price) }}</td>
-          </tr>
-        </tbody>
-      </v-table>
+
+        <template #item.price="{ item }">
+          <span class="text-caption">₩</span> {{ formatPrice(item.price) }}
+        </template>
+      </v-data-table>
     </v-col>
     <v-col cols="5">
       <v-toolbar flat>
@@ -64,10 +49,10 @@
     <v-col cols="12">
       <v-data-table
         :headers="headers1"
-        :items="servers"
+        :items="server"
         hover
         class="text-no-wrap"
-        @click:row="handleClickRow"
+        @click:row="handleClickRowServer"
         hide-default-footer
       >
         <template v-slot:top>
@@ -75,7 +60,7 @@
             <v-toolbar-title>
               서버 구축
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/servers">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/server">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
@@ -151,13 +136,14 @@
         class="text-no-wrap"
         disable-sort
         hide-default-footer
+        @click:row="handleClickRowDomain"
       >
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
               도메인 연결
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/domains">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/domain">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
@@ -183,13 +169,26 @@
 </template>
 
 <script setup>
-  const items0 = await import(`~/data/works/main.json`)
-  const works = items0.default.works
+  import { useRouter, useRoute } from 'vue-router'
+
+  const route = useRoute()
+  const router = useRouter()
+
+  const items0 = await import(`~/data/task/main.json`)
+  const task = items0.default.task
   .sort(() => 0.5 - Math.random())
   .slice(0, 8)
 
+  const headers0 = [
+    { title: 'No', value: 'id', align: 'end' },
+    { title: '작업', value: 'title' },
+    { title: '난이도', value: 'level' },
+    { title: '작업 시간', value: 'time' },
+    { title: '작업 가격', value: 'price', align: 'end' }
+  ]
+
   const headers1 = [
-    { title: 'No', value: 'id' },
+    { title: 'No', value: 'id', align: 'end' },
     { title: '프로젝트', value: 'project' },
     { title: '프론트엔드', value: 'frontend' },
     { title: '백엔드', value: 'backend' },
@@ -203,12 +202,12 @@
   ]
 
   const items1 = await import(`~/data/server/main.json`)
-  const servers = items1.default.servers
+  const server = items1.default.items
   .sort(() => 0.5 - Math.random())
   .slice(0, 5)
 
   const headers2 = [
-    { title: 'No', value: 'id' },
+    { title: 'No', value: 'id', align: 'end' },
     { title: '도메인', key: 'domain' },
     { title: '구매', key: 'purchaser' },
     { title: '네임서버', key: 'nameserver' },
@@ -216,7 +215,7 @@
     { title: 'SSL 인증서', key: 'ssl' },
     { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
     { title: '메일 서비스', key: 'email' },
-    { title: '메일 요금', key: 'email_cost', align: 'end'  },
+    { title: '메일 요금제', key: 'pricing_plan'},
     { title: '연결 비용', key: 'cost', align: 'end' },
   ]
 
@@ -233,102 +232,89 @@
 
   const formatEmailIcon = (email) => {
     switch (email) {
-      case 'google_workspace':
-        return 'google_workspace.png'
-      case 'naver_works':
-        return 'naver_works.png'
-      case 'microsoft_365':
-        return 'microsoft_365.png'
+      case 'google':
+        return 'google.png'
+      case 'naver':
+        return 'naver.png'
+      case 'microsoft':
+        return 'microsoft.png'
       default:
         return 'default_email.png'
     }
   }
-</script>
 
-<script>
+  const handleClickRowTask = (item, row) => {
+    router.push(`/task/${row.item.id}`)
+  }
 
-export default {
-  data() {
-    return {
-      page: 1,
-      pageCount: 5,
-    };
-  },
-  methods: {
-    handleClickRow(item, row) {
-      // item contains the data of the clicked row
-      // row contains other related data, including the native event
-      // console.log('Row clicked:', row.item.link);
-      this.$router.push(`/servers/${row.item.id}`); // Example: navigate using Vue Router
-    },
+  const handleClickRowServer = (item, row) => {
+    router.push(`/server/${row.item.id}`)
+  }
 
-    formatPrice (value) {
-      if (value === null || value === undefined) {
-          return '';
-        }
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    },
+  const handleClickRowDomain = (item, row) => {
+    router.push(`/domain/${row.item.id}`)
+  }
 
-    formatDevIcon(value) {
-      if (value === 'React') {
-        return 'react.png';
-      } else if (value === 'Next') {
-        return 'next.png';
-      } else if (value === 'Vue') {
-        return 'vue.png';
-      } else if (value === 'Nuxt') {
-        return 'nuxt.png';
-      } else if (value === 'Node' || value === 'Express') {
-        return 'node.png';
-      } else if (value === 'Nest') {
-        return 'nest.png';
-      } else if (value === 'Springboot') {
-        return 'springboot.png';
-      } else if (value === 'Django') {
-        return 'django.png';
-      } else if (value === 'Flask') {
-        return 'flask.png';
-      } else if (value === 'Django') {
-        return 'django.png';
-      } else if (value === 'MySQL') {
-        return 'mysql.png';
-      } else if (value === 'MongoDB') {
-        return 'mongodb.png';
-      } else if (value === 'MariaDB') {
-        return 'mariadb.png';
-      } else {
-        return 'mdi-check-circle-outline';
-      }
-    },
-
-    getComplexityColor (value) {
-      if (value === '상') return 'red'
-      else if (value === '중') return 'orange'
-      else return 'green'
-    },
-
-    getDeploymentColor (value) {
-      if (value === '자동') return 'black'
-      else return 'grey'
-    },
-
-    getHostingIcon(value) {
-      if (value === 'aws') {
-        return 'aws.png';
-      } else if (value === 'gcp') {
-        return 'gcp.png';
-      } else if (value === 'azure') {
-        return 'azure.png';
-      } else if (value === 'cafe24') {
-        return 'cafe24.png';
-      } else if (value === 'godaddy') {
-        return 'godaddy.png';
-      } else if (value === 'bluehost') {
-        return 'bluehost.png';
-      } else {
-        return 'hosting.png';
-      }
+  const formatPrice = (value) => {
+    if (value === null || value === undefined) {
+      return '';
     }
-  },
-};
+
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  const formatDevIcon = (value) => {
+    if (value === 'React') {
+      return 'react.png';
+    } else if (value === 'Next') {
+      return 'next.png';
+    } else if (value === 'Vue') {
+      return 'vue.png';
+    } else if (value === 'Nuxt') {
+      return 'nuxt.png';
+    } else if (value === 'Node' || value === 'Express') {
+      return 'node.png';
+    } else if (value === 'Nest') {
+      return 'nest.png';
+    } else if (value === 'Springboot') {
+      return 'springboot.png';
+    } else if (value === 'Django') {
+      return 'django.png';
+    } else if (value === 'Flask') {
+      return 'flask.png';
+    } else if (value === 'Django') {
+      return 'django.png';
+    } else if (value === 'MySQL') {
+      return 'mysql.png';
+    } else if (value === 'MongoDB') {
+      return 'mongodb.png';
+    } else if (value === 'MariaDB') {
+      return 'mariadb.png';
+    } else {
+      return 'mdi-check-circle-outline';
+    }
+  }
+
+  const getDeploymentColor = (value) => {
+    if (value === '자동') return 'black'
+    else return 'grey'
+  }
+
+  const getHostingIcon = (value) => {
+    if (value === 'aws') {
+      return 'aws.png';
+    } else if (value === 'gcp') {
+      return 'gcp.png';
+    } else if (value === 'azure') {
+      return 'azure.png';
+    } else if (value === 'cafe24') {
+      return 'cafe24.png';
+    } else if (value === 'godaddy') {
+      return 'godaddy.png';
+    } else if (value === 'bluehost') {
+      return 'bluehost.png';
+    } else {
+      return 'hosting.png';
+    }
+  }
 </script>

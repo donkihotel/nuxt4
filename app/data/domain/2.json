@@ -1,13 +1,14 @@
 {
     "id": 2,
-    "domain": "2theblue-studio.com",
-    "purchaser": "스퀘어스페이스",
-    "nameserver": "스퀘어스페이스",
-    "homepage": "n/a",
-    "ssl": "n/a",
+    "date": "2025-01-13",
+    "domain": "polluxsl.com",
+    "purchaser": "가비아",
+    "nameserver": "아임웹",
+    "homepage": "-",
+    "ssl": "-",
     "ssl_cost": 0,
-    "email": "google_workspace",
-    "pricing_plan": "Starter",
+    "email": "google",
+    "pricing_plan": "스타터",
     "cost": 30000,
     "estimates": [
         {

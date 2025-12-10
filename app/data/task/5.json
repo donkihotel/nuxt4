@@ -1,0 +1,31 @@
+{
+    "id": 5,
+    "date": "2024-01-01",
+    "title": "AWS EC2 NAT 게이트웨이 구축",
+    "level": "중",
+    "time": "1시간",
+    "price": "2만원",
+    "images": "",
+    "process": [
+        {
+            "step": 1,
+            "title": "EC2 인스턴스 생성",
+            "content": "AWS Management Console, AWS CLI 또는 AWS SDK를 사용하여 새로운 EC2 인스턴스를 생성합니다. 인스턴스 유형, AMI, 키 페어 등을 선택합니다."
+        },
+        {
+            "step": 2,
+            "title": "탄력적 IP 주소 연결",
+            "content": "탄력적 IP를 생성하고, 이를 NAT 게이트웨이로 사용할 EC2 인스턴스에 연결합니다."
+        },
+        {
+            "step": 3,
+            "title": "Amazon Linux iptables 설정",
+            "content": "EC2 인스턴스에 접속하여 iptables를 구성합니다. NAT 기능을 활성화하고, 필요한 포트 포워딩 규칙을 설정합니다."
+        },
+        {
+            "step": 4,
+            "title": "VPC 라우팅 연결",
+            "content": "NAT 게이트웨이를 사용할 VPC의 라우팅 테이블을 수정하여, 프라이빗 서브넷의 트래픽이 NAT 게이트웨이를 통해 인터넷에 액세스할 수 있도록 설정합니다."
+        }
+    ]
+}

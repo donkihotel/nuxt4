@@ -1,14 +1,15 @@
 {
     "id": 3,
-    "domain": "theblue-studio.com",
-    "purchaser": "스퀘어스페이스",
-    "nameserver": "스퀘어스페이스",
-    "homepage": "n/a",
-    "ssl": "n/a",
+    "date": "2025-01-13",
+    "domain": "apexfood.ca",
+    "purchaser": "가비아",
+    "nameserver": "가비아",
+    "homepage": "호스팅",
+    "ssl": "Let's Encrypt",
     "ssl_cost": 0,
-    "email": "google_workspace",
-    "pricing_plan": "Starter",
-    "cost": 30000,
+    "email": "google",
+    "pricing_plan": "스타터",
+    "cost": 40000,
     "estimates": [
         {
             "no": 1,

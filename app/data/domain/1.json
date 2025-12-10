@@ -1,14 +1,14 @@
 {
     "id": 1,
-    "date": "2025-10-23",
-    "domain": "theblue-studio.com",
-    "purchaser": "스퀘어스페이스",
-    "nameserver": "스퀘어스페이스",
-    "homepage": "n/a",
-    "ssl": "n/a",
-    "ssl_cost": 0,
-    "email": "google_workspace",
-    "pricing_plan": "Starter",
+    "date": "2025-01-03",
+    "domain": "npksolutions.kr",
+    "purchaser": "호스팅케이알",
+    "nameserver": "아임웹",
+    "homepage": "아임웹",
+    "ssl": "Sectigo RSA",
+    "ssl_cost": 38500,
+    "email": "naver",
+    "pricing_plan": "스탠다드",
     "cost": 30000,
     "estimates": [
         {
