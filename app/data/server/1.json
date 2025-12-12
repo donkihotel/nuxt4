@@ -3,13 +3,13 @@
     "date": "2024-01-01",
     "title": "IoT 모니터링 시스템",
     "domain": "naver.com",
-    "frontend": "React",
-    "backend": "Express",
-    "database": "MySQL",
+    "dev_frontend": "React",
+    "dev_backend": "Express",
+    "dev_database": "MySQL",
     "requirements": {
-        "hosting": "AWS",
+        "server_hosting": "AWS",
         "budget": 100000,
-        "scale": "스케일 업",
+        "server_scale": "스케일 업",
         "deployment": "수동",
         "backup": "소스, 데이터베이스",
         "security": "퍼블릭, SSL, 방화벽"

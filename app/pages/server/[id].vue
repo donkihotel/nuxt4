@@ -29,17 +29,17 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">프론트</div>
-                  <div>{{server?.frontend ?? '-' }}</div>
+                  <div>{{server?.dev_frontend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">백엔드</div>
-                  <div>{{server?.backend ?? '-' }}</div>
+                  <div>{{server?.dev_backend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{server?.database ?? '-' }}</div>
+                  <div>{{server?.dev_database ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -53,7 +53,7 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">호스팅</div>
-                  <div>{{server?.requirements.hosting ?? '-' }}</div>
+                  <div>{{server?.requirements.server_hosting ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
@@ -64,7 +64,7 @@
 
                 <div class="my-3">
                   <div class="font-weight-bold">서버 확장</div>
-                  <div>{{server?.requirements.scale ?? '-' }}</div>
+                  <div>{{server?.requirements.server_scale ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
@@ -159,90 +159,8 @@
             </v-card-text>
           </v-card>
 
-          <v-card border flat class="my-5">
-            <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-chat-outline</v-icon>상담</h3>
-            <v-card-text>
-              <div class="pt-2 pb-1">
-                <v-icon
-                  icon="mdi-phone-outline"
-                  size="small"
-                  class="me-2"
-                ></v-icon
-                ><span>결제 전, 전화상담 제공</span><v-spacer></v-spacer>
-              </div>
-              <div class="pt-1 pb-1">
-                <v-icon
-                  icon="mdi-clock-outline"
-                  size="small"
-                  class="me-2"
-                ></v-icon>
-                <span>연락 가능 시간: 09시 ~ 21시</span><v-spacer></v-spacer>
-              </div>
-              <div class="pt-1 pb-2">
-                <v-icon
-                  icon="mdi-comment-outline"
-                  size="small"
-                  class="me-2"
-                ></v-icon>
-                <span>평균 응답 시간: 10분 이내</span><v-spacer></v-spacer>
-              </div>
-              <v-sheet color="grey-lighten-5" rounded="lg" class="text-center">
-                <v-row no-gutters>
-                  <v-col cols="4">
-                    <v-sheet class="ma-2 pa-2" color="grey-lighten-5">
-                      <span class="font-weight-bold">186건 </span>
-                      <v-spacer></v-spacer>
-                      <span class="text-medium-emphasis">거래수 </span>
-                    </v-sheet>
-                  </v-col>
-                  <v-col cols="4">
-                    <v-sheet class="ma-2 pa-2" color="grey-lighten-5">
-                      <span class="font-weight-bold">100% </span>
-                      <v-spacer></v-spacer>
-                      <span class="text-medium-emphasis">만족도 </span>
-                    </v-sheet>
-                  </v-col>
-                  <v-col cols="4">
-                    <v-sheet class="ma-2 pa-2" color="grey-lighten-5">
-                      <span class="font-weight-bold">개인회원 </span>
-                      <v-spacer></v-spacer>
-                      <span class="text-medium-emphasis">회원구분 </span>
-                    </v-sheet>
-                  </v-col>
-                </v-row>
-              </v-sheet>
-            </v-card-text>
-            <v-card-actions class="pa-4">
-              <v-spacer></v-spacer>
-              <v-btn
-                size="large"
-                variant="outlined"
-                width="200"
-              >
-                 <img
-                  src="/assets/btn/kmong.png"
-                  alt="kmong"
-                  height="24"
-                  class="mr-1 mt-1"
-                />
-                크몽
-              </v-btn>
-              <v-btn
-                size="large"
-                color="yellow darken-3"
-                variant="flat"
-                width="200"
-              >
-                <img
-                  src="/assets/btn/kakao.png"
-                  alt="kakao"
-                  height="24"
-                  class="mr-1 mt-1"
-                />
-                카카오톡
-              </v-btn>
-            </v-card-actions>
-          </v-card>
+          <!-- 상담 -->
+          <Consult></Consult>
         </div>
       </v-col>
       <v-col cols="12">
@@ -282,9 +200,9 @@ interface EstimateItem {
 }
 
 interface Requirements {
-  hosting: string
+  server_hosting: string
   budget: number
-  scale: string
+  server_scale: string
   deployment: string
   backup: string
   security: string
@@ -295,9 +213,9 @@ interface Server {
   date: string
   title: string
   domain: string
-  frontend: string
-  backend: string
-  database: string
+  dev_frontend: string
+  dev_backend: string
+  dev_database: string
   requirements: Requirements
   design: string
   schedule: ScheduleItem[]

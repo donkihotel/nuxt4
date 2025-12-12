@@ -132,7 +132,7 @@
               <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
 
               <v-sheet class="d-flex justify-end" >
-                <v-sheet class="pa-2">작업 합계</v-sheet>
+                <v-sheet class="pa-2">합계</v-sheet>
                 <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ formatPrice(totalSupply) }}</v-sheet>
               </v-sheet>
               <v-divider></v-divider>
@@ -149,6 +149,9 @@
             </div>
           </v-card-text>
         </v-card>
+
+        <!-- 상담 -->
+        <Consult></Consult>
       </v-col>
     </v-row>
   </v-container>

@@ -27,7 +27,7 @@
     <v-col cols="5">
       <v-toolbar flat>
         <v-toolbar-title>
-          배너
+          크몽
         </v-toolbar-title>
       </v-toolbar>
       <v-carousel
@@ -36,14 +36,35 @@
         cycle
         hide-delimiter-background
         class="rounded"
+        v-model="currentIndex"
+        hide-delimiters
       >
-        <v-carousel-item src="/assets/banner/banner1.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner2.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner3.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner4.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner5.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner6.jpg" cover></v-carousel-item>
-        <v-carousel-item src="/assets/banner/banner7.jpg" cover></v-carousel-item>
+        <v-carousel-item
+          v-for="(item, i) in banners"
+          :key="i"
+          :src="item.src"
+          @click="open(item.url, '_blank')"
+          cover
+        >
+        </v-carousel-item>
+
+        <v-overlay
+          :scrim="false"
+          content-class="w-100 h-100 d-flex flex-column align-center justify-space-between pointer-pass-through py-3"
+          contained
+          model-value
+          no-click-animation
+          persistent
+        >
+          <div class="position-absolute" style="bottom: 12px; right: 12px;">
+            <v-chip
+              :text="`${ currentIndex + 1 } / ${ banners.length }`"
+              color="#eee"
+              size="small"
+              variant="flat"
+            />
+          </div>
+        </v-overlay>
       </v-carousel>
     </v-col>
     <v-col cols="12">
@@ -64,40 +85,40 @@
           </v-toolbar>
         </template>
 
-        <template v-slot:item.frontend="{ item }">
+        <template v-slot:item.dev_frontend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2" />
-            <span>{{ item.frontend }}</span>
+            <v-img :src="`assets/dev/${formatDevIcon(item.dev_frontend)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.dev_frontend }}</span>
           </v-chip>
         </template>
 
-        <template v-slot:item.backend="{ item }">
+        <template v-slot:item.dev_backend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
-            <span>{{ item.backend }}</span>
+            <v-img :src="`assets/dev/${formatDevIcon(item.dev_backend)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.dev_backend }}</span>
           </v-chip>
         </template>
 
-        <template v-slot:item.database="{ item }">
+        <template v-slot:item.dev_database="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
-            <span>{{ item.database }}</span>
+            <v-img :src="`assets/db/${formatDevIcon(item.dev_database)}`" height="24" width="24" class="mr-2" />
+            <span>{{ item.dev_database }}</span>
           </v-chip>
         </template>
 
-        <template #item.dev_complexity="{ item }">
+        <template #item.build_level="{ item }">
           <v-chip
-            :text="`Level ${item.dev_complexity}`"
+            :text="`Level ${item.build_level}`"
             size="small"
             label
           ></v-chip>
         </template>
 
-        <template #item.scale="{ item }">
+        <template #item.server_scale="{ item }">
           <v-chip
-            :border="`${getScaleColor(item.scale)}`"
-            :color="getScaleColor(item.scale)"
-            :text="item.scale"
+            :border="`${getScaleColor(item.server_scale)}`"
+            :color="getScaleColor(item.server_scale)"
+            :text="item.server_scale"
             size="small"
             class="w-100"
             variant="flat"
@@ -105,22 +126,22 @@
           ></v-chip>
         </template>
 
-        <template #item.dev_deployment="{ item }">
+        <template #item.server_deployment="{ item }">
           <v-chip
-            :border="`${getDeploymentColor(item.dev_deployment)}`"
-            :color="getDeploymentColor(item.dev_deployment)"
-            :text="item.dev_deployment"
+            :border="`${getDeploymentColor(item.server_deployment)}`"
+            :color="getDeploymentColor(item.server_deployment)"
+            :text="item.server_deployment"
             size="small"
             variant="flat"
           ></v-chip>
         </template>
 
-        <!-- <template #item.hosting="{ item }">
-          <v-img :src="`${$config.public.baseURL}/hosting/${getHostingIcon(item.hosting)}`" />
+        <!-- <template #item.server_hosting="{ item }">
+          <v-img :src="`${$config.public.baseURL}/server_hosting/${getHostingIcon(item.server_hosting)}`" />
         </template> -->
 
-        <template #item.server_cost="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.server_cost) }}
+        <template #item.server_budget="{ item }">
+          <span class="text-caption">₩</span> {{ formatPrice(item.server_budget) }}
         </template>
 
         <template #item.build_cost="{ item }">
@@ -174,9 +195,10 @@
   const route = useRoute()
   const router = useRouter()
 
+  const currentIndex = shallowRef(0)
   const items0 = await import(`~/data/task/main.json`)
   const task = items0.default.task
-  .sort(() => 0.5 - Math.random())
+  .sort((a, b) => b.id - a.id)
   .slice(0, 8)
 
   const headers0 = [
@@ -187,27 +209,40 @@
     { title: '작업 가격', value: 'price', align: 'end' }
   ]
 
+  const open = (url) => {
+    window.open(url, '_blank')
+  }
+
   const headers1 = [
-    { title: 'No', value: 'id', align: 'end' },
-    { title: '프로젝트', value: 'project' },
-    { title: '프론트엔드', value: 'frontend' },
-    { title: '백엔드', value: 'backend' },
-    { title: '데이터베이스', value: 'database' },
-    { title: '개발 복잡도', value: 'dev_complexity', align: 'center' },
-    { title: '서버 호스팅', value: 'hosting' },
-    { title: '서버 확장', value: 'scale' },
-    { title: '서버 배포', value: 'dev_deployment', align: 'center' },
-    { title: '서버 요금', value: 'server_cost', align: 'end' },
+    { title: 'No', value: 'id', align: 'end'},
+    { title: '프론트엔드', value: 'dev_frontend' },
+    { title: '백엔드', value: 'dev_backend' },
+    { title: '데이터베이스', value: 'dev_database' },
+    { title: '서버 호스팅', value: 'server_hosting' },
+    { title: '서버 확장', value: 'server_scale' },
+    { title: '서버 배포', value: 'server_deployment', align: 'center' },
+    { title: '서버 예산', value: 'server_budget', align: 'end' },
+    { title: '구축 난이도', value: 'build_level', align: 'center' },
     { title: '구축 비용', value: 'build_cost', align: 'end' }
   ]
 
   const items1 = await import(`~/data/server/main.json`)
   const server = items1.default.items
-  .sort(() => 0.5 - Math.random())
+  .sort((a, b) => b.id - a.id)   // id 기준 내림차순
   .slice(0, 5)
 
+  const banners = [
+    { src: '/assets/banner/banner1.jpg', url: 'https://kmong.com/gig/220715' },
+    { src: '/assets/banner/banner2.jpg', url: 'https://kmong.com/gig/424545' },
+    { src: '/assets/banner/banner3.jpg', url: 'https://kmong.com/gig/586574' },
+    { src: '/assets/banner/banner4.jpg', url: 'https://kmong.com/gig/316594' },
+    { src: '/assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162' },
+    { src: '/assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951' },
+    { src: '/assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478' },
+  ]
+
   const headers2 = [
-    { title: 'No', value: 'id', align: 'end' },
+    { title: 'No', value: 'id', align: 'end', sortable: true },
     { title: '도메인', key: 'domain' },
     { title: '구매', key: 'purchaser' },
     { title: '네임서버', key: 'nameserver' },
@@ -221,7 +256,7 @@
 
   const items2 = await import(`~/data/domain/main.json`)
   const domains = items2.default.domains
-  .sort(() => 0.5 - Math.random())
+  .sort((a, b) => b.id - a.id)   // id 기준 내림차순
   .slice(0, 5)
 
   const getScaleColor = (value) => {
@@ -267,16 +302,28 @@
     if (value === 'React') {
       return 'react.png';
     } else if (value === 'Next') {
-      return 'next.png';
+      return 'nextjs.png';
     } else if (value === 'Vue') {
       return 'vue.png';
     } else if (value === 'Nuxt') {
       return 'nuxt.png';
-    } else if (value === 'Node' || value === 'Express') {
+    } else if (value === 'Flutter') {
+      return 'flutter.png';
+    } else if (value === 'FastAPI') {
+      return 'fastapi.png';
+    } else if (value === 'Streamlit') {
+      return 'streamlit.png';
+    } else if (value === 'Python') {
+      return 'python.png';
+    } else if (value === 'Node') {
       return 'node.png';
+    } else if (value === 'Express') {
+      return 'express.png';
     } else if (value === 'Nest') {
-      return 'nest.png';
-    } else if (value === 'Springboot') {
+      return 'nestjs.png';
+    } else if (value === 'Spring') {
+      return 'spring.png';
+    } else if (value === 'SpringBoot') {
       return 'springboot.png';
     } else if (value === 'Django') {
       return 'django.png';
@@ -284,14 +331,18 @@
       return 'flask.png';
     } else if (value === 'Django') {
       return 'django.png';
+    } else if (value === 'PHP') {
+      return 'php.png';
+    } else if (value === 'Unity') {
+      return 'unity.png';
     } else if (value === 'MySQL') {
       return 'mysql.png';
     } else if (value === 'MongoDB') {
       return 'mongodb.png';
     } else if (value === 'MariaDB') {
       return 'mariadb.png';
-    } else {
-      return 'mdi-check-circle-outline';
+    } else if (value === 'DynamoDB') {
+      return 'dynamodb.png';
     }
   }
 
@@ -300,21 +351,4 @@
     else return 'grey'
   }
 
-  const getHostingIcon = (value) => {
-    if (value === 'aws') {
-      return 'aws.png';
-    } else if (value === 'gcp') {
-      return 'gcp.png';
-    } else if (value === 'azure') {
-      return 'azure.png';
-    } else if (value === 'cafe24') {
-      return 'cafe24.png';
-    } else if (value === 'godaddy') {
-      return 'godaddy.png';
-    } else if (value === 'bluehost') {
-      return 'bluehost.png';
-    } else {
-      return 'hosting.png';
-    }
-  }
 </script>

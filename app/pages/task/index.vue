@@ -53,7 +53,7 @@
 
   // 테이블 헤더
   const headers: DataTableHeader[] = [
-    { title: 'No', key: 'id' },
+    { title: 'No', key: 'id', align: 'end' },
     { title: '구분', key: 'category' },
     { title: '작업명', key: 'title' },
     { title: '난이도', key: 'level' },

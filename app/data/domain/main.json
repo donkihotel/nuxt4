@@ -87,7 +87,7 @@
             "homepage": "아임웹",
             "ssl": "Sectigo RSA",
             "ssl_cost": 38500,
-            "email": "daum_smartwork",
+            "email": "다음 스마트워크",
             "pricing_plan": "-",
             "cost": 30000
         },
@@ -113,7 +113,7 @@
             "homepage": "아임웹",
             "ssl": "Sectigo RSA",
             "ssl_cost": 38500,
-            "email": "gavia_hiworks",
+            "email": "가비아 하이웍스",
             "pricing_plan": "그룹웨어",
             "cost": 30000
         },
@@ -139,7 +139,7 @@
             "homepage": "윅스",
             "ssl": "Let's Encrypt",
             "ssl_cost": 0,
-            "email": "cafe24_mail",
+            "email": "카페24 메일",
             "pricing_plan": "기본",
             "cost": 30000
         },
@@ -152,7 +152,7 @@
             "homepage": "윅스",
             "ssl": "Sectigo RSA",
             "ssl_cost": 38500,
-            "email": "cafe24_mail",
+            "email": "카페24 메일",
             "pricing_plan": "기본",
             "cost": 30000
         },
@@ -243,7 +243,7 @@
             "homepage": "가비아",
             "ssl": "Sectigo DV",
             "ssl_cost": 10000,
-            "email": "gavia_hiworks",
+            "email": "가비아 하이웍스",
             "pricing_plan": "그룹웨어",
             "cost": 30000
         },
@@ -282,7 +282,7 @@
             "homepage": "아임웹",
             "ssl": "Sectigo RSA",
             "ssl_cost": 38500,
-            "email": "mailnara",
+            "email": "메일나라",
             "pricing_plan": "기본",
             "cost": 30000
         },
@@ -373,7 +373,7 @@
             "homepage": "아임웹",
             "ssl": "-",
             "ssl_cost": 0,
-            "email": "mailplug",
+            "email": "메일플러그",
             "pricing_plan": "기본",
             "cost": 30000
         },
@@ -555,7 +555,7 @@
             "homepage": "아임웹",
             "ssl": "AWS",
             "ssl_cost": 0,
-            "email": "godaddy_mail",
+            "email": "godaddy",
             "pricing_plan": "이메일 플러스",
             "cost": 20000
         },

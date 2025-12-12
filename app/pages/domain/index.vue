@@ -78,7 +78,14 @@
     </template>
 
     <template #item.email="{ item }">
-      <v-img :src="`assets/email/${formatEmailIcon(item.email)}`"  width="120" />
+      <v-img
+        v-if="!itemEmailError[item.id]"
+        :src="`assets/email/${formatEmailIcon(item.email)}`"
+        width="120"
+        @error="itemEmailError[item.id] = true"
+      />
+
+      <span v-else>{{ item.email }}</span>
     </template>
 
     <template #item.pricing_plan="{ item }">
@@ -176,6 +183,8 @@
         return 'naver.png'
       case 'microsoft':
         return 'microsoft.png'
+      case 'godaddy':
+        return 'godaddy.png'
       default:
         return 'default_email.png'
     }
@@ -183,7 +192,9 @@
 
   const formatPrice = (value: number) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
+  }
+
+  const itemEmailError = reactive<{ [key: string]: boolean }>({})
 </script>
 
 <style scoped>
