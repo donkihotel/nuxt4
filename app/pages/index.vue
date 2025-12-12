@@ -232,13 +232,13 @@
   .slice(0, 5)
 
   const banners = [
-    { src: '/assets/banner/banner1.jpg', url: 'https://kmong.com/gig/220715' },
-    { src: '/assets/banner/banner2.jpg', url: 'https://kmong.com/gig/424545' },
-    { src: '/assets/banner/banner3.jpg', url: 'https://kmong.com/gig/586574' },
-    { src: '/assets/banner/banner4.jpg', url: 'https://kmong.com/gig/316594' },
-    { src: '/assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162' },
-    { src: '/assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951' },
-    { src: '/assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478' },
+    { src: 'assets/banner/banner1.jpg', url: 'https://kmong.com/gig/220715' },
+    { src: 'assets/banner/banner2.jpg', url: 'https://kmong.com/gig/424545' },
+    { src: 'assets/banner/banner3.jpg', url: 'https://kmong.com/gig/586574' },
+    { src: 'assets/banner/banner4.jpg', url: 'https://kmong.com/gig/316594' },
+    { src: 'assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162' },
+    { src: 'assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951' },
+    { src: 'assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478' },
   ]
 
   const headers2 = [
