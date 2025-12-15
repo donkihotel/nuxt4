@@ -136,7 +136,10 @@
         </v-card>
 
         <v-card border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-4-box</v-icon>일정</h3>
+          <h3 class="bg-surface-light pa-2">
+            <v-icon class="mr-2">mdi-numeric-4-box</v-icon>일정
+            - <span class="text-subtitle-1 font-italic">Level {{server?.build_day }}</span>
+          </h3>
           <v-card-text>
             <v-data-table
               :headers="scheduleHeaders"
@@ -148,6 +151,7 @@
               <template #item.working_day="{ item }">
                 <span>{{ item.working_day }}</span>일
               </template>
+
               <template v-slot:no-data>
                 📌 일정 데이터가 없습니다.
               </template>
@@ -185,12 +189,12 @@
 
               <div v-if="estimate.length">
                 <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2">합계</v-sheet>
+                  <v-sheet class="pa-2 text-caption">합계</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ totalSupply.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider></v-divider>
                 <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2">VAT 10%</v-sheet>
+                  <v-sheet class="pa-2 text-caption">VAT 10%</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ vat.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider class="bg-grey-lighten-2"></v-divider>
@@ -270,6 +274,7 @@ interface Server {
   dev_database: string
   requirements: Requirements
   design: Design
+  build_day: number
   schedule: ScheduleItem[]
   estimate: EstimateItem[]
 }

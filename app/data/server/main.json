@@ -11,7 +11,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 1,
+            "build_day": 7.5,
             "build_cost": 180000
         },
         {
@@ -25,7 +25,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 240000
         },
         {
@@ -39,7 +39,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 240000
         },
         {
@@ -53,7 +53,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "자동",
-            "build_level": 3,
+            "build_day": 3,
             "build_cost": 360000
         },
         {
@@ -67,7 +67,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 240000
         },
         {
@@ -81,7 +81,7 @@
             "server_budget": 50000,
             "server_scale": "UP",
             "server_deployment": "자동",
-            "build_level": 3,
+            "build_day": 3,
             "build_cost": 240000
         },
         {
@@ -95,7 +95,7 @@
             "server_budget": 40000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 240000
         },
         {
@@ -109,7 +109,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 1,
+            "build_day": 1,
             "build_cost": 60000
         },
         {
@@ -123,7 +123,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 240000
         },
         {
@@ -137,7 +137,7 @@
             "server_budget": 100000,
             "server_scale": "OUT",
             "server_deployment": "자동",
-            "build_level": 3,
+            "build_day": 3,
             "build_cost": 360000
         },
         {
@@ -151,7 +151,7 @@
             "server_budget": 60000,
             "server_scale": "UP",
             "server_deployment": "자동",
-            "build_level": 3,
+            "build_day": 3,
             "build_cost": 360000
         },
         {
@@ -165,7 +165,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "자동",
-            "build_level": 3,
+            "build_day": 3,
             "build_cost": 240000
         },
         {
@@ -179,7 +179,7 @@
             "server_budget": 20000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 120000
         },
         {
@@ -193,7 +193,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 1,
+            "build_day": 1,
             "build_cost": 60000
         },
         {
@@ -207,7 +207,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 120000
         },
         {
@@ -221,7 +221,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "자동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 180000
         },
         {
@@ -235,7 +235,7 @@
             "server_budget": 200000,
             "server_scale": "OUT",
             "server_deployment": "자동",
-            "build_level": 5,
+            "build_day": 5,
             "build_cost": 1800000
         },
         {
@@ -249,7 +249,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 120000
         },
         {
@@ -263,7 +263,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 180000
         },
         {
@@ -277,7 +277,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 120000
         },
         {
@@ -291,7 +291,7 @@
             "server_budget": 30000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 180000
         },
         {
@@ -305,7 +305,7 @@
             "server_budget": 60000,
             "server_scale": "UP",
             "server_deployment": "수동",
-            "build_level": 2,
+            "build_day": 2,
             "build_cost": 180000
         },
         {
@@ -319,7 +319,7 @@
             "server_budget": 200000,
             "server_scale": "OUT",
             "server_deployment": "자동",
-            "build_level": 5,
+            "build_day": 5,
             "build_cost": 1200000
         },
         {
@@ -333,7 +333,7 @@
             "server_budget": 200000,
             "server_scale": "OUT",
             "server_deployment": "자동",
-            "build_level": 4,
+            "build_day": 4,
             "build_cost": 700000
         },
         {
@@ -347,8 +347,8 @@
             "server_budget": 200000,
             "server_scale": "OUT",
             "server_deployment": "자동",
-            "build_level": 5,
-            "build_cost": 1000000
+            "build_day": 7.5,
+            "build_cost": 715000
         }
     ]
 }

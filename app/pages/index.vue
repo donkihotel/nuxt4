@@ -106,12 +106,8 @@
           </v-chip>
         </template>
 
-        <template #item.build_level="{ item }">
-          <v-chip
-            :text="`Level ${item.build_level}`"
-            size="small"
-            label
-          ></v-chip>
+        <template #item.build_day="{ item }">
+          {{ item.build_day }} 일
         </template>
 
         <template #item.server_scale="{ item }">
@@ -139,6 +135,14 @@
         <!-- <template #item.server_hosting="{ item }">
           <v-img :src="`${$config.public.baseURL}/server_hosting/${getHostingIcon(item.server_hosting)}`" />
         </template> -->
+
+        <template #item.server_security="{ item }">
+          <v-chip
+            :text="`Level ${item.server_security}`"
+            size="small"
+            label
+          ></v-chip>
+        </template>
 
         <template #item.server_budget="{ item }">
           <span class="text-caption">₩</span> {{ formatPrice(item.server_budget) }}
@@ -222,7 +226,8 @@
     { title: '서버 예산', value: 'server_budget', align: 'end' },
     { title: '서버 확장', value: 'server_scale' },
     { title: '서버 배포', value: 'server_deployment', align: 'center' },
-    { title: '구축 난이도', value: 'build_level', align: 'center' },
+    { title: '서버 보안', value: 'server_security', align: 'center' },
+    { title: '구축 일정', value: 'build_day', align: 'end' },
     { title: '구축 비용', value: 'build_cost', align: 'end' }
   ]
 

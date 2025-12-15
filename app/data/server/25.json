@@ -6,6 +6,7 @@
     "dev_frontend": "React",
     "dev_backend": "Express",
     "dev_database": "MySQL",
+    "build_day": 4,
     "requirements": {
         "server_hosting": "AWS",
         "server_build": "개발, 운영",
@@ -38,7 +39,7 @@
         {
             "no": 3,
             "category": "구축",
-            "title": "데이타베이스 구축",
+            "title": "데이터베이스 구축",
             "quantity": 1,
             "working_day": 0.5
         },
@@ -88,45 +89,45 @@
     "estimate": [
         {
             "no": 1,
-            "work": "프론트 웹 서버 환경 구축",
-            "supplyPrice": 50000,
+            "work": "아키텍처 구축",
+            "supplyPrice": 200000,
             "quantity": 1,
-            "sumPrice": 50000
+            "sumPrice": 200000
         },
         {
             "no": 2,
-            "work": "백엔드 웹 서버 환경 구축",
+            "work": "네트워크 VPC 구축",
+            "supplyPrice": 60000,
+            "quantity": 1,
+            "sumPrice": 60000
+        },
+        {
+            "no": 3,
+            "work": "데이터베이스 구축",
+            "supplyPrice": 60000,
+            "quantity": 1,
+            "sumPrice": 60000
+        },
+        {
+            "no": 4,
+            "work": "프론트 CI/CD",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
         },
         {
-            "no": 3,
-            "work": "프로젝트 소스 배포",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
-            "no": 4,
-            "work": "도메인 연결 및 SSL",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
             "no": 5,
-            "work": "방화벽 구축",
-            "supplyPrice": 50000,
+            "work": "벡엔드 CI/CD",
+            "supplyPrice": 200000,
             "quantity": 1,
-            "sumPrice": 50000
+            "sumPrice": 200000
         },
         {
             "no": 6,
-            "work": "백업 구축",
-            "supplyPrice": 50000,
+            "work": "보안 구축",
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 50000
+            "sumPrice": 30000
         }
     ]
 }

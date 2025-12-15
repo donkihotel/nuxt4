@@ -23,7 +23,7 @@
   <v-expansion-panels>
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        1. AWS 사용하는 목적
+        AWS 사용하는 목적
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>국내에서 많이 사용하는 클라우드 서버는 AWS, Azure, GCP, NCloud 등의 있습니다. 그 중에서 AWS 가장 많이 사용하는 이유는 인지도면에서 사용한다고 볼 수 있습니다. 또는 AWS 컴퓨팅 서비스 외에 네트워크, 데이테베이스, 스토리지, 개발자도구, 보안/자격증명, 어플리케이션 등을 연결 하여 사용하기 위해서 입니다. <br/><br/>
@@ -33,7 +33,7 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        2. 프로젝트 소스 분석
+        프로젝트 소스 분석
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>프로젝트 소스에 따라서 서버 설계 방향이 달라질 수 있습니다. 프로젝트 소스가 하나로 통합된 경우가 있거나 기능에 따라서 다수의 프로젝트 되어서 프론트/백엔드 나누어 있는 경우가 있습니다. 프로젝트의 기능과 컴퓨팅 자원 사용률을 분석하여 최소한의 서버를 맞는추는데 설계를 할 수 있습니다. 다음과 같은 개발 프레임워크를 빌드와 배포하는데 있어서 환경적인 요인을 최적화 해드립니다.</p>
@@ -42,7 +42,7 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        3. 서버 예산 설정
+        서버 예산 설정
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -60,7 +60,7 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        4. 확장 설계 검토
+        확장 설계 검토
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -86,7 +86,7 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        5. 견적서 제공
+        견적서 제공
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -112,7 +112,7 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        6. 관리 문서 제공
+        관리 문서 제공
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -179,7 +179,7 @@
       </v-chip>
     </template>
 
-     <template #item.server_security="{ item }">
+    <template #item.server_security="{ item }">
       <v-chip
         :text="`Level ${item.server_security}`"
         size="small"
@@ -187,24 +187,21 @@
       ></v-chip>
     </template>
 
-    <template #item.build_level="{ item }">
-      <v-chip
-        :text="`Level ${item.build_level}`"
-        size="small"
-        label
-      ></v-chip>
+    <template #item.build_day="{ item }">
+      {{ item.build_day }} 일
     </template>
 
     <template #item.server_scale="{ item }">
       <v-chip
         :border="`${getScaleColor(item.server_scale)}`"
         :color="getScaleColor(item.server_scale)"
-        :text="item.server_scale"
+        :text="getServerScale(item.server_scale)"
         size="small"
         class="w-100"
         variant="flat"
         label
       ></v-chip>
+      <!-- {{ getServerScale(item.server_scale) }} -->
     </template>
 
     <template #item.server_deployment="{ item }">
@@ -253,7 +250,7 @@
     server_deployment: string
     server_security: number
     server_budget: number
-    build_level: number
+    build_day: number
     build_cost: number
   }
 
@@ -267,10 +264,10 @@
     { title: '데이터베이스', key: 'dev_database' },
     { title: '서버 호스팅', key: 'server_hosting' },
     { title: '서버 예산', key: 'server_budget', align: 'end' },
-    { title: '서버 확장', key: 'server_scale' },
+    { title: '서버 확장', key: 'server_scale', align: 'center' },
     { title: '서버 배포', key: 'server_deployment', align: 'center' },
     { title: '서버 보안', key: 'server_security', align: 'center' },
-    { title: '구축 난이도', key: 'build_level', align: 'center' },
+    { title: '구축 일정', key: 'build_day', align: 'end' },
     { title: '구축 비용', key: 'build_cost', align: 'end' },
   ]
 
@@ -312,6 +309,11 @@
     else return 'grey'
   }
 
+  const getServerScale = (value: string) => {
+    if (value === 'UP') return '스케일업'
+    else return '스케일아웃'
+  }
+
   const formatPrice = (value: number) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -319,5 +321,13 @@
   const getDeploymentColor = (value: string) => {
     if (value === '자동') return 'black'
     else return 'grey-lighten-2'
+  }
+
+  const getLevelColor = (value: number) => {
+    if (value <= 1) return 'grey-darken-2'
+    else if (value == 2) return 'grey-darken-3'
+    else if (value == 3) return 'grey-darken-4'
+    else if (value >= 4) return 'black'
+    else return 'black'
   }
 </script>
