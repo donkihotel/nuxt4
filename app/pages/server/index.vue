@@ -214,7 +214,6 @@
         :text="item.server_deployment"
         size="small"
         variant="flat"
-        label
       ></v-chip>
     </template>
 
@@ -267,10 +266,10 @@
     { title: '백엔드', key: 'dev_backend' },
     { title: '데이터베이스', key: 'dev_database' },
     { title: '서버 호스팅', key: 'server_hosting' },
+    { title: '서버 예산', key: 'server_budget', align: 'end' },
     { title: '서버 확장', key: 'server_scale' },
     { title: '서버 배포', key: 'server_deployment', align: 'center' },
     { title: '서버 보안', key: 'server_security', align: 'center' },
-    { title: '서버 예산', key: 'server_budget', align: 'end' },
     { title: '구축 난이도', key: 'build_level', align: 'center' },
     { title: '구축 비용', key: 'build_cost', align: 'end' },
   ]
@@ -301,53 +300,7 @@
     router.replace({ path: route.path, query: { ...route.query, page: value } })
   }
 
-  const formatDevIcon = (value: string) => {
-    if (value === 'React') {
-      return 'react.png';
-    } else if (value === 'Next') {
-      return 'nextjs.png';
-    } else if (value === 'Vue') {
-      return 'vue.png';
-    } else if (value === 'Nuxt') {
-      return 'nuxt.png';
-    } else if (value === 'Flutter') {
-      return 'flutter.png';
-    } else if (value === 'FastAPI') {
-      return 'fastapi.png';
-    } else if (value === 'Streamlit') {
-      return 'streamlit.png';
-    } else if (value === 'Python') {
-      return 'python.png';
-    } else if (value === 'Node') {
-      return 'node.png';
-    } else if (value === 'Express') {
-      return 'express.png';
-    } else if (value === 'Nest') {
-      return 'nestjs.png';
-    } else if (value === 'Spring') {
-      return 'spring.png';
-    } else if (value === 'SpringBoot') {
-      return 'springboot.png';
-    } else if (value === 'Django') {
-      return 'django.png';
-    } else if (value === 'Flask') {
-      return 'flask.png';
-    } else if (value === 'Django') {
-      return 'django.png';
-    } else if (value === 'PHP') {
-      return 'php.png';
-    } else if (value === 'Unity') {
-      return 'unity.png';
-    } else if (value === 'MySQL') {
-      return 'mysql.png';
-    } else if (value === 'MongoDB') {
-      return 'mongodb.png';
-    } else if (value === 'MariaDB') {
-      return 'mariadb.png';
-    } else if (value === 'DynamoDB') {
-      return 'dynamodb.png';
-    }
-  }
+  const { formatDevIcon } = useFormatDevIcon();
 
   const handleClickRow = (item: any, row: any) => {
     router.push(`/server/${row.item.id}`)

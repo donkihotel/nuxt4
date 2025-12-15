@@ -74,7 +74,7 @@
     </template>
 
     <template #item.ssl_cost="{ item }">
-      ₩ {{ formatPrice(item.ssl_cost) }}
+      <span class="text-caption">₩</span> {{ formatPrice(item.ssl_cost) }}
     </template>
 
     <template #item.email="{ item }">

@@ -219,9 +219,9 @@
     { title: '백엔드', value: 'dev_backend' },
     { title: '데이터베이스', value: 'dev_database' },
     { title: '서버 호스팅', value: 'server_hosting' },
+    { title: '서버 예산', value: 'server_budget', align: 'end' },
     { title: '서버 확장', value: 'server_scale' },
     { title: '서버 배포', value: 'server_deployment', align: 'center' },
-    { title: '서버 예산', value: 'server_budget', align: 'end' },
     { title: '구축 난이도', value: 'build_level', align: 'center' },
     { title: '구축 비용', value: 'build_cost', align: 'end' }
   ]

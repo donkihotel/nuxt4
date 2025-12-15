@@ -3,7 +3,7 @@
     <v-row>
       <!-- 왼쪽 콘텐츠: 브라우저 전체 스크롤 -->
       <v-col cols="12">
-        <v-card border flat color="primary">
+        <v-card border flat color="black">
           <v-list-item class="px-5">
             <template v-slot:title>No. {{server?.id }}</template>
             <template v-slot:append>{{server?.date }}</template>
@@ -29,7 +29,9 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">프론트</div>
-                  <div>{{server?.dev_frontend ?? '-' }}</div>
+                  <div>
+                    {{server?.dev_frontend ?? '-' }}
+                  </div>
                 </div>
 
                 <div class="my-3">
@@ -52,36 +54,54 @@
             <v-row>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">호스팅</div>
+                  <div class="font-weight-bold">서버 호스팅</div>
                   <div>{{server?.requirements.server_hosting ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 요금</div>
-                  <div v-if="server?.requirements.budget">(월) {{formatPrice(server?.requirements.budget ?? 0 )}} 원</div>
+                  <div>
+                    <span class="font-weight-bold">서버 예산</span>
+                  </div>
+                  <div v-if="server?.requirements.server_budget">
+                    <span class="text-caption">₩</span>
+                    {{formatPrice(server?.requirements.server_budget ?? 0 )}} - <span class="text-caption font-italic">월 요금</span></div>
                   <div v-else>-</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 확장</div>
-                  <div>{{server?.requirements.server_scale ?? '-' }}</div>
+                  <div class="font-weight-bold">서버 구축</div>
+                  <div>{{server?.requirements.server_build ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
-                 <div>
-                  <div class="font-weight-bold">개발 배포</div>
-                  <div>{{server?.requirements.deployment ?? '-' }}</div>
+                <div>
+                  <div class="font-weight-bold">서버 확장</div>
+                  <div v-if="server?.requirements.server_scale">
+                    {{ server?.requirements.server_scale }} - <span class="text-caption font-italic">
+                    {{ server?.requirements.server_scale === 'IN' ? '스케일 인' : server?.requirements.server_scale === 'OUT' ? '스케일 아웃' : server?.requirements.server_scale }}
+                    </span>
+                  </div>
+                  <div v-else>-</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">백업</div>
-                  <div>{{server?.requirements.backup ?? '-' }}</div>
+                  <div class="font-weight-bold">서버 배포</div>
+                  <div v-if="server?.requirements.server_deployment === '자동'">
+                    {{ server?.requirements.server_deployment }} - <span class="text-caption font-italic">
+                      {{ server?.requirements.server_deployment === '자동' ? 'CI/CD' : '' }}
+                    </span>
+                  </div>
+                  <div v-else>-</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">보안</div>
-                  <div>{{server?.requirements.security ?? '-' }}</div>
+                  <div class="font-weight-bold">서버 보안</div>
+                  <div v-if="server?.requirements.server_security">
+                    Level {{ getSecurityCount(server?.requirements.server_security) }}
+                    - <span class="text-caption font-italic">{{server?.requirements.server_security ?? '-' }}</span>
+                  </div>
+                  <div v-else>-</div>
                 </div>
               </v-col>
             </v-row>
@@ -90,31 +110,55 @@
 
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계</h3>
-          <v-card-text>
-            <v-img :src="`${$config.public.baseURL}/${server?.design}`" alt="Server Image" width="100%" />
+            <!-- <v-img :src="`${$config.public.baseURL}/${server?.design}`" alt="Server Image" width="100%" /> -->
+            <v-card-text>
+            <v-row>
+              <v-col cols="12">
+                <div>
+                  <div class="font-weight-bold">서버 확장</div>
+                  <div>{{ server?.design.server_scale ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">서버 배포</div>
+                  <div>{{server?.design.server_deployment ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">서버 보안</div>
+                  <div>{{server?.design.server_security ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">데이터베이스</div>
+                  <div>{{server?.design.server_database ?? '-' }}</div>
+                </div>
+              </v-col>
+            </v-row>
           </v-card-text>
         </v-card>
 
         <v-card border flat>
           <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-4-box</v-icon>일정</h3>
           <v-card-text>
-            <v-timeline dense>
-              <v-timeline-item
-                color="primary"
-                icon="mdi-calendar"
-                v-for="item in server?.schedule"
-                :key="item.no"
-              >
-                <v-card flat>
-                  <v-card-title class="font-weight-bold">{{ item.day }}</v-card-title>
-                  <v-card-text>
-                    <div class="font-weight-bold">{{ item.title }}</div>
-                    <div>{{ item.description }}</div>
-                  </v-card-text>
-                </v-card>
-              </v-timeline-item>
+            <v-data-table
+              :headers="scheduleHeaders"
+              :items="server?.schedule"
+              density="compact"
+              item-key="name"
+              hide-default-footer
+            >
+              <template #item.working_day="{ item }">
+                <span>{{ item.working_day }}</span>일
+              </template>
+              <template v-slot:no-data>
+                📌 일정 데이터가 없습니다.
+              </template>
+            </v-data-table>
 
-            </v-timeline>
+            <v-divider class="bg-grey-lighten-2"></v-divider>
+            <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
+              <v-sheet class="d-flex justify-end" >
+              <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
+              <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{ totalWorkingDay }}일</v-sheet>
+            </v-sheet>
           </v-card-text>
         </v-card>
       </v-col>
@@ -127,7 +171,7 @@
             <v-card-text>
               <v-data-table
                 :headers="headers"
-                :items="server?.estimates"
+                :items="server?.estimate"
                 density="compact"
                 item-key="name"
                 hide-default-footer
@@ -139,9 +183,9 @@
 
               <v-divider></v-divider>
 
-              <div v-if="estimates.length">
+              <div v-if="estimate.length">
                 <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2 font-weight-bold">작업 합계</v-sheet>
+                  <v-sheet class="pa-2">합계</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ totalSupply.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider></v-divider>
@@ -183,12 +227,19 @@ const route = useRoute()
 const id = String(route.params.id) // string으로 통일
 
 // --- JSON 파일 타입 정의 ---
+interface Design {
+  server_scale: string
+  server_deployment: string
+  server_security: string
+  server_database: string
+}
+
 interface ScheduleItem {
   no: number
-  day: string
-  milestone: string
+  category: string
   title: string
-  description: string
+  quantity: number
+  working_day: number
 }
 
 interface EstimateItem {
@@ -201,11 +252,12 @@ interface EstimateItem {
 
 interface Requirements {
   server_hosting: string
-  budget: number
+  server_budget: number
+  server_build: string
   server_scale: string
-  deployment: string
-  backup: string
-  security: string
+  server_deployment: string
+  server_backup: string
+  server_security: number
 }
 
 interface Server {
@@ -217,9 +269,9 @@ interface Server {
   dev_backend: string
   dev_database: string
   requirements: Requirements
-  design: string
+  design: Design
   schedule: ScheduleItem[]
-  estimates: EstimateItem[]
+  estimate: EstimateItem[]
 }
 
 // --- 모든 JSON 파일 eager import ---
@@ -243,12 +295,12 @@ if (!server) {
   error.value = `서버 데이터가 존재하지 않습니다. ID: ${id}`
 }
 
-// --- estimates 배열 ---
-const estimates = ref<EstimateItem[]>(server?.estimates ?? [])
+// --- estimate 배열 ---
+const estimate = ref<EstimateItem[]>(server?.estimate ?? [])
 
 // 합계 (sumPrice 기준)
 const totalSupply = computed(() =>
-  estimates.value.reduce((acc, cur) => acc + (cur.sumPrice ?? 0), 0)
+  estimate.value.reduce((acc, cur) => acc + (cur.sumPrice ?? 0), 0)
 )
 
 // VAT 10%
@@ -277,6 +329,39 @@ const headers: DataTableHeader[] = [
     value: item => formatPrice(item.sumPrice as number)
   },
 ]
+
+const scheduleHeaders: DataTableHeader[] = [
+  { title: 'No', align: 'end', sortable: false, key: 'no' },
+  { title: '구분', align: 'start', sortable: false, key: 'category' },
+  { title: '작업', align: 'start', sortable: false, key: 'title' },
+  { title: '수량', align: 'end', sortable: false, key: 'quantity' },
+  { title: '작업일', align: 'end', sortable: false, key: 'working_day' },
+]
+
+// --- schedule 배열 ---
+const schedule = ref<ScheduleItem[]>(server?.schedule ?? [])
+
+// 합계 (sumPrice 기준)
+const totalWorkingDay = computed(() => {
+  return schedule.value.reduce((sum, item) => {
+    return sum + (item.working_day ?? 0)
+  }, 0)
+})
+
+
+const { formatDevIcon } = useFormatDevIcon();
+
+const getSecurityCount = (value: string | number | null | undefined): number => {
+  if (!value) return 0;
+
+  const normalized = String(value);
+
+  return normalized
+    .split(',')
+    .map(v => v.trim())
+    .filter(v => v.length > 0)
+    .length;
+};
 
 // --- 가격 포맷 함수 ---
 function formatPrice(value: number) {
