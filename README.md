@@ -72,4 +72,4 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check 스케일아웃 the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

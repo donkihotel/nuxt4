@@ -43,7 +43,7 @@ axiosInstance.interceptors.response.use(
         // console.log('Error while trying to refresh the access token: ', refreshError);
         // If the refresh token is expired, then logout the user
         if (refreshError.response.status === 403) {
-          console.log("Refresh token expired, logging out the user");
+          console.log("Refresh token expired, logging 스케일아웃 the user");
           // Remove tokens from local storage
           localStorage.removeItem("access_token");
           localStorage.removeItem("refresh_token");

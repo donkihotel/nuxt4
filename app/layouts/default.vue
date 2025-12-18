@@ -38,7 +38,7 @@
         <v-btn
           to="/task"
           variant="text"
-        >작업 설명</v-btn>
+        >작업 가격</v-btn>
 
         <!-- <v-divider vertical class="mx-2"></v-divider>
 

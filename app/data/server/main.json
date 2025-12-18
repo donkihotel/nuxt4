@@ -9,7 +9,7 @@
             "server_hosting": "DigitalOcean",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 7.5,
             "build_cost": 180000
@@ -23,7 +23,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 240000
@@ -37,7 +37,7 @@
             "server_hosting": "AWS",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 240000
@@ -51,7 +51,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "자동",
             "build_day": 3,
             "build_cost": 360000
@@ -65,7 +65,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 240000
@@ -79,7 +79,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 50000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "자동",
             "build_day": 3,
             "build_cost": 240000
@@ -93,7 +93,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 40000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 240000
@@ -107,7 +107,7 @@
             "server_hosting": "AWS",
             "server_security": 0,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 1,
             "build_cost": 60000
@@ -121,7 +121,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 240000
@@ -135,7 +135,7 @@
             "server_hosting": "AWS",
             "server_security": 3,
             "server_budget": 100000,
-            "server_scale": "OUT",
+            "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 3,
             "build_cost": 360000
@@ -149,7 +149,7 @@
             "server_hosting": "AWS",
             "server_security": 3,
             "server_budget": 60000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "자동",
             "build_day": 3,
             "build_cost": 360000
@@ -163,7 +163,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "자동",
             "build_day": 3,
             "build_cost": 240000
@@ -177,7 +177,7 @@
             "server_hosting": "CAFE24",
             "server_security": 1,
             "server_budget": 20000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 120000
@@ -191,7 +191,7 @@
             "server_hosting": "AWS",
             "server_security": 0,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 1,
             "build_cost": 60000
@@ -205,7 +205,7 @@
             "server_hosting": "Njalla",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 120000
@@ -219,7 +219,7 @@
             "server_hosting": "AWS",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "자동",
             "build_day": 2,
             "build_cost": 180000
@@ -233,7 +233,7 @@
             "server_hosting": "AWS",
             "server_security": 5,
             "server_budget": 200000,
-            "server_scale": "OUT",
+            "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 5,
             "build_cost": 1800000
@@ -247,7 +247,7 @@
             "server_hosting": "AWS",
             "server_security": 0,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 120000
@@ -261,7 +261,7 @@
             "server_hosting": "AWS",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 180000
@@ -275,7 +275,7 @@
             "server_hosting": "AWS",
             "server_security": 1,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 120000
@@ -289,7 +289,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 180000
@@ -303,7 +303,7 @@
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 60000,
-            "server_scale": "UP",
+            "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
             "build_cost": 180000
@@ -317,7 +317,7 @@
             "server_hosting": "AWS",
             "server_security": 5,
             "server_budget": 200000,
-            "server_scale": "OUT",
+            "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 5,
             "build_cost": 1200000
@@ -331,7 +331,7 @@
             "server_hosting": "AWS",
             "server_security": 4,
             "server_budget": 200000,
-            "server_scale": "OUT",
+            "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 4,
             "build_cost": 700000
@@ -339,13 +339,14 @@
         {
             "id": 25,
             "created_at": "2025-12-11",
+            "project_name": "*****관리 시스템",
             "dev_frontend": "Flutter",
             "dev_backend": "SpringBoot",
             "dev_database": "MySQL",
             "server_hosting": "AWS",
             "server_security": 5,
             "server_budget": 200000,
-            "server_scale": "OUT",
+            "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 7.5,
             "build_cost": 715000

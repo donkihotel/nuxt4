@@ -10,12 +10,19 @@
     ></v-alert>
     <v-row>
       <v-col cols="12">
-        <v-card border flat color="black">
-          <v-list-item class="px-5">
-            <template v-slot:title>No. {{domain?.id }}</template>
-            <template v-slot:append>{{domain?.date }}</template>
-          </v-list-item>
-        </v-card>
+        <v-list-item>
+          <template v-slot:title>
+            <h2>{{ domain?.domain ?? '-' }}</h2>
+          </template>
+
+          <template v-slot:subtitle>
+            No. {{domain?.id }}
+          </template>
+
+          <template v-slot:append>
+            <span class="text-subtitle-2">{{domain?.date }}</span>
+          </template>
+        </v-list-item>
       </v-col>
       <v-col cols="6">
         <v-card border flat>
@@ -23,20 +30,16 @@
           <v-card-text>
             <v-row>
               <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">이름</div>
-                  <div>{{ domain?.domain ?? '-' }}</div>
+                 <div>
+                  <div class="font-weight-bold">구매</div>
+                  <div>{{domain?.purchaser ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">구매</div>
-                  <div>{{domain?.purchaser }}</div>
-                </div>
-                <div class="my-3">
                   <div class="font-weight-bold">네임서버</div>
-                  <div>{{domain?.nameserver }}</div>
+                  <div>{{domain?.nameserver ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -118,6 +121,7 @@
               density="compact"
               item-key="name"
               hide-default-footer
+              class="text-no-wrap"
             >
               <template v-slot:no-data>
                 <div class="mt-4">

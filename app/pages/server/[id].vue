@@ -1,47 +1,49 @@
 <template>
   <v-container fluid>
     <v-row>
-      <!-- 왼쪽 콘텐츠: 브라우저 전체 스크롤 -->
       <v-col cols="12">
-        <v-card border flat color="black">
-          <v-list-item class="px-5">
-            <template v-slot:title>No. {{server?.id }}</template>
-            <template v-slot:append>{{server?.date }}</template>
-          </v-list-item>
-        </v-card>
+        <v-list-item>
+          <template v-slot:title>
+            <h2>{{ server?.title ?? '-' }}</h2>
+          </template>
+
+          <template v-slot:subtitle>
+            No. {{server?.id }}
+          </template>
+
+          <template v-slot:append>
+            <span class="text-subtitle-2">{{server?.date }}</span>
+          </template>
+        </v-list-item>
       </v-col>
       <v-col cols="6" class="left-content">
         <v-card border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-1-box</v-icon>개발</h3>
+          <h3 class="bg-surface-light pa-2">
+            <v-icon class="mr-2">mdi-numeric-1-box</v-icon>개발
+          </h3>
           <v-card-text>
             <v-row>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">프로젝트</div>
-                  <div>{{ server?.title ?? '-' }}</div>
+                  <div class="font-weight-bold">프론트</div>
+                  <div>{{server?.development?.dev_frontend ?? '-' }}</div>
                 </div>
+
                 <div class="my-3">
-                  <div class="font-weight-bold">도메인</div>
-                  <div>{{server?.domain }}</div>
+                  <div class="font-weight-bold">백엔드</div>
+                  <div>{{server?.development?.dev_backend ?? '-' }}</div>
+                </div>
+
+                <div class="my-3">
+                  <div class="font-weight-bold">데이터베이스</div>
+                  <div>{{server?.development?.dev_database ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">프론트</div>
-                  <div>
-                    {{server?.dev_frontend ?? '-' }}
-                  </div>
-                </div>
-
-                <div class="my-3">
-                  <div class="font-weight-bold">백엔드</div>
-                  <div>{{server?.dev_backend ?? '-' }}</div>
-                </div>
-
-                <div class="my-3">
-                  <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{server?.dev_database ?? '-' }}</div>
+                  <div class="font-weight-bold">외부 연동</div>
+                  <div>{{server?.development?.dev_linkage ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -49,7 +51,9 @@
         </v-card>
 
         <v-card class="my-5" border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-2-box</v-icon>요구사항</h3>
+          <h3 class="bg-surface-light pa-2">
+            <v-icon class="mr-2">mdi-numeric-2-box</v-icon>요구사항
+          </h3>
           <v-card-text>
             <v-row>
               <v-col cols="6">
@@ -63,8 +67,8 @@
                     <span class="font-weight-bold">서버 예산</span>
                   </div>
                   <div v-if="server?.requirements.server_budget">
-                    <span class="text-caption">₩</span>
-                    {{formatPrice(server?.requirements.server_budget ?? 0 )}} - <span class="text-caption font-italic">월 요금</span></div>
+                    (월) {{formatPrice(server?.requirements.server_budget ?? 0 )}} 원
+                  </div>
                   <div v-else>-</div>
                 </div>
 
@@ -76,32 +80,35 @@
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">서버 확장</div>
+                  <div class="font-weight-bold">
+                    서버 확장
+                  </div>
                   <div v-if="server?.requirements.server_scale">
-                    {{ server?.requirements.server_scale }} - <span class="text-caption font-italic">
-                    {{ server?.requirements.server_scale === 'IN' ? '스케일 인' : server?.requirements.server_scale === 'OUT' ? '스케일 아웃' : server?.requirements.server_scale }}
-                    </span>
+                    {{ server?.requirements.server_scale }}
                   </div>
                   <div v-else>-</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 배포</div>
+                  <div>
+                    <span class="font-weight-bold">서버 배포</span>
+                  </div>
                   <div v-if="server?.requirements.server_deployment === '자동'">
-                    {{ server?.requirements.server_deployment }} - <span class="text-caption font-italic">
-                      {{ server?.requirements.server_deployment === '자동' ? 'CI/CD' : '' }}
-                    </span>
+                    {{ server?.requirements.server_deployment }}
                   </div>
                   <div v-else>-</div>
+                  <div>{{ server?.requirements.server_deployment === '자동' ? 'CI/CD' : '' }}</div>
                 </div>
 
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 보안</div>
+                  <div>
+                    <span class="font-weight-bold">서버 보안</span>
+                  </div>
                   <div v-if="server?.requirements.server_security">
                     Level {{ getSecurityCount(server?.requirements.server_security) }}
-                    - <span class="text-caption font-italic">{{server?.requirements.server_security ?? '-' }}</span>
                   </div>
                   <div v-else>-</div>
+                  <div>{{server?.requirements.server_security ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -109,7 +116,9 @@
         </v-card>
 
         <v-card class="my-5" border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계</h3>
+          <h3 class="bg-surface-light pa-2">
+            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계
+          </h3>
             <!-- <v-img :src="`${$config.public.baseURL}/${server?.design}`" alt="Server Image" width="100%" /> -->
             <v-card-text>
             <v-row>
@@ -138,7 +147,6 @@
         <v-card border flat>
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-4-box</v-icon>일정
-            - <span class="text-subtitle-1 font-italic">Level {{server?.build_day }}</span>
           </h3>
           <v-card-text>
             <v-data-table
@@ -147,6 +155,7 @@
               density="compact"
               item-key="name"
               hide-default-footer
+              class="text-no-wrap"
             >
               <template #item.working_day="{ item }">
                 <span>{{ item.working_day }}</span>일
@@ -171,7 +180,9 @@
       <v-col cols="6" class="right-content">
         <div class="sticky-box">
           <v-card border flat>
-            <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-clipboard-list-outline</v-icon>견적</h3>
+            <h3 class="bg-surface-light pa-2">
+              <v-icon class="mr-2">mdi-clipboard-list-outline</v-icon>견적
+            </h3>
             <v-card-text>
               <v-data-table
                 :headers="headers"
@@ -179,6 +190,7 @@
                 density="compact"
                 item-key="name"
                 hide-default-footer
+                class="text-no-wrap"
               >
                 <template v-slot:no-data>
                   📌 견적 데이터가 없습니다.
@@ -213,7 +225,7 @@
       </v-col>
       <v-col cols="12">
         <v-card flat>
-          <v-list-item class="px-5">
+          <v-list-item class="px-1">
 
           </v-list-item>
         </v-card>
@@ -231,6 +243,13 @@ const route = useRoute()
 const id = String(route.params.id) // string으로 통일
 
 // --- JSON 파일 타입 정의 ---
+interface Development {
+  dev_frontend: string
+  dev_backend: string
+  dev_database: string
+  dev_linkage: string
+}
+
 interface Design {
   server_scale: string
   server_deployment: string
@@ -269,12 +288,9 @@ interface Server {
   date: string
   title: string
   domain: string
-  dev_frontend: string
-  dev_backend: string
-  dev_database: string
+  development: Development
   requirements: Requirements
   design: Design
-  build_day: number
   schedule: ScheduleItem[]
   estimate: EstimateItem[]
 }

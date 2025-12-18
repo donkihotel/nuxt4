@@ -2,9 +2,9 @@
   <v-sheet border="md"
     class="pa-6 text-white mx-auto "
     color="#141518">
-    <h4 class="text-h5 font-weight-bold mb-4">작업 설명</h4>
+    <h4 class="text-h5 font-weight-bold mb-4">작업 가격</h4>
     <p>
-      다양한 작업 설명이 여기에 표시됩니다. 각 작업은 고유한 난이도와 작업 시간이 있으며, 가격도 다릅니다. 사용자는 이 정보를 바탕으로 적절한 작업을 선택할 수 있습니다.
+      작업은 난이도와 작업 시간에 따라서, 작업 가격 차이가 있습니다.
     </p>
   </v-sheet>
 
@@ -21,7 +21,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          작업 설명
+          작업
         </v-toolbar-title>
       </v-toolbar>
     </template>

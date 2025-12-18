@@ -6,14 +6,14 @@
         :items="task"
         hover
         class="text-no-wrap"
-        @click:row="handleClickRowTask"
+        @click:row="onClickTaskRow"
         hide-default-footer
         density="compact"
       >
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              작업 설명
+              작업 가격
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
           </v-toolbar>
@@ -27,7 +27,7 @@
     <v-col cols="5">
       <v-toolbar flat>
         <v-toolbar-title>
-          크몽
+
         </v-toolbar-title>
       </v-toolbar>
       <v-carousel
@@ -73,7 +73,7 @@
         :items="server"
         hover
         class="text-no-wrap"
-        @click:row="handleClickRowServer"
+        @click:row="onClickServerRow"
         hide-default-footer
       >
         <template v-slot:top>
@@ -112,11 +112,10 @@
 
         <template #item.server_scale="{ item }">
           <v-chip
-            :border="`${getScaleColor(item.server_scale)}`"
-            :color="getScaleColor(item.server_scale)"
+            :color="formatScaleColor(item.server_scale)"
             :text="item.server_scale"
             size="small"
-            class="w-100"
+            class="w-100 justify-center"
             variant="flat"
             label
           ></v-chip>
@@ -124,22 +123,19 @@
 
         <template #item.server_deployment="{ item }">
           <v-chip
-            :border="`${getDeploymentColor(item.server_deployment)}`"
-            :color="getDeploymentColor(item.server_deployment)"
+            :color="formatDeployColor(item.server_deployment)"
             :text="item.server_deployment"
             size="small"
             variant="flat"
           ></v-chip>
         </template>
 
-        <!-- <template #item.server_hosting="{ item }">
-          <v-img :src="`${$config.public.baseURL}/server_hosting/${getHostingIcon(item.server_hosting)}`" />
-        </template> -->
-
         <template #item.server_security="{ item }">
           <v-chip
             :text="`Level ${item.server_security}`"
+            :color="formatSecurityColor(item.server_security)"
             size="small"
+            variant="flat"
             label
           ></v-chip>
         </template>
@@ -161,7 +157,7 @@
         class="text-no-wrap"
         disable-sort
         hide-default-footer
-        @click:row="handleClickRowDomain"
+        @click:row="onClickDomainRow"
       >
         <template v-slot:top>
           <v-toolbar flat>
@@ -177,11 +173,7 @@
         </template>
 
         <template #item.email="{ item }">
-          <v-img :src="`assets/email/${formatEmailIcon(item.email)}`"  width="120" />
-        </template>
-
-        <template #item.email_cost="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.email_cost) }}
+          <v-img :src="`assets/email/${formatMailIcon(item.email)}`" width="120" />
         </template>
 
         <template #item.cost="{ item }">
@@ -190,11 +182,11 @@
       </v-data-table>
     </v-col>
   </v-row>
-
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { useRouter, useRoute } from 'vue-router'
+  import type { DataTableHeader } from 'vuetify'
 
   const route = useRoute()
   const router = useRouter()
@@ -205,7 +197,7 @@
   .sort((a, b) => b.id - a.id)
   .slice(0, 8)
 
-  const headers0 = [
+  const headers0: DataTableHeader[] = [
     { title: 'No', value: 'id', align: 'end' },
     { title: '작업', value: 'title' },
     { title: '난이도', value: 'level' },
@@ -213,18 +205,14 @@
     { title: '작업 가격', value: 'price', align: 'end' }
   ]
 
-  const open = (url) => {
-    window.open(url, '_blank')
-  }
-
-  const headers1 = [
+  const headers1: DataTableHeader[] = [
     { title: 'No', value: 'id', align: 'end'},
     { title: '프론트엔드', value: 'dev_frontend' },
     { title: '백엔드', value: 'dev_backend' },
     { title: '데이터베이스', value: 'dev_database' },
     { title: '서버 호스팅', value: 'server_hosting' },
     { title: '서버 예산', value: 'server_budget', align: 'end' },
-    { title: '서버 확장', value: 'server_scale' },
+    { title: '서버 확장', value: 'server_scale', align: 'center' },
     { title: '서버 배포', value: 'server_deployment', align: 'center' },
     { title: '서버 보안', value: 'server_security', align: 'center' },
     { title: '구축 일정', value: 'build_day', align: 'end' },
@@ -246,8 +234,8 @@
     { src: 'assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478' },
   ]
 
-  const headers2 = [
-    { title: 'No', value: 'id', align: 'end', sortable: true },
+  const headers2: DataTableHeader[] = [
+    { title: 'No', value: 'id', align: 'end' },
     { title: '도메인', key: 'domain' },
     { title: '구매', key: 'purchaser' },
     { title: '네임서버', key: 'nameserver' },
@@ -264,96 +252,24 @@
   .sort((a, b) => b.id - a.id)   // id 기준 내림차순
   .slice(0, 5)
 
-  const getScaleColor = (value) => {
-    if (value === 'UP') return 'grey-lighten-2'
-    else if (value === 'OUT') return 'black'
-    else return 'grey'
+  const { formatDevIcon } = useFormatDevIcon()
+  const { formatScaleColor } = useFormatScaleColor()
+  const { formatDeployColor } = useFormatDeployColor()
+  const { formatSecurityColor } = useFormatSecurityColor()
+  const { formatPrice } = useFormatPrice()
+  const { formatMailIcon } = useFormatMailIcon()
+
+  const open = (url: string, type: string) => {
+    window.open(url, type)
   }
 
-  const formatEmailIcon = (email) => {
-    switch (email) {
-      case 'google':
-        return 'google.png'
-      case 'naver':
-        return 'naver.png'
-      case 'microsoft':
-        return 'microsoft.png'
-      default:
-        return 'default_email.png'
+  const handleClickRow = (basePath: string) => {
+    return (_item: any, row: any) => {
+      router.push(`/${basePath}/${row.item.id}`)
     }
   }
 
-  const handleClickRowTask = (item, row) => {
-    router.push(`/task/${row.item.id}`)
-  }
-
-  const handleClickRowServer = (item, row) => {
-    router.push(`/server/${row.item.id}`)
-  }
-
-  const handleClickRowDomain = (item, row) => {
-    router.push(`/domain/${row.item.id}`)
-  }
-
-  const formatPrice = (value) => {
-    if (value === null || value === undefined) {
-      return '';
-    }
-
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
-
-  const formatDevIcon = (value) => {
-    if (value === 'React') {
-      return 'react.png';
-    } else if (value === 'Next') {
-      return 'nextjs.png';
-    } else if (value === 'Vue') {
-      return 'vue.png';
-    } else if (value === 'Nuxt') {
-      return 'nuxt.png';
-    } else if (value === 'Flutter') {
-      return 'flutter.png';
-    } else if (value === 'FastAPI') {
-      return 'fastapi.png';
-    } else if (value === 'Streamlit') {
-      return 'streamlit.png';
-    } else if (value === 'Python') {
-      return 'python.png';
-    } else if (value === 'Node') {
-      return 'node.png';
-    } else if (value === 'Express') {
-      return 'express.png';
-    } else if (value === 'Nest') {
-      return 'nestjs.png';
-    } else if (value === 'Spring') {
-      return 'spring.png';
-    } else if (value === 'SpringBoot') {
-      return 'springboot.png';
-    } else if (value === 'Django') {
-      return 'django.png';
-    } else if (value === 'Flask') {
-      return 'flask.png';
-    } else if (value === 'Django') {
-      return 'django.png';
-    } else if (value === 'PHP') {
-      return 'php.png';
-    } else if (value === 'Unity') {
-      return 'unity.png';
-    } else if (value === 'MySQL') {
-      return 'mysql.png';
-    } else if (value === 'MongoDB') {
-      return 'mongodb.png';
-    } else if (value === 'MariaDB') {
-      return 'mariadb.png';
-    } else if (value === 'DynamoDB') {
-      return 'dynamodb.png';
-    }
-  }
-
-  const getDeploymentColor = (value) => {
-    if (value === '자동') return 'black'
-    else return 'grey'
-  }
-
+  const onClickTaskRow = handleClickRow('task')
+  const onClickServerRow = handleClickRow('server')
+  const onClickDomainRow = handleClickRow('domain')
 </script>

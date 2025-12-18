@@ -1,12 +1,14 @@
 {
-    "id": 2,
+    "id": 24,
     "date": "2025-12-11",
     "title": "***** 관리 시스템",
     "domain": "***ver.com",
-    "dev_frontend": "React",
-    "dev_backend": "Express",
-    "dev_database": "MySQL",
-    "build_day": 4,
+    "development": {
+        "dev_frontend": "React",
+        "dev_backend": "Express",
+        "dev_database": "MySQL",
+        "dev_linkage": "카카오 API"
+    },
     "requirements": {
         "server_hosting": "AWS",
         "server_build": "개발, 운영",

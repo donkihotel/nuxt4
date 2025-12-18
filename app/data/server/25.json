@@ -1,17 +1,22 @@
 {
     "id": 25,
     "date": "2025-12-11",
-    "title": "***** 관리 시스템",
-    "domain": "***ver.com",
-    "dev_frontend": "React",
-    "dev_backend": "Express",
+    "title": "*****관리 시스템",
+    "domain": "*****less.com",
+    "dev_frontend": "Flutter",
+    "dev_backend": "SpringBoot",
     "dev_database": "MySQL",
-    "build_day": 4,
+    "development": {
+        "dev_frontend": "Flutter",
+        "dev_backend": "SpringBoot",
+        "dev_database": "MySQL",
+        "dev_linkage": "SMS"
+    },
     "requirements": {
         "server_hosting": "AWS",
         "server_build": "개발, 운영",
         "server_budget": 100000,
-        "server_scale": "OUT",
+        "server_scale": "스케일아웃",
         "server_deployment": "자동",
         "server_security": "SSL, 방화벽, 프라이빗, 보안도구"
     },
@@ -89,24 +94,24 @@
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 구축",
+            "work": "ECS 아키텍처 구축",
             "supplyPrice": 200000,
             "quantity": 1,
             "sumPrice": 200000
         },
         {
             "no": 2,
-            "work": "네트워크 VPC 구축",
-            "supplyPrice": 60000,
+            "work": "RDS 데이터 이전",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 50000
         },
         {
             "no": 3,
-            "work": "데이터베이스 구축",
-            "supplyPrice": 60000,
-            "quantity": 1,
-            "sumPrice": 60000
+            "work": "백엔드 CI/CD",
+            "supplyPrice": 180000,
+            "quantity": 3,
+            "sumPrice": 540000
         },
         {
             "no": 4,
@@ -117,17 +122,10 @@
         },
         {
             "no": 5,
-            "work": "벡엔드 CI/CD",
-            "supplyPrice": 200000,
+            "work": "보안 도구 및 방화벽 구축",
+            "supplyPrice": 100000,
             "quantity": 1,
-            "sumPrice": 200000
-        },
-        {
-            "no": 6,
-            "work": "보안 구축",
-            "supplyPrice": 30000,
-            "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 100000
         }
     ]
 }

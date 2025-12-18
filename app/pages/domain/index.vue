@@ -4,19 +4,15 @@
     color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">도메인 연결</h4>
     <p>
-      도메인 구매 부터 홈페이지 연결 SSL 보안 연결 그리고 메일 서비스를 연결해 드립니다.<br/>
-      이와 같은 작업하기 위해서는 도메인에 대한 이해가 필요합니다.<br/><br/>
-
-      <b>원격 작업</b><br/>
-      원격화면공유를 통해서 실시간으로 작업을 해드립니다. <br/>
-      중요한 정보인 도메인, 홈페이지, 메일 관리를 위한 로그인 계정을 공유할 필요가 없습니다.
+      도메인에 홈페이지 · 메일 · SSL 연결 작업을 원격리모트 해서 작업을 해드립니다.<br/>
     </p>
   </v-sheet>
 
   <v-expansion-panels>
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        1. 도메인 설정 어려움
+        <v-icon class="mr-2">mdi-numeric-1-box</v-icon>
+        도메인 홈페이지
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -31,7 +27,8 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        2. 메일 설정 어려움
+        <v-icon class="mr-2">mdi-numeric-2-box</v-icon>
+        도메인 메일
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -46,7 +43,8 @@
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
-        3. SSL 인증서 설정 어려움
+        <v-icon class="mr-2">mdi-numeric-3-box</v-icon>
+        도메인 SSL
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         도메인에 연결할 홈페이지나 메일 설정의 어려움을 해결을 해드립니다. 작업은 원격화면공유를 통해서 실시간으로 작업을 해드립니다. 중요한 정보인 도메인, 홈페이지, 메일 관리를 위한 로그인 계정을 공유할 필요가 없습니다.

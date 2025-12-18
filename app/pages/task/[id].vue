@@ -8,15 +8,27 @@
       type="info"
       class="mb-5"
     ></v-alert>
-    <h4 class="text-h5 font-weight-bold mb-4">작업 설명</h4>
     <v-row>
       <v-col cols="12">
-        <v-card border flat color="black">
+        <!-- <v-card border flat color="black">
           <v-list-item class="px-5">
             <template v-slot:title>No. {{task?.id }}</template>
             <template v-slot:append>{{task?.date }}</template>
           </v-list-item>
-        </v-card>
+        </v-card> -->
+        <v-list-item>
+          <template v-slot:title>
+            <h2>{{ task?.title ?? '-' }}</h2>
+          </template>
+
+          <template v-slot:subtitle>
+            No. {{task?.id }}
+          </template>
+
+          <template v-slot:append>
+            <span class="text-subtitle-2">{{task?.date }}</span>
+          </template>
+        </v-list-item>
       </v-col>
       <v-col cols="6">
         <v-card border flat>
@@ -25,10 +37,6 @@
           </h3>
           <v-card-text class="py-3">
             <v-row>
-              <v-col cols="12">
-                <div class="font-weight-bold">제목</div>
-                <div>{{ task?.title ?? '-'}}</div>
-              </v-col>
               <v-col cols="4">
                 <div class="font-weight-bold">난이도</div>
                 <div>{{ task?.level ?? '-'}}</div>
