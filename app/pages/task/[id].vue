@@ -42,11 +42,11 @@
                 <div>{{ task?.level ?? '-'}}</div>
               </v-col>
               <v-col cols="4">
-                <div class="font-weight-bold">작업시간</div>
+                <div class="font-weight-bold">작업 시간</div>
                 <div>{{ task?.time ?? '-'}}</div>
               </v-col>
               <v-col cols="4">
-                <div class="font-weight-bold">작업가격</div>
+                <div class="font-weight-bold">작업 비용</div>
                 <div>{{ formatPrice(task?.price) }}</div>
               </v-col>
             </v-row>
