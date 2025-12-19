@@ -220,7 +220,10 @@
           </v-card>
 
           <!-- 상담 -->
-          <Consult></Consult>
+          <Consult
+            kmong-link="https://kmong.com/gig/220715"
+            kakao-link="https://open.kakao.com/o/sfJs7iHe"
+          />
         </div>
       </v-col>
       <v-col cols="12">

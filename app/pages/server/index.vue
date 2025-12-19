@@ -13,45 +13,46 @@
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-1-box</v-icon>
-        AWS 사용하는 이유
+        서버 선택
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        국내에서 많이 사용하는 클라우드 서버는 AWS, Azure, GCP, NCloud 등의 있습니다. 그 중에서 AWS 가장 많이 사용하는 이유는 인지도면에서 사용한다고 볼 수 있습니다. 또는 AWS 컴퓨팅 서비스 외에 네트워크, 데이테베이스, 스토리지, 개발자도구, 보안/자격증명, 어플리케이션 등을 연결 하여 사용하기 위해서 입니다. <br/><br/>
-        또 다른 이유는 서버관리자에 입장에서 AWS 기술 관련된 자료가 인터넷에 많기 때문에 다른 클라우드 서비스보다 사용하기 쉽기 때문입니다. AWS 사용하는 이유를 통해서 목적에 맞는 서버를 구상해볼 수 있습니다.
+        국내에서 많이 사용하는 클라우드 서버는 AWS, Azure, GCP, NCloud 등의 있습니다. 그중에서 AWS 가장 많이 사용하는 이유는 인지도 면에서 사용한다고 볼 수 있습니다. 또는 AWS 컴퓨팅 서비스 외에 네트워크, 데이터베이스, 스토리지, 개발자도구, 보안/자격 증명, 애플리케이션 등을 연결하여 사용하기 위해서입니다.<br/><br/>
+        AWS 사용하는 이유를 통해서 목적에 맞는 서버를 설계합니다.
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-2-box</v-icon>
-        프로젝트 소스 분석
+        개발 환경
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        프로젝트 소스에 따라서 서버 설계 방향이 달라질 수 있습니다. 프로젝트 소스가 하나로 통합된 경우가 있거나 기능에 따라서 다수의 프로젝트 되어서 프론트/백엔드 나누어 있는 경우가 있습니다. 프로젝트의 기능과 컴퓨팅 자원 사용률을 분석하여 최소한의 서버를 맞는추는데 설계를 할 수 있습니다. 다음과 같은 개발 프레임워크를 빌드와 배포하는데 있어서 환경적인 요인을 최적화 해드립니다.
+        개발 프론트엔드, 벡엔드, 데이타베이스를 분석 합니다.<br/>
+        어플리케이션의 기능과 컴퓨팅 자원 사용률을 분석하여 최적화된 서버를 설계를 합니다. 그리고 지속적인 통합을 위해서 CI/CD 환경을 구성합니다.
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-3-box</v-icon>
-        서버 예산 설정
+        서버 예산
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-          <b>비용 예측 가능성 확보</b><br/>
-          AWS는 사용량 기반 과금이라, 예산을 정하지 않으면 월말에 예상보다 높은 비용이 청구될 수 있습니다. 미리 예산을 정하면 매달 예상 비용 범위 안에서 운영할 수 있어, 재무 계획 수립에 유리합니다.<br/><br/>
+        <b>비용 예측 가능성 확보</b><br/>
+        AWS는 사용량 기반 과금이라, 예산을 정하지 않으면 월말에 예상보다 높은 비용이 청구될 수 있습니다. 미리 예산을 정하면 매달 예상 비용 범위 안에서 운영할 수 있어, 재무 계획 수립에 유리합니다.<br/><br/>
 
-          <b>리소스 과다 사용 방지</b><br/>
-          필요 이상으로 고사양 인스턴스나 과도한 스토리지를 할당하면 낭비가 발생합니다. 예산을 기준으로 인스턴스 크기, 스토리지 용량, 트래픽 대역폭 등을 합리적으로 선택할 수 있습니다.<br/><br/>
+        <b>리소스 과다 사용 방지</b><br/>
+        필요 이상으로 고사양 인스턴스나 과도한 스토리지를 할당하면 낭비가 발생합니다. 예산을 기준으로 인스턴스 크기, 스토리지 용량, 트래픽 대역폭 등을 합리적으로 선택할 수 있습니다.<br/><br/>
 
-          <b>서비스 안정성 & 지속 가능성</b><br/>
-          예산을 초과하면 갑작스러운 비용 부담으로 인해 서비스를 줄이거나 중단해야 할 위험이 생깁니다. 예산 내에서 장기적으로 유지 가능한 아키텍처를 설계하면, 안정적으로 서비스 운영이 가능합니다.
+        <b>서비스 안정성 & 지속 가능성</b><br/>
+        예산을 초과하면 갑작스러운 비용 부담으로 인해 서비스를 줄이거나 중단해야 할 위험이 생깁니다. 예산 내에서 장기적으로 유지 가능한 아키텍처를 설계하면, 안정적으로 서비스 운영이 가능합니다.
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-4-box</v-icon>
-        확장 설계 검토
+        확장 설계
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         기본적으로 프로젝트 소스와 서버 예산을 분석하여 최소한의 서버를 운영하는데 구축을 해드릴 수 있습니다. 하지만, 동시 사용자가 있는 서버면 확장된 설계를 생각해야 합니다. 확장은 성능, 보안, 배포, 백업, 운영을 포함합니다. 어떻게 하면 최소한의 비용으로 서버를 구성해서 사용할 수 있을지 다음과 같은 구성을 생각하여 설계를 해드립니다.<br/><br/>
@@ -76,7 +77,7 @@
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-5-box</v-icon>
-        견적서 제공
+        견적서
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <p>
@@ -103,7 +104,7 @@
     <v-expansion-panel>
       <v-expansion-panel-title>
         <v-icon class="mr-2">mdi-numeric-6-box</v-icon>
-        관리 문서 제공
+        문서화
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         서버 관리 문서는 단순한 보고서가 아니라, 고객님의 시스템을 투명하게 관리하고, 향후 장애 대응·운영·확장 시 꼭 필요한 자산입니다. 즉, 구축 결과를 문서로 만들어 드림으로써 고객님이 안심하고 장기적으로 운영할 수 있도록 하는 보증서 같은 역할을 합니다. 문서로 견적서를 포함하여, 완료 보고서, 전체 아키텍처, VPC 설계, 사용자 계정, 서버 관리를 문서화 해드리고 다음과 같은 장점이 있습니다.<br/><br/>
@@ -203,11 +204,11 @@
     </template>
 
     <template #item.server_budget="{ item }">
-      <span class="text-caption">₩</span> {{ formatPrice(item.server_budget) }}
+      {{ formatPrice(item.server_budget) }}
     </template>
 
     <template #item.build_cost="{ item }">
-      <span class="text-caption">₩</span> {{ formatPrice(item.build_cost) }}
+      {{ formatPrice(item.build_cost) }}
     </template>
 
     <template v-slot:bottom>

@@ -13,14 +13,14 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              작업 가격
+              작업 비용
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
         <template #item.price="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.price) }}
+          {{ formatPrice(item.price) }}
         </template>
       </v-data-table>
     </v-col>
@@ -141,11 +141,11 @@
         </template>
 
         <template #item.server_budget="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.server_budget) }}
+          {{ formatPrice(item.server_budget) }}
         </template>
 
         <template #item.build_cost="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.build_cost) }}
+          {{ formatPrice(item.build_cost) }}
         </template>
       </v-data-table>
     </v-col>
@@ -169,7 +169,7 @@
         </template>
 
         <template #item.ssl_cost="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.ssl_cost) }}
+          {{ formatPrice(item.ssl_cost) }}
         </template>
 
         <template #item.email="{ item }">
@@ -177,7 +177,7 @@
         </template>
 
         <template #item.cost="{ item }">
-          <span class="text-caption">₩</span> {{ formatPrice(item.cost) }}
+          {{ formatPrice(item.cost) }}
         </template>
       </v-data-table>
     </v-col>
@@ -202,7 +202,7 @@
     { title: '작업', value: 'title' },
     { title: '난이도', value: 'level' },
     { title: '작업 시간', value: 'time' },
-    { title: '작업 가격', value: 'price', align: 'end' }
+    { title: '작업 비용', value: 'price', align: 'end' }
   ]
 
   const headers1: DataTableHeader[] = [

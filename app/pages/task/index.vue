@@ -4,7 +4,7 @@
     color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">작업 가격</h4>
     <p>
-      작업은 난이도와 작업 시간에 따라서, 작업 가격 차이가 있습니다.
+      작업은 난이도와 작업 시간에 따라서, 작업 비용 차이가 있습니다.
     </p>
   </v-sheet>
 
@@ -27,7 +27,7 @@
     </template>
 
     <template #item.price="{ item }">
-      <span class="text-caption">₩</span> {{ formatPrice(item.price) }}
+      {{ formatPrice(item.price) }}
     </template>
 
     <template v-slot:bottom>
@@ -58,7 +58,7 @@
     { title: '작업명', key: 'title' },
     { title: '난이도', key: 'level' },
     { title: '작업 시간', key: 'time' },
-    { title: '작업 가격', key: 'price', align: 'end' },
+    { title: '작업 비용', key: 'price', align: 'end' },
   ]
 
    // 데이터 구조
@@ -101,7 +101,5 @@
     router.push(`/task/${row.item.id}`)
   }
 
-  const formatPrice = (value: number) => {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  const { formatPrice } = useFormatPrice()
 </script>

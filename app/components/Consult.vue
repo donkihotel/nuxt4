@@ -36,7 +36,7 @@
 			<v-btn
 				size="large"
 				variant="tonal"
-				href="https://kmong.com/gig/220715"
+				:href="props.kmongLink"
 				target="_blank"
 				width="130"
 			>
@@ -68,7 +68,7 @@
 				color="yellow darken-3"
 				variant="flat"
 				width="130"
-				href="https://open.kakao.com/o/sfJs7iHe"
+				:href="props.kakaoLink"
 				target="_blank"
 			>
 				<img
@@ -83,6 +83,9 @@
 	</v-card>
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+const props = defineProps<{
+  kmongLink: string
+  kakaoLink: string
+}>()
 </script>

@@ -1,7 +1,8 @@
 <template>
-  <v-sheet border="md"
+  <v-sheet
     class="pa-6 text-white mx-auto "
-    color="#141518">
+    color="#141518"
+  >
     <h4 class="text-h5 font-weight-bold mb-4">도메인 연결</h4>
     <p>
       도메인에 홈페이지 · 메일 · SSL 연결 작업을 원격리모트 해서 작업을 해드립니다.<br/>
@@ -15,13 +16,8 @@
         도메인 홈페이지
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        <p>
-          도메인 구매의 목적은 홈페이지나 메일을 연결해서 사용하기 위해서입니다.<br/>
-          도메인 구매를 하면, 도메인 관리를 구매한 곳에서 도메인 설정 관리를 해야 합니다.<br/>
-          도메인은 공통된 관리 규칙(A, CNAME, MX, NS, TXT)을 통해서, 도메인 설정 관리를 해야 합니다. <br/>
-          하지만 도메인을 구매한 곳마다 관리 화면이 설정 차이가 있어서 설정하려고 해도 쉽지 않습니다.<br/>
-          또한 도메인의 홈페이지 연결을 하기 위해서 네임 서버를 변경하여 다른 곳에서 도메인 설정 관리를 해야 하는 경우도 있는데, 이 또한 관리 화면 설정 차이로 인하여 쉽지 않습니다.
-        </p>
+        홈페이지 서비스 윅스, 아임웹, 구글사이트, 캔바, 카페24쇼핑몰, 서버 호스팅 등의 서비스를 도메인 연결을 해드립니다.<br/>
+        <span class="text-subtitle-2 text-medium-emphasis">네임 서버 변경, 레코드 A, CNAME 설정 합니다.</span>
       </v-expansion-panel-text>
     </v-expansion-panel>
 
@@ -31,13 +27,8 @@
         도메인 메일
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        <p>
-          메일 서비스에 가입하면, 도메인을 어떻게 연결해야 하는지 가이드를 제공합니다. 하지만 도메인 설정을 처음 하게 되면 가이드가 있어도 따라 하기가 쉽지 않은 점이 있습니다.<br/><br/>
-
-          그 이유는 가이드에서 제공하는 정보를 보면 도메인에 다음과 같이 설정을 해주세요. 되어있지만, 도메인 구매한 곳마다 설정 관리 화면 차이로 인하여, 접근하기 쉽지 않은 부분이 있습니다.<br/><br/>
-
-          또한 메일 설정은 가이드에서 제공하는 기본 설정 외에 추가로 등록해야 하는 도메인 설정(DKIM, DMARC, SPF)들이 있습니다. 이 정보는 메일의 신뢰도를 높여주는 정보입니다. 신뢰도는 메일의 발신과 수신에 영향이 있고, 메일의 발신될 때 상대방이 잘 받을 수 있도록 합니다.
-        </p>
+        구글워크스페이스, 네이버웍스, 마이크로소프트365 등의 다양한 메일 서비스를 도메인 연결을 해드립니다.<br/>
+        <span class="text-subtitle-2 text-medium-emphasis">메일 신뢰도를 위해서 DKIM, SPF, DMARC 설정 합니다.</span>
       </v-expansion-panel-text>
     </v-expansion-panel>
 
@@ -47,10 +38,10 @@
         도메인 SSL
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        도메인에 연결할 홈페이지나 메일 설정의 어려움을 해결을 해드립니다. 작업은 원격화면공유를 통해서 실시간으로 작업을 해드립니다. 중요한 정보인 도메인, 홈페이지, 메일 관리를 위한 로그인 계정을 공유할 필요가 없습니다.
+        SSL 인증서 구매부터 설치까지 해드립니다.<br/>
+        <span class="text-subtitle-2 text-medium-emphasis">Nginx, Apache 인증서를 설정 합니다.</span>
       </v-expansion-panel-text>
     </v-expansion-panel>
-
   </v-expansion-panels>
 
   <v-data-table
@@ -65,20 +56,18 @@
   >
     <template v-slot:top>
       <v-toolbar flat>
-        <v-toolbar-title>
-          작업 사례
-        </v-toolbar-title>
+        <v-toolbar-title>작업 사례</v-toolbar-title>
       </v-toolbar>
     </template>
 
     <template #item.ssl_cost="{ item }">
-      <span class="text-caption">₩</span> {{ formatPrice(item.ssl_cost) }}
+      {{ formatPrice(item.ssl_cost) }}
     </template>
 
     <template #item.email="{ item }">
       <v-img
         v-if="!itemEmailError[item.id]"
-        :src="`assets/email/${formatEmailIcon(item.email)}`"
+        :src="`assets/email/${formatMailIcon(item.email)}`"
         width="120"
         @error="itemEmailError[item.id] = true"
       />
@@ -91,7 +80,7 @@
     </template>
 
     <template #item.cost="{ item }">
-      <span class="text-caption">₩</span> {{ formatPrice(item.cost) }}
+      {{ formatPrice(item.cost) }}
     </template>
 
     <template v-slot:bottom>
@@ -173,31 +162,8 @@
     router.push(`/domain/${row.item.id}`)
   }
 
-  const formatEmailIcon = (value: string) => {
-    switch (value) {
-      case 'google':
-        return 'google.png'
-      case 'naver':
-        return 'naver.png'
-      case 'microsoft':
-        return 'microsoft.png'
-      case 'godaddy':
-        return 'godaddy.png'
-      default:
-        return 'default_email.png'
-    }
-  }
-
-  const formatPrice = (value: number) => {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
+  const { formatPrice } = useFormatPrice()
+  const { formatMailIcon } = useFormatMailIcon()
 
   const itemEmailError = reactive<{ [key: string]: boolean }>({})
 </script>
-
-<style scoped>
-.v-data-table thead th {
-  background-color: #1976d2;
-  color: white;
-}
-</style>

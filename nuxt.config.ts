@@ -20,6 +20,14 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    // head: {
+    //   meta: [
+    //     {
+    //       name: 'viewport',
+    //       content: 'width=1200, initial-scale=0.3'
+    //     }
+    //   ]
+    // },
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
     buildAssetsDir: '_nuxt/'
   },

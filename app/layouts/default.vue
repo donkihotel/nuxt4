@@ -38,7 +38,7 @@
         <v-btn
           to="/task"
           variant="text"
-        >작업 가격</v-btn>
+        >작업 비용</v-btn>
 
         <!-- <v-divider vertical class="mx-2"></v-divider>
 
@@ -68,7 +68,7 @@
 
     <v-footer class="text-center d-flex flex-column" absolute >
     <div>
-      ⓒ {{ new Date().getFullYear() }}. MySite Inc. All rights reserved.
+      ⓒ {{ new Date().getFullYear() }}. Localnine Co. All rights reserved.
     </div>
   </v-footer>
   </v-app>

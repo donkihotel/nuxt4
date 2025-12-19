@@ -47,7 +47,7 @@
               </v-col>
               <v-col cols="4">
                 <div class="font-weight-bold">작업가격</div>
-                <div>{{ task?.price ?? '-'}}</div>
+                <div>{{ formatPrice(task?.price) }}</div>
               </v-col>
             </v-row>
           </v-card-text>
@@ -138,4 +138,6 @@
 
   // --- process 배열 ---
   const process = ref<ProcessItem[]>(task?.process ?? [])
+
+  const { formatPrice } = useFormatPrice()
 </script>

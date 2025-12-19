@@ -155,7 +155,10 @@
         </v-card>
 
         <!-- 상담 -->
-        <Consult></Consult>
+        <Consult
+          kmong-link="https://kmong.com/gig/424545"
+          kakao-link="https://open.kakao.com/o/gbRh8g7h"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -247,7 +250,7 @@ const headers: DataTableHeader[] = [
     title: '수량', align: 'end', sortable: false, key: 'quantity'
   },
   {
-    title: '합계 (₩)',
+    title: '합계(원)',
     align: 'end',
     sortable: false,
     key: 'sumPrice',
