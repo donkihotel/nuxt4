@@ -6,7 +6,7 @@ export const useFormatMailIcon = () => {
     };
 
     const formatMailIcon = (value: string): string => {
-        return iconMap[value] ?? 'default.png';
+        return iconMap[value] ?? 'not-found';
     };
 
     return {

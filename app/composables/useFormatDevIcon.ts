@@ -24,7 +24,7 @@ export const useFormatDevIcon = () => {
     };
 
     const formatDevIcon = (value: string): string => {
-        return iconMap[value] ?? 'default.png'; // 존재하지 않을 경우 기본 이미지
+        return iconMap[value] ?? 'not-found.png';
     };
 
     return {

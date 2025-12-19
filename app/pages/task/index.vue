@@ -2,7 +2,7 @@
   <v-sheet border="md"
     class="pa-6 text-white mx-auto "
     color="#141518">
-    <h4 class="text-h5 font-weight-bold mb-4">작업 가격</h4>
+    <h4 class="text-h5 font-weight-bold mb-4">작업 비용</h4>
     <p>
       작업은 난이도와 작업 시간에 따라서, 작업 비용 차이가 있습니다.
     </p>

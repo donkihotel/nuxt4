@@ -150,9 +150,13 @@
 
    <template v-slot:item.dev_frontend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`assets/dev/${formatDevIcon(item.dev_frontend)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.dev_frontend }}</span>
+        <v-img
+          :src="`assets/dev/${formatDevIcon(item.dev_frontend)}`" height="24" width="24" class="mr-2"
+          v-if="item.dev_frontend"
+        />
+        <span>{{ item?.dev_frontend ?? '-'}}</span>
       </v-chip>
+
     </template>
 
     <template v-slot:item.dev_backend="{ item }">

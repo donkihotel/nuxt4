@@ -3,7 +3,7 @@
         {
             "id": 1,
             "created_at": "2025-01-08",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "Express",
             "dev_database": "MongoDB",
             "server_hosting": "DigitalOcean",
@@ -17,7 +17,7 @@
         {
             "id": 2,
             "created_at": "2025-01-14",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
             "dev_database": "MariaDB",
             "server_hosting": "AWS",
@@ -59,7 +59,7 @@
         {
             "id": 5,
             "created_at": "2025-02-11",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
             "dev_database": "MySQL",
             "server_hosting": "AWS",
@@ -101,7 +101,7 @@
         {
             "id": 8,
             "created_at": "2025-04-07",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "Python",
             "dev_database": "-",
             "server_hosting": "AWS",
@@ -157,7 +157,7 @@
         {
             "id": 12,
             "created_at": "2025-05-05",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "SpringBoot",
             "dev_database": "DynamoDB",
             "server_hosting": "AWS",
@@ -171,7 +171,7 @@
         {
             "id": 13,
             "created_at": "2025-05-10",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
             "dev_database": "MariaDB",
             "server_hosting": "CAFE24",
@@ -185,7 +185,7 @@
         {
             "id": 14,
             "created_at": "2025-05-15",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
             "dev_database": "MariaDB",
             "server_hosting": "AWS",
@@ -199,7 +199,7 @@
         {
             "id": 15,
             "created_at": "2025-05-16",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
             "dev_database": "MySQL",
             "server_hosting": "Njalla",
@@ -213,7 +213,7 @@
         {
             "id": 16,
             "created_at": "2025-05-20",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "SpringBoot",
             "dev_database": "MariaDB",
             "server_hosting": "AWS",
@@ -227,7 +227,7 @@
         {
             "id": 17,
             "created_at": "2025-06-09",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "SpringBoot",
             "dev_database": "MySQL",
             "server_hosting": "AWS",
@@ -241,7 +241,7 @@
         {
             "id": 18,
             "created_at": "2025-07-07",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "Spring",
             "dev_database": "MariaDB",
             "server_hosting": "AWS",
@@ -255,7 +255,7 @@
         {
             "id": 19,
             "created_at": "2025-08-07",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "Streamlit",
             "dev_database": "-",
             "server_hosting": "AWS",
@@ -269,7 +269,7 @@
         {
             "id": 20,
             "created_at": "2025-08-08",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "FastAPI",
             "dev_database": "MySQL",
             "server_hosting": "AWS",
@@ -283,9 +283,9 @@
         {
             "id": 21,
             "created_at": "2025-08-20",
-            "dev_frontend": "-",
+            "dev_frontend": null,
             "dev_backend": "PHP",
-            "dev_database": "MySQL",
+            "dev_database": "MariaDB",
             "server_hosting": "AWS",
             "server_security": 2,
             "server_budget": 30000,
@@ -306,7 +306,7 @@
             "server_scale": "스케일업",
             "server_deployment": "수동",
             "build_day": 2,
-            "build_cost": 180000
+            "build_cost": 264000
         },
         {
             "id": 23,
@@ -320,7 +320,7 @@
             "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 5,
-            "build_cost": 1200000
+            "build_cost": 1188000
         },
         {
             "id": 24,
@@ -334,7 +334,7 @@
             "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 4,
-            "build_cost": 700000
+            "build_cost": 715000
         },
         {
             "id": 25,
@@ -349,7 +349,7 @@
             "server_scale": "스케일아웃",
             "server_deployment": "자동",
             "build_day": 7.5,
-            "build_cost": 715000
+            "build_cost": 1089000
         }
     ]
 }

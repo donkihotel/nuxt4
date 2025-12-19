@@ -65,9 +65,10 @@
                 <div class="my-3">
                   <div>
                     <span class="font-weight-bold">서버 예산</span>
+                    <span class="font-italic"> - 월 요금</span>
                   </div>
                   <div v-if="server?.requirements.server_budget">
-                    (월) {{formatPrice(server?.requirements.server_budget ?? 0 )}} 원
+                    {{formatPrice(server?.requirements.server_budget ?? 0 )}} 원
                   </div>
                   <div v-else>-</div>
                 </div>
@@ -103,11 +104,10 @@
                 <div class="my-3">
                   <div>
                     <span class="font-weight-bold">서버 보안</span>
+                    <span v-if="server?.requirements.server_security" class="font-italic">
+                      - Level {{ getSecurityCount(server?.requirements.server_security) }}
+                    </span>
                   </div>
-                  <div v-if="server?.requirements.server_security">
-                    Level {{ getSecurityCount(server?.requirements.server_security) }}
-                  </div>
-                  <div v-else>-</div>
                   <div>{{server?.requirements.server_security ?? '-' }}</div>
                 </div>
               </v-col>
@@ -119,7 +119,6 @@
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계
           </h3>
-            <!-- <v-img :src="`${$config.public.baseURL}/${server?.design}`" alt="Server Image" width="100%" /> -->
             <v-card-text>
             <v-row>
               <v-col cols="12">
