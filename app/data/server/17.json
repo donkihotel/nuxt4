@@ -1,12 +1,12 @@
 {
-    "id": 24,
-    "date": "2025-12-11",
-    "title": "***** 관리 시스템",
+    "id": 17,
+    "date": "2025-06-09",
+    "title": "*****관리 시스템",
     "development": {
-        "frontend": "React",
-        "backend": "Express",
+        "frontend": "Flutter",
+        "backend": "SpringBoot",
         "database": "MySQL",
-        "linkage": "카카오 API"
+        "linkage": "SMS"
     },
     "requirements": {
         "hosting": "AWS",
@@ -14,13 +14,18 @@
         "budget": 100000,
         "performance": "스케일아웃",
         "app_deploy": "자동",
-        "security": "SSL, 방화벽, 프라이빗, 보안도구"
+        "security": "SSL, 방화벽"
     },
     "design": {
-        "performance": "ECS, LoadBalancer, AutoScaling",
-        "app_deploy": "Github, CodeBuild, CodePipeline, CodeDeploy",
-        "security": "ACM, WAF, Private-VPC, GuardDuty",
-        "server_database": "RDS Multi-AZ"
+        "instance": "EC2, ECS (Fargate)",
+        "vpc": "Private",
+        "web_server": "SpringBoot",
+        "database": "RDS (MySQL Multi-AZ)",
+        "app_deploy": "CI/CD (Github, Code Build/Pipeline/Deploy)",
+        "storage": "EBS, S3, EFS",
+        "performance": "LoadBalancer, AutoScaling",
+        "security": "VPC (Private), ACM, WAF, GuardDuty, Parameterstore",
+        "cdn": "Cloudfront"
     },
     "schedule": [
         {
@@ -90,24 +95,24 @@
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 구축",
+            "work": "ECS 아키텍처 구축",
             "supplyPrice": 200000,
             "quantity": 1,
             "sumPrice": 200000
         },
         {
             "no": 2,
-            "work": "네트워크 VPC 구축",
-            "supplyPrice": 60000,
+            "work": "RDS 데이터 이전",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 50000
         },
         {
             "no": 3,
-            "work": "데이터베이스 구축",
-            "supplyPrice": 60000,
-            "quantity": 1,
-            "sumPrice": 60000
+            "work": "백엔드 CI/CD",
+            "supplyPrice": 180000,
+            "quantity": 3,
+            "sumPrice": 540000
         },
         {
             "no": 4,
@@ -118,17 +123,10 @@
         },
         {
             "no": 5,
-            "work": "벡엔드 CI/CD",
-            "supplyPrice": 200000,
+            "work": "보안 도구 및 방화벽 구축",
+            "supplyPrice": 100000,
             "quantity": 1,
-            "sumPrice": 200000
-        },
-        {
-            "no": 6,
-            "work": "보안 구축",
-            "supplyPrice": 30000,
-            "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 100000
         }
     ]
 }

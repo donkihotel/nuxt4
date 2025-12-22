@@ -2,25 +2,24 @@
     "id": 22,
     "date": "2025-12-11",
     "title": "***** 관리 시스템",
-    "domain": "***ver.com",
     "development": {
-        "dev_frontend": "React",
-        "dev_backend": "Express",
-        "dev_database": "MySQL",
-        "dev_linkage": null
+        "frontend": "React",
+        "backend": "Express",
+        "database": "MySQL",
+        "linkage": null
     },
     "requirements": {
-        "server_hosting": "AWS",
-        "server_build": "운영",
-        "server_budget": 60000,
-        "server_scale": "스케일업",
-        "server_deployment": "수동",
-        "server_security": "SSL, 방화벽"
+        "hosting": "AWS",
+        "environment": "운영",
+        "budget": 60000,
+        "performance": "스케일업",
+        "app_deploy": "수동",
+        "security": "SSL, 방화벽"
     },
     "design": {
-        "server_scale": "EC2",
-        "server_deployment": "Github-수동",
-        "server_security": "SSL, WAF",
+        "performance": "EC2",
+        "app_deploy": "Github-수동",
+        "security": "SSL, WAF",
         "server_database": "EC2-MySQL"
     },
     "schedule": [

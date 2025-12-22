@@ -3,13 +3,13 @@
     "date": "2024-01-04",
     "title": "홈페이지",
     "domain": "google.com",
-    "dev_frontend": "Vue",
-    "dev_backend": "SpringBoot",
-    "dev_database": "MariaDB",
+    "frontend": "Vue",
+    "backend": "SpringBoot",
+    "database": "MariaDB",
     "requirements": {
-        "server_hosting": "Azure",
+        "hosting": "Azure",
         "budget": 1000000,
-        "server_scale": "스케일 업",
+        "performance": "스케일 업",
         "deployment": "수동",
         "backup": "소스, 데이터베이스",
         "security": "SSL, 방화벽"

@@ -148,35 +148,44 @@
       </v-toolbar>
     </template>
 
-   <template v-slot:item.dev_frontend="{ item }">
+   <template v-slot:item.frontend="{ item }">
       <v-chip variant="text" class="pl-0">
         <v-img
-          :src="`assets/dev/${formatDevIcon(item.dev_frontend)}`" height="24" width="24" class="mr-2"
-          v-if="item.dev_frontend"
+          v-if="item.frontend"
+          :src="`assets/dev/${formatDevIcon(item.frontend)}`"
+          height="24"
+          width="24"
+          class="mr-2"
         />
-        <span>{{ item?.dev_frontend ?? '-'}}</span>
+        <span>{{ item.frontend || '-' }}</span>
       </v-chip>
 
     </template>
 
-    <template v-slot:item.dev_backend="{ item }">
+    <template v-slot:item.backend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`assets/dev/${formatDevIcon(item.dev_backend)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.dev_backend }}</span>
+        <v-img :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+        <span>{{ item.backend }}</span>
       </v-chip>
     </template>
 
-    <template v-slot:item.dev_database="{ item }">
+    <template v-slot:item.database="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`assets/db/${formatDevIcon(item.dev_database)}`" height="24" width="24" class="mr-2" />
-        <span>{{ item.dev_database }}</span>
+        <v-img
+          v-if="item.database"
+          :src="`assets/db/${formatDevIcon(item.database)}`"
+          height="24"
+          width="24"
+          class="mr-2"
+        />
+        <span>{{ item.database || '-' }}</span>
       </v-chip>
     </template>
 
-    <template #item.server_security="{ item }">
+    <template #item.security="{ item }">
       <v-chip
-        :text="`Level ${item.server_security}`"
-        :color="formatSecurityColor(item.server_security)"
+        :text="`Level ${item.security}`"
+        :color="formatSecurityColor(item.security)"
         size="small"
         variant="flat"
         label
@@ -187,10 +196,10 @@
       {{ item.build_day }} 일
     </template>
 
-    <template #item.server_scale="{ item }">
+    <template #item.performance="{ item }">
       <v-chip
-        :color="formatScaleColor(item.server_scale)"
-        :text="item.server_scale"
+        :color="formatScaleColor(item.performance)"
+        :text="item.performance"
         size="small"
         class="w-100 justify-center"
         variant="flat"
@@ -198,17 +207,17 @@
       ></v-chip>
     </template>
 
-    <template #item.server_deployment="{ item }">
+    <template #item.app_deploy="{ item }">
       <v-chip
-        :color="formatDeployColor(item.server_deployment)"
-        :text="item.server_deployment"
+        :color="formatDeployColor(item.app_deploy)"
+        :text="item.app_deploy"
         size="small"
         variant="flat"
       ></v-chip>
     </template>
 
-    <template #item.server_budget="{ item }">
-      {{ formatPrice(item.server_budget) }}
+    <template #item.budget="{ item }">
+      {{ formatPrice(item.budget) }}
     </template>
 
     <template #item.build_cost="{ item }">
@@ -235,14 +244,14 @@
 
   interface Server {
     id: number
-    dev_frontend: string
-    dev_backend: string
-    dev_database: string
-    server_hosting: string
-    server_scale: string
-    server_deployment: string
-    server_security: number
-    server_budget: number
+    frontend: string
+    backend: string
+    database: string
+    hosting: string
+    performance: string
+    app_deploy: string
+    security: number
+    budget: number
     build_day: number
     build_cost: number
   }
@@ -252,14 +261,14 @@
 
   const headers: DataTableHeader[] = [
     { title: 'No', key: 'id', align: 'end' },
-    { title: '프론트엔드', key: 'dev_frontend' },
-    { title: '백엔드', key: 'dev_backend' },
-    { title: '데이터베이스', key: 'dev_database' },
-    { title: '서버 호스팅', key: 'server_hosting' },
-    { title: '서버 예산', key: 'server_budget', align: 'end' },
-    { title: '서버 확장', key: 'server_scale', align: 'center' },
-    { title: '서버 배포', key: 'server_deployment', align: 'center' },
-    { title: '서버 보안', key: 'server_security', align: 'center' },
+    { title: '프론트엔드', key: 'frontend' },
+    { title: '백엔드', key: 'backend' },
+    { title: '데이터베이스', key: 'database' },
+    { title: '서버 호스팅', key: 'hosting' },
+    { title: '서버 예산', key: 'budget', align: 'end' },
+    { title: '서버 확장', key: 'performance', align: 'center' },
+    { title: '서버 배포', key: 'app_deploy', align: 'center' },
+    { title: '서버 보안', key: 'security', align: 'center' },
     { title: '구축 일정', key: 'build_day', align: 'end' },
     { title: '구축 비용', key: 'build_cost', align: 'end' },
   ]

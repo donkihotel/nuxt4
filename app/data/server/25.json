@@ -3,28 +3,30 @@
     "date": "2025-12-11",
     "title": "*****관리 시스템",
     "domain": "*****less.com",
-    "dev_frontend": "Flutter",
-    "dev_backend": "SpringBoot",
-    "dev_database": "MySQL",
     "development": {
-        "dev_frontend": "Flutter",
-        "dev_backend": "SpringBoot",
-        "dev_database": "MySQL",
-        "dev_linkage": "SMS"
+        "frontend": "Flutter",
+        "backend": "SpringBoot",
+        "database": "MySQL",
+        "linkage": "SMS"
     },
     "requirements": {
-        "server_hosting": "AWS",
-        "server_build": "개발, 운영",
-        "server_budget": 100000,
-        "server_scale": "스케일아웃",
-        "server_deployment": "자동",
-        "server_security": "SSL, 방화벽, 프라이빗, 보안도구"
+        "hosting": "AWS",
+        "environment": "개발, 운영",
+        "budget": 100000,
+        "performance": "스케일아웃",
+        "app_deploy": "자동",
+        "security": "SSL, 방화벽"
     },
     "design": {
-        "server_scale": "ECS, LoadBalancer, AutoScaling",
-        "server_deployment": "Github, CodeBuild, CodePipeline, CodeDeploy",
-        "server_security": "ACM, WAF, Private-VPC, GuardDuty",
-        "server_database": "RDS Multi-AZ"
+        "instance": "EC2, ECS (Fargate)",
+        "vpc": "Private",
+        "web_server": "SpringBoot",
+        "database": "RDS (MySQL Multi-AZ)",
+        "app_deploy": "CI/CD (Github, Code Build/Pipeline/Deploy)",
+        "storage": "EBS, S3, EFS",
+        "performance": "LoadBalancer, AutoScaling",
+        "security": "VPC (Private), ACM, WAF, GuardDuty, Parameterstore",
+        "cdn": "Cloudfront"
     },
     "schedule": [
         {

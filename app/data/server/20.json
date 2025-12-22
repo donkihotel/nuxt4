@@ -1,0 +1,117 @@
+{
+    "id": 20,
+    "date": "2025-08-08",
+    "title": "IoT 센서 데이터 서버",
+    "development": {
+        "frontend": null,
+        "backend": "FastAPI",
+        "database": "MariaDB",
+        "linkage": null
+    },
+    "requirements": {
+        "hosting": "AWS",
+        "environment": "개발",
+        "budget": 30000,
+        "performance": "스케일업",
+        "app_deploy": "수동",
+        "security": "SSL"
+    },
+    "design": {
+        "instance": "EC2",
+        "vpc": "Public",
+        "web_server": "Nginx",
+        "database": "(EC2) MySQL, Redis",
+        "app_deploy": "파일 복사",
+        "storage": "EBS",
+        "performance": null,
+        "security": "Let's Encrypt"
+    },
+    "schedule": [
+        {
+            "no": 1,
+            "category": "설치",
+            "title": "EC2, Ubuntu",
+            "quantity": 1,
+            "working_day": 0.25
+        },
+        {
+            "no": 2,
+            "category": "설치",
+            "title": "MariaDB, Redis",
+            "quantity": 1,
+            "working_day": 0.25
+        },
+        {
+            "no": 3,
+            "category": "설치",
+            "title": "FastAPI 개발 환경",
+            "quantity": 1,
+            "working_day": 0.25
+        },
+        {
+            "no": 4,
+            "category": "설치",
+            "title": "Nginx, Uvicorn",
+            "quantity": 1,
+            "working_day": 0.25
+        },
+        {
+            "no": 5,
+            "category": "설치",
+            "title": "도메인, SSL",
+            "quantity": 1,
+            "working_day": 0.25
+        },
+        {
+            "no": 6,
+            "category": "설치",
+            "title": "FTP",
+            "quantity": 1,
+            "working_day": 0.25
+        }
+    ],
+    "estimate": [
+        {
+            "no": 1,
+            "work": "EC2, Ubuntu",
+            "supplyPrice": 10000,
+            "quantity": 1,
+            "sumPrice": 10000
+        },
+        {
+            "no": 2,
+            "work": "MariaDB, Redis",
+            "supplyPrice": 30000,
+            "quantity": 1,
+            "sumPrice": 30000
+        },
+        {
+            "no": 3,
+            "work": "FastAPI 개발 환경",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
+        },
+        {
+            "no": 4,
+            "work": "Nginx, Uvicorn",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
+        },
+        {
+            "no": 5,
+            "work": "도메인, SSL",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
+        },
+        {
+            "no": 6,
+            "work": "FTP",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
+        }
+    ]
+}

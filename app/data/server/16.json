@@ -1,0 +1,89 @@
+{
+    "id": 16,
+    "date": "2025-05-20",
+    "title": "**** 수시/생활 보고서 시스템",
+    "development": {
+        "frontend": null,
+        "backend": "Spring",
+        "database": "MariaDB",
+        "linkage": "Google reCAPTCHA"
+    },
+    "requirements": {
+        "hosting": "AWS",
+        "environment": "테스트",
+        "budget": 30000,
+        "performance": "스케일업",
+        "app_deploy": "수동",
+        "security": "SSL"
+    },
+    "design": {
+        "instance": "EC2",
+        "vpc": "Public",
+        "web_server": "Nginx, Tomcat",
+        "database": "MariaDB",
+        "app_deploy": "파일 복사",
+        "storage": "EBS",
+        "performance": null,
+        "security": "Let's Encrypt"
+    },
+    "schedule": [
+        {
+            "no": 1,
+            "category": "설계",
+            "title": "아키텍처 설계",
+            "quantity": 1,
+            "working_day": 0.5
+        },
+        {
+            "no": 2,
+            "category": "구축",
+            "title": "아키텍처 구축",
+            "quantity": 1,
+            "working_day": 0.5
+        },
+        {
+            "no": 3,
+            "category": "배포",
+            "title": "애플리케이션 배포",
+            "quantity": 2,
+            "working_day": 1
+        },
+        {
+            "no": 4,
+            "category": "테스트",
+            "title": "통합 테스트",
+            "quantity": 1,
+            "working_day": 1
+        },
+        {
+            "no": 5,
+            "category": "완료",
+            "title": "문서화 및 인계 교육",
+            "quantity": 1,
+            "working_day": 0.5
+        }
+    ],
+    "estimate": [
+        {
+            "no": 1,
+            "work": "아키텍처 설계",
+            "supplyPrice": 10000,
+            "quantity": 1,
+            "sumPrice": 10000
+        },
+        {
+            "no": 2,
+            "work": "아키텍처 구축",
+            "supplyPrice": 60000,
+            "quantity": 1,
+            "sumPrice": 60000
+        },
+        {
+            "no": 3,
+            "work": "애플리케이션 배포",
+            "supplyPrice": 60000,
+            "quantity": 2,
+            "sumPrice": 120000
+        }
+    ]
+}

@@ -3,22 +3,22 @@
     "date": "2025-12-11",
     "title": "***** 관리 시스템",
     "domain": "***ver.com",
-    "dev_frontend": "React",
-    "dev_backend": "Express",
-    "dev_database": "MySQL",
+    "frontend": "React",
+    "backend": "Express",
+    "database": "MySQL",
     "build_day": 4,
     "requirements": {
-        "server_hosting": "AWS",
-        "server_build": "개발, 운영",
-        "server_budget": 100000,
-        "server_scale": "스케일아웃",
-        "server_deployment": "자동",
-        "server_security": "SSL, 방화벽, 프라이빗, 보안도구"
+        "hosting": "AWS",
+        "environment": "개발, 운영",
+        "budget": 100000,
+        "performance": "스케일아웃",
+        "app_deploy": "자동",
+        "security": "SSL, 방화벽, 프라이빗, 보안도구"
     },
     "design": {
-        "server_scale": "ECS, LoadBalancer, AutoScaling",
-        "server_deployment": "Github, CodeBuild, CodePipeline, CodeDeploy",
-        "server_security": "ACM, WAF, Private-VPC, GuardDuty",
+        "performance": "ECS, LoadBalancer, AutoScaling",
+        "app_deploy": "Github, CodeBuild, CodePipeline, CodeDeploy",
+        "security": "ACM, WAF, Private-VPC, GuardDuty",
         "server_database": "RDS Multi-AZ"
     },
     "schedule": [
