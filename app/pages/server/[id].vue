@@ -61,7 +61,6 @@
                   <div class="font-weight-bold">호스팅</div>
                   <div>{{server?.requirements.hosting ?? '-' }}</div>
                 </div>
-
                 <div class="my-3">
                   <div>
                     <span class="font-weight-bold">예산</span>
@@ -72,35 +71,25 @@
                   </div>
                   <div v-else>-</div>
                 </div>
-
                 <div class="my-3">
                   <div class="font-weight-bold">환경</div>
                   <div>{{server?.requirements.environment ?? '-' }}</div>
                 </div>
               </v-col>
+
               <v-divider vertical></v-divider>
+
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">
-                    성능
-                  </div>
-                  <div v-if="server?.requirements.performance">
-                    {{ server?.requirements.performance }}
-                  </div>
-                  <div v-else>-</div>
+                  <div class="font-weight-bold">성능</div>
+                  <div>{{ server?.requirements.performance ?? '-' }}</div>
                 </div>
-
                 <div class="my-3">
-                  <div>
-                    <span class="font-weight-bold">애플리케이션 배포</span>
-                  </div>
-                  {{ server?.requirements.app_deploy }}
+                  <div class="font-weight-bold">애플리케이션 배포</div>
+                  <div>{{ server?.requirements.app_deploy ?? '-' }}</div>
                 </div>
-
                 <div class="my-3">
-                  <div>
-                    <span class="font-weight-bold">보안</span>
-                  </div>
+                  <div class="font-weight-bold">보안</div>
                   <div>{{server?.requirements.security ?? '-' }}</div>
                 </div>
               </v-col>
@@ -124,6 +113,10 @@
                   <div>{{ server?.design.vpc ?? '-' }}</div>
                 </div>
                 <div class="my-3">
+                  <div class="font-weight-bold">OS 운영체제</div>
+                  <div>{{ server?.design.os ?? '-' }}</div>
+                </div>
+                <div class="my-3">
                   <div class="font-weight-bold">웹 서버</div>
                   <div>{{ server?.design.web_server ?? '-' }}</div>
                 </div>
@@ -131,48 +124,34 @@
                   <div class="font-weight-bold">데이터베이스</div>
                   <div>{{server?.design.database ?? '-' }}</div>
                 </div>
-                <div class="my-3">
-                  <div class="font-weight-bold">어플리케이션 배포</div>
-                <div>{{ server?.design.app_deploy ?? '-' }}</div>
-                </div>
               </v-col>
 
               <v-divider vertical></v-divider>
+
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">
-                    파일
-                  </div>
-                  <div>
-                    {{ server?.design.storage ?? '-' }}
-                  </div>
+                  <div class="font-weight-bold">파일</div>
+                  <div>{{ server?.design.storage ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
-                  <div>
-                    <span class="font-weight-bold">성능</span>
-                  </div>
-                  <div>
-                    {{ server?.design.performance ?? '-' }}
-                  </div>
+                  <div class="font-weight-bold">성능</div>
+                  <div>{{ server?.design.performance ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
-                  <div>
-                    <span class="font-weight-bold">보안</span>
-                  </div>
-                  <div>
-                    {{ server?.design.security ?? '-' }}
-                  </div>
+                  <div class="font-weight-bold">보안</div>
+                  <div>{{ server?.design.security ?? '-' }}</div>
                 </div>
 
                  <div class="my-3">
-                  <div>
-                    <span class="font-weight-bold">CDN</span>
-                  </div>
-                  <div>
-                    {{ server?.design.cdn ?? '-' }}
-                  </div>
+                  <div class="font-weight-bold">CDN</div>
+                  <div>{{ server?.design.cdn ?? '-' }}</div>
+                </div>
+
+                <div class="my-3">
+                  <div class="font-weight-bold">어플리케이션 배포</div>
+                  <div>{{ server?.design.app_deploy ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -236,18 +215,18 @@
 
               <div v-if="estimate.length">
                 <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2 text-caption">합계</v-sheet>
+                  <v-sheet class="pa-2">합계</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ totalSupply.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider></v-divider>
                 <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2 text-caption">VAT 10%</v-sheet>
+                  <v-sheet class="pa-2">VAT 10%</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ vat.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider class="bg-grey-lighten-2"></v-divider>
                 <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
                   <v-sheet class="d-flex justify-end" >
-                  <v-sheet class="pa-2 font-weight-bold">총 합계</v-sheet>
+                  <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold text-red" width="100">{{ totalAmount.toLocaleString() }} 원</v-sheet>
                 </v-sheet>
               </div>
@@ -291,6 +270,7 @@ interface Development {
 interface Design {
   instance: string
   vpc: string
+  os: string
   web_server: string
   app_deploy: string
   database: string

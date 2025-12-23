@@ -1,31 +1,31 @@
 {
-    "id": 16,
-    "date": "2025-05-20",
-    "title": "****** API 서비스",
+    "id": 15,
+    "date": "2025-05-16",
+    "title": "***** 홈페이지",
     "development": {
         "frontend": null,
-        "backend": "Spring",
-        "database": "MariaDB",
+        "backend": "PHP",
+        "database": "MySQL",
         "linkage": null
     },
     "requirements": {
-        "hosting": "AWS",
+        "hosting": "Njalla",
         "environment": "운영",
         "budget": 30000,
-        "performance": "스케일업",
-        "app_deploy": "자동",
-        "security": "SSL"
+        "performance": null,
+        "app_deploy": "수동",
+        "security": null
     },
     "design": {
-        "instance": "EC2",
+        "instance": "VPS 30",
         "vpc": "Public",
-        "os": "Amazon Linux",
-        "web_server": "Nginx",
-        "database": "EC2 (MariaDB)",
-        "app_deploy": "GitHub, Codedeploy",
-        "storage": "EBS, S3",
+        "os": "Ubuntu",
+        "web_server": "Apache, PHP",
+        "database": "MySQL",
+        "app_deploy": null,
+        "storage": "EBS, vsftpd",
         "performance": null,
-        "security": "SSL (Let's Encrypt), WAF (ModSecurity)"
+        "security": null
     },
     "schedule": [
         {
@@ -44,24 +44,17 @@
         },
         {
             "no": 3,
-            "category": "배포",
-            "title": "애플리케이션 배포",
-            "quantity": 1,
-            "working_day": 0.5
-        },
-        {
-            "no": 4,
             "category": "테스트",
             "title": "통합 테스트",
             "quantity": 1,
             "working_day": 0.5
         },
         {
-            "no": 5,
+            "no": 4,
             "category": "완료",
-            "title": "문서화 및 인계 교육",
+            "title": "문서화 및 인계",
             "quantity": 1,
-            "working_day": 1
+            "working_day": 0.5
         }
     ],
     "estimate": [
@@ -78,13 +71,6 @@
             "supplyPrice": 80000,
             "quantity": 1,
             "sumPrice": 80000
-        },
-        {
-            "no": 3,
-            "work": "애플리케이션 배포",
-            "supplyPrice": 60000,
-            "quantity": 1,
-            "sumPrice": 60000
         }
     ]
 }

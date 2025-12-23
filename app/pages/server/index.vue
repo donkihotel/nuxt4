@@ -159,7 +159,6 @@
         />
         <span>{{ item.frontend || '-' }}</span>
       </v-chip>
-
     </template>
 
     <template v-slot:item.backend="{ item }">

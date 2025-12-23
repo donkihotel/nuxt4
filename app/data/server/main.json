@@ -203,25 +203,25 @@
             "backend": "PHP",
             "database": "MySQL",
             "hosting": "Njalla",
-            "security": 1,
+            "security": 0,
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 2,
-            "build_cost": 120000
+            "build_day": 1,
+            "build_cost": 99000
         },
         {
             "id": 16,
             "created_at": "2025-05-20",
-            "frontend": "",
+            "frontend": null,
             "backend": "SpringBoot",
             "database": "MariaDB",
             "hosting": "AWS",
-            "security": 1,
+            "security": 2,
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "자동",
-            "build_day": 2,
+            "build_day": 3,
             "build_cost": 165000
         },
         {
@@ -283,7 +283,7 @@
         {
             "id": 21,
             "created_at": "2025-08-20",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "hosting": "AWS",

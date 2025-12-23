@@ -68,7 +68,7 @@
 
     <v-footer class="text-center d-flex flex-column" absolute >
     <div>
-      ⓒ {{ new Date().getFullYear() }}. Localnine Co. All rights reserved.
+      ⓒ {{ new Date().getFullYear() }}. <span class="text-primary">2</span>CPU<span class="text-primary">2</span>RAM Co. All rights reserved.
     </div>
   </v-footer>
   </v-app>
