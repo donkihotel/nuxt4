@@ -1,17 +1,17 @@
 {
-    "id": 10,
-    "date": "2025-04-17",
-    "title": "***** 선박 관리시스템",
+    "id": 11,
+    "date": "2025-05-05",
+    "title": "***** 모니터링 개발 서버",
     "development": {
-        "frontend": "Next",
-        "backend": "Nest",
-        "database": "PostgreSQL",
+        "frontend": "React",
+        "backend": "SpringBoot",
+        "database": "MySQL",
         "linkage": null
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "운영",
-        "budget": 100000,
+        "environment": "개발",
+        "budget": 60000,
         "performance": "업스케일링",
         "app_deploy": "자동",
         "security": "SSL, 방화벽",
@@ -22,7 +22,7 @@
         "vpc": "Public",
         "os": "Amazon Linux",
         "web_server": "Nginx",
-        "database": "RDS (PostgreSQL)",
+        "database": "MySQL",
         "app_deploy": "Github, Code Deploy",
         "storage": "EBS, S3",
         "performance": null,
@@ -97,9 +97,9 @@
         {
             "no": 4,
             "work": "백엔드 CI/CD",
-            "supplyPrice": 140000,
+            "supplyPrice": 120000,
             "quantity": 1,
-            "sumPrice": 140000
+            "sumPrice": 120000
         }
     ]
 }

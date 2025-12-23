@@ -1,6 +1,6 @@
 {
-    "id": 14,
-    "date": "2025-05-13",
+    "id": 13,
+    "date": "2025-05-10",
     "title": "**** 홈페이지 서버",
     "development": {
         "frontend": null,
@@ -9,16 +9,16 @@
         "linkage": null
     },
     "requirements": {
-        "hosting": "AWS",
+        "hosting": "CAFE24",
         "environment": "운영",
-        "budget": 30000,
+        "budget": 10000,
         "performance": null,
-        "app_deploy": null,
+        "app_deploy": "수동",
         "security": null,
-        "etc": "SSH 패스워드 설정, PHP 모듈 설치"
+        "etc": null
     },
     "design": {
-        "instance": "EC2",
+        "instance": "가상서버호스팅",
         "vpc": "Public",
         "os": "RockyLinux",
         "web_server": "Apache, PHP",
@@ -45,13 +45,20 @@
         },
         {
             "no": 3,
+            "category": "배포",
+            "title": "애플리케이션 배포",
+            "quantity": 1,
+            "working_day": 0.5
+        },
+        {
+            "no": 4,
             "category": "테스트",
             "title": "통합 테스트",
             "quantity": 1,
             "working_day": 0.5
         },
         {
-            "no": 4,
+            "no": 5,
             "category": "완료",
             "title": "문서화 및 인계",
             "quantity": 1,
@@ -69,9 +76,16 @@
         {
             "no": 2,
             "work": "아키텍처 구축",
-            "supplyPrice": 140000,
+            "supplyPrice": 40000,
             "quantity": 1,
-            "sumPrice": 140000
+            "sumPrice": 40000
+        },
+        {
+            "no": 3,
+            "work": "애플리케이션 배포",
+            "supplyPrice": 60000,
+            "quantity": 1,
+            "sumPrice": 60000
         }
     ]
 }

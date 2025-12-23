@@ -8,11 +8,11 @@
           </template>
 
           <template v-slot:subtitle>
-            No. {{server?.id }}
+            No. {{ server?.id }}
           </template>
 
           <template v-slot:append>
-            <span class="text-subtitle-2">{{server?.date }}</span>
+            <span class="text-subtitle-2">{{ server?.date }}</span>
           </template>
         </v-list-item>
       </v-col>
@@ -26,24 +26,24 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">프론트</div>
-                  <div>{{server?.development?.frontend ?? '-' }}</div>
+                  <div>{{ server?.development?.frontend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">백엔드</div>
-                  <div>{{server?.development?.backend ?? '-' }}</div>
+                  <div>{{ server?.development?.backend ?? '-' }}</div>
                 </div>
 
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{server?.development?.database ?? '-' }}</div>
+                  <div>{{ server?.development?.database ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">외부 연동</div>
-                  <div>{{server?.development?.linkage ?? '-' }}</div>
+                  <div>{{ server?.development?.linkage ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -59,7 +59,7 @@
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">호스팅</div>
-                  <div>{{server?.requirements.hosting ?? '-' }}</div>
+                  <div>{{ server?.requirements.hosting ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div>
@@ -67,13 +67,13 @@
                     <span class="font-italic"> - 서버 요금(월)</span>
                   </div>
                   <div v-if="server?.requirements.budget">
-                    {{formatPrice(server?.requirements.budget ?? 0 )}} 원
+                    {{ formatPrice(server?.requirements.budget ?? 0) }} 원
                   </div>
                   <div v-else>-</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">환경</div>
-                  <div>{{server?.requirements.environment ?? '-' }}</div>
+                  <div>{{ server?.requirements.environment ?? '-' }}</div>
                 </div>
               </v-col>
 
@@ -90,7 +90,11 @@
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">보안</div>
-                  <div>{{server?.requirements.security ?? '-' }}</div>
+                  <div>{{ server?.requirements.security ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">기타</div>
+                  <div>{{ server?.requirements.etc ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -101,7 +105,7 @@
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처
           </h3>
-            <v-card-text>
+          <v-card-text>
             <v-row>
               <v-col cols="6">
                 <div>
@@ -122,7 +126,7 @@
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{server?.design.database ?? '-' }}</div>
+                  <div>{{ server?.design.database ?? '-' }}</div>
                 </div>
               </v-col>
 
@@ -144,7 +148,7 @@
                   <div>{{ server?.design.security ?? '-' }}</div>
                 </div>
 
-                 <div class="my-3">
+                <div class="my-3">
                   <div class="font-weight-bold">CDN</div>
                   <div>{{ server?.design.cdn ?? '-' }}</div>
                 </div>
@@ -163,14 +167,8 @@
             <v-icon class="mr-2">mdi-numeric-4-box</v-icon>일정
           </h3>
           <v-card-text>
-            <v-data-table
-              :headers="scheduleHeaders"
-              :items="server?.schedule"
-              density="compact"
-              item-key="name"
-              hide-default-footer
-              class="text-no-wrap"
-            >
+            <v-data-table :headers="scheduleHeaders" :items="server?.schedule" density="compact" item-key="name"
+              hide-default-footer class="text-no-wrap">
               <template #item.working_day="{ item }">
                 <span>{{ item.working_day }}</span>
               </template>
@@ -182,9 +180,10 @@
 
             <v-divider class="bg-grey-lighten-2"></v-divider>
             <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
-              <v-sheet class="d-flex justify-end" >
+            <v-sheet class="d-flex justify-end">
               <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
-              <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{ totalWorkingDay }} 일</v-sheet>
+              <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{ totalWorkingDay }}
+                일</v-sheet>
             </v-sheet>
           </v-card-text>
         </v-card>
@@ -198,14 +197,8 @@
               <v-icon class="mr-2">mdi-clipboard-list-outline</v-icon>견적
             </h3>
             <v-card-text>
-              <v-data-table
-                :headers="headers"
-                :items="server?.estimate"
-                density="compact"
-                item-key="name"
-                hide-default-footer
-                class="text-no-wrap"
-              >
+              <v-data-table :headers="headers" :items="server?.estimate" density="compact" item-key="name"
+                hide-default-footer class="text-no-wrap">
                 <template v-slot:no-data>
                   📌 견적 데이터가 없습니다.
                 </template>
@@ -214,30 +207,29 @@
               <v-divider></v-divider>
 
               <div v-if="estimate.length">
-                <v-sheet class="d-flex justify-end" >
+                <v-sheet class="d-flex justify-end">
                   <v-sheet class="pa-2">합계</v-sheet>
-                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ totalSupply.toLocaleString() }}</v-sheet>
+                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ totalSupply.toLocaleString()
+                  }}</v-sheet>
                 </v-sheet>
                 <v-divider></v-divider>
-                <v-sheet class="d-flex justify-end" >
+                <v-sheet class="d-flex justify-end">
                   <v-sheet class="pa-2">VAT 10%</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end" width="100">{{ vat.toLocaleString() }}</v-sheet>
                 </v-sheet>
                 <v-divider class="bg-grey-lighten-2"></v-divider>
                 <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
-                  <v-sheet class="d-flex justify-end" >
+                <v-sheet class="d-flex justify-end">
                   <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
-                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold text-red" width="100">{{ totalAmount.toLocaleString() }} 원</v-sheet>
+                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold text-red" width="100">{{
+                    totalAmount.toLocaleString() }} 원</v-sheet>
                 </v-sheet>
               </div>
             </v-card-text>
           </v-card>
 
           <!-- 상담 -->
-          <Consult
-            kmong-link="https://kmong.com/gig/220715"
-            kakao-link="https://open.kakao.com/o/sfJs7iHe"
-          />
+          <Consult kmong-link="https://kmong.com/gig/220715" kakao-link="https://open.kakao.com/o/sfJs7iHe" />
         </div>
       </v-col>
       <v-col cols="12">
@@ -304,13 +296,13 @@ interface Requirements {
   app_deploy: string
   server_backup: string
   security: number
+  etc: string
 }
 
 interface Server {
   id: number
   date: string
   title: string
-  domain: string
   development: Development
   requirements: Requirements
   design: Design
@@ -418,12 +410,15 @@ function formatPrice(value: number) {
 
 <style scoped>
 .left-content {
-  overflow-y: auto; /* 세로 스크롤 허용 */
-  max-height: 100%; /* 화면 높이까지만 */
+  overflow-y: auto;
+  /* 세로 스크롤 허용 */
+  max-height: 100%;
+  /* 화면 높이까지만 */
 }
 
 .right-content .sticky-box {
   position: sticky;
-  top: 0; /* 상단에 고정 */
+  top: 0;
+  /* 상단에 고정 */
 }
 </style>

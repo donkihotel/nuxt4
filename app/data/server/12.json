@@ -1,32 +1,32 @@
 {
-    "id": 14,
-    "date": "2025-05-13",
-    "title": "**** 홈페이지 서버",
+    "id": 12,
+    "date": "2025-05-05",
+    "title": "**** 스포츠 API 서버",
     "development": {
         "frontend": null,
-        "backend": "PHP",
-        "database": "MariaDB",
+        "backend": "SpringBoot",
+        "database": "DynamoDB",
         "linkage": null
     },
     "requirements": {
         "hosting": "AWS",
         "environment": "운영",
-        "budget": 30000,
-        "performance": null,
-        "app_deploy": null,
-        "security": null,
-        "etc": "SSH 패스워드 설정, PHP 모듈 설치"
+        "budget": 60000,
+        "performance": "업스케일링",
+        "app_deploy": "자동",
+        "security": "SSL, 방화벽",
+        "etc": null
     },
     "design": {
         "instance": "EC2",
         "vpc": "Public",
-        "os": "RockyLinux",
-        "web_server": "Apache, PHP",
-        "database": "MariaDB",
-        "app_deploy": null,
-        "storage": "EBS",
+        "os": "Amazon Linux",
+        "web_server": "Nginx",
+        "database": "DynamoDB",
+        "app_deploy": "Github, Code Deploy",
+        "storage": "EBS, S3",
         "performance": null,
-        "security": null
+        "security": "SSL (Let's Encrypt), WAF (ModSecurity)"
     },
     "schedule": [
         {
@@ -41,17 +41,24 @@
             "category": "구축",
             "title": "아키텍처 구축",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         },
         {
             "no": 3,
-            "category": "테스트",
-            "title": "통합 테스트",
+            "category": "배포",
+            "title": "애플리케이션 배포",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         },
         {
             "no": 4,
+            "category": "테스트",
+            "title": "통합 테스트",
+            "quantity": 1,
+            "working_day": 1
+        },
+        {
+            "no": 5,
             "category": "완료",
             "title": "문서화 및 인계",
             "quantity": 1,
@@ -69,9 +76,16 @@
         {
             "no": 2,
             "work": "아키텍처 구축",
-            "supplyPrice": 140000,
+            "supplyPrice": 120000,
             "quantity": 1,
-            "sumPrice": 140000
+            "sumPrice": 120000
+        },
+        {
+            "no": 3,
+            "work": "애플리케이션 배포",
+            "supplyPrice": 120000,
+            "quantity": 1,
+            "sumPrice": 120000
         }
     ]
 }

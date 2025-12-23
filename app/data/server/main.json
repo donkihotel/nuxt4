@@ -135,10 +135,10 @@
             "hosting": "AWS",
             "security": 3,
             "budget": 100000,
-            "performance": "스케일아웃",
+            "performance": "스케일업",
             "app_deploy": "자동",
             "build_day": 3,
-            "build_cost": 360000
+            "build_cost": 363000
         },
         {
             "id": 11,
@@ -152,7 +152,7 @@
             "performance": "스케일업",
             "app_deploy": "자동",
             "build_day": 3,
-            "build_cost": 360000
+            "build_cost": 341000
         },
         {
             "id": 12,
@@ -161,12 +161,12 @@
             "backend": "SpringBoot",
             "database": "DynamoDB",
             "hosting": "AWS",
-            "security": 2,
-            "budget": 30000,
+            "security": 1,
+            "budget": 100000,
             "performance": "스케일업",
             "app_deploy": "자동",
             "build_day": 3,
-            "build_cost": 240000
+            "build_cost": 275000
         },
         {
             "id": 13,
@@ -176,11 +176,11 @@
             "database": "MariaDB",
             "hosting": "CAFE24",
             "security": 1,
-            "budget": 20000,
+            "budget": 10000,
             "performance": "스케일업",
             "app_deploy": "수동",
             "build_day": 2,
-            "build_cost": 120000
+            "build_cost": 121000
         },
         {
             "id": 14,
@@ -193,8 +193,8 @@
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 1,
-            "build_cost": 60000
+            "build_day": 2,
+            "build_cost": 165000
         },
         {
             "id": 15,
@@ -232,11 +232,11 @@
             "database": "MySQL",
             "hosting": "AWS",
             "security": 5,
-            "budget": 250000,
+            "budget": 300000,
             "performance": "스케일아웃",
             "app_deploy": "자동",
-            "build_day": 15,
-            "build_cost": 2321000
+            "build_day": 20,
+            "build_cost": 2222000
         },
         {
             "id": 18,
