@@ -33,16 +33,15 @@
                   <div class="font-weight-bold">백엔드</div>
                   <div>{{ server?.development?.backend ?? '-' }}</div>
                 </div>
-
-                <div class="my-3">
-                  <div class="font-weight-bold">데이터베이스</div>
-                  <div>{{ server?.development?.database ?? '-' }}</div>
-                </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">외부 연동</div>
+                  <div class="font-weight-bold">데이터베이스</div>
+                  <div>{{ server?.development?.database ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">외부 연동 및 기타</div>
                   <div>{{ server?.development?.linkage ?? '-' }}</div>
                 </div>
               </v-col>
@@ -71,7 +70,7 @@
                   </div>
                   <div v-else>-</div>
                 </div>
-                <div class="my-3">
+                <div>
                   <div class="font-weight-bold">환경</div>
                   <div>{{ server?.requirements.environment ?? '-' }}</div>
                 </div>
@@ -81,18 +80,21 @@
 
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">성능</div>
+                  <div class="font-weight-bold">확장</div>
                   <div>{{ server?.requirements.performance ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">애플리케이션 배포</div>
+                  <div>
+                    <span class="font-weight-bold">배포</span>
+                    <span class="font-italic"> - 애플리케이션</span>
+                  </div>
                   <div>{{ server?.requirements.app_deploy ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">보안</div>
                   <div>{{ server?.requirements.security ?? '-' }}</div>
                 </div>
-                <div class="my-3">
+                <div>
                   <div class="font-weight-bold">기타</div>
                   <div>{{ server?.requirements.etc ?? '-' }}</div>
                 </div>
@@ -106,9 +108,11 @@
             <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처
           </h3>
           <v-card-text>
+            <p class="text-h6 font-weight-black">기본</p>
+            <v-divider class="my-1"></v-divider>
             <v-row>
               <v-col cols="6">
-                <div>
+                <div class="my-3">
                   <div class="font-weight-bold">인스턴스</div>
                   <div>{{ server?.design.instance ?? '-' }}</div>
                 </div>
@@ -120,42 +124,96 @@
                   <div class="font-weight-bold">OS 운영체제</div>
                   <div>{{ server?.design.os ?? '-' }}</div>
                 </div>
+              </v-col>
+
+              <v-divider vertical inset></v-divider>
+
+              <v-col cols="6">
                 <div class="my-3">
-                  <div class="font-weight-bold">웹 서버</div>
-                  <div>{{ server?.design.web_server ?? '-' }}</div>
+                  <div class="font-weight-bold">파일</div>
+                  <div>{{ server?.design.storage ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
                   <div>{{ server?.design.database ?? '-' }}</div>
                 </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">소프트웨어</div>
+                  <div>{{ server?.design.software ?? '-' }}</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+
+          <v-card-text>
+            <p class="text-h6 font-weight-black">배포</p>
+            <v-divider class="my-1"></v-divider>
+            <v-row>
+              <v-col cols="6">
+                <div class="my-3">
+                  <div class="font-weight-bold">프론트</div>
+                  <div>{{ server?.design?.deploy?.frontend ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">백엔드</div>
+                  <div>{{ server?.design?.deploy?.backend ?? '-' }}</div>
+                </div>
               </v-col>
 
-              <v-divider vertical></v-divider>
+              <v-divider vertical inset></v-divider>
 
               <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">파일</div>
-                  <div>{{ server?.design.storage ?? '-' }}</div>
-                </div>
-
                 <div class="my-3">
-                  <div class="font-weight-bold">성능</div>
-                  <div>{{ server?.design.performance ?? '-' }}</div>
+                  <div class="font-weight-bold">소스</div>
+                  <div>{{ server?.design?.deploy?.source ?? '-' }}</div>
                 </div>
-
                 <div class="my-3">
-                  <div class="font-weight-bold">보안</div>
-                  <div>{{ server?.design.security ?? '-' }}</div>
+                  <div class="font-weight-bold">빌드</div>
+                  <div>{{ server?.design?.deploy?.build ?? '-' }}</div>
                 </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">배포</div>
+                  <div>{{ server?.design?.deploy?.deploy ?? '-' }}</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
 
+          <v-card-text>
+            <p class="text-h6 font-weight-black">보안</p>
+            <v-divider class="my-1"></v-divider>
+            <v-row>
+              <v-col cols="12">
+                <div class="my-3">
+                  <div class="font-weight-bold">보안 도구</div>
+                  <div>{{ server?.design?.security?.tools ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">보안 기타</div>
+                  <div>{{ server?.design?.security?.etc ?? '-' }}</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+
+          <v-card-text>
+            <p class="text-h6 font-weight-black">확장</p>
+            <v-divider></v-divider>
+            <v-row>
+              <v-col cols="6">
+                <div class="my-3">
+                  <div class="font-weight-bold">로드밸런서</div>
+                  <div>{{ server?.design?.extension?.loadbalancer ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">오토스케일링</div>
+                  <div>{{ server?.design?.extension?.autoscaling ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-col cols="6">
                 <div class="my-3">
                   <div class="font-weight-bold">CDN</div>
-                  <div>{{ server?.design.cdn ?? '-' }}</div>
-                </div>
-
-                <div class="my-3">
-                  <div class="font-weight-bold">어플리케이션 배포</div>
-                  <div>{{ server?.design.app_deploy ?? '-' }}</div>
+                  <div>{{ server?.design?.extension?.cdn ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -251,7 +309,7 @@ import type { DataTableHeader } from 'vuetify'
 const route = useRoute()
 const id = String(route.params.id) // string으로 통일
 
-// --- JSON 파일 타입 정의 ---
+// 개발
 interface Development {
   frontend: string
   backend: string
@@ -259,17 +317,39 @@ interface Development {
   linkage: string
 }
 
+// 아키텍처 > 배포
+interface Deploy {
+  frontend: string
+  backend: string
+  source: string
+  build: string
+  deploy: string
+}
+
+// 아키텍처 > 보안
+interface Security {
+  tools: string
+  etc: string
+}
+
+// 아키텍처 > 확장
+interface Extension {
+  loadbalancer: string
+  autoscaling: string
+  cdn: string
+}
+
+// 아키텍처
 interface Design {
   instance: string
   vpc: string
   os: string
-  web_server: string
-  app_deploy: string
-  database: string
   storage: string
-  performance: string
-  security: string,
-  cdn: string
+  database: string
+  software: string
+  deploy: Deploy,       // 배포
+  security: Security    // 보안
+  extension: Extension  // 확장
 }
 
 interface ScheduleItem {

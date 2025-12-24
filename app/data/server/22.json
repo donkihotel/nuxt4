@@ -1,6 +1,6 @@
 {
     "id": 22,
-    "date": "2025-12-11",
+    "date": "2025-08-26",
     "title": "***** 관리 시스템",
     "development": {
         "frontend": "React",
@@ -10,104 +10,121 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "운영",
+        "environment": "개발",
         "budget": 60000,
         "performance": "스케일업",
         "app_deploy": "수동",
         "security": "SSL, 방화벽"
     },
     "design": {
-        "performance": "EC2",
-        "app_deploy": "Github-수동",
-        "security": "SSL, WAF",
-        "server_database": "EC2-MySQL"
+        "instance": "EC2",
+        "vpc": "Private",
+        "storage": "EBS",
+        "database": "RDS Multi-AZ",
+        "software": null,
+        "deploy": {
+            "frontend": "EC2, Nginx",
+            "backend": "EC2, PM2",
+            "source": "Github",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt), WAF (ModSecurity)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        }
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
-            "title": "아키텍처 문서화",
+            "category": "기본",
+            "title": "아키텍처 설계/구축",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "데이터베이스 구축",
+            "category": "배포",
+            "title": "프론트 배포",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "프론트 구축",
-            "quantity": 1,
-            "working_day": 0.5
-        },
-        {
-            "no": 4,
-            "category": "구축",
-            "title": "백엔드 구축",
+            "category": "배포",
+            "title": "백엔드 배포",
             "quantity": 1,
             "working_day": 1
         },
         {
-            "no": 5,
-            "category": "구축",
+            "no": 4,
+            "category": "보안",
             "title": "보안 구축",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 6,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "확장",
+            "title": "확장 구축",
+            "quantity": 0,
+            "working_day": 0
         },
         {
             "no": 7,
-            "category": "완료",
-            "title": "서버관리 문서화",
+            "category": "테스트",
+            "title": "통합 테스트",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
+        },
+        {
+            "no": 8,
+            "category": "완료",
+            "title": "아키텍처 문서화 및 인계",
+            "quantity": 1,
+            "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 구축",
-            "supplyPrice": 30000,
+            "work": "아키텍처 설계/구축",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 50000
         },
         {
             "no": 2,
-            "work": "데이터베이스 구축",
-            "supplyPrice": 30000,
+            "work": "프론트 배포",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 50000
         },
         {
             "no": 3,
-            "work": "프론트 구축",
-            "supplyPrice": 60000,
+            "work": "백엔드 배포",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 50000
         },
         {
             "no": 4,
-            "work": "벡엔드 구축",
-            "supplyPrice": 60000,
+            "work": "보안 도구",
+            "supplyPrice": 50000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 50000
         },
         {
             "no": 5,
-            "work": "보안 구축",
-            "supplyPrice": 60000,
+            "work": "확장 구축",
+            "supplyPrice": 100000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 100000
         }
     ]
 }

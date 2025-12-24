@@ -1,10 +1,10 @@
 {
     "id": 25,
-    "date": "2025-12-11",
+    "date": "2025-11-21",
     "title": "*****관리 시스템",
     "development": {
-        "frontend": "Flutter",
-        "backend": "SpringBoot",
+        "frontend": "Flutter (1EA)",
+        "backend": "SpringBoot (3EA)",
         "database": "MySQL",
         "linkage": "SMS"
     },
@@ -19,111 +19,109 @@
     "design": {
         "instance": "EC2, ECS (Fargate)",
         "vpc": "Private",
-        "web_server": "SpringBoot",
-        "database": "RDS (MySQL Multi-AZ)",
-        "app_deploy": "CI/CD (Github, Code Build/Pipeline/Deploy)",
         "storage": "EBS, S3, EFS",
-        "performance": "LoadBalancer, AutoScaling",
-        "security": "VPC (Private), ACM, WAF, GuardDuty, Parameterstore",
-        "cdn": "Cloudfront"
+        "database": "RDS (MySQL Multi-AZ)",
+        "software": "Nginx",
+        "deploy": {
+            "frontend": "S3, CloudFront",
+            "backend": "ECS (Fargate)",
+            "source": "Github",
+            "build": "CodeBuild",
+            "deploy": "CodePipeline, CodeDeploy"
+        },
+        "security": {
+            "tools": "ACM, WAF, GuardDuty, Parameterstore",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": "Application LB",
+            "autoscaling": "사용",
+            "cdn": "CloudFront"
+        }
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
-            "title": "아키텍처 문서화",
+            "category": "기본",
+            "title": "아키텍처 설계/구축",
             "quantity": 1,
             "working_day": 1
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "네트워크 VPC 구축",
+            "category": "배포",
+            "title": "프론트 CI/CD",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "데이터베이스 구축",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "배포",
+            "title": "백엔드 CI/CD",
+            "quantity": 3,
+            "working_day": 3
         },
         {
             "no": 4,
-            "category": "구축",
-            "title": "프론트 CI/CD 구축",
+            "category": "보안",
+            "title": "보안 도구",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         },
         {
             "no": 5,
-            "category": "구축",
-            "title": "백엔드 CI/CD 구축",
+            "category": "확장",
+            "title": "확장 구축",
             "quantity": 1,
             "working_day": 1
         },
         {
             "no": 6,
-            "category": "구축",
-            "title": "보안 구축",
-            "quantity": 1,
-            "working_day": 0.5
-        },
-        {
-            "no": 7,
             "category": "테스트",
             "title": "통합 테스트",
             "quantity": 1,
             "working_day": 2
         },
         {
-            "no": 8,
+            "no": 7,
             "category": "완료",
-            "title": "서버관리 문서화",
+            "title": "아키텍처 문서화 및 인계",
             "quantity": 1,
             "working_day": 1
-        },
-        {
-            "no": 9,
-            "category": "완료",
-            "title": "완료 인계(교육 2시간)",
-            "quantity": 1,
-            "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "ECS 아키텍처 구축",
+            "work": "아키텍처 설계/구축",
             "supplyPrice": 200000,
             "quantity": 1,
             "sumPrice": 200000
         },
         {
             "no": 2,
-            "work": "RDS 데이터 이전",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
-            "no": 3,
-            "work": "백엔드 CI/CD",
-            "supplyPrice": 180000,
-            "quantity": 3,
-            "sumPrice": 540000
-        },
-        {
-            "no": 4,
             "work": "프론트 CI/CD",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
         },
         {
+            "no": 3,
+            "work": "백엔드 CI/CD",
+            "supplyPrice": 160000,
+            "quantity": 3,
+            "sumPrice": 480000
+        },
+        {
+            "no": 4,
+            "work": "보안 도구",
+            "supplyPrice": 100000,
+            "quantity": 1,
+            "sumPrice": 100000
+        },
+        {
             "no": 5,
-            "work": "보안 도구 및 방화벽 구축",
+            "work": "확장 구축",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
