@@ -4,7 +4,7 @@
     "title": "**** 수시/생활 보고서 시스템",
     "development": {
         "frontend": null,
-        "backend": "Streamlit",
+        "backend": "Streamlit (2EA)",
         "database": null,
         "linkage": null
     },
@@ -18,42 +18,57 @@
     },
     "design": {
         "instance": "Lightsail",
-        "vpc": "Public",
-        "web_server": "Nginx",
-        "database": null,
-        "app_deploy": "파일 복사",
+        "network": "Public",
+        "os": "Amazon Linux",
         "storage": "EBS",
-        "performance": "LoadBalancer",
-        "security": "Let's Encrypt, ModSecurity"
+        "dns": "Route 53",
+        "database": null,
+        "deploy": {
+            "frontend": null,
+            "backend": "Gunicorn (Python)",
+            "source": "Github",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "etc": "vsftpd"
     },
     "schedule": [
         {
             "no": 1,
             "category": "설계",
-            "title": "아키텍처 설계",
+            "title": "아키텍처 설계/구축",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "아키텍처 구축",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "배포",
+            "title": "백엔드 배포",
+            "quantity": 2,
+            "working_day": 1
         },
         {
             "no": 3,
-            "category": "배포",
-            "title": "애플리케이션 배포",
-            "quantity": 2,
-            "working_day": 1
+            "category": "보안",
+            "title": "보안 구축",
+            "quantity": 1,
+            "working_day": 0.5
         },
         {
             "no": 4,
             "category": "테스트",
             "title": "통합 테스트",
             "quantity": 1,
-            "working_day": 1
+            "working_day": 0.5
         },
         {
             "no": 5,
@@ -66,24 +81,31 @@
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 10000,
+            "work": "아키텍처 설계/구축",
+            "supplyPrice": 40000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 40000
         },
         {
             "no": 2,
-            "work": "아키텍처 구축",
-            "supplyPrice": 60000,
-            "quantity": 1,
-            "sumPrice": 60000
+            "work": "백엔드 배포",
+            "supplyPrice": 50000,
+            "quantity": 2,
+            "sumPrice": 100000
         },
         {
             "no": 3,
-            "work": "애플리케이션 배포",
-            "supplyPrice": 60000,
-            "quantity": 2,
-            "sumPrice": 120000
+            "work": "보안 구축",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
+        },
+        {
+            "no": 4,
+            "work": "기타 소프트웨어 설치",
+            "supplyPrice": 20000,
+            "quantity": 1,
+            "sumPrice": 20000
         }
     ]
 }

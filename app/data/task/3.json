@@ -1,15 +1,15 @@
 {
     "id": 3,
     "date": "2024-01-01",
-    "title": "AWS Private VPC 설계",
+    "title": "AWS Private network 설계",
     "level": "상",
     "time": "2시간",
     "price": "6만원",
-    "image": "https://docs.aws.amazon.com/images/vpc/latest/userguide/images/how-it-works.png",
+    "image": "https://docs.aws.amazon.com/images/network/latest/userguide/images/how-it-works.png",
     "process": [
         {
             "step": 1,
-            "title": "VPC 생성",
+            "title": "network 생성",
             "content": "AWS Management Console, AWS CLI 또는 AWS SDK를 사용하여 새로운 VPC를 생성합니다. CIDR 블록을 지정하고, 필요한 경우 태그를 추가합니다."
         },
         {
@@ -30,7 +30,7 @@
         {
             "step": 5,
             "title": "보안그룹 생성",
-            "content": "VPC 내 리소스에 대한 트래픽을 제어하기 위해 보안 그룹을 생성하고, 인바운드 및 아웃바운드 규칙을 정의합니다."
+            "content": "network 내 리소스에 대한 트래픽을 제어하기 위해 보안 그룹을 생성하고, 인바운드 및 아웃바운드 규칙을 정의합니다."
         },
         {
             "step": 6,

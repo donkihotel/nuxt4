@@ -117,11 +117,11 @@
                   <div>{{ server?.design.instance ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">VPC 네트워크</div>
-                  <div>{{ server?.design.vpc ?? '-' }}</div>
+                  <div class="font-weight-bold">네트워크</div>
+                  <div>{{ server?.design.network ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">OS 운영체제</div>
+                  <div class="font-weight-bold">OS 및 운영환경</div>
                   <div>{{ server?.design.os ?? '-' }}</div>
                 </div>
               </v-col>
@@ -130,16 +130,16 @@
 
               <v-col cols="6">
                 <div class="my-3">
-                  <div class="font-weight-bold">파일</div>
+                  <div class="font-weight-bold">스토리지</div>
                   <div>{{ server?.design.storage ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">도메인 및 DNS</div>
+                  <div>{{ server?.design.dns ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
                   <div>{{ server?.design.database ?? '-' }}</div>
-                </div>
-                <div class="my-3">
-                  <div class="font-weight-bold">소프트웨어</div>
-                  <div>{{ server?.design.software ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -197,7 +197,7 @@
           </v-card-text>
 
           <v-card-text>
-            <p class="text-h6 font-weight-black">확장</p>
+            <p class="text-h6 font-weight-black">부하분산</p>
             <v-divider></v-divider>
             <v-row>
               <v-col cols="6">
@@ -214,6 +214,19 @@
                 <div class="my-3">
                   <div class="font-weight-bold">CDN</div>
                   <div>{{ server?.design?.extension?.cdn ?? '-' }}</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+
+          <v-card-text>
+            <p class="text-h6 font-weight-black">기타</p>
+            <v-divider></v-divider>
+            <v-row>
+              <v-col cols="12">
+                <div class="my-3">
+                  <div class="font-weight-bold">소프트웨어</div>
+                  <div>{{ server?.design?.etc ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -279,7 +292,7 @@
                 <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
                 <v-sheet class="d-flex justify-end">
                   <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
-                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold text-red" width="100">{{
+                  <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{
                     totalAmount.toLocaleString() }} 원</v-sheet>
                 </v-sheet>
               </div>
@@ -342,14 +355,15 @@ interface Extension {
 // 아키텍처
 interface Design {
   instance: string
-  vpc: string
+  network: string
   os: string
   storage: string
   database: string
-  software: string
+  dns: string
   deploy: Deploy,       // 배포
   security: Security    // 보안
   extension: Extension  // 확장
+  etc: string
 }
 
 interface ScheduleItem {

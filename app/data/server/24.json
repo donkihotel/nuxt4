@@ -14,16 +14,18 @@
         "budget": 100000,
         "performance": "스케일아웃",
         "app_deploy": "자동",
-        "security": "SSL, 방화벽, 프라이빗, 보안도구"
+        "security": "SSL, 방화벽, 프라이빗, 보안도구",
+        "etc": null
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Private",
+        "network": "VPC (Private)",
+        "os": null,
         "storage": "EBS, S3, EFS",
+        "dns": "Route 53",
         "database": "RDS Multi-AZ",
-        "software": null,
         "deploy": {
-            "frontend": "S3, CloudFront",
+            "frontend": "CloudFront (S3)",
             "backend": "ECS (Fargate)",
             "source": "Github",
             "build": "CodeBuild",
@@ -50,28 +52,28 @@
         {
             "no": 2,
             "category": "배포",
-            "title": "프론트 CI/CD",
+            "title": "프론트 CI/CD 배포",
             "quantity": 1,
             "working_day": 1
         },
         {
             "no": 3,
             "category": "배포",
-            "title": "백엔드 CI/CD",
+            "title": "백엔드 CI/CD 배포",
             "quantity": 1,
             "working_day": 1
         },
         {
             "no": 4,
             "category": "보안",
-            "title": "보안 도구",
+            "title": "보안 구축",
             "quantity": 1,
             "working_day": 1
         },
         {
             "no": 5,
-            "category": "확장",
-            "title": "확장 구축",
+            "category": "부하분산",
+            "title": "부하분산 구축",
             "quantity": 1,
             "working_day": 1
         },

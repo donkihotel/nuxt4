@@ -18,7 +18,7 @@
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Public",
+        "network": "Public",
         "os": "Amazon Linux",
         "web_server": "Nginx",
         "database": "EC2 (MariaDB)",

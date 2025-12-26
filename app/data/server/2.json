@@ -18,7 +18,7 @@
     "design": {
         "performance": "ECS, LoadBalancer, AutoScaling",
         "app_deploy": "Github, CodeBuild, CodePipeline, CodeDeploy",
-        "security": "ACM, WAF, Private-VPC, GuardDuty",
+        "security": "ACM, WAF, Private-network, GuardDuty",
         "server_database": "RDS Multi-AZ"
     },
     "schedule": [
@@ -32,7 +32,7 @@
         {
             "no": 2,
             "category": "구축",
-            "title": "네트워크 VPC 구축",
+            "title": "네트워크 network 구축",
             "quantity": 1,
             "working_day": 0.5
         },
@@ -96,7 +96,7 @@
         },
         {
             "no": 2,
-            "work": "네트워크 VPC 구축",
+            "work": "네트워크 network 구축",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000

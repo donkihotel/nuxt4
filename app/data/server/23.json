@@ -19,13 +19,14 @@
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Private",
+        "network": "VPC (Private)",
+        "os": "Amazon Linux",
         "storage": "EBS, S3, EFS",
+        "dns": "Route 53",
         "database": "RDS Multi-AZ",
-        "software": null,
         "deploy": {
-            "frontend": "S3, CloudFront",
-            "backend": "EC2",
+            "frontend": "CloudFront (S3)",
+            "backend": "EC2 (PM2, Node)",
             "source": "CodeCommit",
             "build": "CodeBuild",
             "deploy": "CodePipeline, CodeDeploy"

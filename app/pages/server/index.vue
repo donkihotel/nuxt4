@@ -112,7 +112,8 @@
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         서버 관리 문서는 단순한 보고서가 아니라, 고객님의 시스템을 투명하게 관리하고, 향후 장애 대응·운영·확장 시 꼭 필요한 자산입니다. 즉, 구축 결과를 문서로 만들어 드림으로써 고객님이 안심하고
-        장기적으로 운영할 수 있도록 하는 보증서 같은 역할을 합니다. 문서로 견적서를 포함하여, 완료 보고서, 전체 아키텍처, VPC 설계, 사용자 계정, 서버 관리를 문서화 해드리고 다음과 같은 장점이
+        장기적으로 운영할 수 있도록 하는 보증서 같은 역할을 합니다. 문서로 견적서를 포함하여, 완료 보고서, 전체 아키텍처, network 설계, 사용자 계정, 서버 관리를 문서화 해드리고 다음과 같은
+        장점이
         있습니다.<br /><br />
 
         <b>현황 파악 및 자산 관리</b><br />
@@ -151,7 +152,7 @@
       <v-chip variant="text" class="pl-0">
         <v-img v-if="item.frontend" :src="`assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24"
           class="mr-2" />
-        <span>{{ item?.frontend ?? '-' }}</span>
+        <span>{{ item.frontend || '-' }}</span>
       </v-chip>
     </template>
 

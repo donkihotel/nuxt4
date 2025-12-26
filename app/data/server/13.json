@@ -19,7 +19,7 @@
     },
     "design": {
         "instance": "가상서버호스팅",
-        "vpc": "Public",
+        "network": "Public",
         "os": "RockyLinux",
         "web_server": "Apache, PHP",
         "database": "MariaDB",

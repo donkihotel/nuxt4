@@ -18,7 +18,7 @@
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Public",
+        "network": "Public",
         "web_server": "Nginx, Tomcat",
         "database": "MariaDB",
         "app_deploy": "파일 복사",

@@ -19,7 +19,7 @@
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Public",
+        "network": "Public",
         "os": "RockyLinux",
         "web_server": "Apache, PHP",
         "database": "MariaDB",

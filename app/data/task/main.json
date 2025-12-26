@@ -19,7 +19,7 @@
         {
             "id": 3,
             "category": "네트워크",
-            "title": "AWS Private VPC 설계",
+            "title": "AWS Private network 설계",
             "level": "상",
             "time": "2시간",
             "price": 60000

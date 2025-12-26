@@ -4,9 +4,9 @@
     "title": "IoT 센서 데이터 서버",
     "development": {
         "frontend": null,
-        "backend": "FastAPI",
+        "backend": "FastAPI (1EA)",
         "database": "MariaDB",
-        "linkage": null
+        "linkage": "TensorFlow"
     },
     "requirements": {
         "hosting": "AWS",
@@ -14,104 +14,106 @@
         "budget": 30000,
         "performance": "스케일업",
         "app_deploy": "수동",
-        "security": "SSL"
+        "security": "SSL",
+        "etc": null
     },
     "design": {
         "instance": "EC2",
-        "vpc": "Public",
-        "web_server": "Nginx",
-        "database": "(EC2) MySQL, Redis",
-        "app_deploy": "파일 복사",
+        "network": "Public",
+        "os": "Ubuntu",
         "storage": "EBS",
-        "performance": null,
-        "security": "Let's Encrypt"
+        "dns": "Cloudflare",
+        "database": "MariaDB (EC2)",
+        "deploy": {
+            "frontend": null,
+            "backend": "Gunicorn (Python)",
+            "source": "File (zip)",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": null,
+            "etc": "Cloudflare SSL"
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "etc": "Redis, vsftpd"
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설치",
-            "title": "EC2, Ubuntu",
+            "category": "기본",
+            "title": "아키텍처 설계/구축",
             "quantity": 1,
-            "working_day": 0.25
+            "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "설치",
-            "title": "MariaDB, Redis",
+            "category": "배포",
+            "title": "백엔드 배포",
             "quantity": 1,
-            "working_day": 0.25
+            "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "설치",
-            "title": "FastAPI 개발 환경",
+            "category": "보안",
+            "title": "보안 구축",
             "quantity": 1,
             "working_day": 0.25
         },
         {
             "no": 4,
-            "category": "설치",
-            "title": "Nginx, Uvicorn",
+            "category": "기타",
+            "title": "소프트웨어 설치",
             "quantity": 1,
             "working_day": 0.25
         },
         {
             "no": 5,
-            "category": "설치",
-            "title": "도메인, SSL",
+            "category": "테스트",
+            "title": "통합 테스트",
             "quantity": 1,
-            "working_day": 0.25
+            "working_day": 0.5
         },
         {
             "no": 6,
-            "category": "설치",
-            "title": "FTP",
+            "category": "완료",
+            "title": "아키텍처 문서화 및 인계",
             "quantity": 1,
-            "working_day": 0.25
+            "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "EC2, Ubuntu",
-            "supplyPrice": 10000,
+            "work": "아키텍처 설계",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "MariaDB, Redis",
+            "work": "벡엔드 배포",
             "supplyPrice": 30000,
             "quantity": 1,
             "sumPrice": 30000
         },
         {
             "no": 3,
-            "work": "FastAPI 개발 환경",
+            "work": "보안 구축",
             "supplyPrice": 20000,
             "quantity": 1,
             "sumPrice": 20000
         },
         {
             "no": 4,
-            "work": "Nginx, Uvicorn",
-            "supplyPrice": 20000,
+            "work": "기타 소프트웨어 설치",
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 20000
-        },
-        {
-            "no": 5,
-            "work": "도메인, SSL",
-            "supplyPrice": 20000,
-            "quantity": 1,
-            "sumPrice": 20000
-        },
-        {
-            "no": 6,
-            "work": "FTP",
-            "supplyPrice": 20000,
-            "quantity": 1,
-            "sumPrice": 20000
+            "sumPrice": 30000
         }
     ]
 }

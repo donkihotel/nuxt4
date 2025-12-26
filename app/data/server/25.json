@@ -14,16 +14,18 @@
         "budget": 100000,
         "performance": "스케일아웃",
         "app_deploy": "자동",
-        "security": "SSL, 방화벽"
+        "security": "SSL, 방화벽",
+        "etc": null
     },
     "design": {
         "instance": "EC2, ECS (Fargate)",
-        "vpc": "Private",
+        "network": "VPC (Private)",
+        "os": "Amazon Linux, Container",
         "storage": "EBS, S3, EFS",
+        "dns": "Route 53",
         "database": "RDS (MySQL Multi-AZ)",
-        "software": "Nginx",
         "deploy": {
-            "frontend": "S3, CloudFront",
+            "frontend": "CloudFront (S3)",
             "backend": "ECS (Fargate)",
             "source": "Github",
             "build": "CodeBuild",
@@ -100,28 +102,28 @@
         },
         {
             "no": 2,
-            "work": "프론트 CI/CD",
+            "work": "프론트 CI/CD 배포",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
         },
         {
             "no": 3,
-            "work": "백엔드 CI/CD",
+            "work": "백엔드 CI/CD 배포",
             "supplyPrice": 160000,
             "quantity": 3,
             "sumPrice": 480000
         },
         {
             "no": 4,
-            "work": "보안 도구",
+            "work": "보안 구축",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
         },
         {
             "no": 5,
-            "work": "확장 구축",
+            "work": "부하분산 구축",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000

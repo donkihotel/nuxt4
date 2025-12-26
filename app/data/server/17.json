@@ -18,14 +18,14 @@
     },
     "design": {
         "instance": "EC2, ECS (Fargate)",
-        "vpc": "Private",
+        "network": "Private",
         "os": "Docker",
         "web_server": "SpringBoot",
         "database": "RDS (MySQL Multi-AZ)",
         "app_deploy": "CI/CD (Github, Code Build/Pipeline/Deploy)",
         "storage": "EBS, S3, EFS",
         "performance": "LoadBalancer, AutoScaling",
-        "security": "VPC (Private), ACM, WAF, GuardDuty, Parameterstore",
+        "security": "network (Private), ACM, WAF, GuardDuty, Parameterstore",
         "cdn": "Cloudfront"
     },
     "schedule": [
@@ -39,7 +39,7 @@
         {
             "no": 2,
             "category": "구축",
-            "title": "VPC 네트워크",
+            "title": "network 네트워크",
             "quantity": 1,
             "working_day": 1
         },

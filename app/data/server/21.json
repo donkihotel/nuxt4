@@ -14,40 +14,60 @@
         "budget": 60000,
         "performance": "스케일업",
         "app_deploy": "수동",
-        "security": "SSL, 방화벽"
+        "security": "SSL, 방화벽",
+        "etc": null
     },
     "design": {
-        "performance": "EC2",
-        "app_deploy": "Github-수동",
-        "security": "SSL, WAF",
-        "server_database": "EC2-MySQL"
+        "instance": "Lightsail",
+        "network": "Public",
+        "os": "Ubuntu",
+        "storage": "EBS",
+        "dns": "Lightsail DNS",
+        "database": "MariaDB",
+        "deploy": {
+            "frontend": null,
+            "backend": "Apache (PHP)",
+            "source": "File (zip), 이윰",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt), WAF (ModSecurity, ModEvasiave)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "etc": "vsftpd, GoAccess"
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
-            "title": "아키텍처 문서화",
+            "category": "기본",
+            "title": "아키텍처 설계/구축",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "데이터베이스 구축",
+            "category": "배포",
+            "title": "백엔드 배포",
             "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "백엔드 구축",
+            "category": "보안",
+            "title": "보안 구축",
             "quantity": 1,
-            "working_day": 1
+            "working_day": 0.5
         },
         {
             "no": 4,
-            "category": "구축",
-            "title": "보안 구축",
+            "category": "기타",
+            "title": "소프트웨어 설치",
             "quantity": 1,
             "working_day": 0.5
         },
@@ -61,39 +81,39 @@
         {
             "no": 6,
             "category": "완료",
-            "title": "서버관리 문서화",
+            "title": "아키텍처 문서화 및 인계",
             "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 구축",
-            "supplyPrice": 30000,
+            "work": "아키텍처 설계/구축",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "데이터베이스 구축",
-            "supplyPrice": 30000,
+            "work": "백엔드 배포",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 60000
         },
         {
             "no": 3,
-            "work": "프론트 구축",
+            "work": "보안 구축",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 4,
-            "work": "보안 구축",
-            "supplyPrice": 60000,
+            "work": "기타 소프트웨어 설치",
+            "supplyPrice": 40000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 40000
         }
     ]
 }
