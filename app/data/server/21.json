@@ -40,7 +40,7 @@
             "autoscaling": null,
             "cdn": null
         },
-        "etc": "vsftpd, GoAccess"
+        "software": "vsftpd, GoAccess"
     },
     "schedule": [
         {

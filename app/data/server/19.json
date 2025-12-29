@@ -39,7 +39,7 @@
             "autoscaling": null,
             "cdn": null
         },
-        "etc": "vsftpd"
+        "software": "vsftpd"
     },
     "schedule": [
         {

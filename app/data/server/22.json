@@ -39,7 +39,8 @@
             "loadbalancer": null,
             "autoscaling": null,
             "cdn": null
-        }
+        },
+        "software": null
     },
     "schedule": [
         {

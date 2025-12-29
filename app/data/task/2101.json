@@ -1,0 +1,32 @@
+{
+    "id": 2101,
+    "date": "2025-10-23",
+    "type": "배포",
+    "title": "프론트 애플리케이션 배포 - Nginx",
+    "level": 4,
+    "time": "2시간",
+    "price": "3만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "노드",
+            "content": "Node를 설치 합니다."
+        },
+        {
+            "step": 2,
+            "title": "소스 복사",
+            "content": "프론트 소스 복사하고 빌드 합니다."
+        },
+        {
+            "step": 3,
+            "title": "Nginx",
+            "content": "Nginx를 설치하고 빌드된 소스를 연결 합니다."
+        },
+        {
+            "step": 4,
+            "title": "도메인 연결",
+            "content": "도메인 레코드를 설정합니다."
+        }
+    ]
+}

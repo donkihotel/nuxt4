@@ -1,0 +1,32 @@
+{
+    "id": 4102,
+    "date": "2025-10-23",
+    "type": "부하분산",
+    "title": "애플리케이션 로드밸런서 - 복합 리스너",
+    "level": 3,
+    "time": "1시간",
+    "price": "4만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "대상 그룹",
+            "content": "대상 그룹을 2개 이상 생성 합니다."
+        },
+        {
+            "step": 2,
+            "title": "ACM",
+            "content": "Certificate Manager 에서 SSL 인증서를 생성합니다."
+        },
+        {
+            "step": 3,
+            "title": "로드밸런서",
+            "content": "애플리케이션 로드밸런서를 생성하고, 2개의 이상의 리스너를 설정 합니다."
+        },
+        {
+            "step": 4,
+            "title": "도메인",
+            "content": "Route 53에 2개 이상 레코드에 로드밸런서를 연결합니다."
+        }
+    ]
+}

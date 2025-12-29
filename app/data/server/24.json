@@ -39,7 +39,8 @@
             "loadbalancer": "Application LB",
             "autoscaling": "사용",
             "cdn": "CloudFront"
-        }
+        },
+        "software": null
     },
     "schedule": [
         {

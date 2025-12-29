@@ -40,7 +40,7 @@
             "autoscaling": null,
             "cdn": null
         },
-        "etc": "Redis, vsftpd"
+        "software": "Redis, vsftpd"
     },
     "schedule": [
         {

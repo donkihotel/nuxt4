@@ -1,0 +1,27 @@
+{
+    "id": 1101,
+    "date": "2025-10-23",
+    "type": "기본",
+    "title": "Lightsail 아키텍처 설계 - 기본",
+    "level": 1,
+    "time": "1시간",
+    "price": "2만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "인스턴스",
+            "content": "라이트세일에서 인스턴스를 생성합니다."
+        },
+        {
+            "step": 2,
+            "title": "네트워킹",
+            "content": "고정 IP를 연결합니다."
+        },
+        {
+            "step": 3,
+            "title": "도메인 및 DNS",
+            "content": "DNS 생성하고 도메인 연결을 합니다."
+        }
+    ]
+}

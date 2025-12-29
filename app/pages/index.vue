@@ -12,9 +12,10 @@
           </v-toolbar>
         </template>
 
-        <template #item.price="{ item }">
-          {{ formatPrice(item.price) }}
+        <template #item.count="{ item }">
+          {{ item.count }} 단계 <span class="text-caption">({{ item.time }})</span>
         </template>
+
       </v-data-table>
     </v-col>
     <v-col cols="5">
@@ -141,10 +142,11 @@ const task = items0.default.task
   .slice(0, 8)
 
 const headers0: DataTableHeader[] = [
-  { title: 'No', value: 'id', align: 'end' },
-  { title: '작업', value: 'title' },
-  { title: '난이도', value: 'level' },
-  { title: '작업 시간', value: 'time' },
+  { title: 'No', value: 'id' },
+  { title: '설계 구분', value: 'design' },
+  { title: '작업 이름', value: 'title' },
+  { title: '작업 과정', value: 'count' },
+  // { title: '작업 시간', value: 'time' },
   { title: '작업 비용', value: 'price', align: 'end' }
 ]
 

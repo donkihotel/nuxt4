@@ -1,0 +1,27 @@
+{
+    "id": 4103,
+    "date": "2025-10-23",
+    "type": "부하분산",
+    "title": "CDN 클라우드프론트 - 프론트 웹",
+    "level": 3,
+    "time": "1시간",
+    "price": "3만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "S3",
+            "content": "S3 버킷을 생성하고 스태틱 웹 파일을 복사 합니다."
+        },
+        {
+            "step": 2,
+            "title": "CloudFront",
+            "content": "클라우드프론트를 생성하고 S3 버킷을 연결 합니다."
+        },
+        {
+            "step": 3,
+            "title": "Route 53",
+            "content": "DNS 생성하고, 레코드에 클라우드프론트를 연결 합니다."
+        }
+    ]
+}

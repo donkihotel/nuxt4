@@ -1,0 +1,32 @@
+{
+    "id": 4101,
+    "date": "2025-10-23",
+    "type": "부하분산",
+    "title": "애플리케이션 로드밸런서 - 단순 리스너",
+    "level": 2,
+    "time": "1시간",
+    "price": "3만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "대상 그룹",
+            "content": "대상 그룹을 1개 생성 합니다."
+        },
+        {
+            "step": 2,
+            "title": "ACM",
+            "content": "Certificate Manager 에서 SSL 인증서를 생성합니다."
+        },
+        {
+            "step": 3,
+            "title": "로드밸런서",
+            "content": "애플리케이션 로드밸런서를 생성하고, 1개의 리스너를 설정 합니다."
+        },
+        {
+            "step": 4,
+            "title": "도메인",
+            "content": "Route 53에 1개의 레코드에 로드밸런서를 연결합니다."
+        }
+    ]
+}

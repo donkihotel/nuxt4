@@ -1,84 +1,130 @@
 {
     "task": [
         {
-            "id": 1,
-            "category": "거버넌스",
-            "title": "AWS Organizations를 활용한 멀티 계정 관리",
-            "level": "중",
+            "id": 1101,
+            "design": "기본",
+            "title": "Lightsail 아키텍처 설계 - 기본",
+            "count": 3,
+            "level": 1,
             "time": "1시간",
-            "price": 20000
+            "price": "2만원"
         },
         {
-            "id": 2,
-            "category": "거버넌스",
-            "title": "AWS IAM Identity Center 설정",
-            "level": "중",
-            "time": "30분",
-            "price": 20000
+            "id": 1102,
+            "design": "기본",
+            "title": "Lightsail 아키텍처 설계 - 데이터베이스",
+            "count": 4,
+            "level": 2,
+            "time": "1시간",
+            "price": "3만원"
         },
         {
-            "id": 3,
-            "category": "네트워크",
-            "title": "AWS Private network 설계",
-            "level": "상",
+            "id": 1103,
+            "design": "기본",
+            "title": "Lightsail 아키텍처 설계 - 스토리지",
+            "count": 5,
+            "level": 3,
+            "time": "1시간",
+            "price": "4만원"
+        },
+        {
+            "id": 1201,
+            "design": "기본",
+            "title": "EC2 아키텍처 설계 - 기본",
+            "count": 4,
+            "level": 1,
+            "time": "1시간",
+            "price": "2만원"
+        },
+        {
+            "id": 1202,
+            "design": "기본",
+            "title": "EC2 아키텍처 설계 - 데이터베이스",
+            "count": 5,
+            "level": 2,
+            "time": "1시간",
+            "price": "3만원"
+        },
+        {
+            "id": 1203,
+            "design": "기본",
+            "title": "EC2 아키텍처 설계 - 스토리지",
+            "count": 5,
+            "level": 3,
             "time": "2시간",
-            "price": 60000
+            "price": "4만원"
         },
         {
-            "id": 4,
-            "category": "컴퓨터",
-            "title": "AWS EC2 Bastion Host 구축",
-            "level": "하",
-            "time": "30분",
-            "price": 10000
+            "id": 1204,
+            "design": "기본",
+            "title": "EC2 아키텍처 설계 - 서버 분리",
+            "count": 6,
+            "level": 4,
+            "time": "2시간",
+            "price": "5만원"
         },
         {
-            "id": 5,
-            "category": "네트워크",
-            "title": "AWS EC2 NAT 게이트웨이 구축",
-            "level": "하",
+            "id": 2101,
+            "design": "배포",
+            "title": "프론트 애플리케이션 배포 - Nginx",
+            "count": 4,
+            "level": 3,
+            "time": "2시간",
+            "price": "3만원"
+        },
+        {
+            "id": 3101,
+            "design": "보안",
+            "title": "SSL 무료 인증서 설치",
+            "count": 3,
+            "level": 2,
             "time": "1시간",
-            "price": 20000
+            "price": "3만원"
         },
         {
-            "id": 6,
-            "category": "네트워크",
-            "title": "AWS Route53 설정",
-            "level": "하",
-            "time": "30분",
-            "price": 10000
-        },
-        {
-            "id": 7,
-            "category": "데이터베이스",
-            "title": "AWS RDS MySQL 인스턴스 생성",
-            "level": "중",
+            "id": 4101,
+            "design": "부하분산",
+            "title": "애플리케이션 로드밸런서 - 단순 리스너",
+            "count": 4,
+            "level": 2,
             "time": "1시간",
-            "price": 20000
+            "price": "3만원"
         },
         {
-            "id": 8,
-            "category": "데이터베이스",
-            "title": "MySQL 데이터베이스 및 계정 생성",
-            "level": "하",
-            "time": "30분",
-            "price": 10000
+            "id": 4102,
+            "design": "부하분산",
+            "title": "애플리케이션 로드밸런서 - 복합 리스너",
+            "count": 4,
+            "level": 3,
+            "time": "2시간",
+            "price": "4만원"
         },
         {
-            "id": 9,
-            "category": "데이터베이스",
-            "title": "MySQL 데이터베이스 백업 및 복구",
-            "level": "중",
+            "id": 4103,
+            "design": "부하분산",
+            "title": "CDN 클라우드프론트 - 프론트 웹",
+            "count": 4,
+            "level": 3,
             "time": "1시간",
-            "price": 20000
+            "price": "3만원"
         },
         {
-            "id": 10,
-            "category": "데이터베이스",
-            "title": "RDS 스냅샷 계정 이전",
-            "level": "중",
+            "id": 5101,
+            "design": "소프트웨어",
+            "title": "Redis 설치",
+            "count": 2,
+            "level": 1,
             "time": "1시간",
-            "price": 20000
+            "price": "1만원"
+        },
+        {
+            "id": 5102,
+            "design": "소프트웨어",
+            "title": "vsftpd 설치",
+            "count": 3,
+            "level": 2,
+            "time": "1시간",
+            "price": "2만원"
         }
     ]
 }

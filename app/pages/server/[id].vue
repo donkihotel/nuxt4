@@ -105,7 +105,7 @@
 
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2">
-            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처
+            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계
           </h3>
           <v-card-text>
             <p class="text-h6 font-weight-black">기본</p>
@@ -220,13 +220,13 @@
           </v-card-text>
 
           <v-card-text>
-            <p class="text-h6 font-weight-black">기타</p>
+            <p class="text-h6 font-weight-black">소프트웨어</p>
             <v-divider></v-divider>
             <v-row>
               <v-col cols="12">
                 <div class="my-3">
-                  <div class="font-weight-bold">소프트웨어</div>
-                  <div>{{ server?.design?.etc ?? '-' }}</div>
+                  <div class="font-weight-bold">설치</div>
+                  <div>{{ server?.design?.software ?? '-' }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -363,7 +363,7 @@ interface Design {
   deploy: Deploy,       // 배포
   security: Security    // 보안
   extension: Extension  // 확장
-  etc: string
+  software: string
 }
 
 interface ScheduleItem {

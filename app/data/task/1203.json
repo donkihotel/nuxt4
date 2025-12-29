@@ -1,0 +1,37 @@
+{
+    "id": 1203,
+    "date": "2025-10-23",
+    "type": "기본",
+    "title": "EC2 아키텍처 설계 - 스토리지",
+    "level": 3,
+    "time": "1시간",
+    "price": "3만원",
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "인스턴스",
+            "content": "EC2 인스턴스를 생성합니다."
+        },
+        {
+            "step": 2,
+            "title": "네트워크 및 보안",
+            "content": "보안 그룹, 탄력적 IP 생성하여 연결 합니다."
+        },
+        {
+            "step": 3,
+            "title": "스토리지",
+            "content": "EBS 볼륨을 확장 또는 수명 주기를 생성 합니다."
+        },
+        {
+            "step": 4,
+            "title": "도메인 및 DNS",
+            "content": "Route 53 생성하고 도메인 연결을 합니다."
+        },
+        {
+            "step": 5,
+            "title": "데이터베이스",
+            "content": "EC2 또는 RDS 에 단일 DB 인스턴스를 생성합니다"
+        }
+    ]
+}
