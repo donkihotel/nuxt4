@@ -57,13 +57,13 @@
             <v-row>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">호스팅</div>
+                  <div class="font-weight-bold">서버 호스팅</div>
                   <div>{{ server?.requirements.hosting ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div>
-                    <span class="font-weight-bold">예산</span>
-                    <span class="font-italic"> - 서버 요금(월)</span>
+                    <span class="font-weight-bold">서버 예산</span>
+                    <span class="font-italic"> - 요금(월)</span>
                   </div>
                   <div v-if="server?.requirements.budget">
                     {{ formatPrice(server?.requirements.budget ?? 0) }} 원
@@ -71,7 +71,7 @@
                   <div v-else>-</div>
                 </div>
                 <div>
-                  <div class="font-weight-bold">환경</div>
+                  <div class="font-weight-bold">운영 환경</div>
                   <div>{{ server?.requirements.environment ?? '-' }}</div>
                 </div>
               </v-col>
@@ -80,10 +80,6 @@
 
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">확장</div>
-                  <div>{{ server?.requirements.performance ?? '-' }}</div>
-                </div>
-                <div class="my-3">
                   <div>
                     <span class="font-weight-bold">배포</span>
                     <span class="font-italic"> - 애플리케이션</span>
@@ -93,6 +89,10 @@
                 <div class="my-3">
                   <div class="font-weight-bold">보안</div>
                   <div>{{ server?.requirements.security ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">서버 확장</div>
+                  <div>{{ server?.requirements.performance ?? '-' }}</div>
                 </div>
                 <div>
                   <div class="font-weight-bold">기타</div>
@@ -105,7 +105,7 @@
 
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2">
-            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>설계
+            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처
           </h3>
           <v-card-text>
             <p class="text-h6 font-weight-black">기본</p>
@@ -124,18 +124,22 @@
                   <div class="font-weight-bold">OS 및 운영환경</div>
                   <div>{{ server?.design.os ?? '-' }}</div>
                 </div>
+                <div>
+                  <div class="font-weight-bold">스토리지</div>
+                  <div>{{ server?.design.storage ?? '-' }}</div>
+                </div>
               </v-col>
 
               <v-divider vertical inset></v-divider>
 
               <v-col cols="6">
                 <div class="my-3">
-                  <div class="font-weight-bold">스토리지</div>
-                  <div>{{ server?.design.storage ?? '-' }}</div>
-                </div>
-                <div class="my-3">
                   <div class="font-weight-bold">도메인 및 DNS</div>
                   <div>{{ server?.design.dns ?? '-' }}</div>
+                </div>
+                <div class="my-3">
+                  <div class="font-weight-bold">웹 서버</div>
+                  <div>{{ server?.design.webserver ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div class="font-weight-bold">데이터베이스</div>
@@ -358,6 +362,7 @@ interface Design {
   network: string
   os: string
   storage: string
+  webserver: string
   database: string
   dns: string
   deploy: Deploy,       // 배포

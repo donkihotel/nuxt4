@@ -10,7 +10,7 @@
     "process": [
         {
             "step": 1,
-            "title": "노드",
+            "title": "노드 설치",
             "content": "Node를 설치 합니다."
         },
         {
@@ -20,7 +20,7 @@
         },
         {
             "step": 3,
-            "title": "Nginx",
+            "title": "Nginx 실행",
             "content": "Nginx를 설치하고 빌드된 소스를 연결 합니다."
         },
         {

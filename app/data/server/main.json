@@ -3,7 +3,7 @@
         {
             "id": 1,
             "created_at": "2025-01-08",
-            "frontend": "",
+            "frontend": null,
             "backend": "Express",
             "database": "MongoDB",
             "hosting": "DigitalOcean",
@@ -17,7 +17,7 @@
         {
             "id": 2,
             "created_at": "2025-01-14",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "hosting": "AWS",
@@ -59,7 +59,7 @@
         {
             "id": 5,
             "created_at": "2025-02-11",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MySQL",
             "hosting": "AWS",
@@ -101,9 +101,9 @@
         {
             "id": 8,
             "created_at": "2025-04-07",
-            "frontend": "",
+            "frontend": null,
             "backend": "Python",
-            "database": "-",
+            "database": null,
             "hosting": "AWS",
             "security": 0,
             "budget": 30000,
@@ -157,7 +157,7 @@
         {
             "id": 12,
             "created_at": "2025-05-05",
-            "frontend": "",
+            "frontend": null,
             "backend": "SpringBoot",
             "database": "DynamoDB",
             "hosting": "AWS",
@@ -171,7 +171,7 @@
         {
             "id": 13,
             "created_at": "2025-05-10",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "hosting": "CAFE24",
@@ -185,7 +185,7 @@
         {
             "id": 14,
             "created_at": "2025-05-15",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "hosting": "AWS",
@@ -199,7 +199,7 @@
         {
             "id": 15,
             "created_at": "2025-05-16",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MySQL",
             "hosting": "Njalla",
@@ -213,7 +213,7 @@
         {
             "id": 16,
             "created_at": "2025-05-20",
-            "frontend": "",
+            "frontend": null,
             "backend": "SpringBoot",
             "database": "MariaDB",
             "hosting": "AWS",
@@ -241,7 +241,7 @@
         {
             "id": 18,
             "created_at": "2025-07-07",
-            "frontend": "",
+            "frontend": null,
             "backend": "Spring",
             "database": "MariaDB",
             "hosting": "AWS",
@@ -255,7 +255,7 @@
         {
             "id": 19,
             "created_at": "2025-08-07",
-            "frontend": "",
+            "frontend": null,
             "backend": "Streamlit",
             "database": "",
             "hosting": "AWS",
@@ -269,9 +269,9 @@
         {
             "id": 20,
             "created_at": "2025-08-08",
-            "frontend": "",
+            "frontend": null,
             "backend": "FastAPI",
-            "database": "MariaDB",
+            "database": "MySQL",
             "hosting": "AWS",
             "security": 1,
             "budget": 30000,
@@ -283,7 +283,7 @@
         {
             "id": 21,
             "created_at": "2025-08-20",
-            "frontend": "",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "hosting": "AWS",

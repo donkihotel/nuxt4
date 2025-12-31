@@ -138,8 +138,8 @@
     </v-expansion-panel>
   </v-expansion-panels>
 
-  <v-data-table :headers="headers" :items="server_list" :items-per-page="10" v-model:page="page" hover
-    class="text-no-wrap" @click:row="handleClickRow" disable-sort>
+  <v-data-table :headers="headers" :items="items" :items-per-page="10" v-model:page="page" hover class="text-no-wrap"
+    @click:row="handleClickRow" disable-sort>
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
@@ -158,7 +158,8 @@
 
     <template v-slot:item.backend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+        <v-img v-if="item.backend" :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24"
+          class="mr-2" />
         <span>{{ item.backend }}</span>
       </v-chip>
     </template>
@@ -213,9 +214,9 @@ import type { DataTableHeader } from 'vuetify'
 
 interface Server {
   id: number
-  frontend: string
-  backend: string
-  database: string
+  frontend: string | null
+  backend: string | null
+  database: string | null
   hosting: string
   performance: string
   app_deploy: string
@@ -243,23 +244,23 @@ const headers: DataTableHeader[] = [
 ]
 
 // 상태
-const server_list = ref<Server[]>([])
+const items = ref<Server[]>([])
 const page = ref(Number(route.query.page) || 1)
 const perPage = 10
 
 // 데이터 로드
 onMounted(async () => {
   const data = await import('~/data/server/main.json')
-  server_list.value = (data.default.items || []).slice().sort((a, b) => b.id - a.id)
+  items.value = (data.default.items || []).slice().sort((a, b) => b.id - a.id)
 })
 
 // 전체 페이지 수
-const pageCount = computed(() => Math.ceil(server_list.value.length / perPage) || 1)
+const pageCount = computed(() => Math.ceil(items.value.length / perPage) || 1)
 
 // 현재 페이지 데이터 계산
 const paginatedItems = computed(() => {
   const start = (page.value - 1) * perPage
-  return server_list.value.slice(start, start + perPage)
+  return items.value.slice(start, start + perPage)
 })
 
 // 페이지 변경 시 호출 (선택적)

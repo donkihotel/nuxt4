@@ -67,7 +67,8 @@
 
         <template v-slot:item.database="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24" class="mr-2" />
+            <v-img v-if="item.database" :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24"
+              class="mr-2" />
             <span>{{ item.database }}</span>
           </v-chip>
         </template>
@@ -116,8 +117,15 @@
           {{ formatPrice(item.ssl_cost) }}
         </template>
 
-        <template #item.email="{ item }">
+        <!-- <template #item.email="{ item }">
           <v-img :src="`assets/email/${formatMailIcon(item.email)}`" width="120" />
+        </template> -->
+
+        <template #item.email="{ item }">
+          <v-img v-if="!itemEmailError[item.id]" :src="`assets/email/${formatMailIcon(item.email)}`" width="120"
+            @error="itemEmailError[item.id] = true" />
+
+          <span v-else>{{ item.email }}</span>
         </template>
 
         <template #item.cost="{ item }">
@@ -217,4 +225,6 @@ const handleClickRow = (basePath: string) => {
 const onClickTaskRow = handleClickRow('task')
 const onClickServerRow = handleClickRow('server')
 const onClickDomainRow = handleClickRow('domain')
+
+const itemEmailError = reactive<{ [key: string]: boolean }>({})
 </script>

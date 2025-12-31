@@ -1,20 +1,20 @@
 {
     "id": 20,
     "date": "2025-08-08",
-    "title": "IoT 센서 데이터 서버",
+    "title": "수치 계산과 데이터 분석 서버",
     "development": {
         "frontend": null,
         "backend": "FastAPI (1EA)",
-        "database": "MariaDB",
+        "database": "MySQL",
         "linkage": "TensorFlow"
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "개발",
         "budget": 30000,
-        "performance": "스케일업",
+        "environment": "개발",
         "app_deploy": "수동",
         "security": "SSL",
+        "performance": "스케일업",
         "etc": null
     },
     "design": {
@@ -23,10 +23,11 @@
         "os": "Ubuntu",
         "storage": "EBS",
         "dns": "Cloudflare",
+        "webserver": "Nginx",
         "database": "MariaDB (EC2)",
         "deploy": {
             "frontend": null,
-            "backend": "Gunicorn (Python)",
+            "backend": "FastAPI (Gunicorn)",
             "source": "File (zip)",
             "build": null,
             "deploy": null
@@ -46,7 +47,7 @@
         {
             "no": 1,
             "category": "기본",
-            "title": "아키텍처 설계/구축",
+            "title": "아키텍처 설계",
             "quantity": 1,
             "working_day": 0.5
         },
@@ -66,9 +67,9 @@
         },
         {
             "no": 4,
-            "category": "기타",
+            "category": "소프트웨어",
             "title": "소프트웨어 설치",
-            "quantity": 1,
+            "quantity": 2,
             "working_day": 0.25
         },
         {
@@ -110,7 +111,7 @@
         },
         {
             "no": 4,
-            "work": "기타 소프트웨어 설치",
+            "work": "소프트웨어 설치",
             "supplyPrice": 30000,
             "quantity": 1,
             "sumPrice": 30000

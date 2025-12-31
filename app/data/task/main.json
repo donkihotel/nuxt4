@@ -73,6 +73,15 @@
             "price": "3만원"
         },
         {
+            "id": 2102,
+            "design": "배포",
+            "title": "백엔드 애플리케이션 배포 - FastAPI",
+            "count": 8,
+            "level": 3,
+            "time": "2시간",
+            "price": "6만원"
+        },
+        {
             "id": 3101,
             "design": "보안",
             "title": "SSL 무료 인증서 설치",
