@@ -1,7 +1,7 @@
 {
     "id": 22,
     "date": "2025-08-26",
-    "title": "***** 관리 시스템",
+    "title": "의료 모니터링 서버",
     "development": {
         "frontend": "React (1EA)",
         "backend": "Express (1EA)",
@@ -46,71 +46,65 @@
         {
             "no": 1,
             "category": "기본",
-            "title": "아키텍처 설계/구축",
-            "quantity": 1,
+            "title": "아키텍처 설계",
             "working_day": 0.5
         },
         {
             "no": 2,
             "category": "배포",
-            "title": "프론트 배포",
-            "quantity": 1,
+            "title": "프론트 애플리케이션",
             "working_day": 0.5
         },
         {
             "no": 3,
             "category": "배포",
-            "title": "백엔드 배포",
-            "quantity": 1,
+            "title": "백엔드 애플리케이션",
             "working_day": 0.5
         },
         {
             "no": 4,
             "category": "보안",
-            "title": "보안 구축",
-            "quantity": 1,
+            "title": "보안 도구 설치",
             "working_day": 0.5
         },
         {
             "no": 5,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 6,
             "category": "완료",
             "title": "아키텍처 문서화 및 인계",
-            "quantity": 1,
             "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계/구축",
+            "work": "기본 아키텍처 설계",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "프론트 배포",
+            "work": "프론트 애플리케이션 배포",
             "supplyPrice": 40000,
             "quantity": 1,
             "sumPrice": 40000
         },
         {
             "no": 3,
-            "work": "백엔드 배포",
+            "work": "백엔드 애플리케이션 배포",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 4,
-            "work": "보안 도구",
+            "work": "보안 도구 설치",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000

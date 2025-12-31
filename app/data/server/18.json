@@ -1,10 +1,10 @@
 {
     "id": 18,
     "date": "2025-07-07",
-    "title": "**** 수시/생활 보고서 시스템",
+    "title": "글로벌사이트 홈페이지 서버",
     "development": {
         "frontend": null,
-        "backend": "Spring",
+        "backend": "Spring (2EA)",
         "database": "MariaDB",
         "linkage": "Google reCAPTCHA"
     },
@@ -19,68 +19,66 @@
     "design": {
         "instance": "EC2",
         "network": "Public",
-        "web_server": "Nginx, Tomcat",
-        "database": "MariaDB",
-        "app_deploy": "파일 복사",
+        "os": "Amazon Linux",
         "storage": "EBS",
-        "performance": null,
-        "security": "Let's Encrypt"
+        "dns": "Route 53",
+        "webserver": "Nginx, Tomcat",
+        "database": "MariaDB (EC2)",
+        "deploy": {
+            "frontend": null,
+            "backend": "Spring (EC2) x 2",
+            "source": "File (zip)",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": null,
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": null
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
+            "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "아키텍처 구축",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "배포",
+            "title": "백엔드 애플리케이션 배포",
+            "working_day": 1
         },
         {
             "no": 3,
-            "category": "배포",
-            "title": "애플리케이션 배포",
-            "quantity": 2,
-            "working_day": 1
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 0.5
         },
         {
             "no": 4,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 1
-        },
-        {
-            "no": 5,
             "category": "완료",
             "title": "문서화 및 인계 교육",
-            "quantity": 1,
             "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 10000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 40000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 40000
         },
         {
             "no": 2,
-            "work": "아키텍처 구축",
-            "supplyPrice": 60000,
-            "quantity": 1,
-            "sumPrice": 60000
-        },
-        {
-            "no": 3,
-            "work": "애플리케이션 배포",
+            "work": "배포 백엔드 애플리케이션",
             "supplyPrice": 60000,
             "quantity": 2,
             "sumPrice": 120000

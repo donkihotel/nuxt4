@@ -11,7 +11,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          작업
+          작업 비용
         </v-toolbar-title>
       </v-toolbar>
     </template>

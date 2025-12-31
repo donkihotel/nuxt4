@@ -143,7 +143,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          작업 사례
+          서버 구축
         </v-toolbar-title>
       </v-toolbar>
     </template>
@@ -217,7 +217,7 @@ interface Server {
   frontend: string | null
   backend: string | null
   database: string | null
-  hosting: string
+  instance: string
   performance: string
   app_deploy: string
   security: number
@@ -234,13 +234,13 @@ const headers: DataTableHeader[] = [
   { title: '프론트엔드', key: 'frontend' },
   { title: '백엔드', key: 'backend' },
   { title: '데이터베이스', key: 'database' },
-  { title: '서버 호스팅', key: 'hosting' },
-  { title: '서버 예산', key: 'budget', align: 'end' },
-  { title: '서버 확장', key: 'performance', align: 'center' },
-  { title: '서버 배포', key: 'app_deploy', align: 'center' },
-  { title: '서버 보안', key: 'security', align: 'center' },
-  { title: '구축 일정', key: 'build_day', align: 'end' },
-  { title: '구축 비용', key: 'build_cost', align: 'end' },
+  { title: '인스턴스', key: 'instance' },
+  { title: '예산', key: 'budget', align: 'end' },
+  { title: '확장', key: 'performance', align: 'center' },
+  { title: '배포', key: 'app_deploy', align: 'center' },
+  { title: '보안', key: 'security', align: 'center' },
+  { title: '일정', key: 'build_day', align: 'end' },
+  { title: '비용', key: 'build_cost', align: 'end' },
 ]
 
 // 상태

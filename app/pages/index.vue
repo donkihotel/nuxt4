@@ -163,7 +163,7 @@ const headers1: DataTableHeader[] = [
   { title: '프론트엔드', value: 'frontend' },
   { title: '백엔드', value: 'backend' },
   { title: '데이터베이스', value: 'database' },
-  { title: '서버 호스팅', value: 'hosting' },
+  { title: '서버', value: 'instance' },
   { title: '서버 예산', value: 'budget', align: 'end' },
   { title: '서버 확장', value: 'performance', align: 'center' },
   { title: '서버 배포', value: 'app_deploy', align: 'center' },

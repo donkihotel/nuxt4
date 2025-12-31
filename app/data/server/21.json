@@ -1,12 +1,12 @@
 {
     "id": 21,
     "date": "2025-12-11",
-    "title": "***** 관리 시스템",
+    "title": "이윰 쇼핑몰 서버",
     "development": {
         "frontend": null,
-        "backend": "PHP, 이윰쇼핑몰",
+        "backend": "PHP",
         "database": "MariaDB",
-        "linkage": null
+        "linkage": "이윰쇼핑몰"
     },
     "requirements": {
         "hosting": "AWS",
@@ -26,8 +26,8 @@
         "database": "MariaDB",
         "deploy": {
             "frontend": null,
-            "backend": "Apache (PHP)",
-            "source": "File (zip), 이윰",
+            "backend": "PHP (Lightsail)",
+            "source": "이윰(zip)",
             "build": null,
             "deploy": null
         },
@@ -46,57 +46,51 @@
         {
             "no": 1,
             "category": "기본",
-            "title": "아키텍처 설계/구축",
-            "quantity": 1,
+            "title": "아키텍처 설계",
             "working_day": 0.5
         },
         {
             "no": 2,
             "category": "배포",
-            "title": "백엔드 배포",
-            "quantity": 1,
+            "title": "백엔드 애플리케이션 배포",
             "working_day": 0.5
         },
         {
             "no": 3,
             "category": "보안",
-            "title": "보안 구축",
-            "quantity": 1,
+            "title": "보안 도구 설치",
             "working_day": 0.5
         },
         {
             "no": 4,
-            "category": "기타",
+            "category": "소프트웨어",
             "title": "소프트웨어 설치",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 5,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 6,
             "category": "완료",
             "title": "아키텍처 문서화 및 인계",
-            "quantity": 1,
             "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계/구축",
+            "work": "기본 아키텍처 설계",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "백엔드 배포",
+            "work": "백엔드 애플리케이션 배포",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
@@ -110,7 +104,7 @@
         },
         {
             "no": 4,
-            "work": "기타 소프트웨어 설치",
+            "work": "소프트웨어 설치",
             "supplyPrice": 40000,
             "quantity": 1,
             "sumPrice": 40000

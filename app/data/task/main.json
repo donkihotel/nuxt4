@@ -84,9 +84,18 @@
         {
             "id": 3101,
             "design": "보안",
-            "title": "SSL 무료 인증서 설치",
+            "title": "SSL 인증서 Let's Encrypt 설치",
             "count": 3,
             "level": 2,
+            "time": "1시간",
+            "price": "3만원"
+        },
+        {
+            "id": 3102,
+            "design": "보안",
+            "title": "방화벽 ModSecurity 설치",
+            "count": 4,
+            "level": 3,
             "time": "1시간",
             "price": "3만원"
         },

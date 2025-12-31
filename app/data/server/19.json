@@ -1,7 +1,7 @@
 {
     "id": 19,
     "date": "2025-08-08",
-    "title": "**** 수시/생활 보고서 시스템",
+    "title": "학생 수시(관리) 서버",
     "development": {
         "frontend": null,
         "backend": "Streamlit (2EA)",
@@ -25,7 +25,7 @@
         "database": null,
         "deploy": {
             "frontend": null,
-            "backend": "Gunicorn (Python)",
+            "backend": "Streamlit (Lightsail)",
             "source": "Github",
             "build": null,
             "deploy": null
@@ -45,50 +45,51 @@
         {
             "no": 1,
             "category": "설계",
-            "title": "아키텍처 설계/구축",
-            "quantity": 1,
+            "title": "아키텍처 설계",
             "working_day": 0.5
         },
         {
             "no": 2,
             "category": "배포",
-            "title": "백엔드 배포",
-            "quantity": 2,
+            "title": "백엔드 애플리케이션",
             "working_day": 1
         },
         {
             "no": 3,
             "category": "보안",
-            "title": "보안 구축",
-            "quantity": 1,
-            "working_day": 0.5
+            "title": "보안 도구 설치",
+            "working_day": 0.25
         },
         {
             "no": 4,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "소프트웨어",
+            "title": "소프트웨어 설치",
+            "working_day": 0.25
         },
         {
             "no": 5,
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 0.5
+        },
+        {
+            "no": 6,
             "category": "완료",
             "title": "문서화 및 인계 교육",
-            "quantity": 1,
             "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계/구축",
-            "supplyPrice": 40000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 20000,
             "quantity": 1,
-            "sumPrice": 40000
+            "sumPrice": 20000
         },
         {
             "no": 2,
-            "work": "백엔드 배포",
+            "work": "배포 백엔드 애플리케이션",
             "supplyPrice": 50000,
             "quantity": 2,
             "sumPrice": 100000
@@ -96,13 +97,13 @@
         {
             "no": 3,
             "work": "보안 구축",
-            "supplyPrice": 20000,
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 20000
+            "sumPrice": 30000
         },
         {
             "no": 4,
-            "work": "기타 소프트웨어 설치",
+            "work": "소프트웨어 설치",
             "supplyPrice": 20000,
             "quantity": 1,
             "sumPrice": 20000

@@ -1,7 +1,7 @@
 {
     "id": 24,
     "date": "2025-11-07",
-    "title": "ECS 아키텍처",
+    "title": "이커머스(e-commerce) 서버",
     "development": {
         "frontend": "React (1EA)",
         "backend": "Express (1EA)",
@@ -10,7 +10,7 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "개발, 운영",
+        "environment": "개발, 프로덕션",
         "budget": 100000,
         "performance": "스케일아웃",
         "app_deploy": "자동",
@@ -25,8 +25,8 @@
         "dns": "Route 53",
         "database": "RDS Multi-AZ",
         "deploy": {
-            "frontend": "CloudFront (S3)",
-            "backend": "ECS (Fargate)",
+            "frontend": "React (S3)",
+            "backend": "Express (ECS)",
             "source": "Github",
             "build": "CodeBuild",
             "deploy": "CodePipeline, CodeDeploy"
@@ -46,36 +46,31 @@
         {
             "no": 1,
             "category": "기본",
-            "title": "아키텍처 설계/구축",
-            "quantity": 1,
+            "title": "아키텍처 설계",
             "working_day": 1
         },
         {
             "no": 2,
             "category": "배포",
-            "title": "프론트 CI/CD 배포",
-            "quantity": 1,
+            "title": "프론트 애플리케이션 CI/CD",
             "working_day": 1
         },
         {
             "no": 3,
             "category": "배포",
-            "title": "백엔드 CI/CD 배포",
-            "quantity": 1,
+            "title": "백엔드 애플리케이션 CI/CD",
             "working_day": 1
         },
         {
             "no": 4,
             "category": "보안",
-            "title": "보안 구축",
-            "quantity": 1,
+            "title": "보안 도구 설치",
             "working_day": 1
         },
         {
             "no": 5,
             "category": "부하분산",
-            "title": "부하분산 구축",
-            "quantity": 1,
+            "title": "로드밸런서, CDN 구축",
             "working_day": 1
         },
         {
@@ -96,21 +91,21 @@
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계/구축",
+            "work": "기본 아키텍처 설계",
             "supplyPrice": 200000,
             "quantity": 1,
             "sumPrice": 200000
         },
         {
             "no": 2,
-            "work": "프론트 CI/CD",
+            "work": "배포 프론트 CI/CD",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000
         },
         {
             "no": 3,
-            "work": "백엔드 CI/CD",
+            "work": "배포 백엔드 CI/CD",
             "supplyPrice": 160000,
             "quantity": 1,
             "sumPrice": 160000
@@ -124,7 +119,7 @@
         },
         {
             "no": 5,
-            "work": "확장 구축",
+            "work": "부하분산 구축",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000

@@ -48,56 +48,50 @@
             "no": 1,
             "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
             "category": "배포",
             "title": "백엔드 배포",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 3,
             "category": "보안",
-            "title": "보안 구축",
-            "quantity": 1,
+            "title": "보안 도구 설치",
             "working_day": 0.25
         },
         {
             "no": 4,
             "category": "소프트웨어",
             "title": "소프트웨어 설치",
-            "quantity": 2,
             "working_day": 0.25
         },
         {
             "no": 5,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 6,
             "category": "완료",
             "title": "아키텍처 문서화 및 인계",
-            "quantity": 1,
             "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
+            "work": "기본 아키텍처 설계",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "벡엔드 배포",
+            "work": "벡엔드 애플리케이션 배포",
             "supplyPrice": 30000,
             "quantity": 1,
             "sumPrice": 30000

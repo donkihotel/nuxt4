@@ -1,7 +1,7 @@
 {
     "id": 17,
     "date": "2025-06-09",
-    "title": "*****관리 시스템",
+    "title": "의료정보관리 서버",
     "development": {
         "frontend": "Flutter",
         "backend": "SpringBoot",
@@ -10,121 +10,114 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "개발, 운영",
         "budget": 300000,
-        "performance": "스케일아웃",
+        "environment": "개발, 프로덕션",
         "app_deploy": "자동",
-        "security": "SSL, 방화벽, 보안 도구"
+        "security": "SSL, 방화벽, 보안 도구",
+        "performance": "스케일아웃"
     },
     "design": {
         "instance": "EC2, ECS (Fargate)",
         "network": "Private",
         "os": "Docker",
-        "web_server": "SpringBoot",
-        "database": "RDS (MySQL Multi-AZ)",
-        "app_deploy": "CI/CD (Github, Code Build/Pipeline/Deploy)",
         "storage": "EBS, S3, EFS",
-        "performance": "LoadBalancer, AutoScaling",
-        "security": "network (Private), ACM, WAF, GuardDuty, Parameterstore",
-        "cdn": "Cloudfront"
+        "dns": "Route 53",
+        "webserver": "SpringBoot",
+        "database": "RDS (MySQL Multi-AZ)",
+        "deploy": {
+            "frontend": "Flutter Web (S3) x 2",
+            "backend": "SpringBoot (ECS) x 6",
+            "source": "Github",
+            "build": "CodeBuild",
+            "deploy": "CodePipeline, CodeDeploy"
+        },
+        "security": {
+            "tools": "ACM, WAF, GuardDuty, Parameterstore",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": "Application LB",
+            "autoscaling": "사용",
+            "cdn": "CloudFront"
+        },
+        "software": null
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
-            "title": "아키텍처",
-            "quantity": 2,
+            "category": "기본",
+            "title": "아키텍처 설계",
             "working_day": 3
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "network 네트워크",
-            "quantity": 1,
-            "working_day": 1
+            "category": "배포",
+            "title": "프론트 애플리케이션 CI/CD",
+            "working_day": 2
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "데이터베이스",
-            "quantity": 1,
-            "working_day": 1
+            "category": "배포",
+            "title": "백엔드 애플리케이션 CI/CD",
+            "working_day": 6
         },
         {
             "no": 4,
-            "category": "구축",
-            "title": "프론트 CI/CD",
-            "quantity": 2,
+            "category": "보안",
+            "title": "보안 도구 설치",
             "working_day": 2
         },
         {
             "no": 5,
-            "category": "구축",
-            "title": "백엔드 CI/CD",
-            "quantity": 6,
-            "working_day": 6
-        },
-        {
-            "no": 6,
-            "category": "구축",
-            "title": "보안 구축",
-            "quantity": 1,
-            "working_day": 2
-        },
-        {
-            "no": 7,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 3
-        },
-        {
-            "no": 8,
-            "category": "완료",
-            "title": "서버관리 문서화",
-            "quantity": 1,
+            "category": "부하분산",
+            "title": "로드밸런서, CDN 구축",
             "working_day": 1
         },
         {
-            "no": 9,
+            "no": 6,
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 3
+        },
+        {
+            "no": 7,
             "category": "완료",
-            "title": "완료 인계",
-            "quantity": 1,
+            "title": "아키텍처 문서화 및 인계",
             "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 150000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 300000,
             "quantity": 2,
-            "sumPrice": 300000
-        },
-        {
-            "no": 2,
-            "work": "아키텍처 구축",
-            "supplyPrice": 150000,
-            "quantity": 2,
-            "sumPrice": 300000
+            "sumPrice": 600000
         },
         {
             "no": 3,
-            "work": "백엔드 CI/CD",
-            "supplyPrice": 180000,
-            "quantity": 6,
-            "sumPrice": 1080000
-        },
-        {
-            "no": 4,
-            "work": "프론트 CI/CD",
+            "work": "배포 프론트 CI/CD",
             "supplyPrice": 120000,
             "quantity": 2,
             "sumPrice": 240000
         },
         {
+            "no": 4,
+            "work": "배포 백엔드 CI/CD",
+            "supplyPrice": 160000,
+            "quantity": 6,
+            "sumPrice": 960000
+        },
+        {
             "no": 5,
             "work": "보안 도구 및 방화벽 구축",
+            "supplyPrice": 100000,
+            "quantity": 1,
+            "sumPrice": 100000
+        },
+        {
+            "no": 6,
+            "work": "부하분산 구축",
             "supplyPrice": 100000,
             "quantity": 1,
             "sumPrice": 100000

@@ -57,12 +57,12 @@
             <v-row>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">서버 호스팅</div>
+                  <div class="font-weight-bold">호스팅</div>
                   <div>{{ server?.requirements.hosting ?? '-' }}</div>
                 </div>
                 <div class="my-3">
                   <div>
-                    <span class="font-weight-bold">서버 예산</span>
+                    <span class="font-weight-bold">예산</span>
                     <span class="font-italic"> - 요금(월)</span>
                   </div>
                   <div v-if="server?.requirements.budget">
@@ -91,7 +91,7 @@
                   <div>{{ server?.requirements.security ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 확장</div>
+                  <div class="font-weight-bold">확장</div>
                   <div>{{ server?.requirements.performance ?? '-' }}</div>
                 </div>
                 <div>
@@ -466,11 +466,10 @@ const headers: DataTableHeader[] = [
 ]
 
 const scheduleHeaders: DataTableHeader[] = [
-  { title: 'No', align: 'end', sortable: false, key: 'no' },
-  { title: '구분', align: 'start', sortable: false, key: 'category' },
-  { title: '작업', align: 'start', sortable: false, key: 'title' },
-  { title: '수량', align: 'end', sortable: false, key: 'quantity' },
-  { title: '작업일', align: 'end', sortable: false, key: 'working_day' },
+  { title: 'No', key: 'no', align: 'end', sortable: false },
+  { title: '구분', key: 'category', align: 'start', sortable: false },
+  { title: '작업', key: 'title', align: 'start', sortable: false },
+  { title: '작업일', key: 'working_day', align: 'end', sortable: false }
 ]
 
 // --- schedule 배열 ---

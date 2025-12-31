@@ -1,7 +1,7 @@
 {
     "id": 23,
     "date": "2025-09-26",
-    "title": "***** 학습관리 시스템",
+    "title": "LMS 학습관리 서버",
     "development": {
         "frontend": "React (1EA)",
         "backend": "Express (3EA)",
@@ -25,8 +25,8 @@
         "dns": "Route 53",
         "database": "RDS Multi-AZ",
         "deploy": {
-            "frontend": "CloudFront (S3)",
-            "backend": "EC2 (PM2, Node)",
+            "frontend": "React (S3) [배포 X]",
+            "backend": "Express (EC2)",
             "source": "CodeCommit",
             "build": "CodeBuild",
             "deploy": "CodePipeline, CodeDeploy"
@@ -46,29 +46,25 @@
         {
             "no": 1,
             "category": "기본",
-            "title": "아키텍처 설계/구축",
-            "quantity": 1,
+            "title": "아키텍처 설계",
             "working_day": 1
         },
         {
             "no": 2,
             "category": "배포",
-            "title": "백엔드 CI/CD",
-            "quantity": 1,
+            "title": "백엔드 애플리케이션 CI/CD",
             "working_day": 1
         },
         {
             "no": 3,
             "category": "보안",
-            "title": "보안 도구",
-            "quantity": 1,
+            "title": "보안 도구 설치",
             "working_day": 1
         },
         {
             "no": 4,
-            "category": "확장",
-            "title": "확장 구축",
-            "quantity": 1,
+            "category": "부하분산",
+            "title": "로드밸런서, CDN 구축",
             "working_day": 1
         },
         {
@@ -82,21 +78,20 @@
             "no": 6,
             "category": "완료",
             "title": "아키텍처 문서화 및 인계",
-            "quantity": 1,
             "working_day": 1
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계/구축",
+            "work": "기본 아키텍처 설계",
             "supplyPrice": 100000,
             "quantity": 2,
             "sumPrice": 200000
         },
         {
             "no": 3,
-            "work": "백엔드 CI/CD",
+            "work": "배포 백엔드 CI/CD",
             "supplyPrice": 150000,
             "quantity": 3,
             "sumPrice": 450000
@@ -110,7 +105,7 @@
         },
         {
             "no": 4,
-            "work": "확장 구축",
+            "work": "부하분산",
             "supplyPrice": 100000,
             "quantity": 2,
             "sumPrice": 200000
