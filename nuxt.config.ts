@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     '@nuxt/image',
     '@pinia/nuxt',
-    'pinia-plugin-persistedstate/nuxt'
+    'pinia-plugin-persistedstate/nuxt',
+    '@nuxtjs/sitemap'
   ],
   vuetify: {
     moduleOptions: {
@@ -20,14 +21,6 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    // head: {
-    //   meta: [
-    //     {
-    //       name: 'viewport',
-    //       content: 'width=1200, initial-scale=0.3'
-    //     }
-    //   ]
-    // },
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
     buildAssetsDir: '_nuxt/'
   },
@@ -42,4 +35,11 @@ export default defineNuxtConfig({
   // pinia: {
   //   autoImports: ['defineStore', 'acceptHMRUpdate']
   // },
+  site: {
+    url: 'https://2cpu2ram.com',
+    name: '2CPU2RAM'
+  },
+  sitemap: {
+    exclude: ['/pinia/**', '/fetch/**'],
+  }
 })
