@@ -20,8 +20,12 @@
       {{ item.count }} 단계
     </template>
 
-    <template #item.level="{ item }">
-      Level {{ item.level }}
+    <template #item.time="{ item }">
+      {{ item.time }} 시간
+    </template>
+
+    <template #item.price="{ item }">
+      {{ item.price }} 만원
     </template>
 
     <template v-slot:bottom>
@@ -48,7 +52,6 @@ const headers: DataTableHeader[] = [
   { title: '작업 이름', key: 'title' },
   { title: '작업 과정', key: 'count' },
   { title: '작업 시간', key: 'time' },
-  { title: '난이도', key: 'level' },
   { title: '작업 비용', key: 'price' }
 ]
 
@@ -58,9 +61,8 @@ interface Task {
   design: string
   title: string
   count: number
-  level: number
-  time: string
-  price: string
+  time: number
+  price: number
 }
 
 // 상태

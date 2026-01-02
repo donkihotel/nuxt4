@@ -3,15 +3,14 @@
     "date": "2025-10-23",
     "type": "기본",
     "title": "EC2 아키텍처 설계 - 스토리지",
-    "level": 3,
     "time": "1시간",
-    "price": "3만원",
+    "price": "4만원",
     "image": null,
     "process": [
         {
             "step": 1,
             "title": "인스턴스",
-            "content": "EC2 인스턴스를 생성합니다."
+            "content": "기본 VPC에 EC2 인스턴스를 생성합니다."
         },
         {
             "step": 2,

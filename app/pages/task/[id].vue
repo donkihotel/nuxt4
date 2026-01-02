@@ -26,16 +26,16 @@
           <v-card-text class="py-3">
             <v-row>
               <v-col cols="4">
-                <div class="font-weight-bold">난이도</div>
-                <div>Level {{ task?.level ?? '-' }}</div>
+                <div class="font-weight-bold">작업 단계</div>
+                <div>{{ process.length }} 단계</div>
               </v-col>
               <v-col cols="4">
                 <div class="font-weight-bold">작업 시간</div>
-                <div>{{ task?.time ?? '-' }}</div>
+                <div>{{ task?.time ?? '-' }} 시간</div>
               </v-col>
               <v-col cols="4">
                 <div class="font-weight-bold">작업 비용</div>
-                <div>{{ task?.price ?? '-' }}</div>
+                <div>{{ task?.price ?? '-' }} 만원</div>
               </v-col>
             </v-row>
           </v-card-text>
@@ -43,27 +43,9 @@
 
         <v-card class="my-5" border flat>
           <h3 class="bg-surface-light pa-2">
-            <v-icon class="mr-2">mdi-numeric-2-box</v-icon>아키텍처
-          </h3>
-          <v-card-text>
-            <v-row>
-              <v-col cols="12">
-                <div>
-                  <div v-if="task?.image"><v-img :src="task?.image" /></div>
-                  <div else>N/A</div>
-                </div>
-              </v-col>
-            </v-row>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="6">
-        <v-card border flat>
-          <h3 class="bg-surface-light pa-2">
-            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>작업 과정
+            <v-icon class="mr-2">mdi-numeric-2-box</v-icon>작업 과정
           </h3>
           <v-card-text class="py-2">
-            <h3>{{ process.length }} 단계</h3>
             <v-timeline side="end" density="compact">
               <v-timeline-item v-for="taskItem in process" :key="taskItem.step" size="x-small">
                 <div>
@@ -76,6 +58,26 @@
             </v-timeline>
           </v-card-text>
         </v-card>
+      </v-col>
+      <v-col cols="6">
+        <v-card border flat min-height="110">
+          <h3 class="bg-surface-light pa-2">
+            <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처
+          </h3>
+          <v-card-text>
+            <v-row>
+              <v-col cols="12">
+                <div>
+                  <div v-if="task?.image"><v-img :src="task?.image" /></div>
+                  <div else>N/A</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+
+        <!-- 상담 -->
+        <Consult kmong-link="https://kmong.com/gig/220715" kakao-link="https://open.kakao.com/o/sfJs7iHe" />
       </v-col>
     </v-row>
   </v-container>

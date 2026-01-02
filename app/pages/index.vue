@@ -13,7 +13,11 @@
         </template>
 
         <template #item.count="{ item }">
-          {{ item.count }} 단계 <span class="text-caption">({{ item.time }})</span>
+          {{ item.count }} 단계 <span class="text-caption">({{ item.time }} 시간)</span>
+        </template>
+
+        <template #item.price="{ item }">
+          {{ item.price }} 만원
         </template>
 
       </v-data-table>

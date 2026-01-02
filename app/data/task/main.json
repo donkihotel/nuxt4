@@ -5,144 +5,136 @@
             "design": "기본",
             "title": "Lightsail 아키텍처 설계 - 기본",
             "count": 3,
-            "level": 1,
-            "time": "1시간",
-            "price": "2만원"
+            "time": 1,
+            "price": 2
         },
         {
             "id": 1102,
             "design": "기본",
             "title": "Lightsail 아키텍처 설계 - 데이터베이스",
             "count": 4,
-            "level": 2,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 1103,
             "design": "기본",
             "title": "Lightsail 아키텍처 설계 - 스토리지",
             "count": 5,
-            "level": 3,
-            "time": "1시간",
-            "price": "4만원"
+            "time": 1,
+            "price": 4
         },
         {
             "id": 1201,
             "design": "기본",
             "title": "EC2 아키텍처 설계 - 기본",
             "count": 4,
-            "level": 1,
-            "time": "1시간",
-            "price": "2만원"
+            "time": 1,
+            "price": 2
         },
         {
             "id": 1202,
             "design": "기본",
             "title": "EC2 아키텍처 설계 - 데이터베이스",
             "count": 5,
-            "level": 2,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 1203,
             "design": "기본",
             "title": "EC2 아키텍처 설계 - 스토리지",
             "count": 5,
-            "level": 3,
-            "time": "2시간",
-            "price": "4만원"
+            "time": 2,
+            "price": 4
         },
         {
             "id": 1204,
             "design": "기본",
-            "title": "EC2 아키텍처 설계 - 서버 분리",
+            "title": "EC2 아키텍처 설계 - 분리",
             "count": 6,
-            "level": 4,
-            "time": "2시간",
-            "price": "5만원"
+            "time": 2,
+            "price": 8
+        },
+        {
+            "id": 1205,
+            "design": "기본",
+            "title": "EC2 아키텍처 설계 - 프라이빗",
+            "count": 8,
+            "time": 3,
+            "price": 8
         },
         {
             "id": 2101,
             "design": "배포",
             "title": "프론트 애플리케이션 배포 - Nginx",
             "count": 4,
-            "level": 3,
-            "time": "2시간",
-            "price": "3만원"
+            "time": 2,
+            "price": 3
         },
         {
             "id": 2102,
             "design": "배포",
             "title": "백엔드 애플리케이션 배포 - FastAPI",
             "count": 8,
-            "level": 3,
-            "time": "2시간",
-            "price": "6만원"
+            "time": 2,
+            "price": 6
         },
         {
             "id": 3101,
             "design": "보안",
             "title": "SSL 인증서 Let's Encrypt 설치",
             "count": 3,
-            "level": 2,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 3102,
             "design": "보안",
             "title": "방화벽 ModSecurity 설치",
             "count": 4,
-            "level": 3,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 4101,
             "design": "부하분산",
             "title": "애플리케이션 로드밸런서 - 단순 리스너",
             "count": 4,
-            "level": 2,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 4102,
             "design": "부하분산",
             "title": "애플리케이션 로드밸런서 - 복합 리스너",
             "count": 4,
-            "level": 3,
-            "time": "2시간",
-            "price": "4만원"
+            "time": 2,
+            "price": 4
         },
         {
             "id": 4103,
             "design": "부하분산",
             "title": "CDN 클라우드프론트 - 프론트 웹",
             "count": 4,
-            "level": 3,
-            "time": "1시간",
-            "price": "3만원"
+            "time": 1,
+            "price": 3
         },
         {
             "id": 5101,
             "design": "소프트웨어",
             "title": "Redis 설치",
             "count": 2,
-            "level": 1,
-            "time": "1시간",
-            "price": "1만원"
+            "time": 1,
+            "price": 1
         },
         {
             "id": 5102,
             "design": "소프트웨어",
             "title": "vsftpd 설치",
             "count": 3,
-            "level": 2,
-            "time": "1시간",
-            "price": "2만원"
+            "time": 1,
+            "price": 2
         }
     ]
 }
