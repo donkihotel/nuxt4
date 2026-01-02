@@ -18,7 +18,7 @@
           </template>
         </v-list-item>
       </v-col>
-      <v-col cols="6">
+      <v-col xs="12" sm="12" md="6" lg="6">
         <v-card border flat>
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-1-box</v-icon>개요
@@ -59,7 +59,8 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="6">
+
+      <v-col xs="12" sm="12" md="6" lg="6">
         <v-card border flat min-height="110">
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-3-box</v-icon>아키텍처

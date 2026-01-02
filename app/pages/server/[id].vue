@@ -16,7 +16,7 @@
           </template>
         </v-list-item>
       </v-col>
-      <v-col cols="6" class="left-content">
+      <v-col xs="12" sm="12" md="6" lg="6" class="left-content">
         <v-card border flat>
           <h3 class="bg-surface-light pa-2">
             <v-icon class="mr-2">mdi-numeric-1-box</v-icon>개발
@@ -265,7 +265,7 @@
       </v-col>
 
       <!-- 오른쪽 콘텐츠: 고정 -->
-      <v-col cols="6" class="right-content">
+      <v-col xs="12" sm="12" md="6" lg="6" class="right-content">
         <div class="sticky-box">
           <v-card border flat>
             <h3 class="bg-surface-light pa-2">
