@@ -1,6 +1,6 @@
 <template>
   <v-row class="bg-grey-lighten-3">
-    <v-col cols="7">
+    <v-col xs="12" sm="6" md="7" lg="7">
       <v-data-table :headers="headers0" :items="task" hover class="text-no-wrap" @click:row="onClickTaskRow"
         hide-default-footer density="compact">
         <template v-slot:top>
@@ -22,10 +22,10 @@
 
       </v-data-table>
     </v-col>
-    <v-col cols="5">
+    <v-col xs="12" sm="6" md="5" lg="5">
       <v-toolbar flat>
         <v-toolbar-title>
-
+          배너
         </v-toolbar-title>
       </v-toolbar>
       <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"

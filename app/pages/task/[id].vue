@@ -26,7 +26,7 @@
           <v-card-text class="py-3">
             <v-row>
               <v-col cols="4">
-                <div class="font-weight-bold">작업 단계</div>
+                <div class="font-weight-bold">작업 과정</div>
                 <div>{{ process.length }} 단계</div>
               </v-col>
               <v-col cols="4">
