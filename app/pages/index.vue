@@ -1,4 +1,10 @@
 <template>
+  <v-sheet class="pa-4 mb-3 mx-auto">
+    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축을 사례·비용·기간까지 투명하게 공개합니다</h4>
+    <p>
+      스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스
+    </p>
+  </v-sheet>
   <v-row class="bg-grey-lighten-3">
     <v-col xs="12" sm="6" md="7" lg="7">
       <v-data-table :headers="headers0" :items="task" hover class="text-no-wrap" @click:row="onClickTaskRow"
@@ -31,12 +37,22 @@
       <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"
         v-model="currentIndex" hide-delimiters>
         <v-carousel-item v-for="(item, i) in banners" :key="i" :src="item.src" @click="open(item.url, '_blank')" cover>
+          <v-sheet class="d-flex align-center justify-center text-white"
+            :color="item.title ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)'" height="48"
+            style="position:absolute; bottom:0; width:100%;">
+            <span class="text-subtitle-1 font-weight-medium">
+              {{ item.title }}
+            </span>
+
+            <!-- <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat"
+              class="ml-3 mr-3" /> -->
+          </v-sheet>
         </v-carousel-item>
 
         <v-overlay :scrim="false"
           content-class="w-100 h-100 d-flex flex-column align-center justify-space-between pointer-pass-through py-3"
           contained model-value no-click-animation persistent>
-          <div class="position-absolute" style="bottom: 12px; right: 12px;">
+          <div class="position-absolute" style="right: 12px;">
             <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat" />
           </div>
         </v-overlay>
@@ -164,15 +180,14 @@ const headers0: DataTableHeader[] = [
 
 const headers1: DataTableHeader[] = [
   { title: 'No', value: 'id', align: 'end' },
-  { title: '프론트엔드', value: 'frontend' },
-  { title: '백엔드', value: 'backend' },
+  { title: '개발 프론트', value: 'frontend' },
+  { title: '개발 백엔드', value: 'backend' },
   { title: '데이터베이스', value: 'database' },
-  { title: '서버', value: 'instance' },
-  { title: '서버 예산', value: 'budget', align: 'end' },
+  { title: '서버 인스턴스', value: 'instance' },
   { title: '서버 확장', value: 'performance', align: 'center' },
-  { title: '서버 배포', value: 'app_deploy', align: 'center' },
+  { title: '애플리케이션 배포', value: 'app_deploy', align: 'center' },
   { title: '서버 보안', value: 'security', align: 'center' },
-  { title: '구축 일정', value: 'build_day', align: 'end' },
+  { title: '구축 기간', value: 'build_day', align: 'end' },
   { title: '구축 비용', value: 'build_cost', align: 'end' }
 ]
 
@@ -182,13 +197,13 @@ const server = items1.default.items
   .slice(0, 5)
 
 const banners = [
-  { src: 'assets/banner/banner1.jpg', url: 'https://kmong.com/gig/220715' },
-  { src: 'assets/banner/banner2.jpg', url: 'https://kmong.com/gig/424545' },
-  { src: 'assets/banner/banner3.jpg', url: 'https://kmong.com/gig/586574' },
-  { src: 'assets/banner/banner4.jpg', url: 'https://kmong.com/gig/316594' },
-  { src: 'assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162' },
-  { src: 'assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951' },
-  { src: 'assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478' },
+  { src: 'assets/banner/banner1.jpg', url: 'https://kmong.com/gig/220715', title: '' },
+  { src: 'assets/banner/banner2.jpg', url: 'https://kmong.com/gig/424545', title: '' },
+  { src: 'assets/banner/banner3.jpg', url: 'https://kmong.com/gig/586574', title: '서비스 오픈 전, AWS 부하 테스트로 장애를 예방하세요' },
+  { src: 'assets/banner/banner4.jpg', url: 'https://kmong.com/gig/316594', title: '개발자에게 필요한 AWS 교육을 해드립니다' },
+  { src: 'assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162', title: '' },
+  { src: 'assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951', title: '' },
+  { src: 'assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478', title: '' },
 ]
 
 const headers2: DataTableHeader[] = [

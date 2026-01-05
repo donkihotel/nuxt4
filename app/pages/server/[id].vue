@@ -62,11 +62,10 @@
                 </div>
                 <div class="my-3">
                   <div>
-                    <span class="font-weight-bold">예산</span>
-                    <span class="font-italic"> - 요금(월)</span>
+                    <span class="font-weight-bold">서버 요금</span>
                   </div>
                   <div v-if="server?.requirements.budget">
-                    {{ formatPrice(server?.requirements.budget ?? 0) }} 원
+                    (월) {{ formatPrice(server?.requirements.budget ?? 0) }} 원
                   </div>
                   <div v-else>-</div>
                 </div>
@@ -81,17 +80,16 @@
               <v-col cols="6">
                 <div>
                   <div>
-                    <span class="font-weight-bold">배포</span>
-                    <span class="font-italic"> - 애플리케이션</span>
+                    <span class="font-weight-bold">애플리케이션 배포</span>
                   </div>
                   <div>{{ server?.requirements.app_deploy ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">보안</div>
+                  <div class="font-weight-bold">서버 보안</div>
                   <div>{{ server?.requirements.security ?? '-' }}</div>
                 </div>
                 <div class="my-3">
-                  <div class="font-weight-bold">확장</div>
+                  <div class="font-weight-bold">서버 확장</div>
                   <div>{{ server?.requirements.performance ?? '-' }}</div>
                 </div>
                 <div>
@@ -113,7 +111,7 @@
             <v-row>
               <v-col cols="6">
                 <div class="my-3">
-                  <div class="font-weight-bold">인스턴스</div>
+                  <div class="font-weight-bold">서버 인스턴스</div>
                   <div>{{ server?.design.instance ?? '-' }}</div>
                 </div>
                 <div class="my-3">
@@ -257,8 +255,8 @@
             <v-divider class="mt-1 bg-grey-lighten-2"></v-divider>
             <v-sheet class="d-flex justify-end">
               <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
-              <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{ totalWorkingDay }}
-                일</v-sheet>
+              <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{ totalWorkingDay
+              }}</v-sheet>
             </v-sheet>
           </v-card-text>
         </v-card>
@@ -297,7 +295,7 @@
                 <v-sheet class="d-flex justify-end">
                   <v-sheet class="pa-2 font-weight-bold">합계</v-sheet>
                   <v-sheet class="pt-2 pb-2 pr-4 d-flex justify-end font-weight-bold" width="100">{{
-                    totalAmount.toLocaleString() }} 원</v-sheet>
+                    totalAmount.toLocaleString() }}</v-sheet>
                 </v-sheet>
               </div>
             </v-card-text>

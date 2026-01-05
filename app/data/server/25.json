@@ -32,7 +32,7 @@
             "deploy": "CodePipeline, CodeDeploy"
         },
         "security": {
-            "tools": "ACM, WAF, GuardDuty, Parameterstore",
+            "tools": "ACM, WAF, Cognito, GuardDuty, Parameterstore",
             "etc": null
         },
         "extension": {

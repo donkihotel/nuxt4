@@ -231,16 +231,15 @@ const router = useRouter()
 
 const headers: DataTableHeader[] = [
   { title: 'No', key: 'id', align: 'end' },
-  { title: '프론트엔드', key: 'frontend' },
-  { title: '백엔드', key: 'backend' },
+  { title: '개발 프론트', key: 'frontend' },
+  { title: '개발 백엔드', key: 'backend' },
   { title: '데이터베이스', key: 'database' },
-  { title: '인스턴스', key: 'instance' },
-  { title: '예산', key: 'budget', align: 'end' },
-  { title: '확장', key: 'performance', align: 'center' },
-  { title: '배포', key: 'app_deploy', align: 'center' },
-  { title: '보안', key: 'security', align: 'center' },
-  { title: '일정', key: 'build_day', align: 'end' },
-  { title: '비용', key: 'build_cost', align: 'end' },
+  { title: '서버 인스턴스', key: 'instance' },
+  { title: '서버 확장', key: 'performance', align: 'center' },
+  { title: '애플리케이션 배포', key: 'app_deploy', align: 'center' },
+  { title: '서버 보안', key: 'security', align: 'center' },
+  { title: '구축 기간', key: 'build_day', align: 'end' },
+  { title: '구축 비용', key: 'build_cost', align: 'end' },
 ]
 
 // 상태
