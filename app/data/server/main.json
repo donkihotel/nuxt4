@@ -115,7 +115,7 @@
         {
             "id": 9,
             "created_at": "2025-04-12",
-            "frontend": "PHP",
+            "frontend": null,
             "backend": "PHP",
             "database": "MySQL",
             "instance": "EC2",
@@ -124,7 +124,7 @@
             "performance": "스케일업",
             "app_deploy": "수동",
             "build_day": 2,
-            "build_cost": 240000
+            "build_cost": 242000
         },
         {
             "id": 10,

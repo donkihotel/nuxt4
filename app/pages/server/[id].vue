@@ -7,14 +7,19 @@
             <h2>{{ server?.title ?? '-' }}</h2>
           </template>
 
-          <template v-slot:subtitle>
+          <!-- <template v-slot:subtitle>
             No. {{ server?.id }}
-          </template>
+          </template> -->
 
           <template v-slot:append>
             <span class="text-subtitle-2">{{ server?.date }}</span>
           </template>
         </v-list-item>
+        <v-sheet class="pl-4">
+          <span class="text-subtitle-2">
+            {{ server?.subtitle ?? '-' }}
+          </span>
+        </v-sheet>
       </v-col>
       <v-col xs="12" sm="12" md="6" lg="6" class="left-content">
         <v-card border flat>
@@ -182,7 +187,8 @@
           </v-card-text>
 
           <v-card-text>
-            <p class="text-h6 font-weight-black">보안</p>
+            <p class="text-h6 font-weight-black">보안 <span class="text-body-2">(Level {{
+              getSecurityCount(server?.design?.security?.tools) ?? '-' }})</span></p>
             <v-divider class="my-1"></v-divider>
             <v-row>
               <v-col cols="12">
@@ -267,7 +273,7 @@
         <div class="sticky-box">
           <v-card border flat>
             <h3 class="bg-surface-light pa-2">
-              <v-icon class="mr-2">mdi-clipboard-list-outline</v-icon>견적
+              <v-icon class="mr-2">mdi-numeric-5-box</v-icon>견적
             </h3>
             <v-card-text>
               <v-data-table :headers="headers" :items="server?.estimate" density="compact" item-key="name"
@@ -400,6 +406,7 @@ interface Server {
   id: number
   date: string
   title: string
+  subtitle: string
   development: Development
   requirements: Requirements
   design: Design
