@@ -3,8 +3,8 @@
     "date": "2025-10-23",
     "type": "부하분산",
     "title": "애플리케이션 로드밸런서 - 복합 리스너",
-    "time": "1시간",
-    "price": "4만원",
+    "time": 1,
+    "price": 4,
     "image": null,
     "process": [
         {

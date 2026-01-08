@@ -3,8 +3,8 @@
     "date": "2025-10-23",
     "type": "기본",
     "title": "EC2 아키텍처 설계 - 서버 분리",
-    "time": "2시간",
-    "price": "6만원",
+    "time": 2,
+    "price": 6,
     "image": null,
     "process": [
         {

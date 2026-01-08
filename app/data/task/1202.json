@@ -3,8 +3,8 @@
     "date": "2025-10-23",
     "type": "기본",
     "title": "EC2 아키텍처 설계 - 데이터베이스",
-    "time": "1시간",
-    "price": "3만원",
+    "time": 1,
+    "price": 3,
     "image": null,
     "process": [
         {

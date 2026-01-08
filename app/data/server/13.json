@@ -1,7 +1,8 @@
 {
     "id": 13,
     "date": "2025-05-10",
-    "title": "**** 홈페이지 서버",
+    "title": "CAFE24 가상호스팅 PHP 웹 서버 구축",
+    "subtitle": "소셜미디어",
     "development": {
         "frontend": null,
         "backend": "PHP",
@@ -21,71 +22,82 @@
         "instance": "가상서버호스팅",
         "network": "Public",
         "os": "RockyLinux",
-        "web_server": "Apache, PHP",
-        "database": "MariaDB",
         "app_deploy": null,
         "storage": "EBS",
-        "performance": null,
-        "security": null
+        "dns": "cafe24",
+        "webserver": "Apache",
+        "database": "MariaDB",
+        "deploy": {
+            "frontend": null,
+            "backend": "PHP",
+            "source": "파일 (ZIP)",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": null
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
+            "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "아키텍처 구축",
-            "quantity": 1,
+            "category": "배포",
+            "title": "애플리케이션 배포",
             "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "배포",
-            "title": "애플리케이션 배포",
-            "quantity": 1,
-            "working_day": 0.5
+            "category": "보안",
+            "title": "보안 도구 설치",
+            "working_day": 0.25
         },
         {
             "no": 4,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 0.5
+            "working_day": 0.25
         },
         {
             "no": 5,
             "category": "완료",
             "title": "문서화 및 인계",
-            "quantity": 1,
             "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 10000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 30000
         },
         {
             "no": 2,
-            "work": "아키텍처 구축",
+            "work": "백엔드 애플리케이션 배포",
             "supplyPrice": 40000,
             "quantity": 1,
             "sumPrice": 40000
         },
         {
             "no": 3,
-            "work": "애플리케이션 배포",
-            "supplyPrice": 60000,
+            "work": "보안 구축",
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 60000
+            "sumPrice": 30000
         }
     ]
 }

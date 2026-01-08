@@ -1,7 +1,7 @@
 {
     "id": 16,
     "date": "2025-05-20",
-    "title": "****** API 서비스",
+    "title": "AWS 스프링부트 애플리케이션 웹 서버 구축",
     "development": {
         "frontend": null,
         "backend": "Spring",
@@ -11,7 +11,7 @@
     "requirements": {
         "hosting": "AWS",
         "environment": "운영",
-        "budget": 30000,
+        "budget": 50000,
         "performance": "스케일업",
         "app_deploy": "자동",
         "security": "SSL"
@@ -22,66 +22,76 @@
         "os": "Amazon Linux",
         "web_server": "Nginx",
         "database": "EC2 (MariaDB)",
-        "app_deploy": "GitHub, Codedeploy",
         "storage": "EBS, S3",
         "performance": null,
-        "security": "SSL (Let's Encrypt), WAF (ModSecurity)"
+        "deploy": {
+            "frontend": null,
+            "backend": "SpringBoot x 1",
+            "source": "Github",
+            "build": null,
+            "deploy": "Codedeploy"
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt), WAF (ModSecurity)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": null
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
+            "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
-            "working_day": 0.5
-        },
-        {
-            "no": 2,
-            "category": "구축",
-            "title": "아키텍처 구축",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 3,
             "category": "배포",
             "title": "애플리케이션 배포",
-            "quantity": 1,
-            "working_day": 0.5
+            "working_day": 1
         },
         {
             "no": 4,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
+            "category": "보안",
+            "title": "보안도구 설치",
             "working_day": 0.5
         },
         {
             "no": 5,
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 0.5
+        },
+        {
+            "no": 6,
             "category": "완료",
             "title": "문서화 및 인계 교육",
-            "quantity": 1,
-            "working_day": 1
+            "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 10000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 40000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 40000
         },
         {
             "no": 2,
-            "work": "아키텍처 구축",
-            "supplyPrice": 80000,
+            "work": "배포 백엔드 CI/CD",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 80000
+            "sumPrice": 60000
         },
         {
             "no": 3,
-            "work": "애플리케이션 배포",
+            "work": "보안 구축",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000

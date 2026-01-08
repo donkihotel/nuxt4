@@ -151,8 +151,8 @@
             "budget": 60000,
             "performance": "스케일업",
             "app_deploy": "자동",
-            "build_day": 3,
-            "build_cost": 341000
+            "build_day": 4.5,
+            "build_cost": 352000
         },
         {
             "id": 12,
@@ -166,7 +166,7 @@
             "performance": "스케일업",
             "app_deploy": "자동",
             "build_day": 3,
-            "build_cost": 275000
+            "build_cost": 264000
         },
         {
             "id": 13,
@@ -180,7 +180,7 @@
             "performance": "스케일업",
             "app_deploy": "수동",
             "build_day": 2,
-            "build_cost": 121000
+            "build_cost": 110000
         },
         {
             "id": 14,
@@ -193,8 +193,8 @@
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 2,
-            "build_cost": 165000
+            "build_day": 1.5,
+            "build_cost": 66000
         },
         {
             "id": 15,
@@ -207,7 +207,7 @@
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 1,
+            "build_day": 2,
             "build_cost": 99000
         },
         {
@@ -222,7 +222,7 @@
             "performance": "스케일업",
             "app_deploy": "자동",
             "build_day": 3,
-            "build_cost": 165000
+            "build_cost": 176000
         },
         {
             "id": 17,

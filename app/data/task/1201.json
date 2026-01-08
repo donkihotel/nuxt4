@@ -3,8 +3,8 @@
     "date": "2025-10-23",
     "type": "기본",
     "title": "EC2 아키텍처 설계 - 기본",
-    "time": "1시간",
-    "price": "2만원",
+    "time": 1,
+    "price": 2,
     "image": null,
     "process": [
         {

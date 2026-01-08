@@ -67,7 +67,7 @@
         {
             "id": 2101,
             "design": "배포",
-            "title": "프론트 애플리케이션 배포 - Nginx",
+            "title": "프론트 애플리케이션 배포 - 기본",
             "count": 4,
             "time": 2,
             "price": 3
@@ -75,10 +75,26 @@
         {
             "id": 2102,
             "design": "배포",
-            "title": "백엔드 애플리케이션 배포 - FastAPI",
+            "title": "백엔드 애플리케이션 배포 - 기본",
             "count": 8,
             "time": 2,
             "price": 6
+        },
+        {
+            "id": 2103,
+            "design": "배포",
+            "title": "프론트 애플리케이션 배포 - CI/CD",
+            "count": 4,
+            "time": 3,
+            "price": 6
+        },
+        {
+            "id": 2104,
+            "design": "배포",
+            "title": "백엔드 애플리케이션 배포 - CI/CD",
+            "count": 8,
+            "time": 3,
+            "price": 9
         },
         {
             "id": 3101,
