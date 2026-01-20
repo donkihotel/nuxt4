@@ -1,8 +1,8 @@
 {
     "id": 25,
     "date": "2025-11-21",
-    "title": "의료정보관리 서버",
-    "subtitle": "의료정보관리 서비스는 개인정보 보호와 안정성이 가장 중요합니다. 본 사례는 AWS 기반으로 SSL, 방화벽, 자동 배포를 포함하여의료 서비스에 적합한 서버 환경을 구축한 사례입니다.",
+    "type": "ECS",
+    "title": "B2C 의료 플랫폼 서비스 서버",
     "development": {
         "frontend": "Flutter (1EA)",
         "backend": "SpringBoot (3EA)",

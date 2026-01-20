@@ -1,7 +1,8 @@
 {
     "id": 22,
     "date": "2025-08-26",
-    "title": "의료 모니터링 서버",
+    "type": "EC2",
+    "title": "의료기기 IoT 모니터링 서버",
     "development": {
         "frontend": "React (1EA)",
         "backend": "Express (1EA)",

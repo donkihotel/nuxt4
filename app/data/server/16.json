@@ -1,7 +1,8 @@
 {
     "id": 16,
     "date": "2025-05-20",
-    "title": "AWS 스프링부트 애플리케이션 웹 서버 구축",
+    "type": "EC2",
+    "title": "B2B 관리자 서비스 서버",
     "development": {
         "frontend": null,
         "backend": "Spring",

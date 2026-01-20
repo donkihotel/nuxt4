@@ -1,6 +1,6 @@
 <template>
   <v-sheet class="pa-4 mb-3 mx-auto">
-    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축을 사례·비용·기간까지 투명하게 공개합니다</h4>
+    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축을 사례·비용·기간 공개합니다</h4>
     <p>
       스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스
     </p>

@@ -1,6 +1,7 @@
 {
     "id": 2,
     "date": "2025-12-11",
+    "type": "EC2",
     "title": "***** 관리 시스템",
     "domain": "***ver.com",
     "frontend": "React",

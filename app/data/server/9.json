@@ -1,6 +1,7 @@
 {
     "id": 9,
     "date": "2025-04-12",
+    "type": "EC2",
     "title": "쇼핑몰 서버 구축",
     "development": {
         "frontend": null,

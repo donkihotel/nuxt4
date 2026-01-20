@@ -1,6 +1,7 @@
 {
     "id": 7,
     "date": "2025-03-19",
+    "type": "EC2",
     "title": "국외 여행사 홈페이지",
     "subtitle": "Lightsail",
     "development": {

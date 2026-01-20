@@ -1,6 +1,7 @@
 {
     "id": 14,
     "date": "2025-05-13",
+    "type": "EC2",
     "title": "AWS 에서 PHP 웹 서버 구축",
     "subtitle": "PHP 모듈 설치",
     "development": {

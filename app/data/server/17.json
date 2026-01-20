@@ -1,7 +1,8 @@
 {
     "id": 17,
     "date": "2025-06-09",
-    "title": "의료정보관리 서버",
+    "type": "ECS",
+    "title": "B2C 의료 플랫폼 서비스 서버",
     "development": {
         "frontend": "Flutter",
         "backend": "SpringBoot",

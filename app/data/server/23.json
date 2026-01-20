@@ -1,6 +1,7 @@
 {
     "id": 23,
     "date": "2025-09-26",
+    "type": "EC2",
     "title": "LMS 학습관리 서버",
     "development": {
         "frontend": "React (1EA)",

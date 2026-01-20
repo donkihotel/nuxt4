@@ -3,23 +3,17 @@
     <v-row>
       <v-col cols="12">
         <v-list-item>
-          <template v-slot:title>
-            <h2>{{ server?.title ?? '-' }}</h2>
-          </template>
-
-          <!-- <template v-slot:subtitle>
-            No. {{ server?.id }}
-          </template> -->
-
+          <v-list-item-title class="text-wrap">
+            <span class="text-h5 mr-2 font-weight-bold text-orange-darken-3">{{ server?.type }}</span>
+            <span class="text-h5 font-weight-bold">{{ server?.title }}</span>
+          </v-list-item-title>
           <template v-slot:append>
-            <span class="text-subtitle-2">{{ server?.date }}</span>
+            <v-list-item-action class="flex-column align-end">
+              <small class="text-high-emphasis">No. {{ server?.id }}</small>
+              <small class="text-high-emphasis opacity-60">{{ server?.date }}</small>
+            </v-list-item-action>
           </template>
         </v-list-item>
-        <v-sheet class="pl-4">
-          <span class="text-subtitle-2">
-            {{ server?.subtitle ?? '-' }}
-          </span>
-        </v-sheet>
       </v-col>
       <v-col xs="12" sm="12" md="6" lg="6" class="left-content">
         <v-card border flat>
@@ -405,6 +399,7 @@ interface Requirements {
 interface Server {
   id: number
   date: string
+  type: string
   title: string
   subtitle: string
   development: Development

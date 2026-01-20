@@ -1,7 +1,8 @@
 {
     "id": 19,
     "date": "2025-08-08",
-    "title": "학생 수시(관리) 서버",
+    "type": "Lightsail",
+    "title": "B2B 학생 관리 서버",
     "development": {
         "frontend": null,
         "backend": "Streamlit (2EA)",

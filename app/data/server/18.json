@@ -1,6 +1,7 @@
 {
     "id": 18,
     "date": "2025-07-07",
+    "type": "EC2",
     "title": "글로벌사이트 홈페이지 서버",
     "development": {
         "frontend": null,

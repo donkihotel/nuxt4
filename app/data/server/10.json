@@ -1,6 +1,7 @@
 {
     "id": 10,
     "date": "2025-04-17",
+    "type": "EC2",
     "title": "***** 선박 관리시스템",
     "subtitle": null,
     "development": {

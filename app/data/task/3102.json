@@ -2,30 +2,25 @@
     "id": 3102,
     "date": "2025-10-23",
     "type": "보안",
-    "title": "방화벽 ModSecurity 설치",
+    "title": "유료 SSL 인증서를 구매 설치",
     "time": 1,
     "price": 3,
     "image": null,
     "process": [
         {
             "step": 1,
-            "title": "개발 도구 설치",
-            "content": "방화벽 설치에 필요한 패키지를 설치 합니다."
+            "title": "SS 인증서 구매",
+            "content": "인증서를 파는곳에서 구매를 합니다."
         },
         {
             "step": 2,
-            "title": "ModSecurity 설치",
-            "content": "소스 빌드, Nginx 모듈 설치를 합니다."
+            "title": "도메인 인증",
+            "content": "도메인 또는 웹서버를 설정을 통해서 인증을 받습니다."
         },
         {
             "step": 3,
-            "title": "Nginx 연결",
-            "content": "ModSecurity Nginx에 연결 합니다."
-        },
-        {
-            "step": 4,
-            "title": "ModSecurity 설정",
-            "content": "차단 룰을 설정 합니다."
+            "title": "인증서 연결",
+            "content": "Apache, Nginx 웹 서버에 인증서를 연결 합니다."
         }
     ]
 }

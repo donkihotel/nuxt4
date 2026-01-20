@@ -2,25 +2,25 @@
     "id": 3101,
     "date": "2025-10-23",
     "type": "보안",
-    "title": "SSL 무료 인증서 설치",
+    "title": "무료 SSL 인증서 Let's Encrypt 설치",
     "time": 1,
     "price": 3,
     "image": null,
     "process": [
         {
             "step": 1,
-            "title": "인증서 설치",
-            "content": "Let's Encrypt 인증서를 설치 합니다."
+            "title": "인증서 발급",
+            "content": "Certbot 설치하여 Let's Encrypt 인증서를 발급 받습니다"
         },
         {
             "step": 2,
             "title": "인증서 연결",
-            "content": "웹 서버에 인증서를 연결 합니다."
+            "content": "Apache, Nginx 웹 서버에 인증서를 연결 합니다."
         },
         {
             "step": 3,
             "title": "인증서 자동 갱신",
-            "content": "Crontab 사용하여 인증서 자동 갱신을 합니다"
+            "content": "Crontab 사용하여 인증서 자동 갱신을 합니다."
         }
     ]
 }

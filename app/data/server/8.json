@@ -1,6 +1,7 @@
 {
     "id": 8,
     "date": "2025-04-07",
+    "type": "EC2",
     "title": "파이썬 자동매매프로그램 서버",
     "subtitle": "EC2",
     "development": {

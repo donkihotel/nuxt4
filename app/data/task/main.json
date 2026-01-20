@@ -67,7 +67,7 @@
         {
             "id": 2101,
             "design": "배포",
-            "title": "프론트 애플리케이션 기본 배포",
+            "title": "프론트 애플리케이션 수동 배포",
             "count": 4,
             "time": 2,
             "price": 3
@@ -75,7 +75,7 @@
         {
             "id": 2102,
             "design": "배포",
-            "title": "백엔드 애플리케이션 기본 배포",
+            "title": "백엔드 애플리케이션 수동 배포",
             "count": 8,
             "time": 2,
             "price": 6
@@ -83,33 +83,41 @@
         {
             "id": 2103,
             "design": "배포",
-            "title": "프론트 애플리케이션 CI/CD 배포",
-            "count": 4,
+            "title": "프론트 애플리케이션 자동 배포 - CI/CD",
+            "count": 7,
             "time": 3,
             "price": 6
         },
         {
             "id": 2104,
             "design": "배포",
-            "title": "백엔드 애플리케이션 CI/CD 배포",
-            "count": 8,
+            "title": "백엔드 애플리케이션 자동 배포 - CI/CD",
+            "count": 11,
             "time": 3,
             "price": 9
         },
         {
             "id": 3101,
             "design": "보안",
-            "title": "SSL 인증서 Let's Encrypt 설치",
+            "title": "무료 SSL 인증서 Let's Encrypt 설치",
             "count": 3,
-            "time": 1,
+            "time": 2,
             "price": 3
         },
         {
             "id": 3102,
             "design": "보안",
+            "title": "유료 SSL 인증서를 구매 설치",
+            "count": 3,
+            "time": 2,
+            "price": 3
+        },
+        {
+            "id": 3103,
+            "design": "보안",
             "title": "방화벽 ModSecurity 설치",
             "count": 4,
-            "time": 1,
+            "time": 2,
             "price": 3
         },
         {

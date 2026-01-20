@@ -1,7 +1,8 @@
 {
     "id": 24,
     "date": "2025-11-07",
-    "title": "이커머스(e-commerce) 서버",
+    "type": "EC2",
+    "title": "B2C 이커머스 서비스 서버",
     "development": {
         "frontend": "React (1EA)",
         "backend": "Express (1EA)",

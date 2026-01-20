@@ -1,6 +1,7 @@
 {
     "id": 20,
     "date": "2025-08-08",
+    "type": "EC2",
     "title": "수치 계산과 데이터 분석 서버",
     "development": {
         "frontend": null,
