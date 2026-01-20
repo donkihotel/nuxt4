@@ -74,20 +74,20 @@
             "id": 6,
             "created_at": "2025-02-20",
             "frontend": "Next",
-            "backend": "Next",
+            "backend": "Express",
             "database": "MariaDB",
             "instance": "EC2",
             "security": 2,
             "budget": 50000,
             "performance": "스케일업",
             "app_deploy": "자동",
-            "build_day": 3,
-            "build_cost": 240000
+            "build_day": 3.5,
+            "build_cost": 330000
         },
         {
             "id": 7,
             "created_at": "2025-03-19",
-            "frontend": "PHP",
+            "frontend": null,
             "backend": "PHP",
             "database": "MariaDB",
             "instance": "EC2",
@@ -96,7 +96,7 @@
             "performance": "스케일업",
             "app_deploy": "수동",
             "build_day": 2,
-            "build_cost": 240000
+            "build_cost": 242000
         },
         {
             "id": 8,
@@ -110,7 +110,7 @@
             "performance": "스케일업",
             "app_deploy": "수동",
             "build_day": 1,
-            "build_cost": 60000
+            "build_cost": 66000
         },
         {
             "id": 9,
@@ -137,7 +137,7 @@
             "budget": 100000,
             "performance": "스케일업",
             "app_deploy": "자동",
-            "build_day": 3,
+            "build_day": 4,
             "build_cost": 363000
         },
         {

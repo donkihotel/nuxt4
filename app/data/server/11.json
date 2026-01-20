@@ -91,14 +91,14 @@
         },
         {
             "no": 2,
-            "work": "프론트 CI/CD",
+            "work": "배포 프론트 CI/CD",
             "supplyPrice": 80000,
             "quantity": 1,
             "sumPrice": 80000
         },
         {
             "no": 3,
-            "work": "백엔드 CI/CD",
+            "work": "배포 백엔드 CI/CD",
             "supplyPrice": 120000,
             "quantity": 1,
             "sumPrice": 120000

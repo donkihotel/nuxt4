@@ -89,7 +89,7 @@
       <v-chip variant="text" class="pl-0">
         <v-img v-if="item.backend" :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24"
           class="mr-2" />
-        <span>{{ item.backend }}</span>
+        <span>{{ item.backend || '-' }}</span>
       </v-chip>
     </template>
 

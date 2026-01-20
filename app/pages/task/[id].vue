@@ -5,16 +5,15 @@
     <v-row>
       <v-col cols="12">
         <v-list-item>
-          <template v-slot:title>
-            <h2>{{ task?.title ?? '-' }}</h2>
-          </template>
-
-          <template v-slot:subtitle>
-            No. {{ task?.id }}
-          </template>
-
+          <v-list-item-title class="text-wrap">
+            <span class="text-h5 mr-2">[{{ task?.type }}]</span>
+            <span class="text-h5 font-weight-bold">{{ task?.title }}</span>
+          </v-list-item-title>
           <template v-slot:append>
-            <span class="text-subtitle-2">{{ task?.date }}</span>
+            <v-list-item-action class="flex-column align-end">
+              <small class="text-high-emphasis">No. {{ task?.id }}</small>
+              <small class="text-high-emphasis opacity-60">{{ task?.date }}</small>
+            </v-list-item-action>
           </template>
         </v-list-item>
       </v-col>

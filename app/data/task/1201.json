@@ -1,8 +1,8 @@
 {
     "id": 1201,
     "date": "2025-10-23",
-    "type": "기본",
-    "title": "EC2 아키텍처 설계 - 기본",
+    "type": "설계",
+    "title": "퍼블릭 VPC, EC2",
     "time": 1,
     "price": 2,
     "image": null,

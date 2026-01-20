@@ -171,10 +171,9 @@ const task = items0.default.task
 
 const headers0: DataTableHeader[] = [
   { title: 'No', value: 'id' },
-  { title: '설계 구분', value: 'design' },
+  { title: '작업 구분', value: 'design' },
   { title: '작업 이름', value: 'title' },
   { title: '작업 과정', value: 'count' },
-  // { title: '작업 시간', value: 'time' },
   { title: '작업 비용', value: 'price', align: 'end' }
 ]
 

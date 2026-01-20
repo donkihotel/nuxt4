@@ -1,8 +1,8 @@
 {
     "id": 1204,
     "date": "2025-10-23",
-    "type": "기본",
-    "title": "EC2 아키텍처 설계 - 서버 분리",
+    "type": "설계",
+    "title": "퍼블릭 VPC, EC2, 데이터베이스, 스토리지, 프론트/백엔드 분리",
     "time": 2,
     "price": 6,
     "image": null,
@@ -20,7 +20,7 @@
         {
             "step": 3,
             "title": "스토리지",
-            "content": "EBS 볼륨을 확장 또는 수명 주기를 생성 합니다."
+            "content": "기본 EBS 볼륨 생성 합니다."
         },
         {
             "step": 4,
@@ -35,7 +35,7 @@
         {
             "step": 6,
             "title": "프록시",
-            "content": "프론트에 Squid 프록시를 설치 합니다."
+            "content": "프론트에 Squid Proxy 설치 합니다."
         }
     ]
 }

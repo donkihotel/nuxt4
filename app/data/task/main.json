@@ -2,72 +2,72 @@
     "task": [
         {
             "id": 1101,
-            "design": "기본",
-            "title": "Lightsail 아키텍처 설계 - 기본",
+            "design": "설계",
+            "title": "Lightsail 인스턴스",
             "count": 3,
             "time": 1,
             "price": 2
         },
         {
             "id": 1102,
-            "design": "기본",
-            "title": "Lightsail 아키텍처 설계 - 데이터베이스",
+            "design": "설계",
+            "title": "Lightsail 인스턴스, 데이터베이스",
             "count": 4,
             "time": 1,
             "price": 3
         },
         {
             "id": 1103,
-            "design": "기본",
-            "title": "Lightsail 아키텍처 설계 - 스토리지",
+            "design": "설계",
+            "title": "Lightsail 인스턴스, 데이터베이스, 스토리지",
             "count": 5,
-            "time": 1,
+            "time": 2,
             "price": 4
         },
         {
             "id": 1201,
-            "design": "기본",
-            "title": "EC2 아키텍처 설계 - 기본",
+            "design": "설계",
+            "title": "퍼블릭 VPC, EC2",
             "count": 4,
             "time": 1,
             "price": 2
         },
         {
             "id": 1202,
-            "design": "기본",
-            "title": "EC2 아키텍처 설계 - 데이터베이스",
+            "design": "설계",
+            "title": "퍼블릭 VPC, EC2, 데이터베이스",
             "count": 5,
             "time": 1,
             "price": 3
         },
         {
             "id": 1203,
-            "design": "기본",
-            "title": "EC2 아키텍처 설계 - 스토리지",
-            "count": 5,
+            "design": "설계",
+            "title": "퍼블릭 VPC, EC2, 데이터베이스, 스토리지",
+            "count": 6,
             "time": 2,
             "price": 4
         },
         {
             "id": 1204,
-            "design": "기본",
-            "title": "EC2 아키텍처 설계 - 분리",
+            "design": "설계",
+            "title": "퍼블릭 VPC, EC2, 데이터베이스, 스토리지, 프론트/백엔드 분리",
             "count": 6,
             "time": 2,
-            "price": 8
+            "price": 6
         },
         {
             "id": 1205,
-            "design": "기본",
-            "title": "EC2 아키텍처 설계 - 프라이빗",
+            "design": "설계",
+            "title": "프라이빗 VPC, EC2, 데이터베이스, 스토리지",
             "count": 8,
-            "time": 3,
-            "price": 8
+            "time": 4,
+            "price": 10
         },
         {
             "id": 2101,
             "design": "배포",
-            "title": "프론트 애플리케이션 배포 - 기본",
+            "title": "프론트 애플리케이션 기본 배포",
             "count": 4,
             "time": 2,
             "price": 3
@@ -75,7 +75,7 @@
         {
             "id": 2102,
             "design": "배포",
-            "title": "백엔드 애플리케이션 배포 - 기본",
+            "title": "백엔드 애플리케이션 기본 배포",
             "count": 8,
             "time": 2,
             "price": 6
@@ -83,7 +83,7 @@
         {
             "id": 2103,
             "design": "배포",
-            "title": "프론트 애플리케이션 배포 - CI/CD",
+            "title": "프론트 애플리케이션 CI/CD 배포",
             "count": 4,
             "time": 3,
             "price": 6
@@ -91,7 +91,7 @@
         {
             "id": 2104,
             "design": "배포",
-            "title": "백엔드 애플리케이션 배포 - CI/CD",
+            "title": "백엔드 애플리케이션 CI/CD 배포",
             "count": 8,
             "time": 3,
             "price": 9

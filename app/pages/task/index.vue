@@ -48,7 +48,7 @@ const router = useRouter()
 // 테이블 헤더
 const headers: DataTableHeader[] = [
   { title: 'No', key: 'id' },
-  { title: '설계 구분', key: 'design' },
+  { title: '작업 구분', key: 'design' },
   { title: '작업 이름', key: 'title' },
   { title: '작업 과정', key: 'count' },
   { title: '작업 시간', key: 'time' },

@@ -2,6 +2,7 @@
     "id": 10,
     "date": "2025-04-17",
     "title": "***** 선박 관리시스템",
+    "subtitle": null,
     "development": {
         "frontend": "Next",
         "backend": "Nest",
@@ -10,7 +11,7 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "운영",
+        "environment": "프로덕션",
         "budget": 100000,
         "performance": "업스케일링",
         "app_deploy": "자동",
@@ -21,85 +22,94 @@
         "instance": "EC2",
         "network": "Public",
         "os": "Amazon Linux",
-        "web_server": "Nginx",
-        "database": "RDS (PostgreSQL)",
-        "app_deploy": "Github, Code Deploy",
         "storage": "EBS, S3",
-        "performance": null,
-        "security": "SSL (Let's Encrypt), WAF (ModSecurity)"
+        "dns": "Route 53",
+        "webserver": "Nginx",
+        "database": "RDS (PostgreSQL)",
+        "deploy": {
+            "frontend": "Next (Nginx)",
+            "backend": "Nest (PM2, Nginx)",
+            "source": "GitHub Repository",
+            "build": "GitHub Actions",
+            "deploy": "AWS CodeDeploy"
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt), WAF (ModSecurity)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": null
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
+            "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
             "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "아키텍처 구축",
-            "quantity": 1,
-            "working_day": 1
+            "category": "배포",
+            "title": "프론트 애플리케이션 CI/CD",
+            "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "프론트 CI/CD",
-            "quantity": 1,
+            "category": "배포",
+            "title": "백엔드 애플리케이션 CI/CD",
             "working_day": 1
         },
         {
             "no": 4,
-            "category": "구축",
-            "title": "백엔드 CI/CD",
-            "quantity": 1,
-            "working_day": 1
+            "category": "보안",
+            "title": "보안 도구 설치",
+            "working_day": 0.5
         },
         {
             "no": 5,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
             "working_day": 1
         },
         {
             "no": 6,
             "category": "완료",
-            "title": "문서화 및 인계",
-            "quantity": 1,
+            "title": "아키텍처 문서화 및 인계",
             "working_day": 0.5
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 설계",
-            "supplyPrice": 10000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 10000
+            "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "아키텍처 구축",
+            "work": "프론트 CI/CD",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 3,
-            "work": "프론트 CI/CD",
-            "supplyPrice": 120000,
+            "work": "백엔드 CI/CD",
+            "supplyPrice": 90000,
             "quantity": 1,
-            "sumPrice": 120000
+            "sumPrice": 90000
         },
         {
             "no": 4,
-            "work": "백엔드 CI/CD",
-            "supplyPrice": 140000,
+            "work": "보안 구축",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 140000
+            "sumPrice": 60000
         }
     ]
 }
