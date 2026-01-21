@@ -1,134 +1,115 @@
 {
     "id": 2,
-    "date": "2025-12-11",
-    "type": "EC2",
-    "title": "***** 관리 시스템",
-    "domain": "***ver.com",
-    "frontend": "React",
-    "backend": "Express",
-    "database": "MySQL",
-    "build_day": 4,
+    "date": "2025-01-14",
+    "type": "Lightsail",
+    "title": "자동차 운전연수 홈페이지 서버",
+    "development": {
+        "frontend": null,
+        "backend": "PHP",
+        "database": "MariaDB",
+        "linkage": "워드프레스"
+    },
     "requirements": {
         "hosting": "AWS",
-        "environment": "개발, 운영",
-        "budget": 100000,
-        "performance": "스케일아웃",
-        "app_deploy": "자동",
-        "security": "SSL, 방화벽, 프라이빗, 보안도구"
+        "environment": "프로덕션",
+        "budget": 20000,
+        "performance": "업스케일링",
+        "app_deploy": "수동",
+        "security": "SSL, 방화벽",
+        "etc": null
     },
     "design": {
-        "performance": "ECS, LoadBalancer, AutoScaling",
-        "app_deploy": "Github, CodeBuild, CodePipeline, CodeDeploy",
-        "security": "ACM, WAF, Private-network, GuardDuty",
-        "server_database": "RDS Multi-AZ"
+        "instance": "Lightsail",
+        "network": "Public",
+        "os": "Amazon Linux",
+        "storage": "EBS",
+        "dns": "Lightsail DNS",
+        "webserver": "Apache",
+        "database": "Lightsail (MariaDB)",
+        "deploy": {
+            "frontend": null,
+            "backend": "PHP (Apache)",
+            "source": "File (Zip)",
+            "build": null,
+            "deploy": "수동 (파일 복사)"
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt), WAF (ModSecurity)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": "vsFTP, GoAccess"
     },
     "schedule": [
         {
             "no": 1,
-            "category": "설계",
-            "title": "아키텍처 문서화",
-            "quantity": 1,
-            "working_day": 1
+            "category": "기본",
+            "title": "아키텍처 설계",
+            "working_day": 0.5
         },
         {
             "no": 2,
-            "category": "구축",
-            "title": "네트워크 network 구축",
-            "quantity": 1,
+            "category": "배포",
+            "title": "애플리케이션 수동 배포",
             "working_day": 0.5
         },
         {
             "no": 3,
-            "category": "구축",
-            "title": "데이터베이스 구축",
-            "quantity": 1,
+            "category": "보안",
+            "title": "보안 도구 설치",
             "working_day": 0.5
         },
         {
             "no": 4,
-            "category": "구축",
-            "title": "프론트 CI/CD 구축",
-            "quantity": 1,
+            "category": "소프트웨어",
+            "title": "소프트웨어 설치",
             "working_day": 0.5
         },
         {
             "no": 5,
-            "category": "구축",
-            "title": "백엔드 CI/CD 구축",
-            "quantity": 1,
-            "working_day": 1
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 0.25
         },
         {
             "no": 6,
-            "category": "구축",
-            "title": "보안 구축",
-            "quantity": 1,
-            "working_day": 0.5
-        },
-        {
-            "no": 7,
-            "category": "테스트",
-            "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 2
-        },
-        {
-            "no": 8,
             "category": "완료",
-            "title": "서버관리 문서화",
-            "quantity": 1,
-            "working_day": 1
-        },
-        {
-            "no": 9,
-            "category": "완료",
-            "title": "완료 인계(교육 2시간)",
-            "quantity": 1,
-            "working_day": 0.5
+            "title": "아키텍처 문서화 및 인계",
+            "working_day": 0.25
         }
     ],
     "estimate": [
         {
             "no": 1,
-            "work": "아키텍처 구축",
-            "supplyPrice": 200000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 200000
+            "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "네트워크 network 구축",
+            "work": "애플리케이션 수동 배포",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 3,
-            "work": "데이터베이스 구축",
+            "work": "보안 구축",
             "supplyPrice": 60000,
             "quantity": 1,
             "sumPrice": 60000
         },
         {
             "no": 4,
-            "work": "프론트 CI/CD",
-            "supplyPrice": 100000,
+            "work": "소프트웨어 설치",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 100000
-        },
-        {
-            "no": 5,
-            "work": "벡엔드 CI/CD",
-            "supplyPrice": 200000,
-            "quantity": 1,
-            "sumPrice": 200000
-        },
-        {
-            "no": 6,
-            "work": "보안 구축",
-            "supplyPrice": 30000,
-            "quantity": 1,
-            "sumPrice": 30000
+            "sumPrice": 60000
         }
     ]
 }

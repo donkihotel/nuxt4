@@ -11,8 +11,8 @@
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 7.5,
-            "build_cost": 180000
+            "build_day": 2,
+            "build_cost": 165000
         },
         {
             "id": 2,
@@ -25,8 +25,8 @@
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",
-            "build_day": 2,
-            "build_cost": 240000
+            "build_day": 2.5,
+            "build_cost": 264000
         },
         {
             "id": 3,
@@ -35,7 +35,7 @@
             "backend": "SpringBoot",
             "database": "MySQL",
             "instance": "EC2",
-            "security": 1,
+            "security": 2,
             "budget": 50000,
             "performance": "스케일업",
             "app_deploy": "수동",
@@ -133,7 +133,7 @@
             "backend": "Nest",
             "database": "PostgreSQL",
             "instance": "EC2",
-            "security": 3,
+            "security": 2,
             "budget": 100000,
             "performance": "스케일업",
             "app_deploy": "자동",
@@ -147,7 +147,7 @@
             "backend": "SpringBoot",
             "database": "MySQL",
             "instance": "EC2",
-            "security": 3,
+            "security": 2,
             "budget": 60000,
             "performance": "스케일업",
             "app_deploy": "자동",
@@ -161,7 +161,7 @@
             "backend": "SpringBoot",
             "database": "DynamoDB",
             "instance": "EC2",
-            "security": 1,
+            "security": 2,
             "budget": 100000,
             "performance": "스케일업",
             "app_deploy": "자동",
@@ -203,7 +203,7 @@
             "backend": "PHP",
             "database": "MySQL",
             "instance": "Njalla",
-            "security": 0,
+            "security": 1,
             "budget": 30000,
             "performance": "스케일업",
             "app_deploy": "수동",

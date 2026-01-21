@@ -1,100 +1,102 @@
 {
     "id": 1,
-    "date": "2024-01-01",
-    "type": "EC2",
-    "title": "IoT 모니터링 시스템",
-    "domain": "naver.com",
-    "frontend": "React",
-    "backend": "Express",
-    "database": "MySQL",
-    "requirements": {
-        "hosting": "AWS",
-        "budget": 100000,
-        "performance": "스케일 업",
-        "deployment": "수동",
-        "backup": "소스, 데이터베이스",
-        "security": "퍼블릭, SSL, 방화벽"
+    "date": "2025-01-26",
+    "type": "DigitalOcean",
+    "title": "B2C 주문관리 서비스 서버",
+    "development": {
+        "frontend": null,
+        "backend": "Express",
+        "database": "MongoDB",
+        "linkage": null
     },
-    "design": [],
+    "requirements": {
+        "hosting": "DigitalOcean",
+        "environment": "프로덕션",
+        "budget": 30000,
+        "performance": "스케일 업",
+        "app_deploy": "수동",
+        "security": "SSL",
+        "etc": null
+    },
+    "design": {
+        "instance": "Droplet",
+        "network": "Public",
+        "os": "Ubuntu",
+        "storage": "EBS",
+        "dns": "Default DNS",
+        "webserver": "Nginx",
+        "database": "Database (MongoDB)",
+        "deploy": {
+            "frontend": null,
+            "backend": "Express (Nginx)",
+            "source": "File (zip)",
+            "build": null,
+            "deploy": null
+        },
+        "security": {
+            "tools": "SSL (Let's Encrypt)",
+            "etc": null
+        },
+        "extension": {
+            "loadbalancer": null,
+            "autoscaling": null,
+            "cdn": null
+        },
+        "software": null
+    },
     "schedule": [
         {
             "no": 1,
-            "day": "1 Day",
-            "milestone": "기획",
-            "title": "기획",
-            "description": "요구사항 분석 및 문서화"
+            "category": "기본",
+            "title": "아키텍처 설계",
+            "working_day": 0.25
         },
         {
             "no": 2,
-            "day": "2 Day",
-            "milestone": "디자인",
-            "title": "디자인",
-            "description": "UI/UX 디자인 및 프로토타입 제작"
+            "category": "배포",
+            "title": "백엔드 애플리케이션 배포",
+            "working_day": 0.5
         },
         {
             "no": 3,
-            "day": "3 Day",
-            "milestone": "개발",
-            "title": "개발",
-            "description": "프론트엔드 및 백엔드 개발"
+            "category": "보안",
+            "title": "보안 도구 설치",
+            "working_day": 0.5
         },
         {
             "no": 4,
-            "day": "4 Day",
-            "milestone": "테스트",
-            "title": "테스트",
-            "description": "시스템 테스트 및 버그 수정"
+            "category": "테스트",
+            "title": "통합 테스트",
+            "working_day": 0.25
         },
         {
             "no": 5,
-            "day": "5 Day",
-            "milestone": "배포",
-            "title": "배포",
-            "description": "서버 설정 및 서비스 배포"
+            "category": "완료",
+            "title": "아키텍처 문서화 및 인계",
+            "working_day": 0.5
         }
     ],
-    "estimates": [
+    "estimate": [
         {
             "no": 1,
-            "work": "프론트 웹 서버 환경 구축",
-            "supplyPrice": 50000,
+            "work": "기본 아키텍처 설계",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 50000
+            "sumPrice": 60000
         },
         {
             "no": 2,
-            "work": "백엔드 웹 서버 환경 구축",
-            "supplyPrice": 100000,
+            "work": "백엔드 애플리케이션 배포",
+            "supplyPrice": 60000,
             "quantity": 1,
-            "sumPrice": 100000
+            "sumPrice": 60000
         },
         {
             "no": 3,
-            "work": "프로젝트 소스 배포",
-            "supplyPrice": 50000,
+            "work": "보안 구축",
+            "supplyPrice": 30000,
             "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
-            "no": 4,
-            "work": "도메인 연결 및 SSL",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
-            "no": 5,
-            "work": "방화벽 구축",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
-        },
-        {
-            "no": 6,
-            "work": "백업 구축",
-            "supplyPrice": 50000,
-            "quantity": 1,
-            "sumPrice": 50000
+            "sumPrice": 30000
         }
     ]
 }

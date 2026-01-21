@@ -13,7 +13,7 @@
     "requirements": {
         "hosting": "AWS",
         "budget": 60000,
-        "environment": "운영",
+        "environment": "프로덕션",
         "app_deploy": "자동",
         "security": "SSL, 방화벽",
         "performance": "업스케일링",

@@ -11,7 +11,7 @@
     },
     "requirements": {
         "hosting": "Njalla",
-        "environment": "운영",
+        "environment": "프로덕션",
         "budget": 30000,
         "app_deploy": "수동",
         "security": null,

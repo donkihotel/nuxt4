@@ -11,7 +11,7 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "개발, 운영",
+        "environment": "개발, 프로덕션",
         "budget": 150000,
         "performance": "스케일아웃",
         "app_deploy": "자동",
@@ -33,7 +33,7 @@
             "deploy": "CodePipeline, CodeDeploy"
         },
         "security": {
-            "tools": "ACM, WAF, SystemsManager",
+            "tools": "ACM, WAF, SecretManager",
             "etc": null
         },
         "extension": {

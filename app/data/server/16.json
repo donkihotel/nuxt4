@@ -11,7 +11,7 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "운영",
+        "environment": "프로덕션",
         "budget": 50000,
         "performance": "스케일업",
         "app_deploy": "자동",
@@ -51,25 +51,25 @@
             "working_day": 0.5
         },
         {
-            "no": 3,
+            "no": 2,
             "category": "배포",
             "title": "애플리케이션 배포",
             "working_day": 1
         },
         {
-            "no": 4,
+            "no": 3,
             "category": "보안",
             "title": "보안도구 설치",
             "working_day": 0.5
         },
         {
-            "no": 5,
+            "no": 4,
             "category": "테스트",
             "title": "통합 테스트",
             "working_day": 0.5
         },
         {
-            "no": 6,
+            "no": 5,
             "category": "완료",
             "title": "문서화 및 인계 교육",
             "working_day": 0.5

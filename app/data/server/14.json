@@ -12,7 +12,7 @@
     },
     "requirements": {
         "hosting": "AWS",
-        "environment": "운영",
+        "environment": "프로덕션",
         "budget": 30000,
         "performance": null,
         "app_deploy": null,

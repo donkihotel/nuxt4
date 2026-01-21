@@ -33,7 +33,7 @@
             "deploy": "CodePipeline, CodeDeploy"
         },
         "security": {
-            "tools": "ACM, WAF, SecretsManager",
+            "tools": "ACM, WAF, SecretsManager, PrivateVPC",
             "etc": null
         },
         "extension": {
