@@ -3,7 +3,7 @@
     "date": "2025-10-23",
     "type": "보안",
     "title": "방화벽 ModSecurity 설치",
-    "time": 1,
+    "time": 2,
     "price": 3,
     "image": null,
     "process": [
@@ -26,6 +26,11 @@
             "step": 4,
             "title": "ModSecurity 설정",
             "content": "차단 룰을 설정 합니다."
+        },
+        {
+            "step": 5,
+            "title": "웹서버 재시작",
+            "content": "Apaceh 또는 Nginx를 재시작 합니다."
         }
     ]
 }

@@ -158,7 +158,7 @@
   <v-dialog v-model="dialog" max-width="420">
     <v-card rounded="lg">
       <v-card-title class="text-h6 font-weight-bold">
-        크몽 사이트 이동 안내
+        외부 사이트 이동 안내
       </v-card-title>
 
       <v-card-text>

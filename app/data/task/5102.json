@@ -2,7 +2,7 @@
     "id": 5102,
     "date": "2025-10-23",
     "type": "소프트웨어",
-    "title": "vsftpd 설치",
+    "title": "FTP서버 vsftpd 설치",
     "time": 1,
     "price": 2,
     "image": null,

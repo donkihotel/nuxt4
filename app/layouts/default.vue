@@ -32,7 +32,10 @@
 
     <v-footer class="text-center d-flex flex-column" absolute>
       <div>
-        ⓒ {{ new Date().getFullYear() }}. <span class="text-primary">2</span>CPU<span class="text-primary">2</span>RAM
+        ⓒ {{ new Date().getFullYear() }}.
+        <span class="font-weight-bold">
+          <span class="text-primary">2</span>CPU<span class="text-primary">2</span>RAM
+        </span>
         Co. All rights reserved.
       </div>
     </v-footer>

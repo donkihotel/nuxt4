@@ -2,15 +2,15 @@
     "id": 3102,
     "date": "2025-10-23",
     "type": "보안",
-    "title": "유료 SSL 인증서를 구매 설치",
+    "title": "유료 SSL 인증서 구매 설치",
     "time": 1,
     "price": 3,
     "image": null,
     "process": [
         {
             "step": 1,
-            "title": "SS 인증서 구매",
-            "content": "인증서를 파는곳에서 구매를 합니다."
+            "title": "SSL 인증서 구매",
+            "content": "인증서를 구매를 합니다."
         },
         {
             "step": 2,

@@ -1,0 +1,51 @@
+{
+    "id": 3105,
+    "date": "2025-10-23",
+    "type": "보안",
+    "title": "국외IP 차단 Maxmind 설치",
+    "time": 2,
+    "price": 3,
+    "image": null,
+    "process": [
+        {
+            "step": 1,
+            "title": "Maxmind 키 발급",
+            "content": "Maxmind 사이트에서 키 발급 합니다."
+        },
+        {
+            "step": 2,
+            "title": "Maxmind 설치",
+            "content": "Maxmind geoip 설치를 하고 키 설정 합니다."
+        },
+        {
+            "step": 3,
+            "title": "Geo 데이타 받기",
+            "content": "명령어로 Geo 데이타를 받고, 스케줄에 등록 합니다."
+        },
+        {
+            "step": 4,
+            "title": "개발 도구 설치",
+            "content": "빌드하기위한 필요한 패키지를 설치 합니다."
+        },
+        {
+            "step": 5,
+            "title": "Apache 모듈 Maxminddb 설치",
+            "content": "소스를 내려받고 컴파일 설치를 합니다."
+        },
+        {
+            "step": 6,
+            "title": "Aapache 모듈 연결",
+            "content": "모듈을 Apache 연결합니다."
+        },
+        {
+            "step": 7,
+            "title": "Aapache 에 Maxminddb 연결",
+            "content": "Apache 설정에 조건을 설정 합니다."
+        },
+        {
+            "step": 8,
+            "title": "아파치 재시작",
+            "content": "아파치를 재시작 합니다."
+        }
+    ]
+}
