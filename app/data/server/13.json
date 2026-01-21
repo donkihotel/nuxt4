@@ -1,9 +1,8 @@
 {
     "id": 13,
     "date": "2025-05-10",
-    "type": "EC2",
-    "title": "CAFE24 가상호스팅 PHP 웹 서버 구축",
-    "subtitle": "소셜미디어",
+    "type": "CAFE24",
+    "title": "B2C 홈페이지 서버",
     "development": {
         "frontend": null,
         "backend": "PHP",

@@ -2,7 +2,7 @@
     "id": 10,
     "date": "2025-04-17",
     "type": "EC2",
-    "title": "***** 선박 관리시스템",
+    "title": "B2B 선박관리 서버",
     "subtitle": null,
     "development": {
         "frontend": "Next",

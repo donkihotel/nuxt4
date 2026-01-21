@@ -1,8 +1,8 @@
 {
     "id": 15,
     "date": "2025-05-16",
-    "type": "EC2",
-    "title": "Njalla 호스팅에서 PHP 웹 서버 구축",
+    "type": "Njalla",
+    "title": "B2B 홈페이지 서버 구축",
     "development": {
         "frontend": null,
         "backend": "PHP",

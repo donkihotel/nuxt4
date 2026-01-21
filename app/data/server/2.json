@@ -2,7 +2,7 @@
     "id": 2,
     "date": "2025-01-14",
     "type": "Lightsail",
-    "title": "자동차 운전연수 홈페이지 서버",
+    "title": "B2C 자동차 운전연수 홈페이지 서버",
     "development": {
         "frontend": null,
         "backend": "PHP",

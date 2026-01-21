@@ -2,7 +2,7 @@
     "id": 9,
     "date": "2025-04-12",
     "type": "EC2",
-    "title": "쇼핑몰 서버 구축",
+    "title": "B2C 의료 쇼핑몰 서버",
     "development": {
         "frontend": null,
         "backend": "PHP",

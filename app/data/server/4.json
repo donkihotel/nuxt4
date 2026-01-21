@@ -2,7 +2,7 @@
     "id": 4,
     "date": "2024-01-27",
     "type": "EC2",
-    "title": "웹 게임 플랫폼 서비스 서버",
+    "title": "C2C 웹 게임 플랫폼 서비스 서버",
     "development": {
         "frontend": "Unity (WebGL)",
         "backend": "SpringBoot",

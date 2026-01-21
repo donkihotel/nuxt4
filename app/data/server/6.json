@@ -2,7 +2,7 @@
     "id": 6,
     "date": "2025-02-20",
     "type": "EC2",
-    "title": "회사 홈페이지",
+    "title": "B2B 회사 홈페이지",
     "subtitle": "프론트, 백엔드가 NextJS 하나로 통합해서 사용",
     "development": {
         "frontend": "Next",

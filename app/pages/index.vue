@@ -36,7 +36,7 @@
       </v-toolbar>
       <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"
         v-model="currentIndex" hide-delimiters>
-        <v-carousel-item v-for="(item, i) in banners" :key="i" :src="item.src" @click="open(item.url, '_blank')" cover>
+        <v-carousel-item v-for="(item, i) in banners" :key="i" :src="item.src" @click="openConfirm(item.url)" cover>
           <v-sheet class="d-flex align-center justify-center text-white"
             :color="item.title ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)'" height="48"
             style="position:absolute; bottom:0; width:100%;">
@@ -154,6 +154,28 @@
       </v-data-table>
     </v-col>
   </v-row>
+
+  <v-dialog v-model="dialog" max-width="420">
+    <v-card rounded="lg">
+      <v-card-title class="text-h6 font-weight-bold">
+        크몽 사이트 이동 안내
+      </v-card-title>
+
+      <v-card-text>
+        현재 사이트를 벗어나 크몽 사이트로 이동합니다.<br>
+        계속 진행하시겠습니까?
+      </v-card-text>
+
+      <v-card-actions class="justify-end">
+        <v-btn variant="text" @click="dialog = false">
+          취소
+        </v-btn>
+        <v-btn color="primary" @click="goExternal">
+          확인
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script setup lang="ts">
@@ -245,4 +267,17 @@ const onClickServerRow = handleClickRow('server')
 const onClickDomainRow = handleClickRow('domain')
 
 const itemEmailError = reactive<{ [key: string]: boolean }>({})
+
+const dialog = ref(false)
+const targetUrl = ref('')
+
+const openConfirm = (url: string) => {
+  targetUrl.value = url
+  dialog.value = true
+}
+
+const goExternal = () => {
+  window.open(targetUrl.value, '_blank')
+  dialog.value = false
+}
 </script>

@@ -2,7 +2,7 @@
     "id": 11,
     "date": "2025-05-05",
     "type": "EC2",
-    "title": "AWS EC2 스프링부트, 리액트 웹 서버 구축",
+    "title": "센서 IoT 모니터링 서버",
     "development": {
         "frontend": "React",
         "backend": "SpringBoot",

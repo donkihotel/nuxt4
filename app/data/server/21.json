@@ -2,7 +2,7 @@
     "id": 21,
     "date": "2025-12-11",
     "type": "Lightsail",
-    "title": "이윰 쇼핑몰 서버",
+    "title": "B2C 의료 쇼핑몰 서버",
     "development": {
         "frontend": null,
         "backend": "PHP",

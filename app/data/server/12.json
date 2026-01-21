@@ -2,8 +2,7 @@
     "id": 12,
     "date": "2025-05-05",
     "type": "EC2",
-    "title": "AWS EC2 스프링부트 웹 서버 구축",
-    "subtitle": "API 서버",
+    "title": "B2C 스포츠 경기 플랫폼 서비스 서버",
     "development": {
         "frontend": null,
         "backend": "SpringBoot",
