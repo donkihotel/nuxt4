@@ -38,6 +38,14 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'AWS 작업 비용 확인 | 2CPU2RAM',
+  meta: [
+    { name: 'description', content: 'AWS 작업 비용 확인' },
+    { name: 'keywords', content: 'AWS,서버,구축,설계,배포,인프라,클라우드,호스팅' }
+  ]
+})
+
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import type { DataTableHeader } from 'vuetify'
