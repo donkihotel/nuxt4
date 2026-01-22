@@ -43,6 +43,12 @@ useHead({
   meta: [
     { name: 'description', content: 'AWS 작업 비용 확인' },
     { name: 'keywords', content: 'AWS,서버,구축,설계,배포,인프라,클라우드,호스팅' }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://2cpu2ram.com/task'
+    }
   ]
 })
 

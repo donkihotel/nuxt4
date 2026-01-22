@@ -82,6 +82,12 @@ useHead({
   meta: [
     { name: 'description', content: '도메인 홈페이지 및 메일 연결' },
     { name: 'keywords', content: 'AWS,서버,구축,설계,배포,인프라,클라우드,호스팅' }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://2cpu2ram.com/domain'
+    }
   ]
 })
 
