@@ -555,7 +555,7 @@
             "homepage": "아임웹",
             "ssl": "AWS",
             "ssl_cost": 0,
-            "email": "GoDaddy",
+            "email": "godaddy",
             "pricing_plan": "이메일 플러스",
             "cost": 20000
         },

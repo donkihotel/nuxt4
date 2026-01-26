@@ -2,7 +2,7 @@
   <v-sheet class="pa-6 text-white mx-auto " color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">도메인 연결</h4>
     <p>
-      도메인에 홈페이지 · 메일 · SSL 연결 작업을 원격리모트 해서 작업을 해드립니다.<br />
+      도메인에 홈페이지 · 메일 · SSL 연결 작업을 해드립니다.<br />
     </p>
   </v-sheet>
 

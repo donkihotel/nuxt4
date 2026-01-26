@@ -261,6 +261,8 @@ const formatEmailIcon = (value: string) => {
       return 'naver.png'
     case 'microsoft':
       return 'microsoft.png'
+    case 'godaddy':
+      return 'godaddy.png'
     default:
       return 'default_email.png'
   }

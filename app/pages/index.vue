@@ -1,8 +1,14 @@
 <template>
-  <v-sheet class="pa-4 mb-3 mx-auto">
-    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축을 사례·비용·기간 공개합니다</h4>
-    <p>
-      스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스
+  <v-sheet class="pa-4 mb-3 mx-auto text-white" style="
+    background-image: url('assets/bg/aws-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+  ">
+    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축 사례 · 견적을 공개합니다.</h4>
+    <p class="font-weight-bold">
+      # 스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스 <br />
+      # 실제 구축 사례와 견적을 확인해보세요.
     </p>
   </v-sheet>
   <v-row class="bg-grey-lighten-3">
@@ -12,7 +18,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              작업 비용
+              작업별 단가표
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
           </v-toolbar>
@@ -31,7 +37,7 @@
     <v-col xs="12" sm="6" md="5" lg="5">
       <v-toolbar flat>
         <v-toolbar-title>
-          배너
+          크몽에서 서비스 만나보기
         </v-toolbar-title>
       </v-toolbar>
       <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"
@@ -64,7 +70,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              서버 구축
+              서버 구축 사례 & 견적
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/server">더 보기 ></v-btn>
           </v-toolbar>
@@ -127,7 +133,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              도메인 연결
+              도메인 연결 서비스 - <span class="font-italic">사례</span>
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/domain">더 보기 ></v-btn>
           </v-toolbar>
