@@ -48,43 +48,37 @@
             "no": 1,
             "category": "기본",
             "title": "아키텍처 설계",
-            "quantity": 1,
             "working_day": 1
         },
         {
             "no": 2,
             "category": "배포",
             "title": "프론트 애플리케이션 CI/CD",
-            "quantity": 1,
             "working_day": 1
         },
         {
             "no": 3,
             "category": "배포",
             "title": "백엔드 애플리케이션 CI/CD",
-            "quantity": 3,
-            "working_day": 3
+            "working_day": 2
         },
         {
             "no": 4,
             "category": "보안",
             "title": "보안 도구 설치",
-            "quantity": 1,
             "working_day": 1
         },
         {
             "no": 5,
             "category": "부하분산",
             "title": "로드밸런서, CDN 구축",
-            "quantity": 1,
             "working_day": 1
         },
         {
             "no": 6,
             "category": "테스트",
             "title": "통합 테스트",
-            "quantity": 1,
-            "working_day": 2
+            "working_day": 1
         },
         {
             "no": 7,

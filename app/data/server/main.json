@@ -333,7 +333,7 @@
             "budget": 200000,
             "performance": "스케일아웃",
             "app_deploy": "자동",
-            "build_day": 4,
+            "build_day": 7,
             "build_cost": 726000
         },
         {
@@ -348,7 +348,7 @@
             "budget": 200000,
             "performance": "스케일아웃",
             "app_deploy": "자동",
-            "build_day": 7.5,
+            "build_day": 8,
             "build_cost": 1078000
         }
     ]
