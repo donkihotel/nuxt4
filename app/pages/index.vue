@@ -5,7 +5,7 @@
     background-position: center;
     border-radius: 12px;
   ">
-    <h4 class="text-h5 font-weight-bold mb-4">AWS 서버 구축 사례 · 견적을 공개합니다.</h4>
+    <h4 class="text-h5 font-weight-bold mb-4">AWS 구축 사례와 비용을 투명하게 공개합니다</h4>
     <p class="font-weight-bold">
       # 스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스 <br />
       # 실제 구축 사례와 견적을 확인해보세요.
