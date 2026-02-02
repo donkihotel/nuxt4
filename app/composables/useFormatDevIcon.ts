@@ -20,7 +20,8 @@ export const useFormatDevIcon = () => {
         MySQL: 'mysql.png',
         MongoDB: 'mongodb.png',
         MariaDB: 'mariadb.png',
-        PostgreSQL: 'postgresql.png'
+        PostgreSQL: 'postgresql.png',
+        DynamoDB: 'dynamodb.png',
     };
 
     const formatDevIcon = (value: string): string => {
