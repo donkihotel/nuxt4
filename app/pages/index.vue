@@ -159,6 +159,74 @@
         </template>
       </v-data-table>
     </v-col>
+
+    <v-col>
+      <v-toolbar flat>
+        <v-toolbar-title>
+          추천사이트
+          <div class="text-caption font-italic">다음과 같은 사이트의 서비스를 사용하여 서버를 구축합니다.</div>
+        </v-toolbar-title>
+      </v-toolbar>
+      <v-row>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3" @click="openConfirm('https://www.hosting.kr/')">
+            <v-img :src="`assets/bottom/hostringkr.jpg`" height="70" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>호스팅케이알</v-card-title>
+            <v-card-subtitle>도메인 최저가</v-card-subtitle>
+          </v-card>
+        </v-col>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3" @click="openConfirm('https://www.sslcert.co.kr/')">
+            <v-img :src="`assets/bottom/securesign.jpg`" height="70" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>SecureSign</v-card-title>
+            <v-card-subtitle>SSL 인증서 최저가</v-card-subtitle>
+          </v-card>
+        </v-col>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3" @click="openConfirm('https://aws.amazon.com/ko/')">
+            <v-img :src="`assets/bottom/aws.jpg`" height="70" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>Amazon Web Services</v-card-title>
+            <v-card-subtitle>많이 사용하는 클라우드</v-card-subtitle>
+          </v-card>
+        </v-col>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3">
+            <v-img class="align-end" height="70"
+              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>준비중</v-card-title>
+            <v-card-subtitle>준비중 입니다</v-card-subtitle>
+          </v-card>
+        </v-col>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3">
+            <v-img class="align-end" height="70"
+              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>준비중</v-card-title>
+            <v-card-subtitle>준비중 입니다</v-card-subtitle>
+          </v-card>
+        </v-col>
+        <v-col xs="6" sm="4" md="3" lg="2">
+          <v-card class="pb-3">
+            <v-img class="align-end" height="70"
+              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
+            </v-img>
+            <v-divider></v-divider>
+            <v-card-title>준비중</v-card-title>
+            <v-card-subtitle>준비중 입니다</v-card-subtitle>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-col>
   </v-row>
 
   <v-dialog v-model="dialog" max-width="420">
@@ -168,7 +236,7 @@
       </v-card-title>
 
       <v-card-text>
-        현재 사이트를 벗어나 크몽 사이트로 이동합니다.<br>
+        현재 사이트를 벗어나 외부 사이트로 이동합니다.<br>
         계속 진행하시겠습니까?
       </v-card-text>
 
