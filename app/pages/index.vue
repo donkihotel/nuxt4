@@ -182,7 +182,7 @@
             <v-img :src="`assets/bottom/securesign.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
-            <v-card-title>SecureSign</v-card-title>
+            <v-card-title>시큐어사인</v-card-title>
             <v-card-subtitle>SSL 인증서 최저가</v-card-subtitle>
           </v-card>
         </v-col>
@@ -191,18 +191,17 @@
             <v-img :src="`assets/bottom/aws.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
-            <v-card-title>Amazon Web Services</v-card-title>
+            <v-card-title>아마존 웹 서비스</v-card-title>
             <v-card-subtitle>많이 사용하는 클라우드</v-card-subtitle>
           </v-card>
         </v-col>
         <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3">
-            <v-img class="align-end" height="70"
-              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
+          <v-card class="pb-3" @click="openConfirm('https://github.com/')">
+            <v-img :src="`assets/bottom/github.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
-            <v-card-title>준비중</v-card-title>
-            <v-card-subtitle>준비중 입니다</v-card-subtitle>
+            <v-card-title>깃허브</v-card-title>
+            <v-card-subtitle>가장 핫한 소스 저장소</v-card-subtitle>
           </v-card>
         </v-col>
         <v-col xs="6" sm="4" md="3" lg="2">
