@@ -4,6 +4,15 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'github_pages',
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/server/',
+        '/domain/',
+        '/task/'
+      ]
+    }
   },
   modules: [
     'vuetify-nuxt-module',

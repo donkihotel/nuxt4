@@ -81,12 +81,12 @@ useHead({
   title: '도메인 홈페이지 및 메일 연결 | 2CPU2RAM',
   meta: [
     { name: 'description', content: '도메인 홈페이지 및 메일 연결' },
-    { name: 'keywords', content: 'AWS,서버,구축,설계,배포,인프라,클라우드,호스팅' }
+    { name: 'keywords', content: '구글워크스페이스, 네이버웍스, 마이크로소프트365, 윅스, 아임웹, 캔바, 카페24쇼핑몰' }
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://2cpu2ram.com/domain'
+      href: 'https://2cpu2ram.com/domain/'
     }
   ]
 })

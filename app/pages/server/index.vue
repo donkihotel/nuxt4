@@ -141,12 +141,12 @@ useHead({
   title: '소규모 AWS 서버 구축 | 2CPU2RAM',
   meta: [
     { name: 'description', content: '스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스' },
-    { name: 'keywords', content: 'AWS,서버,구축,설계,배포,인프라,클라우드,호스팅' }
+    { name: 'keywords', content: 'EC2, Lightsail, ECS, RDS, LoadBalancer, AutoScaling' }
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://2cpu2ram.com/server'
+      href: 'https://2cpu2ram.com/server/'
     }
   ]
 })
