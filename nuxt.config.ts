@@ -31,7 +31,16 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
-    buildAssetsDir: '_nuxt/'
+    buildAssetsDir: '_nuxt/',
+    head: {
+      script: [
+        {
+          src: 'https://analytics.ahrefs.com/analytics.js',
+          async: true,
+          'data-key': 'KZQYFtkPbslgyuy51XUE7A'
+        }
+      ]
+    }
   },
   runtimeConfig: {
     public: {
