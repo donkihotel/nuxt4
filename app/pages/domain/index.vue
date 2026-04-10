@@ -86,7 +86,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://2cpu2ram.com/domain/'
+      href: 'https://2cpu2ram.com/domain'
     }
   ]
 })

@@ -47,7 +47,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://2cpu2ram.com/task/'
+      href: 'https://2cpu2ram.com/task'
     }
   ]
 })
