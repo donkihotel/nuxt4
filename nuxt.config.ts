@@ -59,11 +59,6 @@ export default defineNuxtConfig({
   },
   sitemap: {
     exclude: ['/pinia/**', '/fetch/**'],
-    urls: async () => [
-      { loc: '/' },
-      { loc: '/server/' },
-      { loc: '/domain/' },
-      { loc: '/task/' }
-    ]
+    urls: ['/server/', '/domain/', '/task/']
   }
 })
