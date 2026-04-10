@@ -72,7 +72,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          구축 사례 & 견적
+          서버 구축 - <span class="font-italic">사례</span>
         </v-toolbar-title>
       </v-toolbar>
     </template>
@@ -141,7 +141,8 @@ useHead({
   title: '소규모 AWS 서버 구축 | 2CPU2RAM',
   meta: [
     { name: 'description', content: '스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스' },
-    { name: 'keywords', content: 'EC2, Lightsail, ECS, RDS, LoadBalancer, AutoScaling' }
+    { name: 'keywords', content: 'EC2, Lightsail, ECS, RDS, LoadBalancer, AutoScaling' },
+    { property: 'og:url', content: 'https://2cpu2ram.com/server/' }
   ],
   link: [
     {

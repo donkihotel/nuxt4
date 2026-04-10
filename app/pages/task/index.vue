@@ -11,7 +11,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          작업별 단가표
+          작업 단가
         </v-toolbar-title>
       </v-toolbar>
     </template>
@@ -42,7 +42,8 @@ useHead({
   title: 'AWS 작업 비용 확인 | 2CPU2RAM',
   meta: [
     { name: 'description', content: 'AWS 작업 비용 확인' },
-    { name: 'keywords', content: 'VPC설계, 애플리케이션배포, 방화벽설치, SSL설치, 보안설정' }
+    { name: 'keywords', content: 'VPC설계, 애플리케이션배포, 방화벽설치, SSL설치, 보안설정' },
+    { property: 'og:url', content: 'https://2cpu2ram.com/task/' }
   ],
   link: [
     {

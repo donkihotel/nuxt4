@@ -10,9 +10,9 @@
               <span class="text-h6">.com</span>
             </div>
           </v-chip>
-          <v-chip to="/server" variant="text" size="large" density="compact">서버 구축 사례 & 견적</v-chip>
-          <v-chip to="/domain" variant="text" size="large" density="compact">도메인 연결 서비스</v-chip>
-          <v-chip to="/task" variant="text" size="large" density="compact">작업별 단가표</v-chip>
+          <v-chip to="/server" variant="text" size="large" density="compact">서버 구축</v-chip>
+          <v-chip to="/domain" variant="text" size="large" density="compact">도메인 연결</v-chip>
+          <v-chip to="/task" variant="text" size="large" density="compact">작업 단가</v-chip>
         </v-chip-group>
       </v-container>
     </v-app-bar>

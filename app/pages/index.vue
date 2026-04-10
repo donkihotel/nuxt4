@@ -18,7 +18,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              작업별 단가표
+              작업 단가
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
           </v-toolbar>
@@ -37,7 +37,7 @@
     <v-col xs="12" sm="6" md="5" lg="5">
       <v-toolbar flat>
         <v-toolbar-title>
-          크몽에서 서비스 만나보기
+          크몽에서 보기
         </v-toolbar-title>
       </v-toolbar>
       <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"
@@ -70,7 +70,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              서버 구축 사례 & 견적
+              서버 구축 - <span class="font-italic">사례</span>
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/server">더 보기 ></v-btn>
           </v-toolbar>
@@ -133,7 +133,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              도메인 연결 서비스 - <span class="font-italic">사례</span>
+              도메인 연결 - <span class="font-italic">사례</span>
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/domain">더 보기 ></v-btn>
           </v-toolbar>
@@ -163,8 +163,7 @@
     <v-col>
       <v-toolbar flat>
         <v-toolbar-title>
-          추천사이트
-          <div class="text-caption font-italic">다음과 같은 사이트의 서비스를 사용하여 서버를 구축합니다.</div>
+          작업 사이트
         </v-toolbar-title>
       </v-toolbar>
       <v-row>
