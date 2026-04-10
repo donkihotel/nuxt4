@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
-    '@nuxtjs/sitemap'
+    // '@nuxtjs/sitemap'
   ],
   vuetify: {
     moduleOptions: {
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     url: 'https://2cpu2ram.com',
     name: '2CPU2RAM'
   },
-  sitemap: {
-    exclude: ['/pinia/**', '/fetch/**'],
-  }
+  // sitemap: {
+  //   exclude: ['/pinia/**', '/fetch/**'],
+  // }
 })
