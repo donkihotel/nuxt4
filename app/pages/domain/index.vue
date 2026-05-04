@@ -54,7 +54,7 @@
     </template>
 
     <template #item.email="{ item }">
-      <v-img v-if="!itemEmailError[item.id]" :src="`assets/email/${formatMailIcon(item.email)}`" width="120"
+      <v-img v-if="!itemEmailError[item.id]" :src="`/assets/email/${formatMailIcon(item.email)}`" width="120"
         @error="itemEmailError[item.id] = true" />
 
       <span v-else>{{ item.email }}</span>
@@ -155,7 +155,7 @@ function handlePage(value: number) {
 
 // 행 클릭 시 상세 페이지로 이동
 const handleClickRow = (item: any, row: any) => {
-  router.push(`/domain/${row.item.id}`)
+  router.push(`/domain/${row.item.id}/`)
 }
 
 const { formatPrice } = useFormatPrice()

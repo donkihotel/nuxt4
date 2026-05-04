@@ -3,7 +3,7 @@ export const useRowNavigation = () => {
 
     const handleClickRow = (basePath: string) => {
         return (_item: any, row: any) => {
-            router.push(`/${basePath}/${row.item.id}`)
+            router.push(`/${basePath}/${row.item.id}/`)
         }
     }
 

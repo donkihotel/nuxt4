@@ -20,7 +20,7 @@
             <v-toolbar-title>
               작업 단가
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/task">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/task/">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
@@ -72,13 +72,13 @@
             <v-toolbar-title>
               서버 구축 - <span class="font-italic">사례</span>
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/server">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/server/">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
         <template v-slot:item.frontend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2"
+            <v-img :src="`/assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24" class="mr-2"
               v-if="item.frontend" />
             <span>{{ item?.frontend ?? '-' }}</span>
           </v-chip>
@@ -86,14 +86,14 @@
 
         <template v-slot:item.backend="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
+            <v-img :src="`/assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24" class="mr-2" />
             <span>{{ item.backend }}</span>
           </v-chip>
         </template>
 
         <template v-slot:item.database="{ item }">
           <v-chip variant="text" class="pl-0">
-            <v-img v-if="item.database" :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24"
+            <v-img v-if="item.database" :src="`/assets/db/${formatDevIcon(item.database)}`" height="24" width="24"
               class="mr-2" />
             <span>{{ item.database }}</span>
           </v-chip>
@@ -135,7 +135,7 @@
             <v-toolbar-title>
               도메인 연결 - <span class="font-italic">사례</span>
             </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/domain">더 보기 ></v-btn>
+            <v-btn variant="text" size="small" to="/domain/">더 보기 ></v-btn>
           </v-toolbar>
         </template>
 
@@ -144,11 +144,11 @@
         </template>
 
         <!-- <template #item.email="{ item }">
-          <v-img :src="`assets/email/${formatMailIcon(item.email)}`" width="120" />
+          <v-img :src="`/assets/email/${formatMailIcon(item.email)}`" width="120" />
         </template> -->
 
         <template #item.email="{ item }">
-          <v-img v-if="!itemEmailError[item.id]" :src="`assets/email/${formatMailIcon(item.email)}`" width="120"
+          <v-img v-if="!itemEmailError[item.id]" :src="`/assets/email/${formatMailIcon(item.email)}`" width="120"
             @error="itemEmailError[item.id] = true" />
 
           <span v-else>{{ item.email }}</span>
@@ -169,7 +169,7 @@
       <v-row>
         <v-col xs="6" sm="4" md="3" lg="2">
           <v-card class="pb-3" @click="openConfirm('https://www.hosting.kr/')">
-            <v-img :src="`assets/bottom/hostringkr.jpg`" height="70" cover>
+            <v-img :src="`/assets/bottom/hostringkr.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
             <v-card-title>호스팅케이알</v-card-title>
@@ -178,7 +178,7 @@
         </v-col>
         <v-col xs="6" sm="4" md="3" lg="2">
           <v-card class="pb-3" @click="openConfirm('https://www.sslcert.co.kr/')">
-            <v-img :src="`assets/bottom/securesign.jpg`" height="70" cover>
+            <v-img :src="`/assets/bottom/securesign.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
             <v-card-title>시큐어사인</v-card-title>
@@ -187,7 +187,7 @@
         </v-col>
         <v-col xs="6" sm="4" md="3" lg="2">
           <v-card class="pb-3" @click="openConfirm('https://aws.amazon.com/ko/')">
-            <v-img :src="`assets/bottom/aws.jpg`" height="70" cover>
+            <v-img :src="`/assets/bottom/aws.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
             <v-card-title>아마존 웹 서비스</v-card-title>
@@ -196,7 +196,7 @@
         </v-col>
         <v-col xs="6" sm="4" md="3" lg="2">
           <v-card class="pb-3" @click="openConfirm('https://github.com/')">
-            <v-img :src="`assets/bottom/github.jpg`" height="70" cover>
+            <v-img :src="`/assets/bottom/github.jpg`" height="70" cover>
             </v-img>
             <v-divider></v-divider>
             <v-card-title>깃허브</v-card-title>
@@ -330,7 +330,7 @@ const open = (url: string, type: string) => {
 
 const handleClickRow = (basePath: string) => {
   return (_item: any, row: any) => {
-    router.push(`/${basePath}/${row.item.id}`)
+    router.push(`/${basePath}/${row.item.id}/`)
   }
 }
 

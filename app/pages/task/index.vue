@@ -108,6 +108,6 @@ function handlePage(value: number) {
 
 // 행 클릭 시 상세 페이지로 이동
 const handleClickRow = (item: any, row: any) => {
-  router.push(`/task/${row.item.id}`)
+  router.push(`/task/${row.item.id}/`)
 }
 </script>

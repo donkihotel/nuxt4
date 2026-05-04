@@ -79,7 +79,7 @@
 
     <template v-slot:item.frontend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img v-if="item.frontend" :src="`assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24"
+        <v-img v-if="item.frontend" :src="`/assets/dev/${formatDevIcon(item.frontend)}`" height="24" width="24"
           class="mr-2" />
         <span>{{ item.frontend || '-' }}</span>
       </v-chip>
@@ -87,7 +87,7 @@
 
     <template v-slot:item.backend="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img v-if="item.backend" :src="`assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24"
+        <v-img v-if="item.backend" :src="`/assets/dev/${formatDevIcon(item.backend)}`" height="24" width="24"
           class="mr-2" />
         <span>{{ item.backend || '-' }}</span>
       </v-chip>
@@ -95,7 +95,7 @@
 
     <template v-slot:item.database="{ item }">
       <v-chip variant="text" class="pl-0">
-        <v-img v-if="item.database" :src="`assets/db/${formatDevIcon(item.database)}`" height="24" width="24"
+        <v-img v-if="item.database" :src="`/assets/db/${formatDevIcon(item.database)}`" height="24" width="24"
           class="mr-2" />
         <span>{{ item.database || '-' }}</span>
       </v-chip>
@@ -219,6 +219,6 @@ const { formatSecurityColor } = useFormatSecurityColor()
 const { formatPrice } = useFormatPrice()
 
 const handleClickRow = (item: any, row: any) => {
-  router.push(`/server/${row.item.id}`)
+  router.push(`/server/${row.item.id}/`)
 }
 </script>
