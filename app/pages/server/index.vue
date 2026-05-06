@@ -72,7 +72,7 @@
     <template v-slot:top>
       <v-toolbar flat>
         <v-toolbar-title>
-          서버 구축 - <span class="font-italic">사례</span>
+          서버 구축 <span class="text-subtitle-2">(사례)</span>
         </v-toolbar-title>
       </v-toolbar>
     </template>
@@ -175,13 +175,13 @@ const router = useRouter()
 
 const headers: DataTableHeader[] = [
   { title: 'No', key: 'id', align: 'end' },
-  { title: '개발 프론트', key: 'frontend' },
-  { title: '개발 백엔드', key: 'backend' },
+  { title: '프론트 개발', key: 'frontend' },
+  { title: '백엔드 개발', key: 'backend' },
   { title: '데이터베이스', key: 'database' },
-  { title: '서버 인스턴스', key: 'instance' },
-  { title: '서버 확장', key: 'performance', align: 'center' },
+  { title: '컴퓨팅 옵션', key: 'instance' },
+  { title: '서버 설계', key: 'performance', align: 'center' },
   { title: '애플리케이션 배포', key: 'app_deploy', align: 'center' },
-  { title: '서버 보안', key: 'security', align: 'center' },
+  { title: '보안 레벨', key: 'security', align: 'center' },
   { title: '구축 기간', key: 'build_day', align: 'end' },
   { title: '구축 비용', key: 'build_cost', align: 'end' },
 ]

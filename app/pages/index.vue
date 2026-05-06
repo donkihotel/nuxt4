@@ -24,8 +24,8 @@
           </v-toolbar>
         </template>
 
-        <template #item.count="{ item }">
-          {{ item.count }} 단계 <span class="text-caption">({{ item.time }} 시간)</span>
+        <template #item.time="{ item }">
+          {{ item.time }} 시간
         </template>
 
         <template #item.price="{ item }">
@@ -70,7 +70,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              서버 구축 - <span class="font-italic">사례</span>
+              서버 구축 <span class="text-subtitle-2">(사례)</span>
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/server/">더 보기 ></v-btn>
           </v-toolbar>
@@ -133,7 +133,7 @@
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>
-              도메인 연결 - <span class="font-italic">사례</span>
+              도메인 연결 <span class="text-subtitle-2">(사례)</span>
             </v-toolbar-title>
             <v-btn variant="text" size="small" to="/domain/">더 보기 ></v-btn>
           </v-toolbar>
@@ -163,67 +163,22 @@
     <v-col>
       <v-toolbar flat>
         <v-toolbar-title>
-          작업 사이트
+          추천 사이트
         </v-toolbar-title>
       </v-toolbar>
-      <v-row>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3" @click="openConfirm('https://www.hosting.kr/')">
-            <v-img :src="`/assets/bottom/hostringkr.jpg`" height="70" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>호스팅케이알</v-card-title>
-            <v-card-subtitle>도메인 최저가</v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3" @click="openConfirm('https://www.sslcert.co.kr/')">
-            <v-img :src="`/assets/bottom/securesign.jpg`" height="70" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>시큐어사인</v-card-title>
-            <v-card-subtitle>SSL 인증서 최저가</v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3" @click="openConfirm('https://aws.amazon.com/ko/')">
-            <v-img :src="`/assets/bottom/aws.jpg`" height="70" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>아마존 웹 서비스</v-card-title>
-            <v-card-subtitle>많이 사용하는 클라우드</v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3" @click="openConfirm('https://github.com/')">
-            <v-img :src="`/assets/bottom/github.jpg`" height="70" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>깃허브</v-card-title>
-            <v-card-subtitle>가장 핫한 소스 저장소</v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3">
-            <v-img class="align-end" height="70"
-              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>준비중</v-card-title>
-            <v-card-subtitle>준비중 입니다</v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col xs="6" sm="4" md="3" lg="2">
-          <v-card class="pb-3">
-            <v-img class="align-end" height="70"
-              src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" cover>
-            </v-img>
-            <v-divider></v-divider>
-            <v-card-title>준비중</v-card-title>
-            <v-card-subtitle>준비중 입니다</v-card-subtitle>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-sheet class="mx-auto" color="transparent">
+        <v-slide-group>
+          <v-slide-group-item v-for="(item, i) in sites" :key="i">
+            <v-card class="mr-2 mb-2 pb-3" @click="openConfirm(item.url)" width="180">
+              <v-img :src="`/${item.src}`" height="70" cover>
+              </v-img>
+              <v-divider></v-divider>
+              <v-card-title>{{ item.title }}</v-card-title>
+              <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
+            </v-card>
+          </v-slide-group-item>
+        </v-slide-group>
+      </v-sheet>
     </v-col>
   </v-row>
 
@@ -234,7 +189,7 @@
       </v-card-title>
 
       <v-card-text>
-        현재 사이트를 벗어나 외부 사이트로 이동합니다.<br>
+        외부 사이트로 이동합니다.<br>
         계속 진행하시겠습니까?
       </v-card-text>
 
@@ -265,21 +220,21 @@ const task = items0.default.task
 
 const headers0: DataTableHeader[] = [
   { title: 'No', value: 'id' },
-  { title: '작업 구분', value: 'design' },
-  { title: '작업 이름', value: 'title' },
-  { title: '작업 과정', value: 'count' },
-  { title: '작업 비용', value: 'price', align: 'end' }
+  { title: '구분', value: 'design' },
+  { title: '작업명', value: 'title' },
+  { title: '작업 시간', value: 'time' },
+  { title: '가격', value: 'price' }
 ]
 
 const headers1: DataTableHeader[] = [
   { title: 'No', value: 'id', align: 'end' },
-  { title: '개발 프론트', value: 'frontend' },
-  { title: '개발 백엔드', value: 'backend' },
+  { title: '프론트 개발', value: 'frontend' },
+  { title: '백엔드 개발', value: 'backend' },
   { title: '데이터베이스', value: 'database' },
-  { title: '서버 인스턴스', value: 'instance' },
-  { title: '서버 확장', value: 'performance', align: 'center' },
+  { title: '컴퓨팅 옵션', value: 'instance' },
+  { title: '서버 설계', value: 'performance', align: 'center' },
   { title: '애플리케이션 배포', value: 'app_deploy', align: 'center' },
-  { title: '서버 보안', value: 'security', align: 'center' },
+  { title: '보안 레벨', value: 'security', align: 'center' },
   { title: '구축 기간', value: 'build_day', align: 'end' },
   { title: '구축 비용', value: 'build_cost', align: 'end' }
 ]
@@ -297,6 +252,15 @@ const banners = [
   { src: 'assets/banner/banner5.jpg', url: 'https://kmong.com/gig/425162', title: '' },
   { src: 'assets/banner/banner6.jpg', url: 'https://kmong.com/gig/554951', title: '' },
   { src: 'assets/banner/banner7.jpg', url: 'https://kmong.com/gig/616478', title: '' },
+]
+
+const sites = [
+  { src: 'assets/bottom/aws.jpg', url: 'https://aws.amazon.com/ko/', title: '아마존 웹 서비스', subtitle: '많이 사용하는 클라우드' },
+  { src: 'assets/bottom/vultr.jpg', url: 'https://www.vultr.com/', title: '벌쳐', subtitle: '가성비가 좋은 호스팅' },
+  { src: 'assets/bottom/github.jpg', url: 'https://github.com/', title: '깃허브', subtitle: '개발자 위한 협업 플랫폼' },
+  { src: 'assets/bottom/hostringkr.jpg', url: 'https://www.hosting.kr/', title: '호스팅케이알', subtitle: '도메인 최저가' },
+  { src: 'assets/bottom/securesign.jpg', url: 'https://www.sslcert.co.kr/', title: '시큐어사인', subtitle: 'SSL 인증서 최저가' },
+  { src: 'assets/bottom/cafe24.jpg', url: 'https://www.cafe24.com/', title: '카페24', subtitle: '국내에서 많이 사용하는 호스팅' },
 ]
 
 const headers2: DataTableHeader[] = [

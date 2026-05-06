@@ -2,7 +2,7 @@
   <v-sheet border="md" class="pa-6 text-white mx-auto " color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">작업별 단가표</h4>
     <p>
-      작업은 작업 과정, 난이도, 작업 시간에 따라서 작업 비용 차이가 있습니다.
+      서버 환경에 따라서 작업은 작업 과정(난이도), 작업 시간에 따라서 가격 차이가 발생할수 있습니다.
     </p>
   </v-sheet>
 
@@ -63,11 +63,11 @@ const router = useRouter()
 // 테이블 헤더
 const headers: DataTableHeader[] = [
   { title: 'No', key: 'id' },
-  { title: '작업 구분', key: 'design' },
-  { title: '작업 이름', key: 'title' },
+  { title: '구분', key: 'design' },
+  { title: '작업명', key: 'title' },
   { title: '작업 과정', key: 'count' },
   { title: '작업 시간', key: 'time' },
-  { title: '작업 비용', key: 'price' }
+  { title: '가격', key: 'price' }
 ]
 
 // 데이터 구조
