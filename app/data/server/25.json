@@ -19,6 +19,10 @@
         "etc": null
     },
     "design": {
+        "src_network": "25_network.jpg",
+        "src_deploy": "25_deploy.jpg",
+        "src_security": "25_security.jpg",
+        "src_loadbalancer": "25_loadbalancer.jpg",
         "instance": "EC2, ECS (Fargate)",
         "network": "VPC (Private)",
         "os": "Amazon Linux, Container",
@@ -37,8 +41,8 @@
             "etc": null
         },
         "extension": {
-            "loadbalancer": "Application LB",
-            "autoscaling": "사용",
+            "loadbalancer": "Application Load Balancer",
+            "autoscaling": "Fargate",
             "cdn": "CloudFront"
         },
         "software": null

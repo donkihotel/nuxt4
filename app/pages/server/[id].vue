@@ -107,10 +107,11 @@
           <v-card-text>
             <p class="text-h6 font-weight-black">기본</p>
             <v-divider class="my-1"></v-divider>
+            <v-img v-if="server?.design.src_network" :src="`/assets/design/${server?.design.src_network}`"></v-img>
             <v-row>
               <v-col cols="6">
                 <div class="my-3">
-                  <div class="font-weight-bold">서버 인스턴스</div>
+                  <div class="font-weight-bold">컴퓨팅</div>
                   <div>{{ server?.design.instance ?? '-' }}</div>
                 </div>
                 <div class="my-3">
@@ -149,6 +150,7 @@
           <v-card-text>
             <p class="text-h6 font-weight-black">배포</p>
             <v-divider class="my-1"></v-divider>
+            <v-img v-if="server?.design.src_deploy" :src="`/assets/design/${server?.design.src_deploy}`"></v-img>
             <v-row>
               <v-col cols="6">
                 <div class="my-3">
@@ -184,6 +186,7 @@
             <p class="text-h6 font-weight-black">보안 <span class="text-body-2">(Level {{
               getSecurityCount(server?.design?.security?.tools) ?? '-' }})</span></p>
             <v-divider class="my-1"></v-divider>
+            <v-img v-if="server?.design.src_security" :src="`/assets/design/${server?.design.src_security}`"></v-img>
             <v-row>
               <v-col cols="12">
                 <div class="my-3">
@@ -200,7 +203,9 @@
 
           <v-card-text>
             <p class="text-h6 font-weight-black">부하분산</p>
-            <v-divider></v-divider>
+            <v-divider class="my-1"></v-divider>
+            <v-img v-if="server?.design.src_loadbalancer"
+              :src="`/assets/design/${server?.design.src_loadbalancer}`"></v-img>
             <v-row>
               <v-col cols="6">
                 <div class="my-3">
@@ -356,6 +361,10 @@ interface Extension {
 
 // 아키텍처
 interface Design {
+  src_network: string
+  src_deploy: string
+  src_security: string
+  src_loadbalancer: string
   instance: string
   network: string
   os: string
