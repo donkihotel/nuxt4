@@ -231,8 +231,8 @@ const headers1: DataTableHeader[] = [
   { title: '프론트 개발', value: 'frontend' },
   { title: '백엔드 개발', value: 'backend' },
   { title: '데이터베이스', value: 'database' },
-  { title: '컴퓨팅 옵션', value: 'instance' },
-  { title: '서버 설계', value: 'performance', align: 'center' },
+  { title: '컴퓨팅', value: 'instance' },
+  { title: '서버 확장', value: 'performance', align: 'center' },
   { title: '애플리케이션 배포', value: 'app_deploy', align: 'center' },
   { title: '보안 레벨', value: 'security', align: 'center' },
   { title: '구축 기간', value: 'build_day', align: 'end' },
@@ -261,6 +261,7 @@ const sites = [
   { src: 'assets/bottom/hostringkr.jpg', url: 'https://www.hosting.kr/', title: '호스팅케이알', subtitle: '도메인 최저가' },
   { src: 'assets/bottom/securesign.jpg', url: 'https://www.sslcert.co.kr/', title: '시큐어사인', subtitle: 'SSL 인증서 최저가' },
   { src: 'assets/bottom/cafe24.jpg', url: 'https://www.cafe24.com/', title: '카페24', subtitle: '국내에서 많이 사용하는 호스팅' },
+  { src: 'assets/bottom/digitalocean.jpg', url: 'https://www.digitalocean.com/', title: '디지털오션', subtitle: '가성비가 좋은 클라우드' },
 ]
 
 const headers2: DataTableHeader[] = [

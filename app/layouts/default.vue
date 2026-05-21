@@ -12,6 +12,7 @@
           </v-chip>
           <v-chip to="/server/" variant="text" size="large" density="compact">서버 구축</v-chip>
           <v-chip to="/domain/" variant="text" size="large" density="compact">도메인 연결</v-chip>
+          <!-- <v-chip to="/mail/" variant="text" size="large" density="compact">메일 서버</v-chip> -->
           <v-chip to="/task/" variant="text" size="large" density="compact">작업 단가</v-chip>
         </v-chip-group>
       </v-container>

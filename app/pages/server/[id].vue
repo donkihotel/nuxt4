@@ -307,7 +307,8 @@
           </v-card>
 
           <!-- 상담 -->
-          <Consult kmong-link="https://kmong.com/gig/220715" kakao-link="https://open.kakao.com/o/sfJs7iHe" />
+          <Consult :consult="server?.consult || []" kmong-link="https://kmong.com/gig/220715"
+            kakao-link="https://open.kakao.com/o/sfJs7iHe" />
         </div>
       </v-col>
       <v-col cols="12">
@@ -394,6 +395,11 @@ interface EstimateItem {
   sumPrice: number
 }
 
+interface ConsultItem {
+  no: number
+  title: string
+}
+
 interface Requirements {
   hosting: string
   budget: number
@@ -416,6 +422,7 @@ interface Server {
   design: Design
   schedule: ScheduleItem[]
   estimate: EstimateItem[]
+  consult: ConsultItem[]
 }
 
 // --- 모든 JSON 파일 eager import ---
