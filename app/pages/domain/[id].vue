@@ -36,6 +36,19 @@
                   <div>{{ domain?.nameserver ?? '-' }}</div>
                 </div>
               </v-col>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">SSL 인증서</div>
+                  <div>{{ domain?.ssl ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-divider vertical></v-divider>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">인증서 가격</div>
+                  <div>{{ formatPrice(domain?.ssl_cost as number) }} 원</div>
+                </div>
+              </v-col>
             </v-row>
           </v-card-text>
         </v-card>
@@ -46,14 +59,14 @@
             <v-row>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">서버</div>
+                  <div class="font-weight-bold">빌더</div>
                   <div>{{ domain?.homepage ?? '-' }}</div>
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">개발</div>
+                  <div class="font-weight-bold">호스팅</div>
                   <div>-</div>
                 </div>
               </v-col>
@@ -62,7 +75,28 @@
         </v-card>
 
         <v-card class="my-5" border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>메일</h3>
+          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-3-box</v-icon>검색</h3>
+          <v-card-text>
+            <v-row>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">검색 도구</div>
+                  <div>{{ domain?.search_tools ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-divider vertical></v-divider>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">사이트맵</div>
+                  <div>-</div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+
+        <v-card class="my-5" border flat>
+          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-4-box</v-icon>메일</h3>
           <v-card-text>
             <v-row>
               <v-col cols="6">
@@ -78,27 +112,6 @@
                 <div>
                   <div class="font-weight-bold">메일 요금제</div>
                   <div>{{ domain?.pricing_plan ?? '-' }}</div>
-                </div>
-              </v-col>
-            </v-row>
-          </v-card-text>
-        </v-card>
-
-        <v-card class="my-5" border flat>
-          <h3 class="bg-surface-light pa-2"><v-icon class="mr-2">mdi-numeric-4-box</v-icon>보안</h3>
-          <v-card-text>
-            <v-row>
-              <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">SSL 인증서</div>
-                  <div>{{ domain?.ssl ?? '-' }}</div>
-                </div>
-              </v-col>
-              <v-divider vertical></v-divider>
-              <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">인증서 가격</div>
-                  <div><span class="text-caption">₩</span> {{ formatPrice(domain?.ssl_cost as number) }}</div>
                 </div>
               </v-col>
             </v-row>
@@ -144,7 +157,8 @@
         </v-card>
 
         <!-- 상담 -->
-        <Consult kmong-link="https://kmong.com/gig/424545" kakao-link="https://open.kakao.com/o/gbRh8g7h" />
+        <Consult :consult="domain?.consult || []" kmong-link="https://kmong.com/gig/220715"
+          kakao-link="https://open.kakao.com/o/sfJs7iHe" />
       </v-col>
     </v-row>
   </v-container>
@@ -168,6 +182,11 @@ interface EstimateItem {
   sumPrice: number
 }
 
+interface ConsultItem {
+  no: number
+  title: string
+}
+
 interface Domain {
   id: number,
   date: string,
@@ -175,12 +194,14 @@ interface Domain {
   purchaser: string,
   nameserver: string,
   homepage: string,
+  search_tools: string,
   ssl: string,
   ssl_cost: number,
   email: string,
   pricing_plan: string,
   cost: number,
-  estimates: EstimateItem[]
+  estimates: EstimateItem[],
+  consult: ConsultItem[]
 }
 
 // --- 모든 JSON 파일 eager import ---

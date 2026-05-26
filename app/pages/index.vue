@@ -227,7 +227,7 @@ const headers0: DataTableHeader[] = [
 ]
 
 const headers1: DataTableHeader[] = [
-  { title: 'No', value: 'id', align: 'end' },
+  { title: 'No', value: 'id' },
   { title: '프론트 개발', value: 'frontend' },
   { title: '백엔드 개발', value: 'backend' },
   { title: '데이터베이스', value: 'database' },
@@ -265,16 +265,18 @@ const sites = [
 ]
 
 const headers2: DataTableHeader[] = [
-  { title: 'No', value: 'id', align: 'end' },
+  { title: 'No', value: 'id' },
+  { title: '업종', key: 'business' },
   { title: '도메인', key: 'domain' },
-  { title: '구매', key: 'purchaser' },
-  { title: '네임서버', key: 'nameserver' },
+  // { title: '구매', key: 'purchaser' },
+  // { title: '네임서버', key: 'nameserver' },
   { title: '홈페이지', key: 'homepage' },
-  { title: 'SSL 인증서', key: 'ssl' },
-  { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
+  { title: '검색도구', key: 'search_tools' },
+  // { title: 'SSL 인증서', key: 'ssl' },
+  // { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
   { title: '메일 서비스', key: 'email' },
-  { title: '메일 요금제', key: 'pricing_plan' },
-  { title: '연결 비용', key: 'cost', align: 'end' },
+  // { title: '메일 요금제', key: 'pricing_plan' },
+  { title: '견적', key: 'cost' },
 ]
 
 const items2 = await import(`~/data/domain/main.json`)

@@ -2,7 +2,7 @@
   <v-sheet class="pa-6 text-white mx-auto " color="#141518">
     <h4 class="text-h5 font-weight-bold mb-4">도메인 연결</h4>
     <p>
-      도메인에 홈페이지 · 메일 · SSL 연결 작업을 해드립니다.<br />
+      도메인에 홈페이지 · 검색도구 · 메일 서비스를 연결 해드립니다.<br />
     </p>
   </v-sheet>
 
@@ -10,33 +10,35 @@
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
         <v-icon class="mr-2">mdi-numeric-1-box</v-icon>
-        도메인 홈페이지
+        홈페이지
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        홈페이지 서비스 윅스, 아임웹, 구글사이트, 캔바, 카페24쇼핑몰, 서버 호스팅 등의 서비스를 도메인 연결을 해드립니다.<br />
-        <span class="text-subtitle-2 text-medium-emphasis">네임 서버 변경, 레코드 A, CNAME 설정 합니다.</span>
+        홈페이지 빌더 윅스, 아임웹, 구글사이트, 캔바, 카페24쇼핑몰, 서버 호스팅 등의 서비스를 도메인 연결을 해드립니다.<br />
+        <span class="text-subtitle-2 text-medium-emphasis">네임 서버 변경, 레코드 A, CNAME 설정</span>
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
         <v-icon class="mr-2">mdi-numeric-2-box</v-icon>
-        도메인 메일
+        검색도구
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        구글워크스페이스, 네이버웍스, 마이크로소프트365 등의 다양한 메일 서비스를 도메인 연결을 해드립니다.<br />
-        <span class="text-subtitle-2 text-medium-emphasis">메일 신뢰도를 위해서 DKIM, SPF, DMARC 설정 합니다.</span>
+        네이버, 구글, 빙 검색에서 노출될수있도록 검색도구 연결을 합니다.<br />
+        <span class="text-subtitle-2 text-medium-emphasis">네이버 서치어드바이저, 구글서치콘솔, 빙 웹마스터를 설정</span>
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
         <v-icon class="mr-2">mdi-numeric-3-box</v-icon>
-        도메인 SSL
+        메일 서비스
       </v-expansion-panel-title>
       <v-expansion-panel-text>
-        SSL 인증서 구매부터 설치까지 해드립니다.<br />
-        <span class="text-subtitle-2 text-medium-emphasis">Nginx, Apache 인증서를 설정 합니다.</span>
+        구글워크스페이스, 네이버웍스, 마이크로소프트365 등의 다양한 메일 서비스를 도메인 연결을 합니다.<br />
+        <span class="text-subtitle-2 text-medium-emphasis">MX, DKIM, SPF, DMARC 설정</span>
+
+        <v-img :src="`/assets/email/mail_all.png`" />
       </v-expansion-panel-text>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -45,7 +47,7 @@
     @click:row="handleClickRow" disable-sort>
     <template v-slot:top>
       <v-toolbar flat>
-        <v-toolbar-title>도메인 연결 - <span class="font-italic">사례</span></v-toolbar-title>
+        <v-toolbar-title>사용 사례</v-toolbar-title>
       </v-toolbar>
     </template>
 
@@ -102,20 +104,23 @@ const router = useRouter()
 // 테이블 헤더
 const headers: DataTableHeader[] = [
   { title: 'No', value: 'id', align: 'end' },
+  { title: '업종', key: 'business' },
   { title: '도메인', key: 'domain' },
-  { title: '구매', key: 'purchaser' },
-  { title: '네임서버', key: 'nameserver' },
+  // { title: '구매', key: 'purchaser' },
+  // { title: '네임서버', key: 'nameserver' },
   { title: '홈페이지', key: 'homepage' },
-  { title: 'SSL 인증서', key: 'ssl' },
-  { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
+  { title: '검색도구', key: 'search_tools' },
+  // { title: 'SSL', key: 'ssl' },
+  // { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
   { title: '메일 서비스', key: 'email' },
-  { title: '메일 요금제', key: 'pricing_plan' },
-  { title: '연결 비용', key: 'cost', align: 'end' },
+  // { title: '메일 요금제', key: 'pricing_plan' },
+  { title: '견적', key: 'cost', },
 ]
 
 // 데이터 구조
 interface Domains {
-  id: number
+  id: number,
+  business: string,
   domain: string,
   purchaser: string,
   nameserver: string,

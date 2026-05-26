@@ -1,6 +1,7 @@
 {
     "id": 44,
     "date": "2025-12-11",
+    "business": "-",
     "domain": "laurelclinic.net",
     "purchaser": "스퀘어스페이스",
     "nameserver": "스퀘어스페이스",
@@ -17,6 +18,24 @@
             "supplyPrice": 30000,
             "quantity": 1,
             "sumPrice": 30000
+        }
+    ],
+    "consult": [
+        {
+            "no": 1,
+            "title": "도메인에 홈페이지 연결"
+        },
+        {
+            "no": 2,
+            "title": "홈페이지를 검색도구에 연결"
+        },
+        {
+            "no": 3,
+            "title": "도메인을 메일 서비스에 연결"
+        },
+        {
+            "no": 4,
+            "title": "연결이 필요한 경우 지금 상담하세요. 👇"
         }
     ]
 }
