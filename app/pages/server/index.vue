@@ -183,7 +183,7 @@ const headers: DataTableHeader[] = [
   { title: '애플리케이션 배포', key: 'app_deploy', align: 'center' },
   { title: '보안 레벨', key: 'security', align: 'center' },
   { title: '구축 기간', key: 'build_day', align: 'end' },
-  { title: '구축 비용', key: 'build_cost', align: 'end' },
+  { title: '견적', key: 'build_cost', align: 'end' },
 ]
 
 // 상태

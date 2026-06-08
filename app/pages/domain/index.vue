@@ -32,7 +32,7 @@
     <v-expansion-panel>
       <v-expansion-panel-title class="font-weight-bold">
         <v-icon class="mr-2">mdi-numeric-3-box</v-icon>
-        메일 서비스
+        메일
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         구글워크스페이스, 네이버웍스, 마이크로소프트365 등의 다양한 메일 서비스를 도메인 연결을 합니다.<br />
@@ -103,7 +103,7 @@ const router = useRouter()
 
 // 테이블 헤더
 const headers: DataTableHeader[] = [
-  { title: 'No', value: 'id', align: 'end' },
+  { title: 'No', value: 'id' },
   { title: '업종', key: 'business' },
   { title: '도메인', key: 'domain' },
   // { title: '구매', key: 'purchaser' },
@@ -112,9 +112,9 @@ const headers: DataTableHeader[] = [
   { title: '검색도구', key: 'search_tools' },
   // { title: 'SSL', key: 'ssl' },
   // { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
-  { title: '메일 서비스', key: 'email' },
+  { title: '메일', key: 'email' },
   // { title: '메일 요금제', key: 'pricing_plan' },
-  { title: '견적', key: 'cost', },
+  { title: '견적', key: 'cost' },
 ]
 
 // 데이터 구조

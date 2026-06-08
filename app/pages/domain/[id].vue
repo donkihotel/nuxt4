@@ -5,8 +5,9 @@
     <v-row>
       <v-col cols="12">
         <v-list-item>
+
           <template v-slot:title>
-            <h2>{{ domain?.domain ?? '-' }}</h2>
+            <h2>{{ domain?.business ?? '-' }}</h2>
           </template>
 
           <template v-slot:subtitle>
@@ -25,30 +26,24 @@
             <v-row>
               <v-col cols="6">
                 <div>
+                  <div class="font-weight-bold">이름</div>
+                  <div>{{ domain?.domain ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-divider vertical></v-divider>
+              <v-col cols="6">
+                <div>
                   <div class="font-weight-bold">구매</div>
                   <div>{{ domain?.purchaser ?? '-' }}</div>
                 </div>
               </v-col>
-              <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
                   <div class="font-weight-bold">네임서버</div>
                   <div>{{ domain?.nameserver ?? '-' }}</div>
                 </div>
               </v-col>
-              <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">SSL 인증서</div>
-                  <div>{{ domain?.ssl ?? '-' }}</div>
-                </div>
-              </v-col>
               <v-divider vertical></v-divider>
-              <v-col cols="6">
-                <div>
-                  <div class="font-weight-bold">인증서 가격</div>
-                  <div>{{ formatPrice(domain?.ssl_cost as number) }} 원</div>
-                </div>
-              </v-col>
             </v-row>
           </v-card-text>
         </v-card>
@@ -70,6 +65,13 @@
                   <div>-</div>
                 </div>
               </v-col>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">SSL</div>
+                  <div>{{ domain?.ssl ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-divider vertical></v-divider>
             </v-row>
           </v-card-text>
         </v-card>
@@ -110,10 +112,17 @@
               <v-divider vertical></v-divider>
               <v-col cols="6">
                 <div>
-                  <div class="font-weight-bold">메일 요금제</div>
-                  <div>{{ domain?.pricing_plan ?? '-' }}</div>
+                  <div class="font-weight-bold">메일 레코드</div>
+                  <div>{{ domain?.mail_record ?? '-' }}</div>
                 </div>
               </v-col>
+              <v-col cols="6">
+                <div>
+                  <div class="font-weight-bold">마케팅 메일</div>
+                  <div>{{ domain?.marketing_mail ?? '-' }}</div>
+                </div>
+              </v-col>
+              <v-divider vertical></v-divider>
             </v-row>
           </v-card-text>
         </v-card>
@@ -189,6 +198,7 @@ interface ConsultItem {
 
 interface Domain {
   id: number,
+  business: string,
   date: string,
   domain: string,
   purchaser: string,
@@ -200,6 +210,8 @@ interface Domain {
   email: string,
   pricing_plan: string,
   cost: number,
+  mail_record: string,
+  marketing_mail: string,
   estimates: EstimateItem[],
   consult: ConsultItem[]
 }

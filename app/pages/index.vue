@@ -236,7 +236,7 @@ const headers1: DataTableHeader[] = [
   { title: '애플리케이션 배포', value: 'app_deploy', align: 'center' },
   { title: '보안 레벨', value: 'security', align: 'center' },
   { title: '구축 기간', value: 'build_day', align: 'end' },
-  { title: '구축 비용', value: 'build_cost', align: 'end' }
+  { title: '견적', value: 'build_cost', align: 'end' }
 ]
 
 const items1 = await import(`~/data/server/main.json`)
@@ -274,9 +274,9 @@ const headers2: DataTableHeader[] = [
   { title: '검색도구', key: 'search_tools' },
   // { title: 'SSL 인증서', key: 'ssl' },
   // { title: '인증서 가격', key: 'ssl_cost', align: 'end' },
-  { title: '메일 서비스', key: 'email' },
+  { title: '메일', key: 'email' },
   // { title: '메일 요금제', key: 'pricing_plan' },
-  { title: '견적', key: 'cost' },
+  { title: '견적', key: 'cost', align: 'end' },
 ]
 
 const items2 = await import(`~/data/domain/main.json`)

@@ -1,17 +1,18 @@
 {
-    "id": 44,
+    "id": 45,
     "date": "2025-12-11",
-    "business": "-",
+    "business": "취업컨설팅",
     "domain": "laurelclinic.net",
     "purchaser": "스퀘어스페이스",
-    "nameserver": "스퀘어스페이스",
-    "homepage": "-",
+    "nameserver": "클라우드플레어",
+    "homepage": "라이브클래스",
     "ssl": "-",
     "ssl_cost": 0,
     "email": "google",
     "pricing_plan": "스타터",
     "cost": 30000,
-    "mail_record": "MX, SPF, DKIM, DMARC",
+    "mail_record": "MX, SPF, DKIM, DMARC, CNAME",
+    "marketing_mail": "스티비",
     "estimates": [
         {
             "no": 1,
@@ -28,7 +29,11 @@
         },
         {
             "no": 2,
-            "title": "구글워크스페이스 연결이 필요한 경우 지금 상담하세요."
+            "title": "라이브클래스에서 메일 설정"
+        },
+        {
+            "no": 2,
+            "title": "구글워크스페이스, 스티비 연결이 필요한 경우 지금 상담하세요."
         }
     ]
 }
