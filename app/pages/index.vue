@@ -1,7 +1,7 @@
 <template>
   <v-sheet color="black" class="mx-auto text-center py-12">
-    <h4 class="text-h5 font-weight-bold mb-4">AWS 구축 사례와 비용을 투명하게 공개합니다</h4>
-    <p class="font-weight-bold">
+    <h4 class="text-h5 font-weight-bold mb-4 ml-4 mr-4">AWS 구축 사례와 비용을 투명하게 공개합니다</h4>
+    <p class="font-weight-bold ml-4 mr-4">
       # 스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스 <br />
       # 실제 구축 사례와 견적을 확인해보세요.
     </p>
@@ -158,10 +158,10 @@
           작업 사이트
         </v-toolbar-title>
       </v-toolbar>
-      <v-sheet class="mx-auto" color="transparent">
-        <v-slide-group>
+      <v-sheet class="mx-auto" color="white">
+        <v-slide-group show-arrows>
           <v-slide-group-item v-for="(item, i) in sites" :key="i">
-            <v-card class="mr-2 mb-2 pb-3" @click="openConfirm(item.url)" width="180">
+            <v-card class="mt-3 mr-3 mb-3 pb-3" @click="openConfirm(item.url)" width="180" style="cursor: pointer;">
               <v-img :src="`/${item.src}`" height="70" cover>
               </v-img>
               <v-divider></v-divider>
