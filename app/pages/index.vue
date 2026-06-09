@@ -1,10 +1,5 @@
 <template>
-  <v-sheet class="pa-4 mb-3 mx-auto text-white" style="
-    background-image: url('assets/bg/aws-bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-  ">
+  <v-sheet color="black" class="mx-auto text-center py-12">
     <h4 class="text-h5 font-weight-bold mb-4">AWS 구축 사례와 비용을 투명하게 공개합니다</h4>
     <p class="font-weight-bold">
       # 스타트업 · 소규모 서비스 · 개발팀을 위한 실전 AWS 인프라 구축 서비스 <br />
@@ -12,58 +7,6 @@
     </p>
   </v-sheet>
   <v-row class="bg-grey-lighten-3">
-    <v-col xs="12" sm="6" md="7" lg="7">
-      <v-data-table :headers="headers0" :items="task" hover class="text-no-wrap" @click:row="onClickTaskRow"
-        hide-default-footer density="compact">
-        <template v-slot:top>
-          <v-toolbar flat>
-            <v-toolbar-title>
-              작업 단가
-            </v-toolbar-title>
-            <v-btn variant="text" size="small" to="/task/">더 보기 ></v-btn>
-          </v-toolbar>
-        </template>
-
-        <template #item.time="{ item }">
-          {{ item.time }} 시간
-        </template>
-
-        <template #item.price="{ item }">
-          {{ item.price }} 만원
-        </template>
-
-      </v-data-table>
-    </v-col>
-    <v-col xs="12" sm="6" md="5" lg="5">
-      <v-toolbar flat>
-        <v-toolbar-title>
-          크몽에서 보기
-        </v-toolbar-title>
-      </v-toolbar>
-      <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background class="rounded"
-        v-model="currentIndex" hide-delimiters>
-        <v-carousel-item v-for="(item, i) in banners" :key="i" :src="item.src" @click="openConfirm(item.url)" cover>
-          <v-sheet class="d-flex align-center justify-center text-white"
-            :color="item.title ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)'" height="48"
-            style="position:absolute; bottom:0; width:100%;">
-            <span class="text-subtitle-1 font-weight-medium">
-              {{ item.title }}
-            </span>
-
-            <!-- <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat"
-              class="ml-3 mr-3" /> -->
-          </v-sheet>
-        </v-carousel-item>
-
-        <v-overlay :scrim="false"
-          content-class="w-100 h-100 d-flex flex-column align-center justify-space-between pointer-pass-through py-3"
-          contained model-value no-click-animation persistent>
-          <div class="position-absolute" style="right: 12px;">
-            <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat" />
-          </div>
-        </v-overlay>
-      </v-carousel>
-    </v-col>
     <v-col cols="12">
       <v-data-table :headers="headers1" :items="server" hover class="text-no-wrap" @click:row="onClickServerRow"
         hide-default-footer>
@@ -160,10 +103,59 @@
       </v-data-table>
     </v-col>
 
+    <v-col xs="12" sm="6" md="7" lg="7">
+      <v-data-table :headers="headers0" :items="task" hover class="text-no-wrap" @click:row="onClickTaskRow"
+        hide-default-footer density="compact">
+        <template v-slot:top>
+          <v-toolbar flat>
+            <v-toolbar-title>
+              작업 단가
+            </v-toolbar-title>
+            <v-btn variant="text" size="small" to="/task/">더 보기 ></v-btn>
+          </v-toolbar>
+        </template>
+
+        <template #item.time="{ item }">
+          {{ item.time }} 시간
+        </template>
+
+        <template #item.price="{ item }">
+          {{ item.price }} 만원
+        </template>
+
+      </v-data-table>
+    </v-col>
+    <v-col xs="12" sm="6" md="5" lg="5">
+      <v-toolbar flat>
+        <v-toolbar-title>
+          크몽
+        </v-toolbar-title>
+      </v-toolbar>
+      <v-carousel height="328" show-arrows="hover" cycle hide-delimiter-background v-model="currentIndex"
+        hide-delimiters>
+        <v-carousel-item v-for="(item, i) in banners" :key="i" :src="item.src" @click="openConfirm(item.url)" cover>
+          <!-- <v-sheet class="d-flex align-center justify-center text-white"
+            :color="item.title ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)'" height="48"
+            style="position:absolute; bottom:0; width:100%;">
+            <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat"
+              class="ml-3 mr-3" />
+          </v-sheet> -->
+        </v-carousel-item>
+
+        <v-overlay :scrim="false"
+          content-class="w-100 h-100 d-flex flex-column align-center justify-space-between pointer-pass-through py-3"
+          contained model-value no-click-animation persistent>
+          <div class="position-absolute" style="right: 12px;">
+            <v-chip :text="`${currentIndex + 1} / ${banners.length}`" color="#eee" size="small" variant="flat" />
+          </div>
+        </v-overlay>
+      </v-carousel>
+    </v-col>
+
     <v-col>
       <v-toolbar flat>
         <v-toolbar-title>
-          추천 사이트
+          작업 사이트
         </v-toolbar-title>
       </v-toolbar>
       <v-sheet class="mx-auto" color="transparent">

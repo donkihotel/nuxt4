@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="grey-lighten-4" flat height="150">
+    <v-app-bar color="grey-lighten-4" flat height="100">
       <v-container>
         <v-chip-group selected-class="text-primary" column mobile>
           <v-chip to="/" variant="text">
